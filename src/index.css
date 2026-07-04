@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:ital,wght@0,400;0,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 7%; 
+    --foreground: 210 40% 98%;
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 199 89% 48%; 
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 19% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 19% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 19% 25%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142 71% 45%;
+    --success-foreground: 210 40% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 40% 98%;
+    --border: 217 19% 25%;
+    --input: 217 19% 25%;
+    --ring: 199 89% 48%;
+    --radius: 0.75rem;
+  }
+
+  /* Night Vision Theme (U1) */
+  .night-vision {
+    --background: 142 71% 2%;
+    --foreground: 142 71% 65%;
+    --card: 142 71% 3%;
+    --card-foreground: 142 71% 60%;
+    --popover: 142 71% 3%;
+    --popover-foreground: 142 71% 60%;
+    --primary: 142 71% 45%;
+    --primary-foreground: 142 71% 5%;
+    --secondary: 142 71% 10%;
+    --secondary-foreground: 142 71% 50%;
+    --muted: 142 71% 5%;
+    --muted-foreground: 142 71% 30%;
+    --accent: 142 71% 15%;
+    --accent-foreground: 142 71% 70%;
+    --border: 142 71% 12%;
+    --input: 142 71% 12%;
+    --ring: 142 71% 45%;
+  }
+}
+ 
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-slate-950 text-white font-sans antialiased selection:bg-primary selection:text-white transition-colors duration-700; }
+}
+
+.night-vision * {
+  text-shadow: 0 0 5px rgba(34, 197, 94, 0.2);
+}
+
+.night-vision img, 
+.night-vision canvas {
+  filter: sepia(100%) hue-rotate(90deg) brightness(80%) contrast(120%);
+}
+
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { @apply bg-transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { @apply bg-white/10 rounded-full hover:bg-primary/30 transition-colors; }
+
+.night-vision .custom-scrollbar::-webkit-scrollbar-thumb { @apply bg-success/20 hover:bg-success/40; }
+
+@keyframes scan { from { transform: translateY(-100%); } to { transform: translateY(1000%); } }
+.animate-scan-line { animation: scan 3s linear infinite; }
+
+@keyframes blink-red { 0%, 100% { opacity: 1; color: #ef4444; } 50% { opacity: 0.2; color: #ef4444; } }
+.animate-blink-red { animation: blink-red 0.8s ease-in-out infinite; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+.animate-shake { animation: shake 0.5s ease-in-out; }
