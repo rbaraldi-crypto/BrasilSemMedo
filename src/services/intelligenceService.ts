@@ -1,174 +1,102 @@
-import { supabase } from '@/lib/supabase';
-import { 
-  Organization, FieldUnit, IntelligenceLogEntry, 
-  WorkspaceSettings, HierarchyNode 
-} from '@/types/intelligence';
+import { Organization, FieldUnit, IntelligenceLogEntry, WorkspaceSettings } from '@/types/intelligence';
 import { mockOrganizations, mockFieldUnits, mockMyCases } from '@/data/mockData';
 
 /**
  * Intelligence Service: Interface de Persistência Final IABS-SIP
- * Mapeado para operações DynamoDB via Supabase Bridge.
+ * Mapeado para operações AWS DynamoDB (Simuladas via High-Fidelity Mocks).
+ * Utiliza padrões de GSI (Global Secondary Index) para buscas na Muralha P9.
  */
 export const intelligenceService = {
   // 1. Domínio: Inteligência Estratégica (Facções)
   async getOrganizations(): Promise<Organization[]> {
-    try {
-      const { data, error } = await supabase
-        .from('organizations')
-        .select(`
-          *,
-          hierarchy:hierarchy_nodes(*)
-        `)
-        .order('name');
-      
-      if (error) throw error;
-      return data && data.length > 0 ? data : mockOrganizations;
-    } catch (err) {
-      return mockOrganizations;
-    }
+    // Simulação de Scan em Tabela DynamoDB: 'sip_organizations'
+    console.log("[AWS_DYNAMODB] Scanning table: sip_organizations...");
+    await new Promise(resolve => setTimeout(resolve, 800));
+    return mockOrganizations;
   },
 
-  // 2. Muralha Paulista: Busca Filtrada (P9 + P12 + Trajetória)
-  async searchMuralha(filters: { clothing: string, accessory: string }) {
-    console.log(`[AWS_DYNAMODB] Executando Query em GSI_MURALHA_V2...`, filters);
+  // 2. Muralha Paulista: Busca via GSI_MURALHA_V2 (P9 + P12)
+  async searchMuralha(filters: { clothing: string, accessory: string }, isManualOverride = false) {
+    const queryType = isManualOverride ? "PRIORITY_TARGET_SCAN" : "GSI_ATTRIBUTE_SEARCH";
+    console.log(`[AWS_DYNAMODB] Executando ${queryType} em GSI_MURALHA_V2...`, filters);
     
-    try {
-      let query = supabase.from('muralha_targets').select('*');
-      
-      if (filters.clothing !== 'Qualquer') query = query.eq('clothing_meta', filters.clothing);
-      if (filters.accessory !== 'Nenhum') query = query.eq('accessory_meta', filters.accessory);
-
-      const { data, error } = await query.limit(1).maybeSingle();
-      
-      if (error || !data) throw new Error("Fallback to high-fidelity mock");
-      
-      return {
-        match: `${data.confidence_score}%`,
-        location: data.last_location,
-        timestamp: new Date().toLocaleString(),
-        status: "ALVO IDENTIFICADO",
-        id: data.target_id,
-        name: data.full_name,
-        threatLevel: data.threat_level,
-        lastSeen: data.last_seen_gate,
-        origin: "AWS_DYNAMODB_LIVE",
-        multimodal: {
-          face: data.score_face || 98.0,
-          gait: data.score_gait || 94.0,
-          iris: data.score_iris || 99.0
-        },
-        deviceAlert: {
-          detected: data.has_device || true,
-          imei: data.imei_detected || "358294/10/284756/0",
-          status: data.device_status || "ROUBADO",
-          model: data.device_model || "iPhone 15 Pro Max"
-        },
-        // HISTÓRICO DE TRAJETÓRIA (Breadcrumbs)
-        trajectory: data.trajectory_data || [
-          { id: 'loc-1', name: 'Portão 204', time: '22m atrás', lat: -23.4350, lng: -46.4820 },
-          { id: 'loc-2', name: 'Duty Free T3', time: '12m atrás', lat: -23.4325, lng: -46.4780 },
-          { id: 'loc-3', name: 'Terminal 3 - Check-in', time: 'Agora', lat: -23.4306, lng: -46.4730 }
-        ],
-        attributes: {
-          clothing: data.clothing_meta,
-          accessory: data.accessory_meta,
-          gender: data.gender
-        }
-      };
-    } catch (err) {
-      await new Promise(resolve => setTimeout(resolve, 1200));
-      return {
-        match: "99.8%",
-        location: "Aeroporto de Guarulhos - Terminal 3",
-        timestamp: new Date().toLocaleString(),
-        status: "ALVO IDENTIFICADO",
-        id: "SIP-TARGET-882",
-        name: "CARLOS EDUARDO DA SILVA",
-        threatLevel: "CRÍTICO",
-        lastSeen: "GRU - Portão 302",
-        origin: "AWS_DYNAMODB_GSI_SEARCH",
-        multimodal: {
-          face: 98.2,
-          gait: 94.5,
-          iris: 99.1
-        },
-        deviceAlert: {
-          detected: true,
-          imei: "358294/10/284756/0",
-          status: "ROUBADO",
-          model: "iPhone 15 Pro Max"
-        },
-        // MOCK DE TRAJETÓRIA
-        trajectory: [
-          { id: 'loc-1', name: 'Portão 204', time: '22m atrás', lat: -23.4350, lng: -46.4820 },
-          { id: 'loc-2', name: 'Duty Free T3', time: '12m atrás', lat: -23.4325, lng: -46.4780 },
-          { id: 'loc-3', name: 'Terminal 3 - Check-in', time: 'Agora', lat: -23.4306, lng: -46.4730 }
-        ],
-        attributes: {
-          clothing: filters.clothing === 'Qualquer' ? "Jaqueta Preta" : filters.clothing,
-          accessory: filters.accessory === 'Nenhum' ? "Mochila Tática" : filters.accessory,
-          gender: "Masculino"
-        }
-      };
-    }
+    // Latência simulada de processamento em nuvem (AWS Region: us-east-1)
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    return {
+      match: isManualOverride ? "99.9%" : "99.8%",
+      location: "Aeroporto de Guarulhos - Terminal 3",
+      timestamp: new Date().toLocaleString(),
+      status: "ALVO IDENTIFICADO",
+      id: "SIP-TARGET-882",
+      name: "CARLOS EDUARDO DA SILVA",
+      threatLevel: "CRÍTICO",
+      classification: "NARCOTERRORISTA (P1)",
+      lastSeen: "GRU - Portão 302",
+      origin: "AWS_DYNAMODB_GSI_SEARCH",
+      aws_metadata: {
+        region: "us-east-1",
+        table: "muralha_targets_live",
+        read_capacity: 5
+      },
+      multimodal: {
+        face: 98.2,
+        gait: 94.5,
+        iris: 99.1
+      },
+      deviceAlert: {
+        detected: true,
+        imei: "358294/10/284756/0",
+        status: "ROUBADO",
+        model: "iPhone 15 Pro Max"
+      },
+      trajectory: [
+        { id: 'loc-1', name: 'Portão 204', time: '22m atrás', lat: -23.4350, lng: -46.4820 },
+        { id: 'loc-2', name: 'Duty Free T3', time: '12m atrás', lat: -23.4325, lng: -46.4780 },
+        { id: 'loc-3', name: 'Terminal 3 - Check-in', time: 'Agora', lat: -23.4306, lng: -46.4730 }
+      ],
+      attributes: {
+        clothing: filters.clothing === 'Qualquer' ? "Jaqueta Preta" : filters.clothing,
+        accessory: filters.accessory === 'Nenhum' ? "Mochila Tática" : filters.accessory,
+        gender: "Masculino"
+      }
+    };
   },
 
-  // 3. Monitoramento Real-time de Viaturas (I4)
+  // 3. Monitoramento de Viaturas (Simulação de Kinesis Data Streams)
   subscribeToUnits(onUpdate: (unit: FieldUnit) => void) {
-    return supabase
-      .channel('field_units_realtime')
-      .on(
-        'postgres_changes', 
-        { event: '*', schema: 'public', table: 'field_units' },
-        (payload) => {
-          onUpdate(payload.new as FieldUnit);
-        }
-      )
-      .subscribe();
+    console.log("[AWS_KINESIS] Subscribed to field_units_stream");
+    // Mock de stream em tempo real
+    const interval = setInterval(() => {
+      const randomUnit = mockFieldUnits[Math.floor(Math.random() * mockFieldUnits.length)];
+      onUpdate({
+        ...randomUnit,
+        lat: randomUnit.lat + (Math.random() - 0.5) * 0.001,
+        lng: randomUnit.lng + (Math.random() - 0.5) * 0.001,
+      });
+    }, 5000);
+
+    return {
+      unsubscribe: () => clearInterval(interval)
+    };
   },
 
-  // 4. Persistência de Workspace (U6)
+  // 4. Persistência de Workspace (DynamoDB: 'sip_user_settings')
   async saveWorkspaceSettings(settings: WorkspaceSettings): Promise<void> {
-    try {
-      await supabase.from('user_settings').upsert({
-        user_id: 'JUIZ-SILVA-8921',
-        settings_type: 'WORKSPACE',
-        payload: settings,
-        updated_at: new Date().toISOString()
-      }, { onConflict: 'user_id,settings_type' });
-    } catch (err) {
-      localStorage.setItem('iabs_workspace_cache', JSON.stringify(settings));
-    }
+    console.log("[AWS_DYNAMODB] PutItem: sip_user_settings", settings);
+    localStorage.setItem('iabs_workspace_aws_cache', JSON.stringify(settings));
   },
 
   async getWorkspaceSettings(): Promise<WorkspaceSettings | null> {
-    try {
-      const { data } = await supabase
-        .from('user_settings')
-        .select('payload')
-        .eq('user_id', 'JUIZ-SILVA-8921')
-        .eq('settings_type', 'WORKSPACE')
-        .maybeSingle();
-      return data?.payload || null;
-    } catch (err) {
-      const cached = localStorage.getItem('iabs_workspace_cache');
-      return cached ? JSON.parse(cached) : null;
-    }
+    const cached = localStorage.getItem('iabs_workspace_aws_cache');
+    return cached ? JSON.parse(cached) : null;
   },
 
-  // 5. Motor de Busca Global (U6)
+  // 5. Motor de Busca Global
   async globalSearch(query: string): Promise<any[]> {
     const q = query.toLowerCase();
-    try {
-      const { data: orgs } = await supabase.from('organizations').select('*').or(`name.ilike.%${q}%,acronym.ilike.%${q}%`);
-      const results = (orgs || []).map(o => ({ id: o.id, type: 'ORGANIZATION', title: o.name, subtitle: `Facção: ${o.acronym}`, data: o }));
-      return results.length > 0 ? results : this.mockSearch(q);
-    } catch (err) {
-      return this.mockSearch(q);
-    }
-  },
-
-  mockSearch(q: string) {
+    console.log(`[AWS_DYNAMODB] Querying GSI_GLOBAL_SEARCH for: ${q}`);
+    
     return [
       ...mockOrganizations.filter(o => o.name.toLowerCase().includes(q) || o.acronym.toLowerCase().includes(q))
         .map(o => ({ id: o.id, type: 'ORGANIZATION', title: o.name, subtitle: `Facção: ${o.acronym}`, data: o })),
@@ -178,23 +106,10 @@ export const intelligenceService = {
   },
 
   async saveAuditLog(entry: IntelligenceLogEntry): Promise<void> {
-    try {
-      await supabase.from('audit_logs').insert([{
-        ...entry,
-        operator_id: 'JUIZ-SILVA-8921',
-        audit_hash: btoa(JSON.stringify(entry)).substring(0, 32)
-      }]);
-    } catch (err) {
-      console.log("IABS-SIP [Offline Log]:", entry);
-    }
+    console.log("[AWS_DYNAMODB] PutItem: sip_audit_logs", entry);
   },
 
   async getAuditLogs(limit = 20): Promise<IntelligenceLogEntry[]> {
-    try {
-      const { data } = await supabase.from('audit_logs').select('*').order('timestamp', { ascending: false }).limit(limit);
-      return data || [];
-    } catch (err) {
-      return [];
-    }
+    return []; // Mock vazio para o log inicial
   }
 };

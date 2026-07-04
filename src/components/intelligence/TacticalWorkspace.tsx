@@ -8,11 +8,11 @@ import { TacticalSkeleton } from '@/components/ui/TacticalSkeleton';
 import { ProgramRoadmap } from './ProgramRoadmap';
 import { TacticalErrorBoundary } from '@/components/ui/TacticalErrorBoundary';
 import { AuditTimeline } from './AuditTimeline';
+import { VictimSupportModule } from './VictimSupportModule';
 
 // Lazy load para os componentes pesados dentro dos painéis
 const MuralhaPanel = lazy(() => import('./MuralhaModal').then(m => ({ default: m.MuralhaModal })));
 const MapPanel = lazy(() => import('./IntelligenceMap').then(m => ({ default: m.IntelligenceMap })));
-const DossierPanel = lazy(() => import('./DossierTree').then(m => ({ default: m.DossierTree })));
 
 interface WorkspacePanelProps {
   id: PanelID;
@@ -66,6 +66,7 @@ export function TacticalWorkspace() {
       case 'MAP': return <MapPanel isEmbedded />;
       case 'MURALHA': return <MuralhaPanel isEmbedded />;
       case 'AUDIT_TIMELINE': return <AuditTimeline isEmbedded />;
+      case 'VICTIM_SUPPORT': return <VictimSupportModule isEmbedded />;
       case 'DOSSIER': return <div className="p-4 text-slate-500 font-mono text-[10px]">MÓDULO DOSSIÊ EM DESENVOLVIMENTO PARA VIEWPORT REDUZIDA</div>;
       default: return null;
     }
@@ -78,7 +79,8 @@ export function TacticalWorkspace() {
       MURALHA: 'Muralha Paulista',
       SISBAJUD: 'Asfixia Financeira',
       DOSSIER: 'Dossiê de Inteligência',
-      AUDIT_TIMELINE: 'Linha do Tempo de Custódia'
+      AUDIT_TIMELINE: 'Linha do Tempo de Custódia',
+      VICTIM_SUPPORT: 'Apoio às Vítimas (P10)'
     };
     return titles[id];
   };

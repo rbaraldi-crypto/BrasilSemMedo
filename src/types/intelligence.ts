@@ -25,6 +25,8 @@ export interface Organization {
   type: OrganizationType;
   classification: ClassificationType;
   threatLevel: ThreatLevel;
+  threatScore: number; // 0-100
+  asphyxiaLevel: number; // 0-100 (Percentual de capital bloqueado)
   activeMembers: number;
   territory: string;
   financialPower: 'Baixo' | 'Médio' | 'Alto';
@@ -34,7 +36,7 @@ export interface Organization {
 export interface IntelligenceLogEntry {
   id?: string;
   timestamp: string;
-  type: 'DOSSIER' | 'MURALHA' | 'SISBAJUD' | 'ONU' | 'BRASIL' | 'DISPATCH' | 'LEGAL' | 'RADIO';
+  type: 'DOSSIER' | 'MURALHA' | 'SISBAJUD' | 'ONU' | 'BRASIL' | 'DISPATCH' | 'LEGAL' | 'RADIO' | 'VICTIM_SUPPORT' | 'NARCO_ALERT' | 'TRANSITION';
   targetName: string;
   details: string;
   operator_id?: string;
@@ -70,6 +72,13 @@ export interface FinancialBlock {
   timestamp: string;
 }
 
+export interface BehaviorMetric {
+  name: string;
+  juvenile: number;
+  adult: number;
+  fullMark: number;
+}
+
 export interface PenalCase {
   id: string;
   case_number: string;
@@ -77,33 +86,22 @@ export interface PenalCase {
   inmate_name: string;
   crime_type: string;
   is_point_11: boolean;
+  is_hardened_mode?: boolean;
+  is_mobile_theft?: boolean;
+  age: number;
   status: string;
   last_decision?: string;
+  transitionDate?: string;
+  behaviorMetrics?: BehaviorMetric[];
 }
 
-export interface DispatchOrder {
+export interface VictimSupportRecord {
   id: string;
-  unit_id: string;
-  target_id: string;
-  operator_id: string;
-  timestamp: string;
-  icp_signature_hash: string;
-  status: 'TRANSMITTED' | 'RECEIVED' | 'EXECUTED';
-}
-
-export interface DossierNode {
-  label: string;
-  value: string;
-  icon?: LucideIcon;
-  children?: DossierNode[];
-}
-
-export interface ProgramGuideline {
-  id: string;
-  title: string;
-  desc: string;
-  status: 'Implementado' | 'Operacional' | 'Em Votação' | 'Análise Jurídica' | 'Em Trâmite';
-  icon: LucideIcon;
+  inmateId: string;
+  victimFamilyId: string;
+  amountRedirected: number;
+  status: 'ACTIVE' | 'PENDING';
+  lastPayment: string;
 }
 
 export interface StrategicMarker {
@@ -115,29 +113,15 @@ export interface StrategicMarker {
   status: string;
   occupancy?: number;
   capacity?: number;
+  isMassive?: boolean;
 }
 
-export interface PatrimonialStep {
-  id: number;
-  text: string;
-  icon: LucideIcon;
-}
-
-export type PanelID = 'MURALHA' | 'MAP' | 'DOSSIER' | 'SISBAJUD' | 'ROADMAP' | 'AUDIT_TIMELINE';
+export type PanelID = 'MURALHA' | 'MAP' | 'DOSSIER' | 'SISBAJUD' | 'ROADMAP' | 'AUDIT_TIMELINE' | 'VICTIM_SUPPORT' | 'NARCO_INDEX';
 
 export interface WorkspaceSettings {
   openPanels: PanelID[];
   layoutMode: 'FULL' | 'SPLIT' | 'QUAD';
   lastUpdated: string;
-}
-
-export interface SearchResult {
-  id: string;
-  type: 'ORGANIZATION' | 'CASE' | 'UNIT' | 'COMMAND';
-  title: string;
-  subtitle: string;
-  action: () => void;
-  icon: LucideIcon;
 }
 
 export interface RecidivismRisk {
