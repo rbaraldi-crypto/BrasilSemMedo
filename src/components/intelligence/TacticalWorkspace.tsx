@@ -9,6 +9,7 @@ import { ProgramRoadmap } from './ProgramRoadmap';
 import { TacticalErrorBoundary } from '@/components/ui/TacticalErrorBoundary';
 import { AuditTimeline } from './AuditTimeline';
 import { VictimSupportModule } from './VictimSupportModule';
+import { TacticalRoutePlanner } from './TacticalRoutePlanner';
 
 // Lazy load para os componentes pesados dentro dos painéis
 const MuralhaPanel = lazy(() => import('./MuralhaModal').then(m => ({ default: m.MuralhaModal })));
@@ -67,6 +68,7 @@ export function TacticalWorkspace() {
       case 'MURALHA': return <MuralhaPanel isEmbedded />;
       case 'AUDIT_TIMELINE': return <AuditTimeline isEmbedded />;
       case 'VICTIM_SUPPORT': return <VictimSupportModule isEmbedded />;
+      case 'LOGISTICS_PLANNER': return <TacticalRoutePlanner isEmbedded />;
       case 'DOSSIER': return <div className="p-4 text-slate-500 font-mono text-[10px]">MÓDULO DOSSIÊ EM DESENVOLVIMENTO PARA VIEWPORT REDUZIDA</div>;
       default: return null;
     }
@@ -80,7 +82,9 @@ export function TacticalWorkspace() {
       SISBAJUD: 'Asfixia Financeira',
       DOSSIER: 'Dossiê de Inteligência',
       AUDIT_TIMELINE: 'Linha do Tempo de Custódia',
-      VICTIM_SUPPORT: 'Apoio às Vítimas (P10)'
+      VICTIM_SUPPORT: 'Apoio às Vítimas (P10)',
+      LOGISTICS_PLANNER: 'Logística Tática (P4)',
+      NARCO_INDEX: 'Índice Narcoterrorista'
     };
     return titles[id];
   };

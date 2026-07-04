@@ -9,7 +9,6 @@ import { mockOrganizations, mockFieldUnits, mockMyCases } from '@/data/mockData'
 export const intelligenceService = {
   // 1. Domínio: Inteligência Estratégica (Facções)
   async getOrganizations(): Promise<Organization[]> {
-    // Simulação de Scan em Tabela DynamoDB: 'sip_organizations'
     console.log("[AWS_DYNAMODB] Scanning table: sip_organizations...");
     await new Promise(resolve => setTimeout(resolve, 800));
     return mockOrganizations;
@@ -20,7 +19,6 @@ export const intelligenceService = {
     const queryType = isManualOverride ? "PRIORITY_TARGET_SCAN" : "GSI_ATTRIBUTE_SEARCH";
     console.log(`[AWS_DYNAMODB] Executando ${queryType} em GSI_MURALHA_V2...`, filters);
     
-    // Latência simulada de processamento em nuvem (AWS Region: us-east-1)
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     return {
@@ -44,11 +42,14 @@ export const intelligenceService = {
         gait: 94.5,
         iris: 99.1
       },
+      // Medida 9: Correlação IMEI-Face (P12)
       deviceAlert: {
         detected: true,
         imei: "358294/10/284756/0",
         status: "ROUBADO",
-        model: "iPhone 15 Pro Max"
+        model: "iPhone 15 Pro Max",
+        last_owner: "Maria Oliveira",
+        theft_date: "12/05/2024"
       },
       trajectory: [
         { id: 'loc-1', name: 'Portão 204', time: '22m atrás', lat: -23.4350, lng: -46.4820 },
@@ -66,7 +67,6 @@ export const intelligenceService = {
   // 3. Monitoramento de Viaturas (Simulação de Kinesis Data Streams)
   subscribeToUnits(onUpdate: (unit: FieldUnit) => void) {
     console.log("[AWS_KINESIS] Subscribed to field_units_stream");
-    // Mock de stream em tempo real
     const interval = setInterval(() => {
       const randomUnit = mockFieldUnits[Math.floor(Math.random() * mockFieldUnits.length)];
       onUpdate({
@@ -81,7 +81,6 @@ export const intelligenceService = {
     };
   },
 
-  // 4. Persistência de Workspace (DynamoDB: 'sip_user_settings')
   async saveWorkspaceSettings(settings: WorkspaceSettings): Promise<void> {
     console.log("[AWS_DYNAMODB] PutItem: sip_user_settings", settings);
     localStorage.setItem('iabs_workspace_aws_cache', JSON.stringify(settings));
@@ -92,7 +91,6 @@ export const intelligenceService = {
     return cached ? JSON.parse(cached) : null;
   },
 
-  // 5. Motor de Busca Global
   async globalSearch(query: string): Promise<any[]> {
     const q = query.toLowerCase();
     console.log(`[AWS_DYNAMODB] Querying GSI_GLOBAL_SEARCH for: ${q}`);
@@ -110,6 +108,6 @@ export const intelligenceService = {
   },
 
   async getAuditLogs(limit = 20): Promise<IntelligenceLogEntry[]> {
-    return []; // Mock vazio para o log inicial
+    return []; 
   }
 };

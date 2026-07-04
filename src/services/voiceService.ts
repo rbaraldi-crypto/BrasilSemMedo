@@ -1,6 +1,6 @@
 /**
- * voiceService: Gerencia a interface de voz tática do IABS-SIP.
- * Utiliza a Web Speech API para comandos hands-free.
+ * voiceService: Expansão de Comandos Táticos (Ponto 3 do polimento).
+ * Suporta consultas contextuais e ações críticas.
  */
 
 export type TacticalCommand = 
@@ -9,7 +9,9 @@ export type TacticalCommand =
   | 'ABRIR_ESTATISTICAS' 
   | 'BLOQUEAR_SISTEMA' 
   | 'MODO_TACTICO' 
-  | 'FECHAR_MODAIS';
+  | 'FECHAR_MODAIS'
+  | 'VER_RISCO_CARLOS'
+  | 'BLOQUEAR_ATIVOS_PCC';
 
 const COMMAND_MAP: Record<string, TacticalCommand> = {
   'abrir muralha': 'ABRIR_MURALHA',
@@ -23,7 +25,12 @@ const COMMAND_MAP: Record<string, TacticalCommand> = {
   'modo táctico': 'MODO_TACTICO',
   'visão noturna': 'MODO_TACTICO',
   'fechar tudo': 'FECHAR_MODAIS',
-  'limpar tela': 'FECHAR_MODAIS'
+  'limpar tela': 'FECHAR_MODAIS',
+  // Expansão: Consultas Específicas
+  'risco para carlos eduardo': 'VER_RISCO_CARLOS',
+  'mostrar risco carlos': 'VER_RISCO_CARLOS',
+  'bloquear ativos pcc': 'BLOQUEAR_ATIVOS_PCC',
+  'asfixia pcc': 'BLOQUEAR_ATIVOS_PCC'
 };
 
 class VoiceControlService {

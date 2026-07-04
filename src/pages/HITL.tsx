@@ -4,19 +4,23 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-// Fixed import path from @/components/form to @/components/ui/form
+import { Badge } from "@/components/ui/badge";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { 
   Gavel, Loader2, CheckCircle, Smartphone, 
-  ArrowLeft, Calculator, ShieldAlert
+  ArrowLeft, Calculator, ShieldAlert, Lock,
+  ShieldCheck, BrainCircuit, Key, FileText
 } from "lucide-react";
 import { mockMyCases } from "@/data/mockData";
 import { BiometricScanner } from "@/components/intelligence/BiometricScanner";
 import { ComplianceSandbox } from "@/components/intelligence/ComplianceSandbox";
 import { HardenedModeToggle } from "@/components/intelligence/HardenedModeToggle";
+import { LegalJustificationAssistant } from "@/components/intelligence/LegalJustificationAssistant";
+import { MultiSignatureAuth } from "@/components/intelligence/MultiSignatureAuth";
+import { tacticalAudio } from "@/lib/audioUtils";
 
 const formSchema = z.object({
   actionType: z.string({ required_error: "Selecione um tipo de ação." }),
@@ -36,6 +40,7 @@ export function HITL() {
   
   // Medida 6 & 11: Modo Endurecido State
   const [isHardenedMode, setIsHardenedMode] = useState(true);
+  const [isMultiSigOpen, setIsMultiSigOpen] = useState(false);
   
   const [mockUserRole, setMockUserRole] = useState<"JUIZ" | "ANALISTA">("ANALISTA");
 
@@ -53,6 +58,21 @@ export function HITL() {
 
   const selectedAction = form.watch("actionType");
 
+  const handleToggleHardenedMode = (val: boolean) => {
+    if (!val && isHardenedMode) {
+      // Tentativa de desativar: Exige Multi-Assinatura
+      setIsMultiSigOpen(true);
+    } else {
+      setIsHardenedMode(val);
+      tacticalAudio.playScan();
+    }
+  };
+
+  const handleJustificationSelect = (text: string) => {
+    form.setValue("dispatchText", text);
+    tacticalAudio.playSuccess();
+  };
+
   // Medida 12: Multiplicador 4x para Celulares
   const calculatePenalty = () => {
     const basePenalty = 5; // anos base
@@ -63,7 +83,6 @@ export function HITL() {
   const penaltyInfo = calculatePenalty();
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // Medida 6 & 11: Hard-block progression in Hardened Mode
     if (isHardenedMode && values.actionType === 'concessao') {
       alert("BLOQUEIO ESTRATÉGICO: Progressão proibida em Modo Endurecido (Ponto 11).");
       return;
@@ -89,6 +108,16 @@ export function HITL() {
 
   return (
     <div className="max-w-6xl mx-auto space-y-6 pb-20">
+      <MultiSignatureAuth 
+        isOpen={isMultiSigOpen}
+        onClose={() => setIsMultiSigOpen(false)}
+        onAuthorized={() => {
+          setIsHardenedMode(false);
+          tacticalAudio.playSuccess();
+        }}
+        actionName="Desativação do Modo Endurecido (Ponto 11)"
+      />
+
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon" onClick={() => navigate(-1)}><ArrowLeft className="h-6 w-6" /></Button>
@@ -103,7 +132,7 @@ export function HITL() {
         <div className="lg:col-span-7 space-y-6">
           <HardenedModeToggle 
             checked={isHardenedMode} 
-            onCheckedChange={setIsHardenedMode}
+            onCheckedChange={handleToggleHardenedMode}
             disabled={mockUserRole !== 'JUIZ'}
           />
 
@@ -145,8 +174,11 @@ export function HITL() {
           )}
 
           <Card className="bg-slate-900 border-white/10">
-            <CardHeader>
+            <CardHeader className="flex flex-row items-center justify-between">
               <CardTitle className="text-lg font-bold text-white uppercase">Sentença Estratégica</CardTitle>
+              <Badge variant="outline" className="border-primary/30 text-primary font-mono text-[9px]">
+                <Lock className="h-2.5 w-2.5 mr-1" /> SECURE_DRAFT
+              </Badge>
             </CardHeader>
             <CardContent>
               <Form {...form}>
@@ -180,8 +212,15 @@ export function HITL() {
                     name="dispatchText"
                     render={({ field }) => (
                       <FormItem>
+                        <FormLabel className="text-[10px] font-black uppercase text-slate-500 flex items-center gap-2">
+                          <FileText className="h-3 w-3" /> Fundamentação Jurídica
+                        </FormLabel>
                         <FormControl>
-                          <Textarea className="min-h-[150px] bg-black/20 border-white/10" placeholder="Fundamentação jurídica..." {...field} />
+                          <Textarea 
+                            className="min-h-[200px] bg-black/20 border-white/10 font-mono text-xs leading-relaxed" 
+                            placeholder="Insira a fundamentação ou utilize o assistente IA ao lado..." 
+                            {...field} 
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -191,9 +230,10 @@ export function HITL() {
                   <Button 
                     type="submit" 
                     disabled={isLoading || (mockUserRole === 'JUIZ' && !isSandboxValidated)} 
-                    className="w-full h-12 bg-primary hover:bg-primary/90 font-black uppercase text-[10px] tracking-widest"
+                    className="w-full h-12 bg-primary hover:bg-primary/90 font-black uppercase text-[10px] tracking-widest shadow-lg shadow-primary/20"
                   >
-                    {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Assinar via ICP-Brasil"}
+                    {isLoading ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <ShieldCheck className="h-4 w-4 mr-2" />}
+                    Assinar via ICP-Brasil
                   </Button>
                 </form>
               </Form>
@@ -202,6 +242,12 @@ export function HITL() {
         </div>
 
         <div className="lg:col-span-5 space-y-6">
+          {/* Medida 6 & 11: Assistente IA Integrado */}
+          <LegalJustificationAssistant 
+            crimeType={currentCase?.type || "Crime Comum"}
+            onSelect={handleJustificationSelect}
+          />
+
           {selectedAction && (
             <ComplianceSandbox 
               caseType={currentCase?.type || ""}

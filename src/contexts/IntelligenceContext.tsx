@@ -1,6 +1,6 @@
-import { createContext, useContext, useState, ReactNode, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, ReactNode, useEffect, useCallback, useMemo } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { Organization, HierarchyNode, IntelligenceLogEntry, PanelID, WorkspaceSettings, FieldUnit } from '@/types/intelligence';
+import { Organization, HierarchyNode, IntelligenceLogEntry, PanelID, WorkspaceSettings, FieldUnit, LinkType } from '@/types/intelligence';
 import { intelligenceService } from '@/services/intelligenceService';
 import { syncService } from '@/services/syncService';
 import { useConnectivity } from '@/hooks/useConnectivity';
@@ -42,6 +42,11 @@ interface IntelligenceContextType {
   requestMuralhaScan: () => void;
   targetTrajectory: any[] | null;
   setTargetTrajectory: (trajectory: any[]) => void;
+  // 3. Technical Infrastructure: Latency Simulation
+  linkType: LinkType;
+  setLinkType: (type: LinkType) => void;
+  simulatedLatency: number;
+  withNetworkDelay: <T>(fn: () => Promise<T>) => Promise<T>;
 }
 
 const IntelligenceContext = createContext<IntelligenceContextType | undefined>(undefined);
@@ -66,14 +71,27 @@ export function IntelligenceProvider({ children }: { children: ReactNode }) {
   const [muralhaScanTrigger, setMuralhaScanTrigger] = useState(0);
   const [targetTrajectory, setTargetTrajectory] = useState<any[] | null>(null);
 
+  // 3. Technical Infrastructure State
+  const [linkType, setLinkType] = useState<LinkType>('FIBER');
+  const simulatedLatency = useMemo(() => {
+    return linkType === 'FIBER' 
+      ? Math.floor(15 + Math.random() * 20) 
+      : Math.floor(650 + Math.random() * 400);
+  }, [linkType]);
+
+  const withNetworkDelay = useCallback(async <T>(fn: () => Promise<T>): Promise<T> => {
+    await new Promise(resolve => setTimeout(resolve, simulatedLatency));
+    return fn();
+  }, [simulatedLatency]);
+
   const { data: organizations = [], isLoading: isLoadingOrgs } = useQuery({
     queryKey: ['organizations'],
-    queryFn: intelligenceService.getOrganizations,
+    queryFn: () => withNetworkDelay(() => intelligenceService.getOrganizations()),
   });
 
   const { data: auditLog = [] } = useQuery({
     queryKey: ['auditLogs'],
-    queryFn: () => intelligenceService.getAuditLogs(20),
+    queryFn: () => withNetworkDelay(() => intelligenceService.getAuditLogs(20)),
   });
 
   useEffect(() => {
@@ -90,7 +108,7 @@ export function IntelligenceProvider({ children }: { children: ReactNode }) {
 
   const handleVoiceCommand = useCallback((cmd: TacticalCommand) => {
     tacticalAudio.playSuccess();
-    toast.info(`COMANDO DE VOZ: ${cmd.replace('_', ' ')}`, { icon: '🎙️' });
+    toast.info(`COMANDO DE VOZ: ${cmd.replace(/_/g, ' ')}`, { icon: '🎙️' });
 
     switch (cmd) {
       case 'ABRIR_MURALHA': requestMuralhaScan(); break;
@@ -98,6 +116,16 @@ export function IntelligenceProvider({ children }: { children: ReactNode }) {
       case 'BLOQUEAR_SISTEMA': setLocked(true); break;
       case 'MODO_TACTICO': setNightVision(!isNightVision); break;
       case 'FECHAR_MODAIS': setActiveModal('NONE'); break;
+      case 'VER_RISCO_CARLOS': 
+        setActiveModal('DOSSIER'); 
+        toast.success("Dossiê de Carlos Eduardo carregado via voz.");
+        break;
+      case 'BLOQUEAR_ATIVOS_PCC':
+        setActiveModal('PATRIMONIAL');
+        toast.error("Protocolo de Asfixia Financeira PCC iniciado via voz.", {
+          description: "Aguardando confirmação biométrica para SISBAJUD."
+        });
+        break;
     }
   }, [requestMuralhaScan, isNightVision]);
 
@@ -150,11 +178,15 @@ export function IntelligenceProvider({ children }: { children: ReactNode }) {
   }, [openPanels, layoutMode, isNightVision]);
 
   const addLogEntry = (type: IntelligenceLogEntry['type'], targetName: string, details: string) => {
+    const lastEntry = auditLog[0];
     const entry: IntelligenceLogEntry = {
       timestamp: new Date().toISOString(),
       type,
       targetName,
-      details
+      details,
+      block_index: (lastEntry?.block_index || 0) + 1,
+      previous_hash: lastEntry?.audit_hash || "0000000000000000",
+      audit_hash: Math.random().toString(36).substring(2, 18).toUpperCase()
     };
 
     if (isOnline) {
@@ -210,6 +242,7 @@ export function IntelligenceProvider({ children }: { children: ReactNode }) {
         isLocked, setLocked,
         muralhaScanTrigger, requestMuralhaScan,
         targetTrajectory, setTargetTrajectory,
+        linkType, setLinkType, simulatedLatency, withNetworkDelay,
         refreshData: () => queryClient.invalidateQueries()
       }}
     >

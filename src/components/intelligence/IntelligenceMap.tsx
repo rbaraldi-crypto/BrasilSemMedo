@@ -11,11 +11,13 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIntelligence } from '@/contexts/IntelligenceContext';
-import { motion, useMotionValue, useTransform, MotionValue } from 'framer-motion';
+import { motion, useMotionValue, useTransform, MotionValue, AnimatePresence } from 'framer-motion';
 import { strategicMarkers as initialMarkers } from '@/data/mockData';
 import { StrategicMarker } from '@/types/intelligence';
 import { HierarchyNode } from './HierarchyNode';
 import { WatermarkOverlay } from '@/components/ui/WatermarkOverlay';
+import { TrevaDigitalTwin } from './TrevaDigitalTwin';
+import { tacticalAudio } from '@/lib/audioUtils';
 
 /**
  * Medida 4: Megaprisões (TREVA)
@@ -32,7 +34,8 @@ const strategicMarkers: StrategicMarker[] = [
     status: 'OPERACIONAL', 
     capacity: 120000, 
     occupancy: 98000,
-    isMassive: true 
+    isMassive: true,
+    floors: initialMarkers.find(m => m.id === 'prison-treva-1')?.floors
   }
 ];
 
@@ -52,7 +55,6 @@ function HeatmapLayer({ markers }: { markers: StrategicMarker[] }) {
         const x = (parseFloat(m.left) / 100) * canvas.width;
         const y = (parseFloat(m.top) / 100) * canvas.height;
         
-        // Medida 4: Escala ampliada para unidades massivas
         const radius = m.isMassive ? 120 : 60;
         const intensity = m.isMassive ? 0.7 : 0.5;
 
@@ -80,12 +82,21 @@ export function IntelligenceMap({ isEmbedded = false }: { isEmbedded?: boolean }
   
   const [visibleLayers] = useState<string[]>(['treva', 'port', 'muralha', 'border']);
   const [showHeatmap, setShowHeatmap] = useState(false);
+  const [activeTrevaTwin, setActiveTrevaTwin] = useState<StrategicMarker | null>(null);
+
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapX = useMotionValue(0);
   const mapY = useMotionValue(0);
   const mapScale = useMotionValue(1);
 
   const filteredMarkers = useMemo(() => strategicMarkers.filter(m => visibleLayers.includes(m.type)), [visibleLayers]);
+
+  const handleMarkerClick = (marker: StrategicMarker) => {
+    if (marker.type === 'treva') {
+      tacticalAudio.playScan();
+      setActiveTrevaTwin(marker);
+    }
+  };
 
   const MapContent = (
     <Tabs value={activeTab} onValueChange={setActiveTab} className="h-full flex flex-col md:flex-row overflow-hidden relative">
@@ -97,8 +108,10 @@ export function IntelligenceMap({ isEmbedded = false }: { isEmbedded?: boolean }
               {showHeatmap && <HeatmapLayer markers={filteredMarkers} />}
               {filteredMarkers.map((marker) => (
                 <div key={marker.id} className="absolute group" style={{ top: marker.top, left: marker.left }}>
-                  <motion.div className={cn(
-                    "rounded-full border-2 border-white/40 flex items-center justify-center shadow-2xl transition-all hover:scale-125 cursor-help z-10", 
+                  <motion.div 
+                    onClick={() => handleMarkerClick(marker)}
+                    className={cn(
+                    "rounded-full border-2 border-white/40 flex items-center justify-center shadow-2xl transition-all hover:scale-125 cursor-pointer z-10", 
                     marker.isMassive ? 'h-16 w-16 bg-red-900 border-red-500 shadow-red-500/80' : 'h-10 w-10 bg-primary shadow-primary/50',
                     marker.type === 'treva' && 'animate-pulse'
                   )}>
@@ -114,6 +127,17 @@ export function IntelligenceMap({ isEmbedded = false }: { isEmbedded?: boolean }
             </div>
            </motion.div>
         </TabsContent>
+        
+        {/* Medida 4: Digital Twin Overlay com AnimatePresence Corrigido */}
+        <AnimatePresence>
+          {activeTrevaTwin && activeTrevaTwin.floors && (
+            <TrevaDigitalTwin 
+              unitName={activeTrevaTwin.name}
+              floors={activeTrevaTwin.floors}
+              onClose={() => setActiveTrevaTwin(null)}
+            />
+          )}
+        </AnimatePresence>
       </div>
     </Tabs>
   );

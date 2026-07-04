@@ -3,6 +3,8 @@ import { Skull, AlertCircle, Zap, ShieldAlert, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { tacticalAudio } from '@/lib/audioUtils';
 import { useEffect } from 'react';
+import { useShake } from '@/hooks/useShake';
+import { cn } from '@/lib/utils';
 
 interface NarcoterroristAlertProps {
   message: string;
@@ -11,14 +13,23 @@ interface NarcoterroristAlertProps {
 
 /**
  * Medida 1: Alerta de Alta Prioridade (System Override)
- * Acionado quando uma liderança narcoterrorista é detectada.
+ * UX Polish: Haptic Feedback Simulation (Ponto 1 do polimento).
  */
 export function NarcoterroristAlert({ message, onClose }: NarcoterroristAlertProps) {
+  const { triggerShake, shakeClass } = useShake();
+
   useEffect(() => {
     tacticalAudio.playScan();
-    const interval = setInterval(() => tacticalAudio.playScan(), 1000);
+    // Trigger shake agressivo no mount
+    triggerShake(1500);
+    
+    const interval = setInterval(() => {
+      tacticalAudio.playScan();
+      triggerShake(400); // Micro-shakes constantes durante o alerta
+    }, 2000);
+    
     return () => clearInterval(interval);
-  }, []);
+  }, [triggerShake]);
 
   return (
     <motion.div 
@@ -27,7 +38,10 @@ export function NarcoterroristAlert({ message, onClose }: NarcoterroristAlertPro
       exit={{ scale: 1.1, opacity: 0 }}
       className="fixed inset-0 z-[150] flex items-center justify-center p-6 bg-red-950/40 backdrop-blur-md"
     >
-      <div className="max-w-xl w-full bg-slate-950 border-2 border-red-600 rounded-3xl overflow-hidden shadow-[0_0_100px_rgba(220,38,38,0.4)] relative">
+      <div className={cn(
+        "max-w-xl w-full bg-slate-950 border-2 border-red-600 rounded-3xl overflow-hidden shadow-[0_0_100px_rgba(220,38,38,0.4)] relative",
+        shakeClass
+      )}>
         {/* Efeito de Scanline de Fundo */}
         <div className="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(220,38,38,0)_50%,rgba(220,38,38,0.5)_50%)] bg-[length:100%_4px]" />
         

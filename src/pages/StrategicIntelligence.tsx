@@ -7,7 +7,7 @@ import {
   ShieldAlert, ShieldCheck, DollarSign, 
   Lock, Scan, Skull, Network,
   History, LayoutGrid, Shield, Zap, 
-  AlertCircle, Target
+  AlertCircle, Target, Truck
 } from 'lucide-react';
 import { useIntelligence } from '@/contexts/IntelligenceContext';
 import { MetricCard } from '@/components/intelligence/MetricCard';
@@ -39,19 +39,17 @@ export default function StrategicIntelligence() {
     overscan: 5,
   });
 
-  // Medida 1: Alerta de Alta Prioridade Automatizado (Simulação de Detecção em Background)
   useEffect(() => {
     const timer = setTimeout(() => {
       setNarcoterroristAlert("Liderança P1 'Sintonia Geral' detectada no Setor de Cargas - GRU.");
       setShowP1Alert(true);
       addLogEntry('NARCO_ALERT', 'Sintonia Geral', 'Match Biométrico P1 via AWS DynamoDB GSI.');
-    }, 15000); // Aumentado para dar tempo ao operador de testar o manual
+    }, 15000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
-      {/* Medida 1: System Override Alert */}
       <AnimatePresence>
         {showP1Alert && narcoterroristAlert && (
           <NarcoterroristAlert 
@@ -76,8 +74,8 @@ export default function StrategicIntelligence() {
         <div className="flex flex-wrap gap-2 relative z-10">
           <PanelToggleButton id="ROADMAP" label="Roadmap" active={openPanels.includes('ROADMAP')} onClick={() => togglePanel('ROADMAP')} icon={<LayoutGrid className="h-3 w-3" />} />
           <PanelToggleButton id="MAP" label="Mapa" active={openPanels.includes('MAP')} onClick={() => togglePanel('MAP')} icon={<Network className="h-3 w-3" />} />
+          <PanelToggleButton id="LOGISTICS_PLANNER" label="Logística" active={openPanels.includes('LOGISTICS_PLANNER')} onClick={() => togglePanel('LOGISTICS_PLANNER')} icon={<Truck className="h-3 w-3" />} />
           <PanelToggleButton id="VICTIM_SUPPORT" label="Vítimas" active={openPanels.includes('VICTIM_SUPPORT')} onClick={() => togglePanel('VICTIM_SUPPORT')} icon={<ShieldCheck className="h-3 w-3" />} />
-          <PanelToggleButton id="AUDIT_TIMELINE" label="Custódia" active={openPanels.includes('AUDIT_TIMELINE')} onClick={() => togglePanel('AUDIT_TIMELINE')} icon={<Shield className="h-3 w-3" />} />
         </div>
       </div>
       
@@ -101,7 +99,6 @@ export default function StrategicIntelligence() {
         </div>
 
         <div className="lg:col-span-3 space-y-6">
-          {/* Medida 1: Narcoterrorist Index Panel */}
           <Card className="bg-slate-900 border-red-600/30 overflow-hidden shadow-[0_0_20px_rgba(220,38,38,0.1)]">
             <CardHeader className="pb-3 bg-red-600/10 border-b border-red-600/20">
               <CardTitle className="text-[10px] font-black uppercase tracking-widest flex items-center gap-2 text-red-500">
@@ -159,6 +156,7 @@ export default function StrategicIntelligence() {
                 <div style={{ height: `${rowVirtualizer.getTotalSize()}px`, width: '100%', position: 'relative' }}>
                   {rowVirtualizer.getVirtualItems().map((virtualRow) => {
                     const log = auditLog[virtualRow.index];
+                    if (!log) return null;
                     return (
                       <div 
                         key={virtualRow.index} 

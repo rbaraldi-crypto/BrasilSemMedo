@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
   ArrowLeft, MapPin, Scan, Shirt, 
-  Zap, Radio, AlertCircle
+  Zap, Radio, AlertCircle, Smartphone,
+  ShieldAlert, UserX
 } from 'lucide-react';
 import { useIntelligence } from '@/contexts/IntelligenceContext';
 import { intelligenceService } from '@/services/intelligenceService';
@@ -16,6 +17,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { RadarWaves } from './RadarWaves';
 import { TelemetryOverlay } from './TelemetryOverlay';
 import { TacticalVideoFeed } from './TacticalVideoFeed';
+import { BiometricMultimodalOverlay } from './BiometricMultimodalOverlay';
 
 export function MuralhaModal({ isEmbedded = false }: { isEmbedded?: boolean }) {
   const { 
@@ -29,7 +31,6 @@ export function MuralhaModal({ isEmbedded = false }: { isEmbedded?: boolean }) {
   const [filters, setFilters] = useState({ clothing: 'Qualquer', accessory: 'Nenhum' });
   const [wsStatus, setWsStatus] = useState<'CONNECTING' | 'CONNECTED'>('CONNECTING');
 
-  // Medida 1: Reagir ao gatilho manual do Dashboard
   useEffect(() => {
     if (muralhaScanTrigger > 0) {
       handleManualPriorityScan();
@@ -41,7 +42,6 @@ export function MuralhaModal({ isEmbedded = false }: { isEmbedded?: boolean }) {
     setWsStatus('CONNECTING');
     tacticalAudio.playScan();
     
-    // Simula Handshake de WebSocket
     setTimeout(() => setWsStatus('CONNECTED'), 1000);
 
     const result = await intelligenceService.searchMuralha(filters, true);
@@ -114,11 +114,17 @@ export function MuralhaModal({ isEmbedded = false }: { isEmbedded?: boolean }) {
           )}
 
           {scanPhase === 'MATCH' && scanResult && (
-            <TacticalVideoFeed>
+            <TacticalVideoFeed isLocking={true}>
               <TelemetryOverlay />
+              {/* Medida 9: Overlay Multimodal & IMEI Correlation */}
+              <BiometricMultimodalOverlay 
+                targetName={scanResult.name} 
+                deviceInfo={scanResult.deviceAlert}
+              />
+              
               <div className="absolute inset-0 bg-slate-900">
                 <img src="https://i.pravatar.cc/800?u=target-sip-882" className="w-full h-full object-cover opacity-40 grayscale" alt="Target" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 text-center">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 text-center">
                    <motion.div 
                      initial={{ scale: 2, opacity: 0 }} 
                      animate={{ scale: 1, opacity: 1 }} 
@@ -126,9 +132,6 @@ export function MuralhaModal({ isEmbedded = false }: { isEmbedded?: boolean }) {
                    >
                      MATCH P1 CONFIRMADO
                    </motion.div>
-                   <div className="mt-4 bg-black/80 px-4 py-2 rounded-lg border border-red-500 animate-pulse">
-                      <p className="text-[10px] font-black text-red-500 uppercase tracking-widest">Liderança Narcoterrorista Detectada</p>
-                   </div>
                 </div>
               </div>
             </TacticalVideoFeed>
@@ -138,18 +141,34 @@ export function MuralhaModal({ isEmbedded = false }: { isEmbedded?: boolean }) {
 
       {scanPhase === 'MATCH' && scanResult && (
         <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="w-full mt-6 max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-slate-900 border border-white/10 rounded-xl p-5 md:col-span-2 flex justify-between items-center">
+          <div className="bg-slate-900 border border-white/10 rounded-xl p-5 md:col-span-2 flex justify-between items-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-1 h-full bg-red-600" />
             <div>
-              <h4 className="text-xl font-bold text-white tracking-tight">{scanResult.name}</h4>
-              <p className="text-xs text-slate-300 flex items-center gap-2"><MapPin className="h-4 w-4 text-red-500" /> {scanResult.location}</p>
+              <div className="flex items-center gap-3">
+                <h4 className="text-xl font-bold text-white tracking-tight">{scanResult.name}</h4>
+                <Badge className="bg-red-600 font-black text-[8px] uppercase">Alvo P1</Badge>
+              </div>
+              <p className="text-xs text-slate-300 flex items-center gap-2 mt-1"><MapPin className="h-4 w-4 text-red-500" /> {scanResult.location}</p>
+              
+              {/* Medida 9: Indicador de Receptação/Mula */}
+              {scanResult.deviceAlert?.detected && (
+                <div className="mt-3 flex items-center gap-3">
+                  <div className="flex items-center gap-1.5 px-2 py-1 bg-red-600/10 border border-red-600/30 rounded text-[8px] font-black text-red-500 uppercase">
+                    <UserX className="h-3 w-3" /> Possível Receptador (P12)
+                  </div>
+                  <div className="flex items-center gap-1.5 px-2 py-1 bg-primary/10 border border-primary/30 rounded text-[8px] font-black text-primary uppercase">
+                    <Smartphone className="h-3 w-3" /> Dispositivo Rastreado
+                  </div>
+                </div>
+              )}
             </div>
             <div className="text-right">
-               <Badge className="bg-red-600 font-black text-[10px]">{scanResult.classification}</Badge>
-               <p className="text-[8px] text-slate-500 mt-1 font-mono">AWS_TRACE: {scanResult.aws_metadata.region}</p>
+               <Badge variant="outline" className="border-white/10 text-slate-400 font-mono text-[8px]">{scanResult.id}</Badge>
+               <p className="text-[8px] text-slate-500 mt-1 font-mono uppercase">AWS_GSI_TRACE: {scanResult.aws_metadata.region}</p>
             </div>
           </div>
-          <Button className="w-full h-full bg-red-600 hover:bg-red-700 text-white font-black uppercase text-[11px] tracking-widest" onClick={() => setActiveModal('DISPATCH')}>
-            <Zap className="h-5 w-5 mr-2" /> Acionar Equipe
+          <Button className="w-full h-full bg-red-600 hover:bg-red-700 text-white font-black uppercase text-[11px] tracking-widest shadow-lg shadow-red-600/20" onClick={() => setActiveModal('DISPATCH')}>
+            <Zap className="h-5 w-5 mr-2" /> Acionar Interceptação
           </Button>
         </motion.div>
       )}
@@ -166,11 +185,14 @@ export function MuralhaModal({ isEmbedded = false }: { isEmbedded?: boolean }) {
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon" className="text-slate-400" onClick={closeModal}><ArrowLeft className="h-5 w-5" /></Button>
             <div className="text-left">
-              <DialogTitle className="text-xl font-bold text-white uppercase tracking-tight">Muralha Paulista (P9)</DialogTitle>
-              <p className="text-[8px] text-slate-500 font-black uppercase tracking-widest">Sincronização AWS DynamoDB GSI</p>
+              <DialogTitle className="text-xl font-bold text-white uppercase tracking-tight italic">Muralha Paulista (P9)</DialogTitle>
+              <p className="text-[8px] text-slate-500 font-black uppercase tracking-widest">Sincronização Biométrica Multimodal AWS</p>
             </div>
           </div>
-          <Badge variant="outline" className="border-cyan-400 text-cyan-400 font-mono text-[10px]">WEBSOCKET_LIVE: ACTIVE</Badge>
+          <div className="flex items-center gap-3">
+            <Badge variant="outline" className="border-red-500/30 text-red-500 font-mono text-[9px] px-3 py-1">P12_CORRELATION: ACTIVE</Badge>
+            <Badge variant="outline" className="border-cyan-400 text-cyan-400 font-mono text-[9px] px-3 py-1">WEBSOCKET_LIVE</Badge>
+          </div>
         </DialogHeader>
         {MainContent}
       </DialogContent>

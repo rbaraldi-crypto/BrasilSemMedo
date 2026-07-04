@@ -1,33 +1,63 @@
-import { Organization, ProgramGuideline, StrategicMarker, DossierNode, FieldUnit } from '@/types/intelligence';
+import { Organization, ProgramGuideline, StrategicMarker, DossierNode, FieldUnit, TrevaFloor } from '@/types/intelligence';
 import { 
   Skull, Siren, Scan, Microscope, HeartHandshake, ShieldAlert, Smartphone, 
   Gavel, Scale, Clock, ShieldX, Lock, Database, Briefcase, ShieldCheck, Network, DollarSign, Link as LinkIcon, MapPin, History, Shield, Users, CalendarClock, FileText
 } from 'lucide-react';
 
-export interface InmateProfile { id: string; name: string; photoUrl: string; biometricStatus: 'confirmed' | 'pending' | 'failed'; dateOfBirth: string; motherName: string; cpf: string; }
-export interface PenalEvent { id: string; date: string; type: string; origin: string; hashICP: string; details: string; }
-export interface Metric { label: string; value: string | number; trend?: string; status?: 'normal' | 'critical' | 'warning'; icon?: string; }
-export interface SimilarityFactor { name: string; weight: number; }
-export interface SimilarCase { id: string; caseNumber: string; penalty: string; crime: string; decision: string; similarity: number; factors?: SimilarityFactor[]; }
-export interface CaseDocument { id: string; title: string; type: string; date: string; pages: number; signedBy?: string; }
-export interface SubordinateUser { id: string; name: string; role: string; avatar: string; workload: number; }
-export interface MyCase { 
-  id: string; 
-  inmateName: string; 
-  caseNumber: string; 
-  priority: 'Alta' | 'Média' | 'Baixa' | 'Delegado'; 
-  type: string; 
-  status: string; 
-  entryDate: string; 
-  similarCases: SimilarCase[]; 
-  documents: CaseDocument[]; 
-  delegatedTo?: SubordinateUser; 
-  delegatedAt?: string; 
-  estimatedCompletion?: string;
-  isPoint11?: boolean;
-}
-export interface DistributionCase { id: string; inmateName: string; inmatePhoto: string; cpf: string; eventType: string; priority: 'Alta' | 'Média' | 'Baixa'; timeInQueue: string; }
-export interface DistributionUser { id: string; name: string; role: 'Analista Penal' | 'Psicólogo' | 'Assistente Social' | 'Juiz da Execução' | 'Coordenador'; avatar: string; workload: number; status: 'Disponível' | 'Ocupado' | 'Ausente'; casesCount: number; maxCases: number; }
+export const mockTrevaFloors: TrevaFloor[] = [
+  {
+    id: 4,
+    label: "NÍVEL 04 - ISOLAMENTO P1",
+    wings: [
+      { id: 'w4-a', name: 'ALA ALFA', occupancy: 42, capacity: 50, riskLevel: 'CRITICAL' },
+      { id: 'w4-b', name: 'ALA BRAVO', occupancy: 12, capacity: 50, riskLevel: 'HIGH' },
+    ]
+  },
+  {
+    id: 3,
+    label: "NÍVEL 03 - CUSTÓDIA MÁXIMA",
+    wings: [
+      { id: 'w3-a', name: 'ALA CHARLIE', occupancy: 120, capacity: 150, riskLevel: 'HIGH' },
+      { id: 'w3-b', name: 'ALA DELTA', occupancy: 145, capacity: 150, riskLevel: 'MEDIUM' },
+    ]
+  },
+  {
+    id: 2,
+    label: "NÍVEL 02 - TRIAGEM",
+    wings: [
+      { id: 'w2-a', name: 'ALA ECHO', occupancy: 80, capacity: 200, riskLevel: 'LOW' },
+    ]
+  }
+];
+
+export const strategicMarkers: StrategicMarker[] = [
+  { id: 'port-santos', type: 'port', name: 'Porto de Santos', top: '65%', left: '45%', status: 'Vigilância Permanente (Marinha)' },
+  { id: 'port-paranagua', type: 'port', name: 'Porto de Paranaguá', top: '75%', left: '38%', status: 'Monitoramento Ativo (Marinha)' },
+  { id: 'border-1', type: 'border', name: 'Sistema Nacional de Fronteira', top: '15%', left: '25%', status: 'Tropas de Elite Ativas' },
+  { 
+    id: 'prison-treva-1', 
+    type: 'treva', 
+    name: 'Presídio Federal TREVA-01', 
+    top: '40%', 
+    left: '50%', 
+    status: 'Isolamento Total',
+    occupancy: 420,
+    capacity: 500,
+    floors: mockTrevaFloors
+  },
+  { 
+    id: 'prison-treva-2', 
+    type: 'treva', 
+    name: 'Presídio Federal TREVA-02', 
+    top: '30%', 
+    left: '60%', 
+    status: 'Segurança Máxima',
+    occupancy: 150,
+    capacity: 500,
+    floors: mockTrevaFloors
+  },
+  { id: 'muralha-1', type: 'muralha', name: 'Nó Muralha Brasileira - SP', top: '55%', left: '48%', status: 'Reconhecimento Facial Ativo' },
+];
 
 export const mockOrganizations: Organization[] = [
   {
@@ -67,33 +97,6 @@ export const mockOrganizations: Organization[] = [
       { id: 'cv-2', name: 'Frente Norte', role: 'Comando Regional', status: 'Ativo', type: 'Operacional', location: 'Amazonas', level: 2, parentId: 'cv-1', org_id: 'org-002' },
     ]
   }
-];
-
-export const strategicMarkers: StrategicMarker[] = [
-  { id: 'port-santos', type: 'port', name: 'Porto de Santos', top: '65%', left: '45%', status: 'Vigilância Permanente (Marinha)' },
-  { id: 'port-paranagua', type: 'port', name: 'Porto de Paranaguá', top: '75%', left: '38%', status: 'Monitoramento Ativo (Marinha)' },
-  { id: 'border-1', type: 'border', name: 'Sistema Nacional de Fronteira', top: '15%', left: '25%', status: 'Tropas de Elite Ativas' },
-  { 
-    id: 'prison-treva-1', 
-    type: 'treva', 
-    name: 'Presídio Federal TREVA-01', 
-    top: '40%', 
-    left: '50%', 
-    status: 'Isolamento Total',
-    occupancy: 420,
-    capacity: 500
-  },
-  { 
-    id: 'prison-treva-2', 
-    type: 'treva', 
-    name: 'Presídio Federal TREVA-02', 
-    top: '30%', 
-    left: '60%', 
-    status: 'Segurança Máxima',
-    occupancy: 150,
-    capacity: 500
-  },
-  { id: 'muralha-1', type: 'muralha', name: 'Nó Muralha Brasileira - SP', top: '55%', left: '48%', status: 'Reconhecimento Facial Ativo' },
 ];
 
 export const programGuidelines: ProgramGuideline[] = [
@@ -150,7 +153,6 @@ export const iabsTreeData: DossierNode = {
   ]
 };
 
-// Coordenadas reais ao redor de GRU para evitar erros de renderização
 export const mockFieldUnits: FieldUnit[] = [
   { id: 'unit-1', callsign: 'RP-2204', status: 'patrolling', lat: -23.4320, lng: -46.4750, type: 'Viatura' },
   { id: 'unit-2', callsign: 'RP-1092', status: 'busy', lat: -23.4280, lng: -46.4680, type: 'Viatura' },
@@ -160,18 +162,18 @@ export const mockFieldUnits: FieldUnit[] = [
   { id: 'unit-6', callsign: 'HE-ÁGUIA', status: 'patrolling', lat: -23.4150, lng: -46.4730, type: 'Aeronave' },
 ];
 
-export const mockSubordinates: SubordinateUser[] = [
+export const mockSubordinates: any[] = [
   { id: "u1", name: "Ana Paula Souza", role: "Analista Judiciário", avatar: "AP", workload: 45 },
   { id: "u2", name: "Bruno Mendes", role: "Assessor", avatar: "BM", workload: 80 },
   { id: "u3", name: "Carla Diaz", role: "Estagiária de Direito", avatar: "CD", workload: 20 },
 ];
 
-export const mockDocuments: CaseDocument[] = [
+export const mockDocuments: any[] = [
   { id: "doc-01", title: "Petição Inicial de Progressão", type: "Petição", date: "10/05/2024", pages: 5, signedBy: "Dr. Advogado OAB/SP 123456" },
   { id: "doc-02", title: "Boletim Informativo", type: "Certidão", date: "11/05/2024", pages: 2, signedBy: "Diretor da Unidade" },
 ];
 
-export const mockInmate: InmateProfile = {
+export const mockInmate: any = {
   id: "SIP-2024-8921",
   name: "Carlos Eduardo da Silva",
   photoUrl: "https://i.pravatar.cc/300?u=SIP-2024-8921",
@@ -181,22 +183,22 @@ export const mockInmate: InmateProfile = {
   cpf: "123.456.789-00"
 };
 
-export const mockMetrics: Metric[] = [
+export const mockMetrics: any[] = [
   { label: "Total de Apenados", value: "12,450", status: "normal", icon: "Users" },
   { label: "Alertas Críticos", value: 23, status: "critical", icon: "AlertTriangle" },
   { label: "Benefícios Vencidos", value: 145, status: "warning", icon: "Clock" },
   { label: "Aguardando HITL", value: 8, status: "normal", icon: "UserCheck" },
 ];
 
-export const mockTimeline: PenalEvent[] = [
+export const mockTimeline: any[] = [
   { id: "evt-001", date: "10/01/2024", type: "Progressão de Regime", origin: "Vara de Execuções Penais - TJSP", hashICP: "8f4b2e1...a9c3", details: "Concessão de progressão para o regime semiaberto conforme Art. 112 da LEP." }
 ];
 
-export const mockSimilarCases: SimilarCase[] = [
+export const mockSimilarCases: any[] = [
   { id: "case-992", caseNumber: "0001234-56.2023.8.26.0050", penalty: "5 anos", crime: "Roubo Majorado", decision: "Concedido", similarity: 92 }
 ];
 
-export const mockMyCases: MyCase[] = [
+export const mockMyCases: any[] = [
   { 
     id: "case-rev-001", 
     inmateName: "Carlos Eduardo da Silva", 
@@ -223,10 +225,10 @@ export const mockMyCases: MyCase[] = [
   }
 ];
 
-export const mockDistributionCases: DistributionCase[] = [
+export const mockDistributionCases: any[] = [
   { id: "dist-001", inmateName: "Marcos Paulo Rocha", inmatePhoto: "https://i.pravatar.cc/150?u=dist-001", cpf: "333.222.111-00", eventType: "Progressão de Regime", priority: "Alta", timeInQueue: "2h 15m" }
 ];
 
-export const mockDistributionUsers: DistributionUser[] = [
+export const mockDistributionUsers: any[] = [
   { id: "user-002", name: "Ana Clara", role: "Analista Penal", avatar: "https://i.pravatar.cc/150?u=user-002", workload: 40, status: "Disponível", casesCount: 8, maxCases: 20 }
 ];

@@ -4,7 +4,8 @@ import { Sidebar } from './Sidebar';
 import { CommandPalette } from '../intelligence/CommandPalette';
 import { 
   ShieldCheck, Activity, Landmark, Bell, BellOff, 
-  Wifi, WifiOff, CloudSync, Mic, MicOff, Lock 
+  Wifi, WifiOff, CloudSync, Mic, MicOff, Lock,
+  Globe, Satellite, Zap
 } from 'lucide-react';
 import { notificationService } from '@/services/notificationService';
 import { Button } from '@/components/ui/button';
@@ -13,8 +14,10 @@ import { IntelligenceProvider, useIntelligence } from '@/contexts/IntelligenceCo
 import { cn } from '@/lib/utils';
 import { DeadMansSwitch } from '../ui/DeadMansSwitch';
 import { iabsTreeData } from '@/data/mockData';
+import { GlobalIntelligenceTicker } from '../intelligence/GlobalIntelligenceTicker';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 
-// Modais de Inteligência Globalizados (Pode ser chamado de qualquer tela)
+// Modais de Inteligência Globalizados
 const MuralhaModal = lazy(() => import('@/components/intelligence/MuralhaModal').then(m => ({ default: m.MuralhaModal })));
 const DispatchModal = lazy(() => import('@/components/intelligence/DispatchModal').then(m => ({ default: m.DispatchModal })));
 const IntelligenceMap = lazy(() => import('@/components/intelligence/IntelligenceMap').then(m => ({ default: m.IntelligenceMap })));
@@ -22,20 +25,30 @@ const DossierTree = lazy(() => import('@/components/intelligence/DossierTree').t
 const PatrimonialModal = lazy(() => import('@/components/intelligence/PatrimonialModal').then(m => ({ default: m.PatrimonialModal })));
 
 function TacticalHUD() {
-  const { isOnline, pendingSyncCount, isNightVision, isVoiceActive, setVoiceActive, setLocked } = useIntelligence();
-  const [notifPermission, setNotifPermission] = useState<NotificationPermission>('default');
+  const { 
+    isOnline, pendingSyncCount, isNightVision, 
+    isVoiceActive, setVoiceActive, setLocked,
+    linkType, setLinkType, simulatedLatency 
+  } = useIntelligence();
 
-  useEffect(() => {
-    setNotifPermission(notificationService.getPermissionStatus());
-  }, []);
+  const handleLinkChange = (type: 'FIBER' | 'SATELLITE') => {
+    setLinkType(type);
+    toast.info(`LINK ALTERADO: ${type}`, {
+      description: type === 'SATELLITE' 
+        ? "Modo de Contingência: Latência elevada detectada." 
+        : "Modo Padrão: Conexão de alta velocidade restabelecida.",
+      icon: type === 'SATELLITE' ? <Satellite className="h-4 w-4" /> : <Globe className="h-4 w-4" />
+    });
+  };
 
   return (
     <div className="md:pl-64 fixed top-0 left-0 right-0 z-40 pointer-events-none">
       <div className="container mx-auto px-4 md:px-10 max-w-7xl">
         <div className="flex justify-end pt-4 gap-4">
            <div className={cn(
-             "bg-slate-900/80 backdrop-blur-md border rounded-full px-4 py-1.5 flex items-center gap-3 shadow-2xl pointer-events-auto transition-colors duration-500",
-             isNightVision ? "border-success/50 shadow-success/10" : "border-white/10 shadow-black"
+             "bg-slate-900/80 backdrop-blur-md border rounded-full px-4 py-1.5 flex items-center gap-3 shadow-2xl pointer-events-auto transition-all duration-500",
+             isNightVision ? "border-success/50 shadow-success/10" : "border-white/10 shadow-black",
+             linkType === 'SATELLITE' && "border-warning/50 shadow-warning/5"
            )}>
               <Button 
                 variant="ghost" 
@@ -60,19 +73,31 @@ function TacticalHUD() {
                 <Lock className="h-3 w-3" />
               </Button>
 
-              <div className="flex items-center gap-2 border-r border-white/10 pr-3">
-                 {isOnline ? (
-                   <Wifi className={cn("h-3 w-3", "text-success")} />
-                 ) : (
-                   <WifiOff className="h-3 w-3 text-destructive animate-pulse" />
-                 )}
-                 <span className={cn(
-                   "text-[9px] font-black uppercase tracking-widest",
-                   isOnline ? (isNightVision ? "text-success/80" : "text-slate-400") : "text-destructive"
-                 )}>
-                   {isOnline ? "Link: Ativo" : "Link: Offline"}
-                 </span>
-              </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <div className="flex items-center gap-2 border-r border-white/10 pr-3 cursor-pointer group">
+                    {isOnline ? (
+                      linkType === 'FIBER' ? <Globe className="h-3 w-3 text-success" /> : <Satellite className="h-3 w-3 text-warning animate-pulse" />
+                    ) : (
+                      <WifiOff className="h-3 w-3 text-destructive animate-pulse" />
+                    )}
+                    <span className={cn(
+                      "text-[9px] font-black uppercase tracking-widest transition-colors",
+                      isOnline ? (linkType === 'FIBER' ? "text-success" : "text-warning") : "text-destructive"
+                    )}>
+                      {isOnline ? `Link: ${linkType}` : "Offline"}
+                    </span>
+                  </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-slate-900 border-white/10 text-white">
+                  <DropdownMenuItem onClick={() => handleLinkChange('FIBER')} className="text-[10px] font-bold uppercase gap-2">
+                    <Globe className="h-3 w-3 text-success" /> Fibra Óptica (Low Latency)
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => handleLinkChange('SATELLITE')} className="text-[10px] font-bold uppercase gap-2">
+                    <Satellite className="h-3 w-3 text-warning" /> Satélite (Field Training)
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
               {pendingSyncCount > 0 && (
                 <div className="flex items-center gap-2 border-r border-white/10 pr-3 animate-pulse">
@@ -87,13 +112,15 @@ function TacticalHUD() {
                  <ShieldCheck className="h-3 w-3 text-success" />
                  <span className={cn("text-[9px] font-black uppercase tracking-widest", isNightVision ? "text-success/80" : "text-slate-400")}>Ponto 11: ATIVO</span>
               </div>
-              <div className="flex items-center gap-2 border-r border-white/10 pr-3">
-                 <Landmark className={cn("h-3 w-3", isNightVision ? "text-success" : "text-primary")} />
-                 <span className={cn("text-[9px] font-black uppercase tracking-widest", isNightVision ? "text-success/80" : "text-slate-400")}>ROI: 11.5%</span>
-              </div>
+              
               <div className="flex items-center gap-2">
-                 <Activity className="h-3 w-3 text-warning animate-pulse" />
-                 <span className={cn("text-[9px] font-black uppercase tracking-widest", isNightVision ? "text-success/80" : "text-slate-400")}>42ms</span>
+                 <Activity className={cn("h-3 w-3 animate-pulse", simulatedLatency > 500 ? "text-warning" : "text-success")} />
+                 <span className={cn(
+                   "text-[9px] font-black uppercase tracking-widest font-mono",
+                   simulatedLatency > 500 ? "text-warning" : "text-success"
+                 )}>
+                   {simulatedLatency}ms
+                 </span>
               </div>
            </div>
         </div>
@@ -107,7 +134,7 @@ function MainLayoutContent() {
 
   return (
     <div className={cn(
-      "min-h-screen transition-colors duration-700",
+      "min-h-screen transition-colors duration-700 pb-8", 
       isNightVision ? "night-vision bg-black" : "bg-slate-950"
     )}>
       <Sidebar />
@@ -135,7 +162,8 @@ function MainLayoutContent() {
         </div>
       </main>
 
-      {/* Camada de Inteligência Global (Modais) */}
+      <GlobalIntelligenceTicker />
+
       <Suspense fallback={null}>
         <MuralhaModal />
         <DispatchModal />

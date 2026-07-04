@@ -4,7 +4,8 @@ import {
   UserCheck, ShieldAlert, 
   ArrowRight, Scale, Gavel, 
   CheckCircle2, BarChart3, 
-  Shield, Clock, FileText, AlertCircle
+  Shield, Clock, FileText, AlertCircle,
+  Building2
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';

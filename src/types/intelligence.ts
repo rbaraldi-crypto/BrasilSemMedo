@@ -6,6 +6,8 @@ export type ClassificationType = 'Comum' | 'Narcoterrorista';
 export type NodeStatus = 'Ativo' | 'Preso' | 'Foragido';
 export type SectorType = 'Liderança' | 'Operacional' | 'Financeiro' | 'Logística';
 
+export type LinkType = 'FIBER' | 'SATELLITE';
+
 export interface HierarchyNode {
   id: string;
   org_id: string;
@@ -25,8 +27,8 @@ export interface Organization {
   type: OrganizationType;
   classification: ClassificationType;
   threatLevel: ThreatLevel;
-  threatScore: number; // 0-100
-  asphyxiaLevel: number; // 0-100 (Percentual de capital bloqueado)
+  threatScore: number; 
+  asphyxiaLevel: number; 
   activeMembers: number;
   territory: string;
   financialPower: 'Baixo' | 'Médio' | 'Alto';
@@ -36,11 +38,13 @@ export interface Organization {
 export interface IntelligenceLogEntry {
   id?: string;
   timestamp: string;
-  type: 'DOSSIER' | 'MURALHA' | 'SISBAJUD' | 'ONU' | 'BRASIL' | 'DISPATCH' | 'LEGAL' | 'RADIO' | 'VICTIM_SUPPORT' | 'NARCO_ALERT' | 'TRANSITION';
+  type: 'DOSSIER' | 'MURALHA' | 'SISBAJUD' | 'ONU' | 'BRASIL' | 'DISPATCH' | 'LEGAL' | 'RADIO' | 'VICTIM_SUPPORT' | 'NARCO_ALERT' | 'TRANSITION' | 'LOGISTICS';
   targetName: string;
   details: string;
   operator_id?: string;
   audit_hash?: string;
+  previous_hash?: string;
+  block_index?: number;
 }
 
 export interface FieldUnit {
@@ -62,46 +66,27 @@ export interface FieldMessage {
   type: 'INFO' | 'STATUS' | 'ACTION' | 'ALERT';
 }
 
-export interface FinancialBlock {
+export interface TrevaWing {
   id: string;
-  org_id: string;
-  amount: number;
-  institution: string;
-  target_cpf: string;
-  protocol_id: string;
-  timestamp: string;
-}
-
-export interface BehaviorMetric {
   name: string;
-  juvenile: number;
-  adult: number;
-  fullMark: number;
+  occupancy: number;
+  capacity: number;
+  riskLevel: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
 }
 
-export interface PenalCase {
-  id: string;
-  case_number: string;
-  inmate_id: string;
-  inmate_name: string;
-  crime_type: string;
-  is_point_11: boolean;
-  is_hardened_mode?: boolean;
-  is_mobile_theft?: boolean;
-  age: number;
-  status: string;
-  last_decision?: string;
-  transitionDate?: string;
-  behaviorMetrics?: BehaviorMetric[];
+export interface TrevaFloor {
+  id: number;
+  label: string;
+  wings: TrevaWing[];
 }
 
-export interface VictimSupportRecord {
+export interface TacticalRoute {
   id: string;
-  inmateId: string;
-  victimFamilyId: string;
-  amountRedirected: number;
-  status: 'ACTIVE' | 'PENDING';
-  lastPayment: string;
+  origin: string;
+  destination: string;
+  riskScore: number;
+  estimatedTime: string;
+  checkpoints: string[];
 }
 
 export interface StrategicMarker {
@@ -114,9 +99,10 @@ export interface StrategicMarker {
   occupancy?: number;
   capacity?: number;
   isMassive?: boolean;
+  floors?: TrevaFloor[];
 }
 
-export type PanelID = 'MURALHA' | 'MAP' | 'DOSSIER' | 'SISBAJUD' | 'ROADMAP' | 'AUDIT_TIMELINE' | 'VICTIM_SUPPORT' | 'NARCO_INDEX';
+export type PanelID = 'MURALHA' | 'MAP' | 'DOSSIER' | 'SISBAJUD' | 'ROADMAP' | 'AUDIT_TIMELINE' | 'VICTIM_SUPPORT' | 'NARCO_INDEX' | 'LOGISTICS_PLANNER';
 
 export interface WorkspaceSettings {
   openPanels: PanelID[];
@@ -133,4 +119,25 @@ export interface RecidivismRisk {
     fullMark: number;
   }[];
   redFlags: string[];
+}
+
+export interface BehaviorMetric {
+  name: string;
+  juvenile: number;
+  adult: number;
+  fullMark: number;
+}
+
+export interface PatrimonialStep {
+  id: number;
+  text: string;
+  icon: LucideIcon;
+}
+
+export interface ProgramGuideline {
+  id: string;
+  title: string;
+  desc: string;
+  status: string;
+  icon: LucideIcon;
 }
