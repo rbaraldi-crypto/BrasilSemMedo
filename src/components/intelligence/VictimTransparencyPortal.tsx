@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   HeartHandshake, Lock, Key, ArrowRight, 
-  History, Calendar, DollarSign, CheckCircle2,
+  History, Calendar, DollarSign, CircleCheck,
   ExternalLink, ShieldCheck, Eye, EyeOff,
   AlertCircle, Download, Landmark, FileText
 } from 'lucide-react';
@@ -160,7 +160,7 @@ export function VictimTransparencyPortal() {
               <span className="text-sm font-black text-white uppercase tracking-tight">Família Souza</span>
               <Badge variant="outline" className="text-[8px] border-success/30 text-success font-mono">TOKEN_VERIFIED</Badge>
             </div>
-            <span className="text-[9px] text-slate-500 font-bold uppercase tracking-widest">Programa Brasil Sem Medo // Reparação de Danos</span>
+            <span className="text-[9px] text-slate-500 font-bold uppercase tracking-widest">Programa Combate a Terrorismo // Reparação de Danos</span>
           </div>
         </div>
         <Button 
@@ -189,7 +189,7 @@ export function VictimTransparencyPortal() {
           </div>
           <div className="p-6 bg-success/5 rounded-3xl border border-success/20 shadow-inner group hover:border-success/40 transition-colors">
             <p className="text-[10px] font-black text-success uppercase mb-3 flex items-center gap-2">
-              <CheckCircle2 className="h-3 w-3" /> Pago até agora
+              <CircleCheck className="h-3 w-3" /> Pago até agora
             </p>
             <div className="flex items-baseline gap-2">
               <p className="text-3xl font-black text-success tracking-tighter">R$ 12.500,00</p>
@@ -244,7 +244,7 @@ export function VictimTransparencyPortal() {
                 <div className="text-right">
                   <p className="text-lg font-mono font-black text-white">R$ {item.amount}</p>
                   <div className="flex items-center justify-end gap-1.5 text-success">
-                    <CheckCircle2 className="h-3.5 w-3.5" />
+                    <CircleCheck className="h-3.5 w-3.5" />
                     <span className="text-[9px] font-black uppercase tracking-widest">{item.status}</span>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ export function VictimTransparencyPortal() {
           </div>
           <p className="text-sm text-slate-300 font-medium leading-relaxed relative z-10 max-w-2xl">
             A reiteração do bloqueio via SISBAJUD foi confirmada pelo magistrado da Vara de Execuções Penais. 
-            O redirecionamento dos ativos do detento <span className="text-white font-bold">Carlos Eduardo da Silva</span> está garantido conforme a Lei do Programa Brasil Sem Medo.
+            O redirecionamento dos ativos do detento <span className="text-white font-bold">Carlos Eduardo da Silva</span> está garantido conforme a Lei do Programa Combate a Terrorismo.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 relative z-10 pt-2">
             <Button variant="outline" className="h-11 border-primary/30 text-primary text-[10px] font-black uppercase hover:bg-primary/10 flex-1">

@@ -8,7 +8,7 @@ import { ShieldCheck, ArrowRight, Zap, Target, Landmark } from 'lucide-react';
 const steps = [
   {
     title: "Briefing Inicial",
-    desc: "Bem-vindo ao IABS-SIP. Este terminal operacionaliza os 12 pontos do programa Brasil Sem Medo.",
+    desc: "Bem-vindo ao IABS-SIP. Este terminal operacionaliza os 12 pontos do programa Combate a Terrorismo.",
     icon: ShieldCheck
   },
   {

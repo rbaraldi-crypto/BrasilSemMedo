@@ -4,7 +4,7 @@ import { Sidebar } from './Sidebar';
 import { CommandPalette } from '../intelligence/CommandPalette';
 import { 
   ShieldCheck, Activity, Landmark, Bell, BellOff, 
-  Wifi, WifiOff, CloudSync, Mic, MicOff, Lock,
+  Wifi, WifiOff, RefreshCw, Mic, MicOff, Lock,
   Globe, Satellite, Zap
 } from 'lucide-react';
 import { notificationService } from '@/services/notificationService';
@@ -101,7 +101,7 @@ function TacticalHUD() {
 
               {pendingSyncCount > 0 && (
                 <div className="flex items-center gap-2 border-r border-white/10 pr-3 animate-pulse">
-                   <CloudSync className="h-3 w-3 text-primary" />
+                   <RefreshCw className="h-3 w-3 text-primary" />
                    <span className="text-[9px] font-black text-primary uppercase tracking-widest">
                      Sync: {pendingSyncCount}
                    </span>

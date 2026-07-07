@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   History, ShieldCheck, Scan, Gavel, 
   Radio, Landmark, FileText, Hash, 
-  User, Clock, CheckCircle2, Lock,
+  User, Clock, CircleCheck, Lock,
   Link as LinkIcon, Database, Shield
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -117,7 +117,7 @@ export function AuditTimeline({ isEmbedded = false }: { isEmbedded?: boolean }) 
                             {log.operator_id || "JUIZ-SILVA-8921"}
                           </div>
                           <div className="flex items-center justify-end gap-1.5 text-success">
-                            <CheckCircle2 className="h-2.5 w-2.5" />
+                            <CircleCheck className="h-2.5 w-2.5" />
                             <span className="text-[7px] font-black uppercase">Sealed</span>
                           </div>
                         </div>

@@ -10,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
-import { ArrowLeft, Scale, FileText, AlertCircle, CheckCircle2, Gavel, ArrowUpRight, Lock, ExternalLink, Paperclip, Eye, Edit2, RefreshCw, Loader2, ShieldAlert, PieChart, Baby } from 'lucide-react';
+import { ArrowLeft, Scale, FileText, AlertCircle, CircleCheck, Gavel, ArrowUpRight, Lock, ExternalLink, Paperclip, Eye, Pencil, RefreshCw, Loader2, ShieldAlert, PieChart, Baby } from 'lucide-react';
 import { JuvenileTransitionWorkflow } from '@/components/intelligence/JuvenileTransitionWorkflow';
 
 // Interface para a resposta da API
@@ -151,7 +151,7 @@ export function CaseReview() {
                 <FileText className="h-5 w-5 text-primary" /> Resumo do Pedido
               </CardTitle>
               <Button variant="ghost" size="sm" className="h-8 gap-2 text-primary" onClick={handleOpenEdit}>
-                <Edit2 className="h-3 w-3" /> Classificar
+                <Pencil className="h-3 w-3" /> Classificar
               </Button>
             </CardHeader>
             <CardContent className="space-y-4 pt-4">
@@ -206,7 +206,7 @@ export function CaseReview() {
                 <CardHeader><CardTitle className="text-base">Sugestão do Sistema</CardTitle></CardHeader>
                 <CardContent className="space-y-4">
                     <div className="p-4 rounded-lg bg-success/10 border border-success/20 flex flex-col items-center text-center gap-2">
-                        <CheckCircle2 className="h-8 w-8 text-success" />
+                        <CircleCheck className="h-8 w-8 text-success" />
                         <span className="font-bold text-success text-lg">Deferimento</span>
                     </div>
                 </CardContent>

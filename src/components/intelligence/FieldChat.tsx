@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Radio, MessageSquare, Shield, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Radio, MessageSquare, Shield, CircleAlert, CircleCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { FieldMessage } from '@/types/intelligence';
 

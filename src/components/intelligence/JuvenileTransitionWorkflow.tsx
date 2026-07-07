@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   UserCheck, ShieldAlert, 
   ArrowRight, Scale, Gavel, 
-  CheckCircle2, BarChart3, 
+  CircleCheck, BarChart3, 
   Shield, Clock, FileText, AlertCircle,
   Building2
 } from 'lucide-react';
@@ -60,7 +60,7 @@ export function JuvenileTransitionWorkflow({ age, inmateName, onComplete }: Juve
             </div>
             <div>
               <CardTitle className="text-sm font-black text-white uppercase tracking-tight">Transição Juvenil/Adulto</CardTitle>
-              <p className="text-[8px] text-slate-500 font-bold uppercase tracking-widest">Protocolo Brasil Sem Medo - Ponto 2</p>
+              <p className="text-[8px] text-slate-500 font-bold uppercase tracking-widest">Protocolo Combate a Terrorismo - Ponto 2</p>
             </div>
           </div>
           <Badge className={cn("font-black text-[9px] px-3", isReducedAge ? "bg-red-600" : "bg-success")}>
@@ -203,7 +203,7 @@ export function JuvenileTransitionWorkflow({ age, inmateName, onComplete }: Juve
                     className="absolute inset-0 bg-success rounded-full blur-2xl"
                   />
                   <div className="h-20 w-20 bg-success/10 rounded-full flex items-center justify-center border-2 border-success/40 relative z-10">
-                    <CheckCircle2 className="h-10 w-10 text-success" />
+                    <CircleCheck className="h-10 w-10 text-success" />
                   </div>
                 </div>
                 

@@ -33,7 +33,7 @@ export function Sidebar() {
   const navItems = [
     { label: t('nav.dashboard'), path: '/dashboard', icon: LayoutDashboard },
     { label: t('nav.mycases'), path: '/meus-casos', icon: Briefcase },
-    { label: 'Brasil Sem Medo', path: '/brasil-sem-medo', icon: ShieldCheck },
+    { label: 'Combate a Terrorismo', path: '/brasil-sem-medo', icon: ShieldCheck },
     // Botão de Teste da Muralha no Menu Principal
     { label: 'Muralha Paulista', path: '#muralha', icon: Scan, onClick: handleMuralhaTest, isAction: true },
     { label: t('nav.profile'), path: '/perfil/SIP-2024-8921', icon: User },

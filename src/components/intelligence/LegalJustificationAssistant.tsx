@@ -28,7 +28,7 @@ export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustif
 
     const justifications = [
       `Considerando a natureza do delito tipificado como crime hediondo e a classificação do apenado como integrante de organização narcoterrorista, nos termos do Art. 112, inciso VI, alínea 'a' da LEP (redação dada pela Lei 13.964/19), indefiro a progressão. A manutenção do regime fechado é imperativa para a garantia da ordem pública e asfixia operacional da facção.`,
-      `Fundamentado no Art. 112, § 1º da LEP, verifico que a gravidade concreta do crime e o vínculo ativo com a estrutura financeira da organização impedem a concessão de benefícios. O protocolo Brasil Sem Medo estabelece o isolamento total como medida de segurança nacional, sobrepondo-se ao requisito puramente temporal.`,
+      `Fundamentado no Art. 112, § 1º da LEP, verifico que a gravidade concreta do crime e o vínculo ativo com a estrutura financeira da organização impedem a concessão de benefícios. O protocolo Combate a Terrorismo estabelece o isolamento total como medida de segurança nacional, sobrepondo-se ao requisito puramente temporal.`,
       `A análise de inteligência via IABS-SIP confirma o alto risco de reincidência específica. Diante do Modo Endurecido ativo, a fundamentação jurídica baseia-se na ausência de mérito subjetivo e na necessidade de segregação de lideranças P1, conforme diretrizes ministeriais vigentes.`
     ];
 

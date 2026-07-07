@@ -50,7 +50,7 @@ export function TacticalRoutePlanner({ isEmbedded = false }: { isEmbedded?: bool
       ]
     });
     
-    addLogEntry('LOGISTICS', 'Transferência P1', 'Rota tática otimizada via Protocolo Brasil Sem Medo.');
+    addLogEntry('LOGISTICS', 'Transferência P1', 'Rota tática otimizada via Protocolo Combate a Terrorismo.');
     setIsCalculating(false);
     tacticalAudio.playSuccess();
   };

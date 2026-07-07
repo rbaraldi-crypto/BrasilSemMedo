@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ShieldCheck, Lock, UserCheck, 
   Key, ShieldAlert, X, Fingerprint,
-  CheckCircle2, AlertTriangle
+  CircleCheck, AlertTriangle
 } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from '@/components/ui/button';
@@ -75,14 +75,14 @@ export function MultiSignatureAuth({ isOpen, onClose, onAuthorized, actionName }
                "flex items-center gap-2 px-4 py-2 rounded-full border transition-all",
                signatures.judge ? "bg-success/10 border-success text-success" : step === 1 ? "bg-primary/10 border-primary text-primary" : "bg-white/5 border-white/10 text-slate-600"
              )}>
-                {signatures.judge ? <CheckCircle2 className="h-3 w-3" /> : <UserCheck className="h-3 w-3" />}
+                {signatures.judge ? <CircleCheck className="h-3 w-3" /> : <UserCheck className="h-3 w-3" />}
                 <span className="text-[9px] font-black uppercase">Magistrado</span>
              </div>
              <div className={cn(
                "flex items-center gap-2 px-4 py-2 rounded-full border transition-all",
                signatures.coordinator ? "bg-success/10 border-success text-success" : step === 2 ? "bg-primary/10 border-primary text-primary" : "bg-white/5 border-white/10 text-slate-600"
              )}>
-                {signatures.coordinator ? <CheckCircle2 className="h-3 w-3" /> : <ShieldCheck className="h-3 w-3" />}
+                {signatures.coordinator ? <CircleCheck className="h-3 w-3" /> : <ShieldCheck className="h-3 w-3" />}
                 <span className="text-[9px] font-black uppercase">Coordenador</span>
              </div>
           </div>

@@ -87,7 +87,7 @@ export function ProgramRoadmap({ isEmbedded = false }: { isEmbedded?: boolean })
           <div>
             <CardTitle className="text-lg font-bold text-white flex items-center gap-2">
               <ShieldCheck className="h-5 w-5 text-primary" />
-              Roadmap Brasil Sem Medo
+              Roadmap Combate a Terrorismo
             </CardTitle>
             <CardDescription className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">
               Mapeamento de Eixos Estratégicos

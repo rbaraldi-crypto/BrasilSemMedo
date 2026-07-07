@@ -66,7 +66,7 @@ export default function StrategicIntelligence() {
             <ShieldAlert className="h-7 w-7 text-white" />
           </div>
           <div>
-            <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">Brasil Sem Medo</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">Combate a Terrorismo</h2>
             <p className="text-slate-400 text-[10px] md:text-xs font-medium uppercase tracking-wider">Terminal de Inteligência AWS DynamoDB</p>
           </div>
         </div>

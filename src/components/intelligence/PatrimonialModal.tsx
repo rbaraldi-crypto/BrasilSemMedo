@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Landmark, Loader2, Zap, CheckCircle, ArrowDown } from 'lucide-react';
+import { Landmark, Loader2, Zap, CircleCheck, ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIntelligence } from '@/contexts/IntelligenceContext';
 import { PatrimonialStep } from '@/types/intelligence';
@@ -77,7 +77,7 @@ export function PatrimonialModal({ workflow }: PatrimonialModalProps) {
                     {step.id === 8 && sisbajudResult && (
                        <div className="mt-2 ml-12 p-4 bg-green-600/10 border border-green-600 rounded-lg animate-in zoom-in">
                           <div className="flex items-center gap-2 text-green-500 mb-2">
-                             <CheckCircle className="h-4 w-4" />
+                             <CircleCheck className="h-4 w-4" />
                              <span className="text-[10px] font-bold uppercase">{sisbajudResult.status}</span>
                           </div>
                           <div className="grid grid-cols-2 gap-4 text-[10px]">

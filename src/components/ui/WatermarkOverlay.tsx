@@ -27,7 +27,7 @@ export function WatermarkOverlay() {
           <div key={i} className="text-white font-mono text-[9px] font-black whitespace-nowrap leading-tight border border-white/10 p-2">
             <div>{operatorData.id} // {operatorData.clearance}</div>
             <div>{operatorData.ip} // {timestamp}</div>
-            <div className="text-primary/60">CONFIDENCIAL IABS-SIP // BRASIL SEM MEDO</div>
+            <div className="text-primary/60">CONFIDENCIAL IABS-SIP // COMBATE A TERRORISMO</div>
           </div>
         ))}
       </div>

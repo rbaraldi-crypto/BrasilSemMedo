@@ -1,15 +1,15 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   PieChart, Pie, Cell, ResponsiveContainer, Tooltip as RechartsTooltip, Legend,
   LineChart, Line, XAxis, YAxis, CartesianGrid, BarChart, Bar, ComposedChart, Area
 } from 'recharts';
 import { 
-  ArrowLeft, AlertTriangle, CheckCircle2, 
+  ArrowLeft, AlertTriangle, CircleCheck, 
   Clock, Users, BrainCircuit, FileDown, Loader2,
-  LayoutDashboard, CalendarRange, TrendingUp, Search, ArrowRight,
+  LayoutDashboard, TrendingUp,
   DollarSign, Landmark, ShieldAlert, Zap, Skull, BarChart3, 
-  Target, ShieldCheck, Activity, TrendingDown
+  Activity
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -103,7 +103,7 @@ export function StatsDashboard() {
               Estatísticas Avançadas IABS-SIP
             </h1>
             <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">
-              Monitoramento Estratégico Brasil Sem Medo
+              Monitoramento Estratégico Combate a Terrorismo
             </p>
           </div>
         </div>
@@ -284,7 +284,7 @@ export function StatsDashboard() {
               <SummaryCard 
                 title="Taxa de Conclusão" 
                 value="92%" 
-                icon={<CheckCircle2 className="h-5 w-5 text-success" />}
+                icon={<CircleCheck className="h-5 w-5 text-success" />}
                 trend="+1.2% vs média"
               />
               <SummaryCard 

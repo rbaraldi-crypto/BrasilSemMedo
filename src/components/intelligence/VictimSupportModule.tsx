@@ -4,7 +4,7 @@ import {
   HeartHandshake, DollarSign, ArrowRight, Users, 
   ShieldCheck, History, LayoutGrid, Eye, 
   ArrowLeft, Landmark, Activity, Lock,
-  ShieldEllipsis, Info
+  ShieldAlert, Info
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -201,7 +201,7 @@ export function VictimSupportModule({ isEmbedded = false }: { isEmbedded?: boole
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
               <div className="p-6 bg-slate-900 border border-white/5 rounded-[2rem] space-y-5">
                 <span className="text-[10px] font-black text-primary uppercase tracking-widest flex items-center gap-2">
-                  <ShieldEllipsis className="h-5 w-5" /> Telemetria de Repasse
+                  <ShieldAlert className="h-5 w-5" /> Telemetria de Repasse
                 </span>
                 <div className="space-y-4">
                   <div className="flex justify-between text-[10px] font-mono border-b border-white/5 pb-2">

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ShieldCheck, ShieldAlert, AlertTriangle, 
-  Scale, Zap, Info, CheckCircle2, XCircle,
+  Scale, Zap, Info, CircleCheck, XCircle,
   BarChart3, Fingerprint
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -103,7 +103,7 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
               />
             </div>
             <div className="text-center space-y-2">
-              <p className="text-[10px] font-black text-primary animate-pulse uppercase tracking-[0.2em]">Cruzando Diretrizes Brasil Sem Medo...</p>
+              <p className="text-[10px] font-black text-primary animate-pulse uppercase tracking-[0.2em]">Cruzando Diretrizes Combate a Terrorismo...</p>
               <div className="flex gap-1 justify-center">
                 {Array.from({ length: 12 }).map((_, i) => (
                   <motion.div 
@@ -181,7 +181,7 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
               )}
             >
               {acknowledged ? (
-                <><CheckCircle2 className="h-4 w-4 mr-2" /> Relatório Validado</>
+                <><CircleCheck className="h-4 w-4 mr-2" /> Relatório Validado</>
               ) : (
                 "Confirmar Ciência do Risco"
               )}

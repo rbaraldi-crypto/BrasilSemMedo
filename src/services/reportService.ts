@@ -27,7 +27,7 @@ export const reportService = {
     doc.text('IABS-SIP: ORDEM DE CAPTURA TÁTICA', 15, 20);
     
     doc.setFontSize(8);
-    doc.text('PROGRAMA BRASIL SEM MEDO - PROTOCOLO DE INTERCEPTAÇÃO GEOESPACIAL', 15, 28);
+    doc.text('PROGRAMA COMBATE A TERRORISMO - PROTOCOLO DE INTERCEPTAÇÃO GEOESPACIAL', 15, 28);
     doc.text(`ID OPERAÇÃO: ${Math.random().toString(36).toUpperCase().substr(2, 12)}`, 15, 33);
     doc.text(`EMISSÃO: ${new Date().toLocaleString()}`, 15, 38);
 
@@ -63,7 +63,7 @@ export const reportService = {
     doc.rect(15, 165, 180, 40, 'F');
     doc.setFontSize(8);
     doc.setTextColor(100, 100, 100);
-    doc.text('TERMO DE ATUAÇÃO: Esta ordem é emitida sob a égide do Programa Brasil Sem Medo.', 20, 175);
+    doc.text('TERMO DE ATUAÇÃO: Esta ordem é emitida sob a égide do Programa Combate a Terrorismo.', 20, 175);
     doc.text('O uso de força deve ser proporcional e estritamente necessário para a captura.', 20, 180);
     doc.text('A assinatura digital ICP-Brasil garante a integridade e a não-repudiação desta ordem.', 20, 185);
 
@@ -88,7 +88,7 @@ export const reportService = {
     pdf.setFontSize(22);
     pdf.text('DOSSIÊ DE ASFIXIA FINANCEIRA', 15, 25);
     pdf.setFontSize(10);
-    pdf.text('PROGRAMA BRASIL SEM MEDO - RELATÓRIO ESTRATÉGICO SISBAJUD', 15, 35);
+    pdf.text('PROGRAMA COMBATE A TERRORISMO - RELATÓRIO ESTRATÉGICO SISBAJUD', 15, 35);
 
     // Sumário de Métricas
     pdf.setTextColor(11, 60, 93);
@@ -128,6 +128,6 @@ export const reportService = {
       if (y > 270) { doc.addPage(); y = 20; }
     });
 
-    doc.save('Auditoria_Brasil_Sem_Medo.pdf');
+    doc.save('Auditoria_Combate_a_Terrorismo.pdf');
   }
 };

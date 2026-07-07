@@ -7,7 +7,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { CheckCircle2, Fingerprint, FileText, Calendar, Hash, AlertTriangle } from "lucide-react";
+import { CircleCheck, Fingerprint, FileText, Calendar, Hash, AlertTriangle } from "lucide-react";
 
 export function Profile() {
   const [selectedEvent, setSelectedEvent] = useState<typeof mockTimeline[0] | null>(null);
@@ -44,7 +44,7 @@ export function Profile() {
                     <div className="inline-flex items-center gap-2 bg-success/10 text-success px-3 py-1 rounded-full text-sm font-semibold cursor-help border border-success/20">
                       <Fingerprint className="h-4 w-4" />
                       Identidade Confirmada
-                      <CheckCircle2 className="h-3 w-3" />
+                      <CircleCheck className="h-3 w-3" />
                     </div>
                   </TooltipTrigger>
                   <TooltipContent className="max-w-xs">
@@ -140,11 +140,11 @@ export function Profile() {
                   <AccordionContent>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-success" />
+                        <CircleCheck className="h-4 w-4 text-success" />
                         <span>Direito a visita periódica (Concedido)</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-success" />
+                        <CircleCheck className="h-4 w-4 text-success" />
                         <span>Remição por trabalho (32 dias remidos)</span>
                       </li>
                     </ul>

@@ -10,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { 
-  Gavel, Loader2, CheckCircle, Smartphone, 
+  Gavel, Loader2, CircleCheck, Smartphone, 
   ArrowLeft, Calculator, ShieldAlert, Lock,
   ShieldCheck, BrainCircuit, Key, FileText
 } from "lucide-react";
@@ -98,7 +98,7 @@ export function HITL() {
     return (
       <div className="flex flex-col items-center justify-center h-[60vh] space-y-6 animate-in fade-in zoom-in duration-300">
         <div className="h-20 w-20 bg-success/10 rounded-full flex items-center justify-center">
-          <CheckCircle className="h-10 w-10 text-success" />
+          <CircleCheck className="h-10 w-10 text-success" />
         </div>
         <h2 className="text-2xl font-bold text-primary">Decisão Registrada via ICP-Brasil</h2>
         <Button onClick={() => navigate(-1)} variant="outline">Voltar</Button>
@@ -123,7 +123,7 @@ export function HITL() {
             <Button variant="ghost" size="icon" onClick={() => navigate(-1)}><ArrowLeft className="h-6 w-6" /></Button>
             <div>
                 <h2 className="text-3xl font-bold text-primary">Terminal de Supervisão Humana</h2>
-                <p className="text-muted-foreground text-sm uppercase font-bold tracking-widest">Brasil Sem Medo: Operational C2</p>
+                <p className="text-muted-foreground text-sm uppercase font-bold tracking-widest">Combate a Terrorismo: Operational C2</p>
             </div>
         </div>
       </div>

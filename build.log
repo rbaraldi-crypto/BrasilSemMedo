@@ -1,0 +1,22 @@
+Forced re-optimization of dependencies
+error when optimizing deps:
+Error:   Failed to scan for dependencies from entries:
+  /home/project/index.html
+
+  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mExpected ")" but found ":"[0m
+
+    src/contexts/IntelligenceContext.tsx:82:51:
+[37m      82 │ ...elay = useCallback(async <T>(fn[32m:[37m () => Promise<T>): Promise<T> ...
+         │                                   [32m^[37m
+         ╵                                   [32m)[0m
+
+
+    at failureErrorWithLog (/home/project/node_modules/vite/node_modules/esbuild/lib/main.js:1462:15)
+    at eval (/home/project/node_modules/vite/node_modules/esbuild/lib/main.js:935:25)
+    at runOnEndCallbacks (/home/project/node_modules/vite/node_modules/esbuild/lib/main.js:1305:45)
+    at buildResponseToResult (/home/project/node_modules/vite/node_modules/esbuild/lib/main.js:933:7)
+    at eval (/home/project/node_modules/vite/node_modules/esbuild/lib/main.js:945:9)
+    at requestCallbacks.on-end (/home/project/node_modules/vite/node_modules/esbuild/lib/main.js:944:54)
+    at handleRequest (/home/project/node_modules/vite/node_modules/esbuild/lib/main.js:637:17)
+    at handleIncomingPacket (/home/project/node_modules/vite/node_modules/esbuild/lib/main.js:662:7)
+    at Socket.readFromStdout (/home/project/node_modules/vite/node_modules/esbuild/lib/main.js:590:7)

@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
-import { AlertTriangle, Info, CheckSquare, ExternalLink, Link as LinkIcon, Loader2, WifiOff, SearchX, UserPlus, CalendarClock, CheckCircle2 } from "lucide-react";
+import { AlertTriangle, Info, CheckSquare, ExternalLink, Link as LinkIcon, Loader2, WifiOff, SearchX, UserPlus, CalendarClock, CircleCheck } from "lucide-react";
 import { mockSubordinates, SubordinateUser } from "@/data/mockData";
 
 export function Compliance() {
@@ -129,7 +129,7 @@ export function Compliance() {
         </Alert>
       ) : (
         <Alert className="bg-success/10 border-success/20 text-success-foreground animate-in fade-in zoom-in duration-300">
-             <CheckCircle2 className="h-5 w-5 text-success" />
+             <CircleCheck className="h-5 w-5 text-success" />
              <AlertTitle className="ml-2 font-bold text-success">Alerta Delegado com Sucesso</AlertTitle>
              <AlertDescription className="ml-2 text-success/80">
                 A tarefa foi encaminhada para a fila do analista responsável. A tela foi atualizada.
@@ -175,7 +175,7 @@ export function Compliance() {
             {mainAlertStatus === 'delegated' ? (
                 <div className="flex items-center gap-3 p-3 rounded-lg border bg-muted/20 animate-in fade-in">
                     <div className="h-8 w-8 rounded-full bg-success/20 flex items-center justify-center">
-                        <CheckCircle2 className="h-4 w-4 text-success" />
+                        <CircleCheck className="h-4 w-4 text-success" />
                     </div>
                     <div>
                         <button 
