@@ -52,7 +52,7 @@ export function MultiSignatureAuth({ isOpen, onClose, onAuthorized, actionName }
             </div>
             <div>
               <h3 className="text-lg font-black text-white uppercase tracking-tighter italic">Protocolo Dual-Key</h3>
-              <p className="text-[8px] text-red-400 font-black uppercase tracking-widest animate-pulse">Autorização de Alto Risco</p>
+              <p className="text-[10px] text-red-400 font-black uppercase tracking-widest animate-pulse">Autorização de Alto Risco</p>
             </div>
           </div>
           <Button variant="ghost" size="icon" className="text-slate-500 hover:text-white" onClick={onClose}>
@@ -64,7 +64,7 @@ export function MultiSignatureAuth({ isOpen, onClose, onAuthorized, actionName }
           <div className="bg-black/40 border border-white/5 p-4 rounded-2xl flex items-start gap-4">
             <AlertTriangle className="h-5 w-5 text-warning shrink-0 mt-0.5" />
             <div className="space-y-1">
-              <p className="text-[10px] font-black text-white uppercase">Ação Solicitada:</p>
+              <p className="text-xs font-black text-white uppercase">Ação Solicitada:</p>
               <p className="text-xs text-slate-400 font-medium">{actionName}</p>
             </div>
           </div>
@@ -76,14 +76,14 @@ export function MultiSignatureAuth({ isOpen, onClose, onAuthorized, actionName }
                signatures.judge ? "bg-success/10 border-success text-success" : step === 1 ? "bg-primary/10 border-primary text-primary" : "bg-white/5 border-white/10 text-slate-600"
              )}>
                 {signatures.judge ? <CheckCircle2 className="h-3 w-3" /> : <UserCheck className="h-3 w-3" />}
-                <span className="text-[9px] font-black uppercase">Magistrado</span>
+                <span className="text-[10px] font-black uppercase">Magistrado</span>
              </div>
              <div className={cn(
                "flex items-center gap-2 px-4 py-2 rounded-full border transition-all",
                signatures.coordinator ? "bg-success/10 border-success text-success" : step === 2 ? "bg-primary/10 border-primary text-primary" : "bg-white/5 border-white/10 text-slate-600"
              )}>
                 {signatures.coordinator ? <CheckCircle2 className="h-3 w-3" /> : <ShieldCheck className="h-3 w-3" />}
-                <span className="text-[9px] font-black uppercase">Coordenador</span>
+                <span className="text-[10px] font-black uppercase">Coordenador</span>
              </div>
           </div>
 
@@ -119,7 +119,7 @@ export function MultiSignatureAuth({ isOpen, onClose, onAuthorized, actionName }
         </div>
 
         <div className="p-4 bg-black/60 border-t border-white/5 text-center">
-          <p className="text-[8px] font-mono text-slate-600 uppercase">
+          <p className="text-[10px] font-mono text-slate-600 uppercase">
             Protocolo S5 // Criptografia Assimétrica RSA-4096 // IABS-SIP SECURE_CORE
           </p>
         </div>

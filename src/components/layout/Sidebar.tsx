@@ -51,7 +51,7 @@ export function Sidebar() {
           </div>
           IABS-SIP
         </h1>
-        <p className="text-[10px] text-slate-400 font-medium uppercase tracking-wider mt-2">Sistema Integrado Penal</p>
+        <p className="text-xs text-slate-400 font-medium uppercase tracking-wider mt-2">Sistema Integrado Penal</p>
       </div>
       
       <nav className="flex-1 py-6 px-4 space-y-1 overflow-y-auto custom-scrollbar">
@@ -93,7 +93,7 @@ export function Sidebar() {
 
       <div className="p-6 border-t border-white/10 bg-black/20 space-y-4">
         <div className="space-y-2">
-            <div className="flex items-center gap-2 text-[10px] text-slate-500 uppercase font-bold tracking-wider">
+            <div className="flex items-center gap-2 text-xs text-slate-500 uppercase font-bold tracking-wider">
                 <Globe className="h-3 w-3" /> Idioma
             </div>
             <Select value={language} onValueChange={(val: any) => setLanguage(val)}>
@@ -112,7 +112,7 @@ export function Sidebar() {
             <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/5 hover:bg-white/10 transition-colors">
               <div className="flex items-center gap-2">
                 <Eye className={cn("h-3.5 w-3.5 transition-colors", isNightVision ? "text-success" : "text-slate-500")} />
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">Operação táctica</span>
+                <span className="text-xs font-black uppercase tracking-widest text-slate-300">Operação táctica</span>
               </div>
               <Switch 
                 checked={isNightVision} 
@@ -124,12 +124,12 @@ export function Sidebar() {
             <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/5 hover:bg-white/10 transition-colors">
               <div className="flex items-center gap-2">
                 <ShieldX className={cn("h-3.5 w-3.5 transition-colors", isLocked ? "text-destructive" : "text-slate-500")} />
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">Bloqueio de terminal</span>
+                <span className="text-xs font-black uppercase tracking-widest text-slate-300">Bloqueio de terminal</span>
               </div>
               <Button 
                 variant="ghost" 
                 size="sm" 
-                className="h-6 px-2 text-[8px] font-black uppercase bg-destructive/10 text-destructive border border-destructive/20 hover:bg-destructive/30 transition-all"
+                className="h-6 px-2 text-[10px] font-black uppercase bg-destructive/10 text-destructive border border-destructive/20 hover:bg-destructive/30 transition-all"
                 onClick={() => setLocked(true)}
               >
                 Simular
@@ -143,7 +143,7 @@ export function Sidebar() {
           </div>
           <div className="flex flex-col min-w-0">
             <span className="text-xs font-semibold text-white truncate">Juiz Dr. Silva</span>
-            <span className="text-[10px] text-slate-500 font-medium">Vara de Execuções</span>
+            <span className="text-xs text-slate-500 font-medium">Vara de Execuções</span>
           </div>
         </div>
       </div>

@@ -60,10 +60,10 @@ export function JuvenileTransitionWorkflow({ age, inmateName, onComplete }: Juve
             </div>
             <div>
               <CardTitle className="text-sm font-black text-white uppercase tracking-tight">Transição Juvenil/Adulto</CardTitle>
-              <p className="text-[8px] text-slate-500 font-bold uppercase tracking-widest">Protocolo Brasil Sem Medo - Ponto 2</p>
+              <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Protocolo Brasil Sem Medo - Ponto 2</p>
             </div>
           </div>
-          <Badge className={cn("font-black text-[9px] px-3", isReducedAge ? "bg-red-600" : "bg-success")}>
+          <Badge className={cn("font-black text-[10px] px-3", isReducedAge ? "bg-red-600" : "bg-success")}>
             IDADE: {age} ANOS
           </Badge>
         </div>
@@ -86,7 +86,7 @@ export function JuvenileTransitionWorkflow({ age, inmateName, onComplete }: Juve
                 <s.icon className="h-5 w-5" />
               </motion.div>
               <span className={cn(
-                "text-[7px] font-black uppercase tracking-widest absolute -bottom-6 whitespace-nowrap",
+                "text-[10px] font-black uppercase tracking-widest absolute -bottom-6 whitespace-nowrap",
                 step === s.id ? "text-primary" : "text-slate-600"
               )}>
                 {s.title}
@@ -108,7 +108,7 @@ export function JuvenileTransitionWorkflow({ age, inmateName, onComplete }: Juve
                 <div className="bg-primary/5 border border-primary/20 p-4 rounded-xl">
                   <div className="flex items-center gap-2 text-primary mb-2">
                     <AlertCircle className="h-4 w-4" />
-                    <span className="text-[10px] font-black uppercase">Monitoramento de Maioridade</span>
+                    <span className="text-xs font-black uppercase">Monitoramento de Maioridade</span>
                   </div>
                   <p className="text-xs text-slate-300 leading-relaxed">
                     O sistema monitora automaticamente a proximidade da maioridade penal (18a) ou do gatilho de crimes hediondos (16a).
@@ -132,15 +132,15 @@ export function JuvenileTransitionWorkflow({ age, inmateName, onComplete }: Juve
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-red-500">
                     <BarChart3 className="h-4 w-4" />
-                    <span className="text-[10px] font-black uppercase">Tracking de Incompatibilidade</span>
+                    <span className="text-xs font-black uppercase">Tracking de Incompatibilidade</span>
                   </div>
-                  <Badge variant="outline" className="text-[8px] border-red-500/30 text-red-400 font-mono">REINTEGRATION_VS_CUSTODY</Badge>
+                  <Badge variant="outline" className="text-[10px] border-red-500/30 text-red-400 font-mono">REINTEGRATION_VS_CUSTODY</Badge>
                 </div>
                 
                 <BehaviorComparativeChart data={behaviorData} />
                 
                 <div className="p-3 bg-red-600/5 border border-red-600/20 rounded-xl">
-                  <p className="text-[9px] text-red-200 leading-relaxed italic font-medium">
+                  <p className="text-[10px] text-red-200 leading-relaxed italic font-medium">
                     "A análise de rede detectou vínculos ativos com 'Sintonia Geral', justificando a transição imediata para o sistema TREVA sob a nova diretriz de segurança máxima."
                   </p>
                 </div>
@@ -167,21 +167,21 @@ export function JuvenileTransitionWorkflow({ age, inmateName, onComplete }: Juve
                         <Building2 className="h-6 w-6 text-red-500" />
                       </div>
                       <div>
-                        <p className="text-[8px] font-black text-slate-500 uppercase">Complexo Destino</p>
+                        <p className="text-[10px] font-black text-slate-500 uppercase">Complexo Destino</p>
                         <p className="text-sm font-bold text-white uppercase">TREVA-01 (Norte)</p>
                       </div>
                     </div>
-                    <Badge className="bg-success text-[8px] font-black">VAGA_CONFIRMADA</Badge>
+                    <Badge className="bg-success text-[10px] font-black">VAGA_CONFIRMADA</Badge>
                   </div>
 
                   <div className="p-4 bg-slate-950 border border-white/5 rounded-2xl">
                     <div className="flex justify-between items-center mb-3">
-                      <span className="text-[9px] font-black text-slate-500 uppercase">Logística de Transferência</span>
-                      <span className="text-[9px] font-mono text-primary">PRIORIDADE_ALTA</span>
+                      <span className="text-[10px] font-black text-slate-500 uppercase">Logística de Transferência</span>
+                      <span className="text-[10px] font-mono text-primary">PRIORIDADE_ALTA</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-                      <span className="text-[10px] text-slate-300 font-medium">Escolta tática pré-agendada para T+1 dia.</span>
+                      <span className="text-xs text-slate-300 font-medium">Escolta tática pré-agendada para T+1 dia.</span>
                     </div>
                   </div>
                 </div>
@@ -209,19 +209,19 @@ export function JuvenileTransitionWorkflow({ age, inmateName, onComplete }: Juve
                 
                 <div className="space-y-2">
                   <h3 className="text-lg font-black text-white uppercase tracking-tighter">Protocolo Validado</h3>
-                  <p className="text-[10px] text-slate-400 max-w-[240px] mx-auto font-medium">
+                  <p className="text-xs text-slate-400 max-w-[240px] mx-auto font-medium">
                     Dossiê de transição ministerial gerado com base no Art. 155/157. Pronto para assinatura ICP-Brasil.
                   </p>
                 </div>
 
                 <div className="w-full bg-black/40 border border-white/10 rounded-xl p-4 space-y-3">
                   <div className="flex justify-between items-center border-b border-white/5 pb-2">
-                    <span className="text-[8px] font-black text-slate-500 uppercase">Hash de Integridade</span>
-                    <span className="text-[8px] font-mono text-primary uppercase">SHA256:7F8A...C2E1</span>
+                    <span className="text-[10px] font-black text-slate-500 uppercase">Hash de Integridade</span>
+                    <span className="text-[10px] font-mono text-primary uppercase">SHA256:7F8A...C2E1</span>
                   </div>
                   <div className="flex items-center gap-2 text-primary">
                     <FileText className="h-3.5 w-3.5" />
-                    <span className="text-[9px] font-bold uppercase tracking-widest">Dossie_Transicao_{inmateName.replace(' ', '_')}.pdf</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest">Dossie_Transicao_{inmateName.replace(' ', '_')}.pdf</span>
                   </div>
                 </div>
               </motion.div>
@@ -233,7 +233,7 @@ export function JuvenileTransitionWorkflow({ age, inmateName, onComplete }: Juve
           {step > 1 && step < 4 && (
             <Button 
               variant="outline"
-              className="border-white/10 text-slate-400 hover:bg-white/5 font-black uppercase text-[10px] h-12 px-6"
+              className="border-white/10 text-slate-400 hover:bg-white/5 font-black uppercase text-xs h-12 px-6"
               onClick={() => setStep(step - 1)}
             >
               Voltar
@@ -242,14 +242,14 @@ export function JuvenileTransitionWorkflow({ age, inmateName, onComplete }: Juve
           
           {step < 4 ? (
             <Button 
-              className="flex-1 bg-primary hover:bg-primary/90 font-black uppercase text-[10px] tracking-widest h-12 shadow-lg shadow-primary/20"
+              className="flex-1 bg-primary hover:bg-primary/90 font-black uppercase text-xs tracking-widest h-12 shadow-lg shadow-primary/20"
               onClick={handleNext}
             >
               Avançar Protocolo <ArrowRight className="h-4 w-4 ml-2" />
             </Button>
           ) : (
             <Button 
-              className="flex-1 bg-success hover:bg-success/90 text-white font-black uppercase text-[10px] tracking-widest h-12 shadow-lg shadow-success/20"
+              className="flex-1 bg-success hover:bg-success/90 text-white font-black uppercase text-xs tracking-widest h-12 shadow-lg shadow-success/20"
               onClick={() => {
                 tacticalAudio.playSuccess();
                 onComplete?.();

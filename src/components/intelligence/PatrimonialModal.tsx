@@ -68,13 +68,13 @@ export function PatrimonialModal({ workflow }: PatrimonialModalProps) {
                       "p-4 rounded-lg border transition-all flex items-center gap-4",
                       step.id === 8 ? "bg-primary/10 border-primary shadow-lg" : "bg-white/5 border-white/5"
                     )}>
-                       <div className="h-8 w-8 rounded-full bg-slate-800 border border-white/10 flex items-center justify-center text-[10px] font-bold text-primary">
+                       <div className="h-8 w-8 rounded-full bg-slate-800 border border-white/10 flex items-center justify-center text-xs font-bold text-primary">
                           {step.id}
                        </div>
                        <step.icon className="h-5 w-5 text-slate-400" />
                        <span className="text-xs font-medium text-white">{step.text}</span>
                        {step.id === 8 && !sisbajudResult && (
-                          <Button size="sm" className="ml-auto bg-primary hover:bg-primary/90 text-[10px] font-bold" onClick={handleSisbajudProtocol} disabled={isSisbajudLoading}>
+                          <Button size="sm" className="ml-auto bg-primary hover:bg-primary/90 text-xs font-bold" onClick={handleSisbajudProtocol} disabled={isSisbajudLoading}>
                              {isSisbajudLoading ? <Loader2 className="h-3 w-3 animate-spin mr-2" /> : <Zap className="h-3 w-3 mr-2" />} Executar Protocolo
                           </Button>
                        )}
@@ -83,9 +83,9 @@ export function PatrimonialModal({ workflow }: PatrimonialModalProps) {
                        <div className="mt-2 ml-12 p-4 bg-green-600/10 border border-green-600 rounded-lg animate-in zoom-in">
                           <div className="flex items-center gap-2 text-green-500 mb-2">
                              <CheckCircle className="h-4 w-4" />
-                             <span className="text-[10px] font-bold uppercase">{sisbajudResult.status}</span>
+                             <span className="text-xs font-bold uppercase">{sisbajudResult.status}</span>
                           </div>
-                          <div className="grid grid-cols-2 gap-4 text-[10px]">
+                          <div className="grid grid-cols-2 gap-4 text-xs">
                              <div>
                                 <p className="text-slate-500 font-bold uppercase">ID Protocolo</p>
                                 <p className="text-white font-mono">{sisbajudResult.protocolId}</p>

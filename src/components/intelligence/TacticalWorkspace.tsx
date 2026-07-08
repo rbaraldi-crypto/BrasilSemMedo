@@ -30,7 +30,7 @@ function WorkspacePanelWrapper({ id, title, children }: WorkspacePanelProps) {
       <div className="h-9 bg-slate-900/80 border-b border-white/10 px-3 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2">
           <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-          <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{title}</span>
+          <span className="text-xs font-black text-slate-400 uppercase tracking-widest">{title}</span>
         </div>
         <div className="flex items-center gap-1 opacity-0 group-hover/panel:opacity-100 transition-opacity">
           <Button variant="ghost" size="icon" className="h-6 w-6 text-slate-500 hover:text-white" onClick={() => togglePanel(id)}>
@@ -70,7 +70,7 @@ export function TacticalWorkspace() {
       case 'AUDIT_TIMELINE': return <AuditTimeline isEmbedded />;
       case 'VICTIM_SUPPORT': return <VictimSupportModule isEmbedded />;
       case 'LOGISTICS_PLANNER': return <TacticalRoutePlanner isEmbedded />;
-      case 'DOSSIER': return <div className="p-4 text-slate-500 font-mono text-[10px]">MÓDULO DOSSIÊ EM DESENVOLVIMENTO PARA VIEWPORT REDUZIDA</div>;
+      case 'DOSSIER': return <div className="p-4 text-slate-500 font-mono text-xs">MÓDULO DOSSIÊ EM DESENVOLVIMENTO PARA VIEWPORT REDUZIDA</div>;
       default: return null;
     }
   };
@@ -95,13 +95,13 @@ export function TacticalWorkspace() {
       <div className="flex items-center justify-between bg-slate-900/40 p-2 rounded-xl border border-white/5">
         <div className="flex items-center gap-2">
           <LayoutGrid className="h-4 w-4 text-primary ml-2" />
-          <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Configuração de Workspace</span>
+          <span className="text-xs font-black text-slate-500 uppercase tracking-[0.2em]">Configuração de Workspace</span>
         </div>
         <div className="flex items-center gap-1">
           <Button 
             variant={layoutMode === 'FULL' ? 'default' : 'ghost'} 
             size="sm" 
-            className="h-8 text-[9px] font-bold uppercase"
+            className="h-8 text-[10px] font-bold uppercase"
             onClick={() => setLayoutMode('FULL')}
           >
             <Monitor className="h-3 w-3 mr-2" /> Foco
@@ -109,7 +109,7 @@ export function TacticalWorkspace() {
           <Button 
             variant={layoutMode === 'SPLIT' ? 'default' : 'ghost'} 
             size="sm" 
-            className="h-8 text-[9px] font-bold uppercase"
+            className="h-8 text-[10px] font-bold uppercase"
             onClick={() => setLayoutMode('SPLIT')}
           >
             <Columns className="h-3 w-3 mr-2" /> Split

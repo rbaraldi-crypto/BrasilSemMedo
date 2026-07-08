@@ -141,3 +141,33 @@ export interface ProgramGuideline {
   status: string;
   icon: LucideIcon;
 }
+
+// --- Novas Interfaces Rigorosas ---
+
+export interface ONUResult {
+  targetName: string;
+  riskLevel: string;
+  designation: string;
+  resolution: string;
+  sanctions: string[];
+}
+
+export interface BrasilResult {
+  targetName: string;
+  riskLevel: string;
+  warrants: number;
+  investigations: number;
+  convictions: number;
+  precautionaryMeasures: number;
+}
+
+export interface GlobalSearchItem {
+  id: string;
+  type: 'ORGANIZATION' | 'CASE' | 'UNIT' | 'COMMAND';
+  title?: string;
+  label?: string;
+  subtitle?: string;
+  icon?: LucideIcon;
+  action?: () => void;
+  data?: any; // Mantido como 'any' ou 'unknown' para flexibilidade do payload, mas a estrutura principal está tipada
+}

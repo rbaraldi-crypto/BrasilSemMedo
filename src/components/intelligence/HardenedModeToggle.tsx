@@ -28,7 +28,7 @@ export function HardenedModeToggle({ checked, onCheckedChange, disabled }: Harde
         </div>
         <div>
           <Label className="text-xs font-black uppercase text-white tracking-tighter">Modo Endurecido (Ponto 11)</Label>
-          <p className="text-[9px] text-slate-500 font-medium leading-tight">Bloqueio total de progressão para crimes hediondos.</p>
+          <p className="text-[10px] text-slate-500 font-medium leading-tight">Bloqueio total de progressão para crimes hediondos.</p>
         </div>
       </div>
       <Switch 

@@ -1,4 +1,4 @@
-import { Organization, FieldUnit, IntelligenceLogEntry, WorkspaceSettings } from '@/types/intelligence';
+import { Organization, FieldUnit, IntelligenceLogEntry, WorkspaceSettings, GlobalSearchItem } from '@/types/intelligence';
 import { mockOrganizations, mockFieldUnits, mockMyCases } from '@/data/mockData';
 
 /**
@@ -91,16 +91,19 @@ export const intelligenceService = {
     return cached ? JSON.parse(cached) : null;
   },
 
-  async globalSearch(query: string): Promise<any[]> {
+  async globalSearch(query: string): Promise<GlobalSearchItem[]> {
     const q = query.toLowerCase();
     console.log(`[AWS_DYNAMODB] Querying GSI_GLOBAL_SEARCH for: ${q}`);
     
-    return [
-      ...mockOrganizations.filter(o => o.name.toLowerCase().includes(q) || o.acronym.toLowerCase().includes(q))
-        .map(o => ({ id: o.id, type: 'ORGANIZATION', title: o.name, subtitle: `Facção: ${o.acronym}`, data: o })),
-      ...mockMyCases.filter(c => c.inmateName.toLowerCase().includes(q) || c.caseNumber.includes(q))
-        .map(c => ({ id: c.id, type: 'CASE', title: c.inmateName, subtitle: `Processo: ${c.caseNumber}`, data: c }))
-    ].slice(0, 8);
+    const orgResults: GlobalSearchItem[] = mockOrganizations
+      .filter(o => o.name.toLowerCase().includes(q) || o.acronym.toLowerCase().includes(q))
+      .map(o => ({ id: o.id, type: 'ORGANIZATION', title: o.name, subtitle: `Facção: ${o.acronym}`, data: o }));
+
+    const caseResults: GlobalSearchItem[] = mockMyCases
+      .filter(c => c.inmateName.toLowerCase().includes(q) || c.caseNumber.includes(q))
+      .map(c => ({ id: c.id, type: 'CASE', title: c.inmateName, subtitle: `Processo: ${c.caseNumber}`, data: c }));
+
+    return [...orgResults, ...caseResults].slice(0, 8);
   },
 
   async saveAuditLog(entry: IntelligenceLogEntry): Promise<void> {

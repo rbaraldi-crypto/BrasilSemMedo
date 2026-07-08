@@ -19,9 +19,9 @@ export function FinancialAsphyxiaFlow({ asphyxiaLevel, orgAcronym, className }: 
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-          <span className="text-[9px] font-black text-white uppercase tracking-widest">Asfixia: {orgAcronym}</span>
+          <span className="text-[10px] font-black text-white uppercase tracking-widest">Asfixia: {orgAcronym}</span>
         </div>
-        <span className="text-[10px] font-mono text-red-500 font-bold">{asphyxiaLevel}% BLOQUEADO</span>
+        <span className="text-xs font-mono text-red-500 font-bold">{asphyxiaLevel}% BLOQUEADO</span>
       </div>
 
       <div className="relative h-12 bg-black/40 rounded-xl border border-white/5 overflow-hidden flex items-center px-4">
@@ -41,7 +41,7 @@ export function FinancialAsphyxiaFlow({ asphyxiaLevel, orgAcronym, className }: 
             className="h-2 bg-slate-800" 
             indicatorClassName="bg-gradient-to-r from-red-600 to-orange-500" 
           />
-          <div className="flex justify-between items-center text-[7px] font-black uppercase text-slate-500">
+          <div className="flex justify-between items-center text-[10px] font-black uppercase text-slate-500">
             <span>Capital Operacional</span>
             <span className="text-red-500">Fluxo SISBAJUD</span>
           </div>
@@ -51,11 +51,11 @@ export function FinancialAsphyxiaFlow({ asphyxiaLevel, orgAcronym, className }: 
       <div className="grid grid-cols-2 gap-2">
         <div className="p-2 bg-red-600/5 border border-red-600/20 rounded-lg flex items-center gap-2">
           <TrendingDown className="h-3 w-3 text-red-500" />
-          <span className="text-[8px] font-bold text-red-200 uppercase">Drenagem Ativa</span>
+          <span className="text-[10px] font-bold text-red-200 uppercase">Drenagem Ativa</span>
         </div>
         <div className="p-2 bg-primary/5 border border-primary/20 rounded-lg flex items-center gap-2">
           <Zap className="h-3 w-3 text-primary" />
-          <span className="text-[8px] font-bold text-primary-foreground uppercase">ROI: 11.5%</span>
+          <span className="text-[10px] font-bold text-primary-foreground uppercase">ROI: 11.5%</span>
         </div>
       </div>
     </div>

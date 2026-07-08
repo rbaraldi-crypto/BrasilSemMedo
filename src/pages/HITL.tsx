@@ -140,7 +140,7 @@ export function HITL() {
             <Card className="bg-red-950/20 border-red-600/50 overflow-hidden">
               <div className="bg-red-600 px-4 py-1.5 flex items-center gap-2">
                 <Calculator className="h-3 w-3 text-white" />
-                <span className="text-[9px] font-black text-white uppercase tracking-widest">Calculadora Penal P12 (Dispositivos Móveis)</span>
+                <span className="text-[10px] font-black text-white uppercase tracking-widest">Calculadora Penal P12 (Dispositivos Móveis)</span>
               </div>
               <CardContent className="p-5 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex items-center gap-4">
@@ -148,24 +148,24 @@ export function HITL() {
                     <Smartphone className="h-8 w-8 text-white" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-black text-red-500 uppercase">Art. 155/157 CP</p>
+                    <p className="text-xs font-black text-red-500 uppercase">Art. 155/157 CP</p>
                     <p className="text-xl font-black text-white">RECEPTAÇÃO / ROUBO</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-4 bg-black/40 p-4 rounded-xl border border-white/5">
                   <div className="text-center">
-                    <p className="text-[8px] font-black text-slate-500 uppercase">Base</p>
+                    <p className="text-[10px] font-black text-slate-500 uppercase">Base</p>
                     <p className="text-lg font-bold text-white">{penaltyInfo.base}a</p>
                   </div>
                   <div className="text-red-500 font-black">X</div>
                   <div className="text-center">
-                    <p className="text-[8px] font-black text-slate-500 uppercase">Multiplicador</p>
+                    <p className="text-[10px] font-black text-slate-500 uppercase">Multiplicador</p>
                     <p className="text-lg font-bold text-red-500">{penaltyInfo.multiplier}x</p>
                   </div>
                   <div className="text-white font-black">=</div>
                   <div className="text-center px-4 py-1 bg-red-600 rounded-lg">
-                    <p className="text-[8px] font-black text-white/70 uppercase">Total</p>
+                    <p className="text-[10px] font-black text-white/70 uppercase">Total</p>
                     <p className="text-xl font-black text-white">{penaltyInfo.total} ANOS</p>
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export function HITL() {
           <Card className="bg-slate-900 border-white/10">
             <CardHeader className="flex flex-row items-center justify-between">
               <CardTitle className="text-lg font-bold text-white uppercase">Sentença Estratégica</CardTitle>
-              <Badge variant="outline" className="border-primary/30 text-primary font-mono text-[9px]">
+              <Badge variant="outline" className="border-primary/30 text-primary font-mono text-[10px]">
                 <Lock className="h-2.5 w-2.5 mr-1" /> SECURE_DRAFT
               </Badge>
             </CardHeader>
@@ -212,7 +212,7 @@ export function HITL() {
                     name="dispatchText"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[10px] font-black uppercase text-slate-500 flex items-center gap-2">
+                        <FormLabel className="text-xs font-black uppercase text-slate-500 flex items-center gap-2">
                           <FileText className="h-3 w-3" /> Fundamentação Jurídica
                         </FormLabel>
                         <FormControl>
@@ -230,7 +230,7 @@ export function HITL() {
                   <Button 
                     type="submit" 
                     disabled={isLoading || (mockUserRole === 'JUIZ' && !isSandboxValidated)} 
-                    className="w-full h-12 bg-primary hover:bg-primary/90 font-black uppercase text-[10px] tracking-widest shadow-lg shadow-primary/20"
+                    className="w-full h-12 bg-primary hover:bg-primary/90 font-black uppercase text-xs tracking-widest shadow-lg shadow-primary/20"
                   >
                     {isLoading ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <ShieldCheck className="h-4 w-4 mr-2" />}
                     Assinar via ICP-Brasil

@@ -32,31 +32,54 @@
     --radius: 0.75rem;
   }
 
-  /* Night Vision Theme (U1) */
+  /* Night Vision Theme (U1) - High Contrast WCAG Compliant */
   .night-vision {
     --background: 142 71% 2%;
-    --foreground: 142 71% 65%;
+    --foreground: 142 71% 95%; /* Aumentado para WCAG AAA */
     --card: 142 71% 3%;
-    --card-foreground: 142 71% 60%;
+    --card-foreground: 142 71% 90%;
     --popover: 142 71% 3%;
-    --popover-foreground: 142 71% 60%;
-    --primary: 142 71% 45%;
+    --popover-foreground: 142 71% 90%;
+    --primary: 142 71% 55%; /* Verde mais vibrante */
     --primary-foreground: 142 71% 5%;
-    --secondary: 142 71% 10%;
-    --secondary-foreground: 142 71% 50%;
-    --muted: 142 71% 5%;
-    --muted-foreground: 142 71% 30%;
+    --secondary: 142 71% 12%;
+    --secondary-foreground: 142 71% 85%; /* Aumentado de 50% para 85% */
+    --muted: 142 71% 6%;
+    --muted-foreground: 142 71% 75%; /* CRÍTICO: Aumentado de 30% para 75% para leitura confortável */
     --accent: 142 71% 15%;
-    --accent-foreground: 142 71% 70%;
-    --border: 142 71% 12%;
-    --input: 142 71% 12%;
-    --ring: 142 71% 45%;
+    --accent-foreground: 142 71% 95%;
+    --border: 142 71% 25%; /* Bordas mais visíveis */
+    --input: 142 71% 25%;
+    --ring: 142 71% 55%;
   }
 }
  
 @layer base {
   * { @apply border-border; }
   body { @apply bg-slate-950 text-white font-sans antialiased selection:bg-primary selection:text-white transition-colors duration-700; }
+}
+
+/* WCAG Contrast Overrides para classes Tailwind fixas no Modo Visão Noturna */
+.night-vision .text-slate-400,
+.night-vision .text-slate-500,
+.night-vision .text-slate-600 {
+  color: hsl(142 71% 75%) !important; /* Força o tom verde de alto contraste */
+}
+
+.night-vision .text-slate-300,
+.night-vision .text-slate-200 {
+  color: hsl(142 71% 95%) !important;
+}
+
+.night-vision .bg-slate-900,
+.night-vision .bg-slate-950,
+.night-vision .bg-slate-800 {
+  background-color: hsl(142 71% 3%) !important;
+}
+
+.night-vision .border-white\/5,
+.night-vision .border-white\/10 {
+  border-color: hsl(142 71% 20%) !important;
 }
 
 .night-vision * {
@@ -72,7 +95,7 @@
 .custom-scrollbar::-webkit-scrollbar-track { @apply bg-transparent; }
 .custom-scrollbar::-webkit-scrollbar-thumb { @apply bg-white/10 rounded-full hover:bg-primary/30 transition-colors; }
 
-.night-vision .custom-scrollbar::-webkit-scrollbar-thumb { @apply bg-success/20 hover:bg-success/40; }
+.night-vision .custom-scrollbar::-webkit-scrollbar-thumb { @apply bg-success/30 hover:bg-success/50; }
 
 @keyframes scan { from { transform: translateY(-100%); } to { transform: translateY(1000%); } }
 .animate-scan-line { animation: scan 3s linear infinite; }

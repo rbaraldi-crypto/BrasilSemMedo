@@ -33,7 +33,7 @@ export function RecidivismRiskAnalysis({ inmateId, className }: RecidivismRiskAn
         <CardHeader className="pb-2 border-b border-white/5 bg-white/5">
           <div className="flex items-center gap-2">
             <BrainCircuit className="h-4 w-4 text-primary animate-pulse" />
-            <span className="text-[10px] font-black text-white uppercase tracking-widest">Processando Risco Preditivo</span>
+            <span className="text-xs font-black text-white uppercase tracking-widest">Processando Risco Preditivo</span>
           </div>
         </CardHeader>
         <CardContent className="p-6">
@@ -56,10 +56,10 @@ export function RecidivismRiskAnalysis({ inmateId, className }: RecidivismRiskAn
       <div className="p-4 bg-white/5 border-b border-white/5 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <BrainCircuit className="h-4 w-4 text-primary" />
-          <span className="text-[10px] font-black text-white uppercase tracking-widest">Análise de Risco de Reincidência</span>
+          <span className="text-xs font-black text-white uppercase tracking-widest">Análise de Risco de Reincidência</span>
         </div>
         <div className={cn(
-          "px-2 py-0.5 rounded text-[8px] font-black uppercase border",
+          "px-2 py-0.5 rounded text-[10px] font-black uppercase border",
           isCritical ? "bg-red-600 border-red-500 text-white" : "bg-success/20 border-success/40 text-success"
         )}>
           {risk.level}
@@ -73,7 +73,7 @@ export function RecidivismRiskAnalysis({ inmateId, className }: RecidivismRiskAn
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart cx="50%" cy="50%" outerRadius="70%" data={risk.factors}>
                 <PolarGrid stroke="#1e293b" />
-                <PolarAngleAxis dataKey="name" tick={{ fill: '#64748b', fontSize: 8, fontWeight: 'bold' }} />
+                <PolarAngleAxis dataKey="name" tick={{ fill: '#64748b', fontSize: 10, fontWeight: 'bold' }} />
                 <Radar
                   name="Risco"
                   dataKey="value"
@@ -88,20 +88,20 @@ export function RecidivismRiskAnalysis({ inmateId, className }: RecidivismRiskAn
           {/* Score Global */}
           <div className="w-full md:w-1/2 space-y-4">
              <div className="text-center md:text-left">
-                <span className="text-[9px] font-bold text-slate-500 uppercase">Índice de Periculosidade</span>
+                <span className="text-[10px] font-bold text-slate-500 uppercase">Índice de Periculosidade</span>
                 <div className={cn(
                   "text-4xl font-black tracking-tighter",
                   isCritical ? "text-red-500" : "text-success"
                 )}>
                   {risk.score}%
                 </div>
-                <p className="text-[10px] text-slate-400 mt-1 font-medium leading-tight">
+                <p className="text-xs text-slate-400 mt-1 font-medium leading-tight">
                   Probabilidade calculada de retorno à atividade criminosa em 24 meses.
                 </p>
              </div>
              
              <div className="space-y-2">
-                <div className="flex justify-between text-[8px] font-black uppercase">
+                <div className="flex justify-between text-[10px] font-black uppercase">
                    <span className="text-slate-500">Conformidade Preditiva</span>
                    <span className={isCritical ? "text-red-400" : "text-success"}>{100 - risk.score}%</span>
                 </div>
@@ -112,7 +112,7 @@ export function RecidivismRiskAnalysis({ inmateId, className }: RecidivismRiskAn
 
         {/* Sinais de Alerta (Red Flags) */}
         <div className="space-y-3">
-          <div className="flex items-center gap-2 text-[9px] font-black text-slate-500 uppercase tracking-widest">
+          <div className="flex items-center gap-2 text-[10px] font-black text-slate-500 uppercase tracking-widest">
              <FileWarning className="h-3 w-3" /> Fatores Determinantes da Decisão
           </div>
           <div className="grid grid-cols-1 gap-2">
@@ -130,7 +130,7 @@ export function RecidivismRiskAnalysis({ inmateId, className }: RecidivismRiskAn
                   <CheckCircle2 className="h-3.5 w-3.5 text-success shrink-0 mt-0.5" />
                 )}
                 <span className={cn(
-                  "text-[10px] font-bold leading-tight",
+                  "text-xs font-bold leading-tight",
                   isCritical ? "text-red-200" : "text-success"
                 )}>
                   {flag}
@@ -143,9 +143,9 @@ export function RecidivismRiskAnalysis({ inmateId, className }: RecidivismRiskAn
         <div className="p-3 bg-black/20 rounded-xl border border-white/5">
            <div className="flex items-center gap-2 text-primary mb-1">
               <Activity className="h-3 w-3" />
-              <span className="text-[8px] font-black uppercase">Fundamentação de Inteligência</span>
+              <span className="text-[10px] font-black uppercase">Fundamentação de Inteligência</span>
            </div>
-           <p className="text-[9px] text-slate-500 italic leading-relaxed">
+           <p className="text-[10px] text-slate-500 italic leading-relaxed">
              "A análise preditiva indica que a progressão de regime neste estágio apresenta risco elevado à segurança pública devido à manutenção de canais de comunicação com a Sintonia Geral."
            </p>
         </div>

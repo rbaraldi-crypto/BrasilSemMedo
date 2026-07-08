@@ -4,10 +4,11 @@ import { Button } from '@/components/ui/button';
 import { Globe, Loader2 } from 'lucide-react';
 import { useTactical } from '@/contexts/TacticalContext';
 import { useUI } from '@/contexts/UIContext';
+import { ONUResult } from '@/types/intelligence';
 
 interface ONUModalProps {
   isLoading: boolean;
-  result: any;
+  result: ONUResult | null;
 }
 
 export function ONUModal({ isLoading, result }: ONUModalProps) {
@@ -36,24 +37,24 @@ export function ONUModal({ isLoading, result }: ONUModalProps) {
             <div className="space-y-6">
               <div className="p-4 bg-white/5 rounded-xl border border-white/5 flex justify-between items-center">
                 <div>
-                  <span className="text-[10px] text-slate-500 font-bold uppercase">Alvo Identificado</span>
+                  <span className="text-xs text-slate-500 font-bold uppercase">Alvo Identificado</span>
                   <h4 className="text-lg font-bold text-white">{selectedNode?.name || result.targetName}</h4>
                 </div>
                 <Badge variant="destructive" className="font-bold">RISCO {result.riskLevel}</Badge>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <span className="text-[10px] text-slate-500 font-bold uppercase">Designação</span>
+                  <span className="text-xs text-slate-500 font-bold uppercase">Designação</span>
                   <div className="p-3 bg-black/20 rounded-lg border border-white/5">
                     <p className="text-xs font-bold text-white">{result.designation}</p>
-                    <p className="text-[10px] text-primary mt-1 font-mono">{result.resolution}</p>
+                    <p className="text-xs text-primary mt-1 font-mono">{result.resolution}</p>
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <span className="text-[10px] text-slate-500 font-bold uppercase">Sanções</span>
+                  <span className="text-xs text-slate-500 font-bold uppercase">Sanções</span>
                   <div className="flex flex-wrap gap-2">
                     {result.sanctions.map((s: string, i: number) => (
-                      <Badge key={i} variant="outline" className="text-[9px] border-white/10 font-medium">{s}</Badge>
+                      <Badge key={i} variant="outline" className="text-[10px] border-white/10 font-medium">{s}</Badge>
                     ))}
                   </div>
                 </div>

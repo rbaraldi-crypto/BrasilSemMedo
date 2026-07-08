@@ -30,7 +30,7 @@ export function DossierTree({ data }: DossierTreeProps) {
               <DialogDescription className="sr-only">Visualização estruturada de dados processuais.</DialogDescription>
             </div>
           </div>
-          <Badge variant="outline" className="border-primary/30 text-primary font-mono text-[8px] md:text-[10px] font-bold">INTEL-GRAPH V2.4</Badge>
+          <Badge variant="outline" className="border-primary/30 text-primary font-mono text-[10px] md:text-xs font-bold">INTEL-GRAPH V2.4</Badge>
         </DialogHeader>
 
         <div className="flex-1 p-4 md:p-8 overflow-y-auto custom-scrollbar">
@@ -42,9 +42,9 @@ export function DossierTree({ data }: DossierTreeProps) {
                  </div>
                  <div className="text-center sm:text-left">
                     <h4 className="text-sm md:text-lg font-bold text-white uppercase tracking-tighter">{selectedNode?.name || data.label}</h4>
-                    <p className="text-[10px] md:text-xs text-primary font-mono font-bold">{selectedNode?.id || data.value}</p>
+                    <p className="text-xs md:text-xs text-primary font-mono font-bold">{selectedNode?.id || data.value}</p>
                     <div className="flex items-center justify-center sm:justify-start gap-2 mt-1">
-                       <Badge className="bg-red-600 text-[7px] md:text-[8px] h-4 px-1.5 font-black">ALVO PRIORITÁRIO</Badge>
+                       <Badge className="bg-red-600 text-[10px] md:text-[10px] h-4 px-1.5 font-black">ALVO PRIORITÁRIO</Badge>
                     </div>
                  </div>
               </div>
@@ -57,7 +57,7 @@ export function DossierTree({ data }: DossierTreeProps) {
                           <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg bg-slate-900 flex items-center justify-center border border-white/5">
                              {branch.icon && <branch.icon className="h-3.5 w-3.5 md:h-4 md:w-4 text-primary" />}
                           </div>
-                          <span className="text-[9px] md:text-[10px] font-black text-white uppercase tracking-wider">{branch.label}</span>
+                          <span className="text-[10px] md:text-xs font-black text-white uppercase tracking-wider">{branch.label}</span>
                        </div>
                        <div className="space-y-2 md:space-y-2.5">
                           {branch.children?.map((leaf, lIdx) => {
@@ -77,12 +77,12 @@ export function DossierTree({ data }: DossierTreeProps) {
                                        )} />
                                      )}
                                      <p className={cn(
-                                       "text-[8px] md:text-[9px] font-black uppercase tracking-tighter",
+                                       "text-[10px] md:text-[10px] font-black uppercase tracking-tighter",
                                        isPoint11 ? "text-red-400" : "text-slate-500 group-hover/leaf:text-slate-300"
                                      )}>{leaf.label}</p>
                                   </div>
                                   <p className={cn(
-                                    "text-[9px] md:text-[10px] font-bold leading-tight",
+                                    "text-[10px] md:text-xs font-bold leading-tight",
                                     isPoint11 ? "animate-blink-red" : "text-white"
                                   )}>
                                     {leaf.value}
@@ -99,7 +99,7 @@ export function DossierTree({ data }: DossierTreeProps) {
 
         {/* HUD Footer (Desktop Only) */}
         <div className="hidden md:flex p-6 bg-slate-950/80 border-t border-white/10 justify-between items-center">
-           <div className="flex items-center gap-4 text-[10px] text-slate-500 font-mono">
+           <div className="flex items-center gap-4 text-xs text-slate-500 font-mono">
               <span className="flex items-center gap-1.5"><ShieldCheck className="h-3 w-3 text-success" /> DADOS CRIPTOGRAFADOS</span>
               <span className="flex items-center gap-1.5"><Activity className="h-3 w-3 text-primary" /> SINCRONIZAÇÃO: BNMP/SISBAJUD</span>
            </div>

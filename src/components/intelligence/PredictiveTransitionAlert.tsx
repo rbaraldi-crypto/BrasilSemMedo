@@ -50,7 +50,7 @@ export function PredictiveTransitionAlert({ transitionDate, thresholdAge }: Pred
             <Clock className={cn("h-5 w-5", isCritical ? "text-red-500 animate-pulse" : "text-primary")} />
           </div>
           <div>
-            <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Gatilho de Transição {thresholdAge}a</span>
+            <span className="text-xs font-black text-slate-500 uppercase tracking-[0.2em]">Gatilho de Transição {thresholdAge}a</span>
             <h4 className="text-sm font-bold text-white uppercase tracking-tighter">Cronograma de Custódia</h4>
           </div>
         </div>
@@ -61,13 +61,13 @@ export function PredictiveTransitionAlert({ transitionDate, thresholdAge }: Pred
           )}>
             {daysRemaining} <span className="text-xs uppercase">Dias</span>
           </div>
-          <p className="text-[8px] font-bold text-slate-500 uppercase">Restantes para Transição</p>
+          <p className="text-[10px] font-bold text-slate-500 uppercase">Restantes para Transição</p>
         </div>
       </div>
 
       <div className="space-y-4 relative z-10">
         <div className="space-y-1.5">
-          <div className="flex justify-between text-[8px] font-black uppercase text-slate-500">
+          <div className="flex justify-between text-[10px] font-black uppercase text-slate-500">
             <span>Início do Ciclo</span>
             <span>Transferência Obrigatória</span>
           </div>
@@ -87,8 +87,8 @@ export function PredictiveTransitionAlert({ transitionDate, thresholdAge }: Pred
             <div className="p-3 bg-red-600/10 border border-red-600/30 rounded-xl flex items-start gap-3">
               <BellRing className="h-4 w-4 text-red-500 shrink-0 mt-0.5 animate-bounce" />
               <div>
-                <p className="text-[9px] font-black text-red-400 uppercase tracking-widest">Alerta Ministério Público (T-90)</p>
-                <p className="text-[10px] text-slate-200 leading-tight font-medium mt-0.5">
+                <p className="text-[10px] font-black text-red-400 uppercase tracking-widest">Alerta Ministério Público (T-90)</p>
+                <p className="text-xs text-slate-200 leading-tight font-medium mt-0.5">
                   Notificação enviada ao MP para manifestação prévia. Protocolo de transição aberto.
                 </p>
               </div>
@@ -97,15 +97,15 @@ export function PredictiveTransitionAlert({ transitionDate, thresholdAge }: Pred
             <div className="p-3 bg-slate-950/60 border border-white/5 rounded-xl flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Building2 className="h-3.5 w-3.5 text-primary" />
-                <span className="text-[9px] font-bold text-slate-400 uppercase">Reserva TREVA:</span>
+                <span className="text-[10px] font-bold text-slate-400 uppercase">Reserva TREVA:</span>
               </div>
-              <Badge className="bg-success text-[8px] font-black px-2 py-0.5">VAGA_RESERVADA_N01</Badge>
+              <Badge className="bg-success text-[10px] font-black px-2 py-0.5">VAGA_RESERVADA_N01</Badge>
             </div>
           </motion.div>
         ) : (
           <div className="flex items-center gap-2 px-3 py-2 bg-white/5 border border-white/5 rounded-xl">
             <ShieldCheck className="h-3.5 w-3.5 text-success" />
-            <span className="text-[9px] font-bold text-slate-400 uppercase">Monitoramento Preventivo: STATUS_OK</span>
+            <span className="text-[10px] font-bold text-slate-400 uppercase">Monitoramento Preventivo: STATUS_OK</span>
           </div>
         )}
       </div>

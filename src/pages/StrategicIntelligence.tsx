@@ -63,7 +63,7 @@ export default function StrategicIntelligence() {
           </div>
           <div>
             <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">Brasil Sem Medo</h2>
-            <p className="text-slate-400 text-[10px] md:text-xs font-medium uppercase tracking-wider">Terminal de Inteligência AWS DynamoDB</p>
+            <p className="text-slate-400 text-xs md:text-xs font-medium uppercase tracking-wider">Terminal de Inteligência AWS DynamoDB</p>
           </div>
         </div>
         
@@ -97,7 +97,7 @@ export default function StrategicIntelligence() {
         <div className="lg:col-span-3 space-y-6">
           <Card className="bg-slate-900 border-red-600/30 overflow-hidden shadow-[0_0_20px_rgba(220,38,38,0.1)]">
             <CardHeader className="pb-3 bg-red-600/10 border-b border-red-600/20">
-              <CardTitle className="text-[10px] font-black uppercase tracking-widest flex items-center gap-2 text-red-500">
+              <CardTitle className="text-xs font-black uppercase tracking-widest flex items-center gap-2 text-red-500">
                 <AlertCircle className="h-3 w-3 animate-pulse" /> Índice Narcoterrorista (P1)
               </CardTitle>
             </CardHeader>
@@ -107,10 +107,10 @@ export default function StrategicIntelligence() {
                   <div className="flex justify-between items-start">
                     <div>
                       <p className="text-xs font-black text-white group-hover:text-red-400 transition-colors">{org.acronym}</p>
-                      <p className="text-[8px] text-slate-500 uppercase font-bold">{org.name}</p>
+                      <p className="text-[10px] text-slate-500 uppercase font-bold">{org.name}</p>
                     </div>
                     <div className="text-right">
-                      <Badge className="bg-red-600 text-[7px] font-black h-4 px-1.5 animate-pulse">AMEAÇA: {org.threatScore}</Badge>
+                      <Badge className="bg-red-600 text-[10px] font-black h-4 px-1.5 animate-pulse">AMEAÇA: {org.threatScore}</Badge>
                     </div>
                   </div>
 
@@ -123,7 +123,7 @@ export default function StrategicIntelligence() {
                     <Button 
                       variant="ghost" 
                       size="sm" 
-                      className="h-6 px-2 text-[7px] font-black uppercase bg-white/5 hover:bg-red-600 hover:text-white transition-all"
+                      className="h-6 px-2 text-[10px] font-black uppercase bg-white/5 hover:bg-red-600 hover:text-white transition-all"
                       onClick={() => setSelectedOrg(org)}
                     >
                       <Target className="h-2.5 w-2.5 mr-1" /> Ver Hierarquia
@@ -131,7 +131,7 @@ export default function StrategicIntelligence() {
                     <Button 
                       variant="ghost" 
                       size="sm" 
-                      className="h-6 px-2 text-[7px] font-black uppercase bg-white/5 hover:bg-primary hover:text-white transition-all"
+                      className="h-6 px-2 text-[10px] font-black uppercase bg-white/5 hover:bg-primary hover:text-white transition-all"
                     >
                       <DollarSign className="h-2.5 w-2.5 mr-1" /> Bloquear Ativos
                     </Button>
@@ -143,7 +143,7 @@ export default function StrategicIntelligence() {
 
           <Card className="bg-slate-900 border-white/10">
             <CardHeader className="pb-3">
-              <CardTitle className="text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
+              <CardTitle className="text-xs font-black uppercase tracking-widest flex items-center gap-2">
                 <History className="h-3 w-3 text-primary" /> Log de Auditoria AWS
               </CardTitle>
             </CardHeader>
@@ -161,12 +161,12 @@ export default function StrategicIntelligence() {
                       >
                         <div className="flex items-center justify-between mb-0.5">
                           <span className={cn(
-                            "text-[7px] font-black uppercase",
+                            "text-[10px] font-black uppercase",
                             log.type === 'NARCO_ALERT' ? "text-red-500" : "text-primary"
                           )}>{log.type}</span>
-                          <span className="text-[7px] text-slate-500 font-mono">{new Date(log.timestamp).toLocaleTimeString()}</span>
+                          <span className="text-[10px] text-slate-500 font-mono">{new Date(log.timestamp).toLocaleTimeString()}</span>
                         </div>
-                        <p className="text-[9px] font-bold text-slate-200 truncate">{log.targetName}</p>
+                        <p className="text-[10px] font-bold text-slate-200 truncate">{log.targetName}</p>
                       </div>
                     );
                   })}
@@ -187,7 +187,7 @@ function PanelToggleButton({ label, active, onClick, icon }: any) {
       size="sm" 
       onClick={onClick}
       className={cn(
-        "h-8 text-[9px] font-black uppercase tracking-widest gap-2 transition-all",
+        "h-8 text-[10px] font-black uppercase tracking-widest gap-2 transition-all",
         active ? "bg-primary shadow-lg shadow-primary/20" : "border-white/10 text-slate-400 hover:bg-white/5"
       )}
     >

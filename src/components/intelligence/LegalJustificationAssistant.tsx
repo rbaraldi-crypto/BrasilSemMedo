@@ -40,9 +40,9 @@ export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustif
       <div className="p-4 bg-primary/10 border-b border-primary/20 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <BrainCircuit className="h-4 w-4 text-primary" />
-          <span className="text-[10px] font-black text-white uppercase tracking-widest">Assistente IA Jurídica</span>
+          <span className="text-xs font-black text-white uppercase tracking-widest">Assistente IA Jurídica</span>
         </div>
-        <Badge variant="outline" className="text-[8px] border-primary/30 text-primary">LLM_LEP_V2.6</Badge>
+        <Badge variant="outline" className="text-[10px] border-primary/30 text-primary">LLM_LEP_V2.6</Badge>
       </div>
 
       <div className="p-5 space-y-4">
@@ -51,14 +51,14 @@ export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustif
             <div className="h-12 w-12 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10">
               <Sparkles className="h-6 w-6 text-primary/40" />
             </div>
-            <p className="text-[10px] text-slate-500 font-medium max-w-[200px]">
+            <p className="text-xs text-slate-500 font-medium max-w-[200px]">
               Gere uma fundamentação técnica baseada no Art. 112 da LEP para este caso.
             </p>
             <Button 
               variant="outline" 
               size="sm" 
               onClick={() => generateJustification()}
-              className="h-8 text-[9px] font-black uppercase border-primary/30 text-primary hover:bg-primary/10"
+              className="h-8 text-[10px] font-black uppercase border-primary/30 text-primary hover:bg-primary/10"
             >
               Minutar Justificativa
             </Button>
@@ -72,7 +72,7 @@ export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustif
               transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
               className="h-10 w-10 border-2 border-primary border-t-transparent rounded-full"
             />
-            <span className="text-[9px] font-mono text-primary animate-pulse uppercase">Processando Jurisprudência...</span>
+            <span className="text-[10px] font-mono text-primary animate-pulse uppercase">Processando Jurisprudência...</span>
           </div>
         )}
 
@@ -84,7 +84,7 @@ export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustif
               className="space-y-4"
             >
               <div className="p-4 bg-black/40 border border-white/5 rounded-xl relative group">
-                <p className="text-[11px] text-slate-300 leading-relaxed italic">"{draft}"</p>
+                <p className="text-sm text-slate-300 leading-relaxed italic">"{draft}"</p>
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <Scale className="h-3 w-3 text-primary/40" />
                 </div>
@@ -92,7 +92,7 @@ export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustif
               
               <div className="flex gap-2">
                 <Button 
-                  className="flex-1 bg-primary hover:bg-primary/90 text-[9px] font-black uppercase h-9"
+                  className="flex-1 bg-primary hover:bg-primary/90 text-[10px] font-black uppercase h-9"
                   onClick={() => onSelect(draft)}
                 >
                   <Check className="h-3.5 w-3.5 mr-2" /> Aplicar ao Despacho
@@ -117,7 +117,7 @@ export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustif
 function Badge({ children, variant, className }: any) {
   return (
     <div className={cn(
-      "px-2 py-0.5 rounded text-[8px] font-black uppercase border",
+      "px-2 py-0.5 rounded text-[10px] font-black uppercase border",
       variant === 'outline' ? "border-white/10 text-slate-400" : "bg-primary text-white border-primary",
       className
     )}>

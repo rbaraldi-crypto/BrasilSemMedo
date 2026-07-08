@@ -60,7 +60,7 @@ export function NarcoterroristAlert({ message, onClose }: NarcoterroristAlertPro
             
             <div className="space-y-2">
               <h2 className="text-3xl font-black text-red-500 uppercase tracking-tighter italic">Alerta de Prioridade P1</h2>
-              <p className="text-[10px] text-red-400 font-black uppercase tracking-[0.3em] animate-pulse">Detecção de Liderança Narcoterrorista</p>
+              <p className="text-xs text-red-400 font-black uppercase tracking-[0.3em] animate-pulse">Detecção de Liderança Narcoterrorista</p>
             </div>
           </div>
 
@@ -70,11 +70,11 @@ export function NarcoterroristAlert({ message, onClose }: NarcoterroristAlertPro
 
           <div className="grid grid-cols-2 gap-4">
             <div className="p-3 bg-black/40 border border-white/5 rounded-xl text-center">
-              <p className="text-[8px] font-black text-slate-500 uppercase">Protocolo</p>
+              <p className="text-[10px] font-black text-slate-500 uppercase">Protocolo</p>
               <p className="text-xs font-mono text-red-400">ASFIXIA_IMEDIATA</p>
             </div>
             <div className="p-3 bg-black/40 border border-white/5 rounded-xl text-center">
-              <p className="text-[8px] font-black text-slate-500 uppercase">Origem</p>
+              <p className="text-[10px] font-black text-slate-500 uppercase">Origem</p>
               <p className="text-xs font-mono text-red-400">MURALHA_P9</p>
             </div>
           </div>
@@ -88,7 +88,7 @@ export function NarcoterroristAlert({ message, onClose }: NarcoterroristAlertPro
             </Button>
             <Button 
               variant="outline"
-              className="h-14 border-white/10 text-slate-400 hover:bg-white/5 font-black uppercase text-[10px]"
+              className="h-14 border-white/10 text-slate-400 hover:bg-white/5 font-black uppercase text-xs"
               onClick={onClose}
             >
               <X className="h-4 w-4" /> Ignorar
@@ -97,7 +97,7 @@ export function NarcoterroristAlert({ message, onClose }: NarcoterroristAlertPro
         </div>
 
         {/* Tickers de Coordenadas */}
-        <div className="absolute bottom-2 left-6 text-[7px] font-mono text-red-600/40">
+        <div className="absolute bottom-2 left-6 text-[10px] font-mono text-red-600/40">
           SYS_OVERRIDE_ACTIVE // TRACE_ID: {Math.random().toString(36).substr(2, 9).toUpperCase()}
         </div>
       </div>

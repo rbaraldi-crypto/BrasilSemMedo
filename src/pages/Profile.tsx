@@ -93,7 +93,7 @@ export function Profile() {
                         <span className="text-xs font-semibold text-primary/80">{event.date}</span>
                         <h4 className="text-sm font-bold group-hover:text-primary transition-colors">{event.type}</h4>
                         <p className="text-xs text-muted-foreground">{event.origin}</p>
-                        <div className="flex items-center gap-1 mt-1 bg-muted/50 w-fit px-2 py-0.5 rounded text-[10px] font-mono text-muted-foreground">
+                        <div className="flex items-center gap-1 mt-1 bg-muted/50 w-fit px-2 py-0.5 rounded text-xs font-mono text-muted-foreground">
                           <Hash className="h-3 w-3" />
                           {event.hashICP}
                         </div>

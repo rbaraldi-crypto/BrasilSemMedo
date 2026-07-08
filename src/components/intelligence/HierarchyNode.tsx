@@ -25,11 +25,11 @@ export function HierarchyNode({ node, isSelected, onClick, color, isSmall = fals
         {node.level === 1 ? <Skull className="h-7 w-7" /> : <Target className="h-5 w-5" />}
       </div>
       <div className="text-center overflow-hidden w-full">
-        <p className="text-[10px] font-bold text-white truncate w-full">{node.name}</p>
-        <p className="text-[8px] text-slate-500 font-medium uppercase tracking-wider truncate w-full">{node.role}</p>
+        <p className="text-xs font-bold text-white truncate w-full">{node.name}</p>
+        <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wider truncate w-full">{node.role}</p>
       </div>
       {node.status === 'Foragido' && (
-        <Badge className="bg-red-500 text-white text-[7px] font-bold uppercase border-none h-4 px-1.5">Procurado</Badge>
+        <Badge className="bg-red-500 text-white text-[10px] font-bold uppercase border-none h-4 px-1.5">Procurado</Badge>
       )}
     </div>
   );

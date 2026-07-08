@@ -81,7 +81,7 @@ function TacticalHUD() {
                       <WifiOff className="h-3 w-3 text-destructive animate-pulse" />
                     )}
                     <span className={cn(
-                      "text-[9px] font-black uppercase tracking-widest transition-colors",
+                      "text-[10px] font-black uppercase tracking-widest transition-colors",
                       isOnline ? (linkType === 'FIBER' ? "text-success" : "text-warning") : "text-destructive"
                     )}>
                       {isOnline ? `Link: ${linkType}` : "Offline"}
@@ -89,10 +89,10 @@ function TacticalHUD() {
                   </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-slate-900 border-white/10 text-white">
-                  <DropdownMenuItem onClick={() => handleLinkChange('FIBER')} className="text-[10px] font-bold uppercase gap-2">
+                  <DropdownMenuItem onClick={() => handleLinkChange('FIBER')} className="text-xs font-bold uppercase gap-2">
                     <Globe className="h-3 w-3 text-success" /> Fibra Óptica (Low Latency)
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => handleLinkChange('SATELLITE')} className="text-[10px] font-bold uppercase gap-2">
+                  <DropdownMenuItem onClick={() => handleLinkChange('SATELLITE')} className="text-xs font-bold uppercase gap-2">
                     <Satellite className="h-3 w-3 text-warning" /> Satélite (Field Training)
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -101,7 +101,7 @@ function TacticalHUD() {
               {pendingSyncCount > 0 && (
                 <div className="flex items-center gap-2 border-r border-white/10 pr-3 animate-pulse">
                    <CloudSync className="h-3 w-3 text-primary" />
-                   <span className="text-[9px] font-black text-primary uppercase tracking-widest">
+                   <span className="text-[10px] font-black text-primary uppercase tracking-widest">
                      Sync: {pendingSyncCount}
                    </span>
                 </div>
@@ -109,13 +109,13 @@ function TacticalHUD() {
 
               <div className="flex items-center gap-2 border-r border-white/10 pr-3">
                  <ShieldCheck className="h-3 w-3 text-success" />
-                 <span className={cn("text-[9px] font-black uppercase tracking-widest", isNightVision ? "text-success/80" : "text-slate-400")}>Ponto 11: ATIVO</span>
+                 <span className={cn("text-[10px] font-black uppercase tracking-widest", isNightVision ? "text-success/80" : "text-slate-400")}>Ponto 11: ATIVO</span>
               </div>
               
               <div className="flex items-center gap-2">
                  <Activity className={cn("h-3 w-3 animate-pulse", simulatedLatency > 500 ? "text-warning" : "text-success")} />
                  <span className={cn(
-                   "text-[9px] font-black uppercase tracking-widest font-mono",
+                   "text-[10px] font-black uppercase tracking-widest font-mono",
                    simulatedLatency > 500 ? "text-warning" : "text-success"
                  )}>
                    {simulatedLatency}ms

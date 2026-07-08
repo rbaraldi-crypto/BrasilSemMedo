@@ -47,13 +47,13 @@ export class TacticalErrorBoundary extends Component<Props, State> {
           
           <div className="text-center space-y-2 max-w-xs">
             <h3 className="text-sm font-black text-white uppercase tracking-tighter">Módulo Corrompido</h3>
-            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest leading-tight">
+            <p className="text-xs text-slate-500 font-bold uppercase tracking-widest leading-tight">
               Falha crítica detectada no componente: <span className="text-destructive">{this.props.moduleName}</span>
             </p>
           </div>
 
           <div className="mt-8 w-full space-y-3">
-            <div className="p-3 bg-black/40 border border-white/5 rounded font-mono text-[8px] text-slate-400 overflow-hidden">
+            <div className="p-3 bg-black/40 border border-white/5 rounded font-mono text-[10px] text-slate-400 overflow-hidden">
               <p className="truncate">ERR_SIG: {this.state.error?.message || "UNKNOWN_EXCEPTION"}</p>
               <p className="text-primary/40 mt-1 uppercase">Ação: Isolamento de Memória Ativo</p>
             </div>
@@ -61,7 +61,7 @@ export class TacticalErrorBoundary extends Component<Props, State> {
             <Button 
               onClick={this.handleReset}
               variant="outline" 
-              className="w-full border-primary/30 text-primary hover:bg-primary/10 font-black uppercase text-[10px] tracking-widest h-10"
+              className="w-full border-primary/30 text-primary hover:bg-primary/10 font-black uppercase text-xs tracking-widest h-10"
             >
               <RefreshCw className="h-3 w-3 mr-2" /> Reinicializar Módulo
             </Button>

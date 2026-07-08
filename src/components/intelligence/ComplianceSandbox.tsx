@@ -69,9 +69,9 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
       <div className="p-4 bg-white/5 border-b border-white/5 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Scale className="h-4 w-4 text-primary" />
-          <span className="text-[10px] font-black text-white uppercase tracking-widest">Sandbox de Conformidade</span>
+          <span className="text-xs font-black text-white uppercase tracking-widest">Sandbox de Conformidade</span>
         </div>
-        <Badge variant="outline" className="text-[8px] border-primary/30 text-primary">PONTO 11 ENGINE v1.0</Badge>
+        <Badge variant="outline" className="text-[10px] border-primary/30 text-primary">PONTO 11 ENGINE v1.0</Badge>
       </div>
 
       <div className="p-6 space-y-6">
@@ -82,11 +82,11 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
             </div>
             <div>
               <h4 className="text-sm font-bold text-white">Pronto para Simulação</h4>
-              <p className="text-[10px] text-slate-500 mt-1">Analise o impacto jurídico desta decisão antes de assinar.</p>
+              <p className="text-xs text-slate-500 mt-1">Analise o impacto jurídico desta decisão antes de assinar.</p>
             </div>
             <Button 
               onClick={runSimulation}
-              className="w-full bg-primary hover:bg-primary/90 font-black uppercase text-[10px] tracking-widest h-11"
+              className="w-full bg-primary hover:bg-primary/90 font-black uppercase text-xs tracking-widest h-11"
             >
               Simular Impacto Jurídico
             </Button>
@@ -103,7 +103,7 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
               />
             </div>
             <div className="text-center space-y-2">
-              <p className="text-[10px] font-black text-primary animate-pulse uppercase tracking-[0.2em]">Cruzando Diretrizes Brasil Sem Medo...</p>
+              <p className="text-xs font-black text-primary animate-pulse uppercase tracking-[0.2em]">Cruzando Diretrizes Brasil Sem Medo...</p>
               <div className="flex gap-1 justify-center">
                 {Array.from({ length: 12 }).map((_, i) => (
                   <motion.div 
@@ -126,7 +126,7 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
           >
             <div className="flex items-center justify-between">
               <div className="space-y-1">
-                <span className="text-[9px] font-bold text-slate-500 uppercase">Score de Conformidade</span>
+                <span className="text-[10px] font-bold text-slate-500 uppercase">Score de Conformidade</span>
                 <div className={cn(
                   "text-3xl font-black tracking-tighter",
                   result.score > 70 ? "text-success" : result.score > 40 ? "text-warning" : "text-destructive"
@@ -135,7 +135,7 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
                 </div>
               </div>
               <div className={cn(
-                "px-3 py-1 rounded-full border font-black text-[9px] uppercase tracking-widest",
+                "px-3 py-1 rounded-full border font-black text-[10px] uppercase tracking-widest",
                 result.score > 70 ? "bg-success/10 border-success/20 text-success" : "bg-destructive/10 border-destructive/20 text-destructive"
               )}>
                 {result.status}
@@ -149,14 +149,14 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
             />
 
             <div className="space-y-3">
-              <span className="text-[9px] font-bold text-slate-500 uppercase">Análise de Riscos</span>
+              <span className="text-[10px] font-bold text-slate-500 uppercase">Análise de Riscos</span>
               {result.violations.length > 0 ? (
                 result.violations.map((v: any) => (
                   <div key={v.id} className="p-3 bg-destructive/10 border border-destructive/20 rounded-xl flex items-start gap-3">
                     <ShieldAlert className="h-4 w-4 text-destructive shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-[10px] font-black text-destructive uppercase">{v.title}</p>
-                      <p className="text-[9px] text-slate-400 font-medium mt-0.5">{v.desc}</p>
+                      <p className="text-xs font-black text-destructive uppercase">{v.title}</p>
+                      <p className="text-[10px] text-slate-400 font-medium mt-0.5">{v.desc}</p>
                     </div>
                   </div>
                 ))
@@ -164,8 +164,8 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
                 <div className="p-3 bg-success/10 border border-success/20 rounded-xl flex items-start gap-3">
                   <ShieldCheck className="h-4 w-4 text-success shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-[10px] font-black text-success uppercase">Conformidade Plena</p>
-                    <p className="text-[9px] text-slate-400 font-medium mt-0.5">Nenhuma violação aos 12 pontos detectada.</p>
+                    <p className="text-xs font-black text-success uppercase">Conformidade Plena</p>
+                    <p className="text-[10px] text-slate-400 font-medium mt-0.5">Nenhuma violação aos 12 pontos detectada.</p>
                   </div>
                 </div>
               )}
@@ -176,7 +176,7 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
               onClick={handleAcknowledge}
               disabled={acknowledged}
               className={cn(
-                "w-full font-black uppercase text-[10px] tracking-widest h-11",
+                "w-full font-black uppercase text-xs tracking-widest h-11",
                 acknowledged ? "border-success text-success" : ""
               )}
             >
@@ -196,7 +196,7 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
 function Badge({ children, variant, className }: any) {
   return (
     <div className={cn(
-      "px-2 py-0.5 rounded text-[8px] font-black uppercase border",
+      "px-2 py-0.5 rounded text-[10px] font-black uppercase border",
       variant === 'outline' ? "border-white/10 text-slate-400" : "bg-primary text-white border-primary",
       className
     )}>

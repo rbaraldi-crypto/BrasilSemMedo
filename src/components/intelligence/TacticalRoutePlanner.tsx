@@ -60,7 +60,7 @@ export function TacticalRoutePlanner({ isEmbedded = false }: { isEmbedded?: bool
         </div>
         <div className="text-left">
           <h4 className="text-xs font-black text-white uppercase tracking-tighter italic">Logística Tática (P4)</h4>
-          <p className="text-[7px] text-slate-500 font-bold uppercase tracking-widest">Otimização de Escolta P1</p>
+          <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Otimização de Escolta P1</p>
         </div>
       </div>
 
@@ -69,7 +69,7 @@ export function TacticalRoutePlanner({ isEmbedded = false }: { isEmbedded?: bool
           <Button 
             onClick={() => calculateTacticalRoute()}
             size="sm"
-            className="bg-sky-600 hover:bg-sky-500 text-white font-black uppercase text-[9px] tracking-widest h-8 px-4 rounded-md shadow-[0_0_15px_rgba(14,165,233,0.3)] border-t border-white/10 transition-all active:scale-95 group overflow-hidden"
+            className="bg-sky-600 hover:bg-sky-500 text-white font-black uppercase text-[10px] tracking-widest h-8 px-4 rounded-md shadow-[0_0_15px_rgba(14,165,233,0.3)] border-t border-white/10 transition-all active:scale-95 group overflow-hidden"
           >
             <Radio className="h-3 w-3 mr-2 text-white animate-pulse" />
             <span>📡 INICIAR CÁLCULO DE ROTA P1</span>
@@ -85,14 +85,14 @@ export function TacticalRoutePlanner({ isEmbedded = false }: { isEmbedded?: bool
           <Button 
             variant="outline" 
             size="sm" 
-            className="h-8 text-[9px] font-black uppercase border-white/10 text-slate-400 hover:bg-white/5"
+            className="h-8 text-[10px] font-black uppercase border-white/10 text-slate-400 hover:bg-white/5"
             onClick={() => setRoute(null)}
           >
             <RefreshCw className="h-3 w-3 mr-1.5" /> Recalcular
           </Button>
         )}
 
-        <Badge variant="outline" className="hidden sm:flex border-sky-500/30 text-sky-400 font-mono text-[8px] h-6">
+        <Badge variant="outline" className="hidden sm:flex border-sky-500/30 text-sky-400 font-mono text-[10px] h-6">
           AWS_LOGISTICS_V2
         </Badge>
       </div>
@@ -119,7 +119,7 @@ export function TacticalRoutePlanner({ isEmbedded = false }: { isEmbedded?: bool
               <Route className="h-20 w-20 text-slate-800 relative z-10 stroke-[1]" />
             </div>
             <h5 className="text-sm font-bold text-slate-600 uppercase tracking-[0.2em]">Aguardando Comando</h5>
-            <p className="text-[9px] text-slate-700 mt-2 max-w-[200px] font-medium uppercase">Utilize o botão superior para iniciar a análise de trajetória AWS us-east-1</p>
+            <p className="text-[10px] text-slate-700 mt-2 max-w-[200px] font-medium uppercase">Utilize o botão superior para iniciar a análise de trajetória AWS us-east-1</p>
           </motion.div>
         )}
 
@@ -139,12 +139,12 @@ export function TacticalRoutePlanner({ isEmbedded = false }: { isEmbedded?: bool
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <Loader2 className="h-8 w-8 text-sky-500 animate-spin mb-2" />
-                <span className="text-[7px] font-mono text-sky-500 font-black">COMPUTING...</span>
+                <span className="text-[10px] font-mono text-sky-500 font-black">COMPUTING...</span>
               </div>
             </div>
             <div className="text-center space-y-2">
-              <p className="text-[9px] font-black text-sky-400 uppercase tracking-[0.2em] animate-pulse">Otimizando Rota de Escolta Blindada</p>
-              <div className="p-2 bg-black/40 border border-white/5 rounded-lg font-mono text-[7px] text-slate-500">
+              <p className="text-[10px] font-black text-sky-400 uppercase tracking-[0.2em] animate-pulse">Otimizando Rota de Escolta Blindada</p>
+              <div className="p-2 bg-black/40 border border-white/5 rounded-lg font-mono text-[10px] text-slate-500">
                 <p>REGION: us-east-1 // TACTICAL_COMPUTE_NODE_04</p>
               </div>
             </div>
@@ -181,7 +181,7 @@ export function TacticalRoutePlanner({ isEmbedded = false }: { isEmbedded?: bool
                   />
                </svg>
                <div className="absolute top-2 left-2">
-                  <Badge variant="outline" className="bg-black/80 border-sky-500/30 text-sky-400 font-mono text-[7px] px-1.5 py-0.5 uppercase">
+                  <Badge variant="outline" className="bg-black/80 border-sky-500/30 text-sky-400 font-mono text-[10px] px-1.5 py-0.5 uppercase">
                     ID: {route.id}
                   </Badge>
                </div>
@@ -189,38 +189,38 @@ export function TacticalRoutePlanner({ isEmbedded = false }: { isEmbedded?: bool
 
             <div className="grid grid-cols-3 gap-2 shrink-0">
               <div className="p-2 bg-slate-900 border border-white/5 rounded-lg text-center">
-                <span className="text-[6px] font-black text-slate-500 uppercase block">Risco</span>
+                <span className="text-[10px] font-black text-slate-500 uppercase block">Risco</span>
                 <p className="text-sm font-black text-success">{route.riskScore}%</p>
               </div>
               <div className="p-2 bg-slate-900 border border-white/5 rounded-lg text-center">
-                <span className="text-[6px] font-black text-slate-500 uppercase block">ETA</span>
+                <span className="text-[10px] font-black text-slate-500 uppercase block">ETA</span>
                 <p className="text-sm font-black text-white">{route.estimatedTime}</p>
               </div>
               <div className="p-2 bg-slate-900 border border-white/5 rounded-lg text-center">
-                <span className="text-[6px] font-black text-slate-500 uppercase block">Distância</span>
+                <span className="text-[10px] font-black text-slate-500 uppercase block">Distância</span>
                 <p className="text-sm font-black text-white">{route.distance}</p>
               </div>
             </div>
 
             <div className="flex-1 flex flex-col min-h-0 space-y-2">
-              <span className="text-[8px] font-black text-slate-500 uppercase tracking-widest flex items-center gap-2">
+              <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest flex items-center gap-2">
                 <ShieldCheck className="h-3 w-3" /> Checkpoints de Escolta
               </span>
               <div className="space-y-1 overflow-y-auto custom-scrollbar pr-1">
                 {route.checkpoints.map((cp: any, idx: number) => (
                   <div key={idx} className="flex items-center gap-2 p-2 bg-white/5 border border-white/5 rounded-lg">
                     <div className="h-4 w-4 rounded bg-sky-500/10 flex items-center justify-center border border-sky-500/20">
-                      <span className="text-[7px] font-bold text-sky-500">{idx + 1}</span>
+                      <span className="text-[10px] font-bold text-sky-500">{idx + 1}</span>
                     </div>
-                    <span className="text-[8px] font-bold text-slate-300 uppercase flex-1 truncate">{cp.name}</span>
-                    <Badge className="bg-success/20 text-success text-[5px] font-black h-3 border-none px-1">SECURE</Badge>
+                    <span className="text-[10px] font-bold text-slate-300 uppercase flex-1 truncate">{cp.name}</span>
+                    <Badge className="bg-success/20 text-success text-[10px] font-black h-3 border-none px-1">SECURE</Badge>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="pt-2 shrink-0">
-              <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-black uppercase text-[9px] h-9 shadow-lg">
+              <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-black uppercase text-[10px] h-9 shadow-lg">
                 <ShieldCheck className="h-3 w-3 mr-1.5" /> Efetivar Plano de Transferência
               </Button>
             </div>

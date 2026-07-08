@@ -46,7 +46,7 @@ export function AnatomiaDigital() {
       </svg>
       
       {/* Tickers de Coordenadas */}
-      <div className="absolute top-4 right-4 text-[7px] font-mono text-cyan-400/60 space-y-1">
+      <div className="absolute top-4 right-4 text-[10px] font-mono text-cyan-400/60 space-y-1">
         <div>X_AXIS: {Math.random().toFixed(4)}</div>
         <div>Y_AXIS: {Math.random().toFixed(4)}</div>
         <div>Z_DEPTH: VALID</div>

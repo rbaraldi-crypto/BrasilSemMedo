@@ -49,23 +49,23 @@ export function ProgramRoadmap({ isEmbedded = false }: { isEmbedded?: boolean })
       <Table>
         <TableHeader>
           <TableRow className="border-white/5 hover:bg-transparent">
-            <TableHead className="text-[9px] font-black text-slate-500 uppercase tracking-widest pl-6">#</TableHead>
-            <TableHead className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Eixo do Programa</TableHead>
-            <TableHead className="text-[9px] font-black text-slate-500 uppercase tracking-widest text-right pr-6">Status</TableHead>
+            <TableHead className="text-[10px] font-black text-slate-500 uppercase tracking-widest pl-6">#</TableHead>
+            <TableHead className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Eixo do Programa</TableHead>
+            <TableHead className="text-[10px] font-black text-slate-500 uppercase tracking-widest text-right pr-6">Status</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {roadmapData.map((item) => (
             <TableRow key={item.id} className="border-white/5 hover:bg-white/5 transition-colors group">
-              <TableCell className="pl-6 font-mono text-[10px] text-slate-500">{item.id.toString().padStart(2, '0')}</TableCell>
+              <TableCell className="pl-6 font-mono text-xs text-slate-500">{item.id.toString().padStart(2, '0')}</TableCell>
               <TableCell>
                 <div className="flex items-center gap-2">
                   <Target className="h-3 w-3 text-primary/40 group-hover:text-primary transition-colors" />
-                  <span className="text-[10px] font-bold text-slate-200">{item.eixo}</span>
+                  <span className="text-xs font-bold text-slate-200">{item.eixo}</span>
                 </div>
               </TableCell>
               <TableCell className="text-right pr-6">
-                <Badge className={cn("text-[7px] font-black uppercase border-none h-4", item.color)}>
+                <Badge className={cn("text-[10px] font-black uppercase border-none h-4", item.color)}>
                   {item.status}
                 </Badge>
               </TableCell>
@@ -89,7 +89,7 @@ export function ProgramRoadmap({ isEmbedded = false }: { isEmbedded?: boolean })
               <ShieldCheck className="h-5 w-5 text-primary" />
               Roadmap Brasil Sem Medo
             </CardTitle>
-            <CardDescription className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">
+            <CardDescription className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-1">
               Mapeamento de Eixos Estratégicos
             </CardDescription>
           </div>
@@ -97,7 +97,7 @@ export function ProgramRoadmap({ isEmbedded = false }: { isEmbedded?: boolean })
             <Button 
               variant="outline" 
               size="sm" 
-              className="h-8 border-primary/30 text-primary hover:bg-primary/10 font-bold text-[9px] uppercase tracking-widest"
+              className="h-8 border-primary/30 text-primary hover:bg-primary/10 font-bold text-[10px] uppercase tracking-widest"
               onClick={handleExportAudit}
               disabled={isExporting}
             >

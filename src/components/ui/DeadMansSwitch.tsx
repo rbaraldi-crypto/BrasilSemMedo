@@ -46,7 +46,7 @@ export function DeadMansSwitch() {
                   tacticalAudio.playSuccess();
                 }}
               />
-              <p className="mt-6 text-[9px] text-slate-500 font-mono uppercase">
+              <p className="mt-6 text-[10px] text-slate-500 font-mono uppercase">
                 Acesso restrito. O bloqueio automático por inatividade foi desativado neste terminal.
               </p>
             </div>

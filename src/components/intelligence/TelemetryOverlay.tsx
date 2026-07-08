@@ -28,7 +28,7 @@ export function TelemetryOverlay() {
   }, []);
 
   return (
-    <div className="absolute inset-0 pointer-events-none z-30 p-4 font-mono text-[8px] text-cyan-400/80">
+    <div className="absolute inset-0 pointer-events-none z-30 p-4 font-mono text-[10px] text-cyan-400/80">
       {/* Top Left: Signal & Battery */}
       <div className="absolute top-4 left-4 flex gap-4 bg-black/20 backdrop-blur-sm p-2 border border-white/5 rounded">
         <div className="flex items-center gap-1.5">

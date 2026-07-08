@@ -82,7 +82,7 @@ export function TacticalTour() {
                     <div key={i} className={cn("h-1 w-4 rounded-full transition-all", i === currentStep ? "bg-primary w-8" : "bg-slate-800")} />
                   ))}
                 </div>
-                <Button onClick={handleNext} className="bg-primary hover:bg-primary/90 text-white font-bold uppercase text-[10px] tracking-widest gap-2">
+                <Button onClick={handleNext} className="bg-primary hover:bg-primary/90 text-white font-bold uppercase text-xs tracking-widest gap-2">
                   {currentStep === steps.length - 1 ? "Iniciar Missão" : "Próximo"}
                   <ArrowRight className="h-3 w-3" />
                 </Button>

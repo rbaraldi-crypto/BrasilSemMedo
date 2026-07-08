@@ -23,13 +23,13 @@ export function MetricCard({ title, value, icon, trend, className, onClick }: Me
     >
       <CardContent className="p-5">
         <div className="flex justify-between items-start mb-3">
-          <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{title}</span>
+          <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">{title}</span>
           <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
             {icon}
           </div>
         </div>
         <div className="text-2xl font-bold text-white">{value}</div>
-        <div className="mt-2 text-[9px] font-medium text-slate-400 flex items-center gap-1">
+        <div className="mt-2 text-[10px] font-medium text-slate-400 flex items-center gap-1">
           <TrendingUp className="h-3 w-3 text-primary" /> {trend}
         </div>
       </CardContent>

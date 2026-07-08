@@ -27,10 +27,10 @@ export function DirectFinancialLink({ inmateName, victimFamily, amount, protocol
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2 text-success">
             <Activity className="h-4 w-4 animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-widest">Fluxo de Reparação Ativo</span>
+            <span className="text-xs font-black uppercase tracking-widest">Fluxo de Reparação Ativo</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-[9px] font-mono text-slate-500 uppercase">Protocolo: {protocolId}</span>
+            <span className="text-[10px] font-mono text-slate-500 uppercase">Protocolo: {protocolId}</span>
             <div className="h-1.5 w-1.5 rounded-full bg-success animate-ping" />
           </div>
         </div>
@@ -43,12 +43,12 @@ export function DirectFinancialLink({ inmateName, victimFamily, amount, protocol
               className="h-20 w-20 rounded-2xl bg-slate-900 border border-red-500/30 flex items-center justify-center shadow-xl relative group"
             >
               <Landmark className="h-10 w-10 text-primary group-hover:text-red-500 transition-colors" />
-              <div className="absolute -top-2 -right-2 bg-red-600 text-[7px] font-black px-1.5 py-0.5 rounded border border-white/20">BLOQUEADO</div>
+              <div className="absolute -top-2 -right-2 bg-red-600 text-[10px] font-black px-1.5 py-0.5 rounded border border-white/20">BLOQUEADO</div>
             </motion.div>
             <div className="space-y-1">
-              <p className="text-[8px] font-black text-slate-500 uppercase">Origem (Ativos Detento)</p>
-              <p className="text-[11px] font-bold text-white truncate w-full">{inmateName}</p>
-              <p className="text-[7px] font-mono text-red-400/60">SISBAJUD_REF: 8821-X</p>
+              <p className="text-[10px] font-black text-slate-500 uppercase">Origem (Ativos Detento)</p>
+              <p className="text-sm font-bold text-white truncate w-full">{inmateName}</p>
+              <p className="text-[10px] font-mono text-red-400/60">SISBAJUD_REF: 8821-X</p>
             </div>
           </div>
 
@@ -88,7 +88,7 @@ export function DirectFinancialLink({ inmateName, victimFamily, amount, protocol
               <div className="bg-slate-900 border border-success/50 px-4 py-1.5 rounded-full shadow-2xl backdrop-blur-md">
                 <span className="text-xs font-black text-success font-mono">R$ {amount.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
               </div>
-              <div className="flex items-center gap-1 text-[7px] font-black text-slate-500 uppercase tracking-tighter">
+              <div className="flex items-center gap-1 text-[10px] font-black text-slate-500 uppercase tracking-tighter">
                 <TrendingDown className="h-2 w-2" /> Redirecionamento Direto
               </div>
             </div>
@@ -103,9 +103,9 @@ export function DirectFinancialLink({ inmateName, victimFamily, amount, protocol
               <Users className="h-10 w-10 text-success group-hover:scale-110 transition-transform" />
             </motion.div>
             <div className="space-y-1">
-              <p className="text-[8px] font-black text-success uppercase">Destino (Família Vítima)</p>
-              <p className="text-[11px] font-bold text-white truncate w-full">{victimFamily}</p>
-              <p className="text-[7px] font-mono text-success/60">CONTA_VINCULADA: ****8921</p>
+              <p className="text-[10px] font-black text-success uppercase">Destino (Família Vítima)</p>
+              <p className="text-sm font-bold text-white truncate w-full">{victimFamily}</p>
+              <p className="text-[10px] font-mono text-success/60">CONTA_VINCULADA: ****8921</p>
             </div>
           </div>
         </div>
@@ -116,8 +116,8 @@ export function DirectFinancialLink({ inmateName, victimFamily, amount, protocol
               <CreditCard className="h-4 w-4 text-primary" />
             </div>
             <div>
-              <p className="text-[7px] font-black text-slate-500 uppercase">Instituição de Repasse</p>
-              <p className="text-[9px] font-bold text-slate-300">CAIXA ECONÔMICA FEDERAL</p>
+              <p className="text-[10px] font-black text-slate-500 uppercase">Instituição de Repasse</p>
+              <p className="text-[10px] font-bold text-slate-300">CAIXA ECONÔMICA FEDERAL</p>
             </div>
           </div>
           <div className="flex items-center gap-3 p-3 bg-success/5 rounded-2xl border border-success/20 group hover:border-success/40 transition-colors">
@@ -125,8 +125,8 @@ export function DirectFinancialLink({ inmateName, victimFamily, amount, protocol
               <ShieldCheck className="h-4 w-4 text-success" />
             </div>
             <div>
-              <p className="text-[7px] font-black text-slate-500 uppercase">Validação ICP-Brasil</p>
-              <p className="text-[9px] font-bold text-success uppercase">Assinatura Digital OK</p>
+              <p className="text-[10px] font-black text-slate-500 uppercase">Validação ICP-Brasil</p>
+              <p className="text-[10px] font-bold text-success uppercase">Assinatura Digital OK</p>
             </div>
           </div>
         </div>

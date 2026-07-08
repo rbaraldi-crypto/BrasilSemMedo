@@ -69,7 +69,7 @@ export function VictimTransparencyPortal() {
             </motion.div>
             <div className="space-y-2">
               <h4 className="text-2xl font-black text-white uppercase tracking-tighter">Portal da Família</h4>
-              <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest leading-tight max-w-[280px] mx-auto">
+              <p className="text-xs text-slate-500 font-bold uppercase tracking-widest leading-tight max-w-[280px] mx-auto">
                 Insira o Token Ministerial de 6 dígitos para acessar o extrato de reparação
               </p>
             </div>
@@ -134,7 +134,7 @@ export function VictimTransparencyPortal() {
 
           <div className="p-4 bg-primary/5 rounded-2xl border border-primary/20 flex items-start gap-3 text-left">
             <AlertCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-            <p className="text-[9px] text-slate-400 font-medium leading-relaxed">
+            <p className="text-[10px] text-slate-400 font-medium leading-relaxed">
               PROTOCOLO DE SEGURANÇA: O token é alterado a cada 30 dias por medida de segurança ministerial. Em caso de perda, procure o Ministério Público.
             </p>
           </div>
@@ -158,15 +158,15 @@ export function VictimTransparencyPortal() {
           <div>
             <div className="flex items-center gap-2">
               <span className="text-sm font-black text-white uppercase tracking-tight">Família Souza</span>
-              <Badge variant="outline" className="text-[8px] border-success/30 text-success font-mono">TOKEN_VERIFIED</Badge>
+              <Badge variant="outline" className="text-[10px] border-success/30 text-success font-mono">TOKEN_VERIFIED</Badge>
             </div>
-            <span className="text-[9px] text-slate-500 font-bold uppercase tracking-widest">Programa Brasil Sem Medo // Reparação de Danos</span>
+            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Programa Brasil Sem Medo // Reparação de Danos</span>
           </div>
         </div>
         <Button 
           variant="ghost" 
           size="sm" 
-          className="h-9 px-4 text-[10px] font-black uppercase text-slate-400 hover:text-white hover:bg-red-600/10 hover:text-red-500 transition-all" 
+          className="h-9 px-4 text-xs font-black uppercase text-slate-400 hover:text-white hover:bg-red-600/10 hover:text-red-500 transition-all" 
           onClick={() => {
             tacticalAudio.playScan();
             setIsAuthenticated(false);
@@ -181,14 +181,14 @@ export function VictimTransparencyPortal() {
         {/* Cards de Métricas Financeiras */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 bg-white/5 rounded-3xl border border-white/5 shadow-inner group hover:border-primary/30 transition-colors">
-            <p className="text-[10px] font-black text-slate-500 uppercase mb-3 flex items-center gap-2">
+            <p className="text-xs font-black text-slate-500 uppercase mb-3 flex items-center gap-2">
               <Landmark className="h-3 w-3" /> Total da Reparação
             </p>
             <p className="text-3xl font-black text-white tracking-tighter">R$ 45.200,00</p>
-            <p className="text-[8px] text-slate-600 mt-2 font-mono italic">Sentença: Proc. 0008921-33</p>
+            <p className="text-[10px] text-slate-600 mt-2 font-mono italic">Sentença: Proc. 0008921-33</p>
           </div>
           <div className="p-6 bg-success/5 rounded-3xl border border-success/20 shadow-inner group hover:border-success/40 transition-colors">
-            <p className="text-[10px] font-black text-success uppercase mb-3 flex items-center gap-2">
+            <p className="text-xs font-black text-success uppercase mb-3 flex items-center gap-2">
               <CheckCircle2 className="h-3 w-3" /> Pago até agora
             </p>
             <div className="flex items-baseline gap-2">
@@ -200,11 +200,11 @@ export function VictimTransparencyPortal() {
             </div>
           </div>
           <div className="p-6 bg-primary/5 rounded-3xl border border-primary/20 shadow-inner group hover:border-primary/40 transition-colors">
-            <p className="text-[10px] font-black text-primary uppercase mb-3 flex items-center gap-2">
+            <p className="text-xs font-black text-primary uppercase mb-3 flex items-center gap-2">
               <Calendar className="h-3 w-3" /> Próximo Repasse
             </p>
             <p className="text-3xl font-black text-primary tracking-tighter">12/06/2024</p>
-            <p className="text-[8px] text-primary/60 mt-2 font-bold uppercase">Agendamento Automático SISBAJUD</p>
+            <p className="text-[10px] text-primary/60 mt-2 font-bold uppercase">Agendamento Automático SISBAJUD</p>
           </div>
         </div>
 
@@ -214,7 +214,7 @@ export function VictimTransparencyPortal() {
             <span className="text-xs font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
               <History className="h-4 w-4" /> Histórico de Repasses Mensais
             </span>
-            <Button variant="outline" size="sm" className="h-7 text-[8px] font-black uppercase border-white/10">
+            <Button variant="outline" size="sm" className="h-7 text-[10px] font-black uppercase border-white/10">
               <Download className="h-3 w-3 mr-1" /> Exportar Extrato
             </Button>
           </div>
@@ -238,14 +238,14 @@ export function VictimTransparencyPortal() {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-white tracking-tight">Repasse Mensal - {item.bank}</p>
-                    <p className="text-[10px] text-slate-500 font-mono">{item.date} // {item.ref}</p>
+                    <p className="text-xs text-slate-500 font-mono">{item.date} // {item.ref}</p>
                   </div>
                 </div>
                 <div className="text-right">
                   <p className="text-lg font-mono font-black text-white">R$ {item.amount}</p>
                   <div className="flex items-center justify-end gap-1.5 text-success">
                     <CheckCircle2 className="h-3.5 w-3.5" />
-                    <span className="text-[9px] font-black uppercase tracking-widest">{item.status}</span>
+                    <span className="text-[10px] font-black uppercase tracking-widest">{item.status}</span>
                   </div>
                 </div>
               </motion.div>
@@ -264,10 +264,10 @@ export function VictimTransparencyPortal() {
             O redirecionamento dos ativos do detento <span className="text-white font-bold">Carlos Eduardo da Silva</span> está garantido conforme a Lei do Programa Brasil Sem Medo.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 relative z-10 pt-2">
-            <Button variant="outline" className="h-11 border-primary/30 text-primary text-[10px] font-black uppercase hover:bg-primary/10 flex-1">
+            <Button variant="outline" className="h-11 border-primary/30 text-primary text-xs font-black uppercase hover:bg-primary/10 flex-1">
               <FileText className="h-4 w-4 mr-2" /> Visualizar Decisão Judicial
             </Button>
-            <Button variant="outline" className="h-11 border-primary/30 text-primary text-[10px] font-black uppercase hover:bg-primary/10 flex-1">
+            <Button variant="outline" className="h-11 border-primary/30 text-primary text-xs font-black uppercase hover:bg-primary/10 flex-1">
               <ExternalLink className="h-4 w-4 mr-2" /> Portal do TJSP (Processo)
             </Button>
           </div>

@@ -60,7 +60,7 @@ export function BiometricMultimodalOverlay({ targetName, deviceInfo }: Biometric
           <div className="h-8 w-8 rounded-full border-2 border-cyan-400 flex items-center justify-center">
             <div className="h-2 w-2 bg-cyan-400 rounded-full animate-ping" />
           </div>
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-[6px] font-mono text-cyan-400">IRIS_L</div>
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] font-mono text-cyan-400">IRIS_L</div>
         </motion.div>
         <motion.div 
           animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
@@ -70,7 +70,7 @@ export function BiometricMultimodalOverlay({ targetName, deviceInfo }: Biometric
           <div className="h-8 w-8 rounded-full border-2 border-cyan-400 flex items-center justify-center">
             <div className="h-2 w-2 bg-cyan-400 rounded-full animate-ping" />
           </div>
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-[6px] font-mono text-cyan-400">IRIS_R</div>
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] font-mono text-cyan-400">IRIS_R</div>
         </motion.div>
       </div>
 
@@ -83,22 +83,22 @@ export function BiometricMultimodalOverlay({ targetName, deviceInfo }: Biometric
         <div className="bg-black/60 backdrop-blur-md border border-red-500/50 p-4 rounded-2xl shadow-[0_0_30px_rgba(220,38,38,0.2)]">
           <div className="flex items-center gap-2 text-red-500 mb-3">
             <Smartphone className="h-4 w-4 animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-widest">Correlação IMEI-Face</span>
+            <span className="text-xs font-black uppercase tracking-widest">Correlação IMEI-Face</span>
           </div>
           
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <span className="text-[8px] text-slate-400 uppercase">Dispositivo:</span>
-              <span className="text-[9px] font-bold text-white">{deviceInfo?.model || "iPhone 15 Pro Max"}</span>
+              <span className="text-[10px] text-slate-400 uppercase">Dispositivo:</span>
+              <span className="text-[10px] font-bold text-white">{deviceInfo?.model || "iPhone 15 Pro Max"}</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-[8px] text-slate-400 uppercase">IMEI:</span>
-              <span className="text-[9px] font-mono text-red-400">{deviceInfo?.imei || "358294/10/284756/0"}</span>
+              <span className="text-[10px] text-slate-400 uppercase">IMEI:</span>
+              <span className="text-[10px] font-mono text-red-400">{deviceInfo?.imei || "358294/10/284756/0"}</span>
             </div>
             <div className="pt-2 border-t border-white/5">
               <div className="flex items-center gap-2 bg-red-600/20 px-2 py-1 rounded">
                 <ShieldAlert className="h-3 w-3 text-red-500" />
-                <span className="text-[8px] font-black text-red-500 uppercase">STATUS: ROUBADO (P12)</span>
+                <span className="text-[10px] font-black text-red-500 uppercase">STATUS: ROUBADO (P12)</span>
               </div>
             </div>
           </div>
@@ -107,14 +107,14 @@ export function BiometricMultimodalOverlay({ targetName, deviceInfo }: Biometric
         <div className="bg-black/60 backdrop-blur-md border border-cyan-400/30 p-4 rounded-2xl">
           <div className="flex items-center gap-2 text-cyan-400 mb-2">
             <Activity className="h-3.5 w-3.5" />
-            <span className="text-[9px] font-black uppercase">Telemetria Biométrica</span>
+            <span className="text-[10px] font-black uppercase">Telemetria Biométrica</span>
           </div>
           <div className="space-y-1.5">
-            <div className="flex justify-between text-[7px] font-mono text-slate-400">
+            <div className="flex justify-between text-[10px] font-mono text-slate-400">
               <span>GAIT_MATCH:</span>
               <span className="text-cyan-400">94.2%</span>
             </div>
-            <div className="flex justify-between text-[7px] font-mono text-slate-400">
+            <div className="flex justify-between text-[10px] font-mono text-slate-400">
               <span>IRIS_VERIFIED:</span>
               <span className="text-cyan-400">TRUE</span>
             </div>
@@ -128,7 +128,7 @@ export function BiometricMultimodalOverlay({ targetName, deviceInfo }: Biometric
           <div className="h-2 w-2 bg-red-600 rounded-full animate-ping" />
           <span className="text-xl font-black text-white uppercase tracking-tighter italic">{targetName}</span>
         </div>
-        <div className="text-[8px] font-mono text-slate-500 uppercase tracking-[0.3em]">
+        <div className="text-[10px] font-mono text-slate-500 uppercase tracking-[0.3em]">
           Target_Lock_Active // UID: SIP-8821-P1
         </div>
       </div>

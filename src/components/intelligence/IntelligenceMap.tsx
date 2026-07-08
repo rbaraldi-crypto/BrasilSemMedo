@@ -118,7 +118,7 @@ export function IntelligenceMap({ isEmbedded = false }: { isEmbedded?: boolean }
                   </motion.div>
                   {marker.isMassive && (
                     <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-black/80 px-2 py-1 rounded border border-red-500/50 whitespace-nowrap z-50">
-                      <p className="text-[8px] font-black text-red-500 uppercase">TREVA MASSIVE: {marker.capacity?.toLocaleString()}</p>
+                      <p className="text-[10px] font-black text-red-500 uppercase">TREVA MASSIVE: {marker.capacity?.toLocaleString()}</p>
                     </div>
                   )}
                 </div>
@@ -153,14 +153,14 @@ export function IntelligenceMap({ isEmbedded = false }: { isEmbedded?: boolean }
               <Button variant="ghost" size="icon" className="text-slate-400 hover:text-white" onClick={closeModal}><ArrowLeft className="h-5 w-5" /></Button>
               <div className="text-left">
                 <DialogTitle className="text-xl font-bold text-white uppercase tracking-tighter">Mapa de Inteligência</DialogTitle>
-                <DialogDescription className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Monitoramento Geoespacial (TREVA Integration)</DialogDescription>
+                <DialogDescription className="text-xs text-slate-500 uppercase tracking-widest font-bold">Monitoramento Geoespacial (TREVA Integration)</DialogDescription>
               </div>
             </div>
             <div className="flex items-center gap-2">
               <Button 
                 variant={showHeatmap ? "default" : "outline"} 
                 size="sm" 
-                className={cn("h-8 text-[9px] font-black uppercase", showHeatmap ? "bg-red-600 border-red-600" : "border-white/10")}
+                className={cn("h-8 text-[10px] font-black uppercase", showHeatmap ? "bg-red-600 border-red-600" : "border-white/10")}
                 onClick={() => setShowHeatmap(!showHeatmap)}
               >
                 <Flame className="h-3 w-3 mr-2" /> Heatmap (Massive Scale)

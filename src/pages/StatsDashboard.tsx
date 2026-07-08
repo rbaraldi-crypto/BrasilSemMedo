@@ -102,7 +102,7 @@ export function StatsDashboard() {
               <BarChart3 className="h-6 w-6 text-primary" />
               Estatísticas Avançadas IABS-SIP
             </h1>
-            <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">
+            <p className="text-xs text-slate-400 font-black uppercase tracking-[0.2em]">
               Monitoramento Estratégico Brasil Sem Medo
             </p>
           </div>
@@ -130,17 +130,17 @@ export function StatsDashboard() {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <div className="flex justify-between items-center mb-6">
             <TabsList className="bg-slate-900 border border-white/10 p-1 h-12">
-              <TabsTrigger value="processual" className="px-8 font-bold text-[10px] uppercase data-[state=active]:bg-primary">
+              <TabsTrigger value="processual" className="px-8 font-bold text-xs uppercase data-[state=active]:bg-primary">
                 <LayoutDashboard className="h-4 w-4 mr-2" /> Fluxo Processual
               </TabsTrigger>
-              <TabsTrigger value="financeiro" className="px-8 font-bold text-[10px] uppercase data-[state=active]:bg-primary">
+              <TabsTrigger value="financeiro" className="px-8 font-bold text-xs uppercase data-[state=active]:bg-primary">
                 <Landmark className="h-4 w-4 mr-2" /> Asfixia Financeira
               </TabsTrigger>
             </TabsList>
             
             <div className="flex items-center gap-3 bg-slate-900 px-4 py-2 rounded-lg border border-white/10 shadow-inner">
               <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_#22c55e]" />
-              <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Sincronização SISBAJUD: ONLINE</span>
+              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Sincronização SISBAJUD: ONLINE</span>
             </div>
           </div>
 
@@ -188,7 +188,7 @@ export function StatsDashboard() {
                       <TrendingUp className="h-5 w-5 text-primary" />
                       Correlação: Investimento vs. Asfixia Financeira
                     </CardTitle>
-                    <CardDescription className="text-slate-400 text-[10px] uppercase font-bold tracking-wider">
+                    <CardDescription className="text-slate-400 text-xs uppercase font-bold tracking-wider">
                       Impacto do Ponto 8 na eficácia do Ponto 1 (SISBAJUD)
                     </CardDescription>
                   </CardHeader>
@@ -202,7 +202,7 @@ export function StatsDashboard() {
                           <YAxis yAxisId="right" orientation="right" stroke="#64748b" fontSize={10} fontWeight="bold" axisLine={false} tickLine={false} />
                           <RechartsTooltip 
                             contentStyle={{ backgroundColor: '#0f172a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px' }}
-                            itemStyle={{ fontSize: '10px', fontWeight: 'bold' }}
+                            itemStyle={{ fontSize: '12px', fontWeight: 'bold' }}
                           />
                           <Area yAxisId="right" type="monotone" dataKey="investimento" fill={COLORS.primary} stroke={COLORS.primary} fillOpacity={0.1} strokeWidth={2} name="Investimento (Bi)" />
                           <Bar yAxisId="left" dataKey="bloqueios" barSize={20} fill={COLORS.danger} radius={[4, 4, 0, 0]} name="Bloqueios (M)" />
@@ -257,8 +257,8 @@ export function StatsDashboard() {
                               <DollarSign className="h-4 w-4 text-danger" />
                             </div>
                             <div>
-                              <p className="text-[10px] font-black text-white uppercase">{event.org}</p>
-                              <p className="text-[9px] text-slate-500 font-bold">{event.type}</p>
+                              <p className="text-xs font-black text-white uppercase">{event.org}</p>
+                              <p className="text-[10px] text-slate-500 font-bold">{event.type}</p>
                             </div>
                           </div>
                           <div className="text-right">
@@ -310,10 +310,10 @@ export function StatsDashboard() {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2">
             <ShieldCheck className="h-3 w-3 text-success" />
-            <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Criptografia AES-256 Ativa</span>
+            <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Criptografia AES-256 Ativa</span>
           </div>
         </div>
-        <div className="text-[9px] font-mono text-slate-600">
+        <div className="text-[10px] font-mono text-slate-600">
           IABS-SIP v2.5.0-ALPHA // TERMINAL-01 // {new Date().toLocaleDateString()}
         </div>
       </footer>
@@ -326,7 +326,7 @@ function SummaryCard({ title, value, icon, trend, className, valueClassName, onC
     <Card className={cn("bg-slate-900 border-white/10 transition-all hover:shadow-2xl hover:border-primary/30 group", className)} onClick={onClick}>
       <CardContent className="p-6">
         <div className="flex justify-between items-start mb-4">
-          <span className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-500 group-hover:text-primary transition-colors">
+          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 group-hover:text-primary transition-colors">
             {title}
           </span>
           <div className="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/5 group-hover:border-primary/20 transition-all">
@@ -338,7 +338,7 @@ function SummaryCard({ title, value, icon, trend, className, valueClassName, onC
         </div>
         {trend && (
           <div className="flex items-center justify-between mt-2">
-            <p className="text-[9px] font-bold text-slate-500 flex items-center gap-1">
+            <p className="text-[10px] font-bold text-slate-500 flex items-center gap-1">
               <TrendingUp className="h-3 w-3 text-primary" /> {trend}
             </p>
           </div>

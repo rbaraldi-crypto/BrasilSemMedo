@@ -50,10 +50,10 @@ export function AuditTimeline({ isEmbedded = false }: { isEmbedded?: boolean }) 
           </div>
           <div>
             <h3 className="text-sm font-black text-white uppercase tracking-tighter">Ledger de Integridade</h3>
-            <p className="text-[8px] text-slate-500 font-bold uppercase tracking-widest">Cadeia de Custódia Blockchain</p>
+            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Cadeia de Custódia Blockchain</p>
           </div>
         </div>
-        <Badge variant="outline" className="border-success/30 text-success font-mono text-[8px] font-black px-2 py-0.5 animate-pulse">
+        <Badge variant="outline" className="border-success/30 text-success font-mono text-[10px] font-black px-2 py-0.5 animate-pulse">
           BLOCK_SYNC: ACTIVE
         </Badge>
       </div>
@@ -64,7 +64,7 @@ export function AuditTimeline({ isEmbedded = false }: { isEmbedded?: boolean }) 
             {auditLog.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-20 opacity-20">
                 <History className="h-12 w-12 mb-4" />
-                <p className="text-[10px] font-black uppercase tracking-widest">Aguardando Genesis Block...</p>
+                <p className="text-xs font-black uppercase tracking-widest">Aguardando Genesis Block...</p>
               </div>
             ) : (
               auditLog.map((log, idx) => {
@@ -90,11 +90,11 @@ export function AuditTimeline({ isEmbedded = false }: { isEmbedded?: boolean }) 
                       {/* Block Header */}
                       <div className="bg-black/40 px-4 py-2 border-b border-white/5 flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                          <span className="text-[8px] font-mono text-primary font-black">BLOCK #{log.block_index || idx}</span>
+                          <span className="text-[10px] font-mono text-primary font-black">BLOCK #{log.block_index || idx}</span>
                           <div className="h-1 w-1 rounded-full bg-slate-700" />
-                          <span className="text-[8px] font-mono text-slate-500">{new Date(log.timestamp).toLocaleTimeString()}</span>
+                          <span className="text-[10px] font-mono text-slate-500">{new Date(log.timestamp).toLocaleTimeString()}</span>
                         </div>
-                        <Badge variant="outline" className={cn("text-[7px] font-black uppercase h-4 px-1.5", colorClass)}>
+                        <Badge variant="outline" className={cn("text-[10px] font-black uppercase h-4 px-1.5", colorClass)}>
                           {log.type}
                         </Badge>
                       </div>
@@ -106,19 +106,19 @@ export function AuditTimeline({ isEmbedded = false }: { isEmbedded?: boolean }) 
                             <Icon className="h-5 w-5" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <p className="text-[10px] font-black text-white uppercase truncate">{log.targetName}</p>
-                            <p className="text-[9px] text-slate-400 leading-relaxed mt-1 line-clamp-2">{log.details}</p>
+                            <p className="text-xs font-black text-white uppercase truncate">{log.targetName}</p>
+                            <p className="text-[10px] text-slate-400 leading-relaxed mt-1 line-clamp-2">{log.details}</p>
                           </div>
                         </div>
 
                         <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/5">
-                          <div className="flex items-center gap-1.5 text-[8px] font-mono text-slate-600">
+                          <div className="flex items-center gap-1.5 text-[10px] font-mono text-slate-600">
                             <User className="h-2.5 w-2.5" />
                             {log.operator_id || "JUIZ-SILVA-8921"}
                           </div>
                           <div className="flex items-center justify-end gap-1.5 text-success">
                             <CheckCircle2 className="h-2.5 w-2.5" />
-                            <span className="text-[7px] font-black uppercase">Sealed</span>
+                            <span className="text-[10px] font-black uppercase">Sealed</span>
                           </div>
                         </div>
                       </div>
@@ -126,12 +126,12 @@ export function AuditTimeline({ isEmbedded = false }: { isEmbedded?: boolean }) 
                       {/* Block Footer (Hashes) */}
                       <div className="bg-black/20 px-4 py-1.5 border-t border-white/5 flex flex-col gap-1">
                         <div className="flex items-center justify-between">
-                          <span className="text-[6px] font-mono text-slate-600 uppercase">Prev_Hash:</span>
-                          <span className="text-[6px] font-mono text-slate-500 truncate max-w-[150px]">{log.previous_hash || "0000000000000000"}</span>
+                          <span className="text-[10px] font-mono text-slate-600 uppercase">Prev_Hash:</span>
+                          <span className="text-[10px] font-mono text-slate-500 truncate max-w-[150px]">{log.previous_hash || "0000000000000000"}</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-[6px] font-mono text-primary/60 uppercase">Curr_Hash:</span>
-                          <span className="text-[6px] font-mono text-primary truncate max-w-[150px] font-bold">{log.audit_hash || "8F4B2E1...A9C3"}</span>
+                          <span className="text-[10px] font-mono text-primary/60 uppercase">Curr_Hash:</span>
+                          <span className="text-[10px] font-mono text-primary truncate max-w-[150px] font-bold">{log.audit_hash || "8F4B2E1...A9C3"}</span>
                         </div>
                       </div>
 
@@ -156,9 +156,9 @@ export function AuditTimeline({ isEmbedded = false }: { isEmbedded?: boolean }) 
       <div className="p-4 bg-slate-900/80 border-t border-white/10 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2">
            <Lock className="h-3 w-3 text-slate-500" />
-           <span className="text-[8px] font-mono text-slate-500 uppercase">Imutabilidade Garantida</span>
+           <span className="text-[10px] font-mono text-slate-500 uppercase">Imutabilidade Garantida</span>
         </div>
-        <button className="text-[8px] font-black text-primary uppercase hover:underline flex items-center gap-1">
+        <button className="text-[10px] font-black text-primary uppercase hover:underline flex items-center gap-1">
           <Hash className="h-2.5 w-2.5" /> Validar Cadeia (ICP)
         </button>
       </div>

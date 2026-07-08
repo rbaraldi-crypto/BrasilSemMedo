@@ -12,11 +12,12 @@ import { useTactical } from '@/contexts/TacticalContext';
 import { useUI } from '@/contexts/UIContext';
 import { cn } from '@/lib/utils';
 import { tacticalAudio } from '@/lib/audioUtils';
+import { GlobalSearchItem } from '@/types/intelligence';
 
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<any[]>([]);
+  const [results, setResults] = useState<GlobalSearchItem[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const navigate = useNavigate();
   const { setSelectedOrg } = useTactical();
@@ -48,7 +49,7 @@ export function CommandPalette() {
     setIsSearching(false);
   }, []);
 
-  const executeAction = (item: any) => {
+  const executeAction = (item: GlobalSearchItem) => {
     tacticalAudio.playSuccess();
     setOpen(false);
     setQuery("");
@@ -68,14 +69,14 @@ export function CommandPalette() {
         togglePanel('MURALHA');
         break;
       default:
-        item.action();
+        if (item.action) item.action();
     }
   };
 
-  const quickCommands = [
-    { icon: Scan, label: "Muralha Brasileira (F1)", action: () => navigate('/brasil-sem-medo'), type: 'COMMAND' },
-    { icon: Landmark, label: "Asfixia Financeira (F3)", action: () => navigate('/estatisticas'), type: 'COMMAND' },
-    { icon: ShieldAlert, label: "Compliance & Ponto 11 (F4)", action: () => navigate('/compliance'), type: 'COMMAND' },
+  const quickCommands: GlobalSearchItem[] = [
+    { id: 'cmd-1', icon: Scan, label: "Muralha Brasileira (F1)", action: () => navigate('/brasil-sem-medo'), type: 'COMMAND' },
+    { id: 'cmd-2', icon: Landmark, label: "Asfixia Financeira (F3)", action: () => navigate('/estatisticas'), type: 'COMMAND' },
+    { id: 'cmd-3', icon: ShieldAlert, label: "Compliance & Ponto 11 (F4)", action: () => navigate('/compliance'), type: 'COMMAND' },
   ];
 
   return (
@@ -95,7 +96,7 @@ export function CommandPalette() {
           ) : (
             <div className="flex items-center gap-1 bg-slate-900 px-2 py-1 rounded border border-white/5">
               <Keyboard className="h-3 w-3 text-primary" />
-              <span className="text-[10px] font-mono text-primary uppercase">Global_Search</span>
+              <span className="text-xs font-mono text-primary uppercase">Global_Search</span>
             </div>
           )}
         </div>
@@ -103,7 +104,7 @@ export function CommandPalette() {
         <div className="max-h-[400px] overflow-y-auto p-2 custom-scrollbar">
           {query.length > 0 ? (
             <div className="space-y-1">
-              <div className="px-2 py-1.5 text-[9px] font-black text-slate-500 uppercase tracking-widest">Resultados da Inteligência</div>
+              <div className="px-2 py-1.5 text-[10px] font-black text-slate-500 uppercase tracking-widest">Resultados da Inteligência</div>
               {results.length > 0 ? (
                 results.map((item) => (
                   <SearchItem key={item.id} item={item} onClick={() => executeAction(item)} />
@@ -116,18 +117,18 @@ export function CommandPalette() {
             </div>
           ) : (
             <div className="space-y-1">
-              <div className="px-2 py-1.5 text-[9px] font-black text-slate-500 uppercase tracking-widest">Comandos do Sistema</div>
-              {quickCommands.map((cmd, i) => (
-                <SearchItem key={i} item={cmd} onClick={() => executeAction(cmd)} />
+              <div className="px-2 py-1.5 text-[10px] font-black text-slate-500 uppercase tracking-widest">Comandos do Sistema</div>
+              {quickCommands.map((cmd) => (
+                <SearchItem key={cmd.id} item={cmd} onClick={() => executeAction(cmd)} />
               ))}
             </div>
           )}
         </div>
 
         <div className="bg-slate-900/50 p-3 border-t border-white/10 flex justify-between items-center">
-          <span className="text-[9px] text-slate-500 font-mono uppercase tracking-tighter">IABS-SIP // Spotlight Engine v2.6</span>
+          <span className="text-[10px] text-slate-500 font-mono uppercase tracking-tighter">IABS-SIP // Spotlight Engine v2.6</span>
           <div className="flex gap-2">
-             <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-white/10 text-[9px] text-slate-400 font-mono">ESC para fechar</kbd>
+             <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-white/10 text-[10px] text-slate-400 font-mono">ESC para fechar</kbd>
           </div>
         </div>
       </DialogContent>
@@ -135,10 +136,10 @@ export function CommandPalette() {
   );
 }
 
-function SearchItem({ item, onClick }: { item: any, onClick: () => void }) {
+function SearchItem({ item, onClick }: { item: GlobalSearchItem, onClick: () => void }) {
   const Icon = item.type === 'ORGANIZATION' ? Skull : 
                item.type === 'CASE' ? Briefcase : 
-               item.type === 'UNIT' ? MapPin : item.icon;
+               item.type === 'UNIT' ? MapPin : (item.icon || Command);
 
   return (
     <button
@@ -151,7 +152,7 @@ function SearchItem({ item, onClick }: { item: any, onClick: () => void }) {
         </div>
         <div className="truncate">
           <p className="text-xs font-bold text-slate-200 group-hover:text-white truncate">{item.title || item.label}</p>
-          <p className="text-[10px] text-slate-500 group-hover:text-primary/70 truncate">{item.subtitle}</p>
+          <p className="text-xs text-slate-500 group-hover:text-primary/70 truncate">{item.subtitle}</p>
         </div>
       </div>
       <ArrowRight className="h-3 w-3 text-slate-700 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />

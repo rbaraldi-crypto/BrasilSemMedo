@@ -5,10 +5,11 @@ import { Shield, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTactical } from '@/contexts/TacticalContext';
 import { useUI } from '@/contexts/UIContext';
+import { BrasilResult } from '@/types/intelligence';
 
 interface BrasilModalProps {
   isLoading: boolean;
-  result: any;
+  result: BrasilResult | null;
 }
 
 export function BrasilModal({ isLoading, result }: BrasilModalProps) {
@@ -37,7 +38,7 @@ export function BrasilModal({ isLoading, result }: BrasilModalProps) {
             <div className="space-y-6">
               <div className="p-4 bg-white/5 rounded-xl border border-white/5 flex justify-between items-center">
                 <div>
-                  <span className="text-[10px] text-slate-500 font-bold uppercase">Alvo em Verificação</span>
+                  <span className="text-xs text-slate-500 font-bold uppercase">Alvo em Verificação</span>
                   <h4 className="text-lg font-bold text-white">{selectedNode?.name || result.targetName}</h4>
                 </div>
                 <Badge className={cn("font-bold", result.riskLevel === 'Monitorado' ? "bg-green-600" : "bg-red-600")}>
@@ -46,19 +47,19 @@ export function BrasilModal({ isLoading, result }: BrasilModalProps) {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div className="p-3 bg-black/20 rounded-lg border border-white/5">
-                  <p className="text-[9px] text-slate-500 uppercase font-bold">Mandados</p>
+                  <p className="text-[10px] text-slate-500 uppercase font-bold">Mandados</p>
                   <p className="text-xs font-semibold text-red-400 mt-1">{result.warrants}</p>
                 </div>
                 <div className="p-3 bg-black/20 rounded-lg border border-white/5">
-                  <p className="text-[9px] text-slate-500 uppercase font-bold">Investigações</p>
+                  <p className="text-[10px] text-slate-500 uppercase font-bold">Investigações</p>
                   <p className="text-xs font-semibold text-white mt-1">{result.investigations}</p>
                 </div>
                 <div className="p-3 bg-black/20 rounded-lg border border-white/5">
-                  <p className="text-[9px] text-slate-500 uppercase font-bold">Condenações</p>
+                  <p className="text-[10px] text-slate-500 uppercase font-bold">Condenações</p>
                   <p className="text-xs font-semibold text-white mt-1">{result.convictions}</p>
                 </div>
                 <div className="p-3 bg-black/20 rounded-lg border border-white/5">
-                  <p className="text-[9px] text-slate-500 uppercase font-bold">Cautelares</p>
+                  <p className="text-[10px] text-slate-500 uppercase font-bold">Cautelares</p>
                   <p className="text-xs font-semibold text-white mt-1">{result.precautionaryMeasures}</p>
                 </div>
               </div>

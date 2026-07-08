@@ -231,7 +231,7 @@ export function MyCases() {
                         {item.priority === 'Delegado' ? (
                             <div className="flex flex-col">
                                 <span className="font-medium text-purple-700">{item.delegatedAt?.split(' ')[0]}</span>
-                                <span className="text-[10px]">Prev: {item.estimatedCompletion}</span>
+                                <span className="text-xs">Prev: {item.estimatedCompletion}</span>
                             </div>
                         ) : (
                             item.entryDate

@@ -28,8 +28,8 @@ export function TacticalSkeleton({ className, lines = 3 }: TacticalSkeletonProps
         </div>
       ))}
       <div className="flex justify-between items-center">
-        <span className="text-[8px] font-mono text-primary/40 animate-pulse">DECRYPTING_DATA_STREAM...</span>
-        <span className="text-[8px] font-mono text-primary/40">SECURE_LINK_V2</span>
+        <span className="text-[10px] font-mono text-primary/40 animate-pulse">DECRYPTING_DATA_STREAM...</span>
+        <span className="text-[10px] font-mono text-primary/40">SECURE_LINK_V2</span>
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ export function BehaviorComparativeChart({ data }: BehaviorComparativeChartProps
           <PolarGrid stroke="#1e293b" strokeDasharray="3 3" />
           <PolarAngleAxis 
             dataKey="name" 
-            tick={{ fill: '#64748b', fontSize: 9, fontWeight: 'bold' }} 
+            tick={{ fill: '#64748b', fontSize: 10, fontWeight: 'bold' }} 
           />
           <Radar
             name="Perfil Juvenil (Ressocialização)"
@@ -43,7 +43,7 @@ export function BehaviorComparativeChart({ data }: BehaviorComparativeChartProps
               backgroundColor: '#0f172a', 
               border: '1px solid rgba(255,255,255,0.1)',
               borderRadius: '8px',
-              fontSize: '10px',
+              fontSize: '12px',
               fontWeight: 'bold'
             }}
           />
@@ -51,7 +51,7 @@ export function BehaviorComparativeChart({ data }: BehaviorComparativeChartProps
             verticalAlign="bottom" 
             iconType="circle"
             wrapperStyle={{ 
-              fontSize: '8px', 
+              fontSize: '10px', 
               fontWeight: 'black', 
               textTransform: 'uppercase', 
               paddingTop: '20px',

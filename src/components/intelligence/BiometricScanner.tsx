@@ -68,7 +68,7 @@ export function BiometricScanner({ onVerified, operatorName, className }: Biomet
     <div className={cn("relative p-6 bg-slate-900/50 border border-white/10 rounded-2xl overflow-hidden", className)}>
       <div className="flex flex-col items-center gap-6">
         <div className="text-center space-y-1">
-          <h4 className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">Autenticação Biométrica</h4>
+          <h4 className="text-xs font-black text-primary uppercase tracking-[0.2em]">Autenticação Biométrica</h4>
           <p className="text-xs text-slate-400 font-medium">Mantenha pressionado para assinar via ICP-Brasil</p>
         </div>
 
@@ -137,11 +137,11 @@ export function BiometricScanner({ onVerified, operatorName, className }: Biomet
         </div>
 
         <div className="w-full space-y-3">
-          <div className="flex justify-between items-center text-[9px] font-mono">
+          <div className="flex justify-between items-center text-[10px] font-mono">
             <span className="text-slate-500 uppercase">Operador:</span>
             <span className="text-white font-bold">{operatorName}</span>
           </div>
-          <div className="flex justify-between items-center text-[9px] font-mono">
+          <div className="flex justify-between items-center text-[10px] font-mono">
             <span className="text-slate-500 uppercase">Status:</span>
             <span className={cn("font-bold", isVerified ? "text-success" : isPressing ? "text-primary animate-pulse" : "text-slate-500")}>
               {isVerified ? "IDENTIDADE VINCULADA" : isPressing ? "LENDO DIGITAL..." : "AGUARDANDO SENSOR"}
@@ -153,7 +153,7 @@ export function BiometricScanner({ onVerified, operatorName, className }: Biomet
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 px-3 py-1.5 bg-success/10 border border-success/20 rounded text-[8px] font-black text-success uppercase tracking-widest"
+            className="flex items-center gap-2 px-3 py-1.5 bg-success/10 border border-success/20 rounded text-[10px] font-black text-success uppercase tracking-widest"
           >
             <ShieldCheck className="h-3 w-3" />
             Certificado ICP-Brasil: VALIDADO
