@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useMutation } from '@tanstack/react-query';
 import { BrainCircuit, Sparkles, FileText, Check, Copy, RefreshCw, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -10,32 +11,29 @@ interface LegalJustificationAssistantProps {
   crimeType: string;
 }
 
-/**
- * Medida 6 & 11: Assistente de Justificativa IA (LLM-Powered)
- * Gera minutas fundamentadas no Art. 112 da LEP para o Modo Endurecido.
- */
 export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustificationAssistantProps) {
-  const [isGenerating, setIsGenerating] = useState(false);
   const [draft, setDraft] = useState<string | null>(null);
 
-  const generateJustification = async () => {
-    setIsGenerating(true);
-    setDraft(null);
-    tacticalAudio.playScan();
+  // Padronização com useMutation para geração de texto via IA
+  const { mutate: generateJustification, isPending: isGenerating } = useMutation({
+    mutationFn: async () => {
+      tacticalAudio.playScan();
+      // Simulação de processamento LLM Jurídico
+      await new Promise(resolve => setTimeout(resolve, 2000));
 
-    // Simulação de processamento LLM Jurídico
-    await new Promise(resolve => setTimeout(resolve, 2000));
+      const justifications = [
+        `Considerando a natureza do delito tipificado como crime hediondo e a classificação do apenado como integrante de organização narcoterrorista, nos termos do Art. 112, inciso VI, alínea 'a' da LEP (redação dada pela Lei 13.964/19), indefiro a progressão. A manutenção do regime fechado é imperativa para a garantia da ordem pública e asfixia operacional da facção.`,
+        `Fundamentado no Art. 112, § 1º da LEP, verifico que a gravidade concreta do crime e o vínculo ativo com a estrutura financeira da organização impedem a concessão de benefícios. O protocolo Brasil Sem Medo estabelece o isolamento total como medida de segurança nacional, sobrepondo-se ao requisito puramente temporal.`,
+        `A análise de inteligência via IABS-SIP confirma o alto risco de reincidência específica. Diante do Modo Endurecido ativo, a fundamentação jurídica baseia-se na ausência de mérito subjetivo e na necessidade de segregação de lideranças P1, conforme diretrizes ministeriais vigentes.`
+      ];
 
-    const justifications = [
-      `Considerando a natureza do delito tipificado como crime hediondo e a classificação do apenado como integrante de organização narcoterrorista, nos termos do Art. 112, inciso VI, alínea 'a' da LEP (redação dada pela Lei 13.964/19), indefiro a progressão. A manutenção do regime fechado é imperativa para a garantia da ordem pública e asfixia operacional da facção.`,
-      `Fundamentado no Art. 112, § 1º da LEP, verifico que a gravidade concreta do crime e o vínculo ativo com a estrutura financeira da organização impedem a concessão de benefícios. O protocolo Brasil Sem Medo estabelece o isolamento total como medida de segurança nacional, sobrepondo-se ao requisito puramente temporal.`,
-      `A análise de inteligência via IABS-SIP confirma o alto risco de reincidência específica. Diante do Modo Endurecido ativo, a fundamentação jurídica baseia-se na ausência de mérito subjetivo e na necessidade de segregação de lideranças P1, conforme diretrizes ministeriais vigentes.`
-    ];
-
-    setDraft(justifications[Math.floor(Math.random() * justifications.length)]);
-    setIsGenerating(false);
-    tacticalAudio.playSuccess();
-  };
+      return justifications[Math.floor(Math.random() * justifications.length)];
+    },
+    onSuccess: (data) => {
+      setDraft(data);
+      tacticalAudio.playSuccess();
+    }
+  });
 
   return (
     <div className="bg-slate-900/50 border border-primary/20 rounded-2xl overflow-hidden">
@@ -59,7 +57,7 @@ export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustif
             <Button 
               variant="outline" 
               size="sm" 
-              onClick={generateJustification}
+              onClick={() => generateJustification()}
               className="h-8 text-[9px] font-black uppercase border-primary/30 text-primary hover:bg-primary/10"
             >
               Minutar Justificativa
@@ -103,7 +101,7 @@ export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustif
                   variant="outline" 
                   size="icon" 
                   className="h-9 w-9 border-white/10"
-                  onClick={generateJustification}
+                  onClick={() => generateJustification()}
                 >
                   <RefreshCw className="h-3.5 w-3.5 text-slate-500" />
                 </Button>

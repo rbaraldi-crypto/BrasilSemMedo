@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useMutation } from '@tanstack/react-query';
 import { 
   Navigation, Shield, MapPin, Zap, 
   Clock, TrendingUp, 
@@ -12,48 +13,44 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { tacticalAudio } from '@/lib/audioUtils';
-import { useIntelligence } from '@/contexts/IntelligenceContext';
+import { useSystem } from '@/contexts/SystemContext';
 
-/**
- * Medida 4: Otimizador de Logística Tática (P4)
- * CORREÇÃO: Barra de comando fixa no topo para garantir visibilidade do botão de cálculo.
- */
 export function TacticalRoutePlanner({ isEmbedded = false }: { isEmbedded?: boolean }) {
-  const { addLogEntry } = useIntelligence();
-  const [isCalculating, setIsCalculating] = useState(false);
+  const { addLogEntry } = useSystem();
   const [route, setRoute] = useState<any | null>(null);
 
-  const calculateTacticalRoute = async () => {
-    setIsCalculating(true);
-    setRoute(null);
-    tacticalAudio.playScan();
-    
-    // Simulação de processamento de IA Logística AWS (us-east-1)
-    await new Promise(resolve => setTimeout(resolve, 3000));
-    
-    setRoute({
-      id: 'TR-8821',
-      origin: 'Presídio Comum - SP',
-      destination: 'TREVA-01 (Norte)',
-      riskScore: 8,
-      estimatedTime: '4h 15m',
-      distance: '342km',
-      checkpoints: [
-        { name: 'CP-ALPHA (Rodoanel)', status: 'SECURE', lat: 20, lng: 30 },
-        { name: 'CP-BRAVO (Fronteira)', status: 'SECURE', lat: 50, lng: 45 },
-        { name: 'CP-CHARLIE (Acesso TREVA)', status: 'SECURE', lat: 80, lng: 70 }
-      ],
-      escortUnits: 6,
-      airSupport: true,
-      threatZones: [
-        { id: 'tz-1', x: 40, y: 50, radius: 15, intensity: 'HIGH' }
-      ]
-    });
-    
-    addLogEntry('LOGISTICS', 'Transferência P1', 'Rota tática otimizada via Protocolo Brasil Sem Medo.');
-    setIsCalculating(false);
-    tacticalAudio.playSuccess();
-  };
+  // Padronização com useMutation para operações assíncronas de cálculo
+  const { mutate: calculateTacticalRoute, isPending: isCalculating } = useMutation({
+    mutationFn: async () => {
+      tacticalAudio.playScan();
+      // Simulação de processamento de IA Logística AWS (us-east-1)
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      
+      return {
+        id: 'TR-8821',
+        origin: 'Presídio Comum - SP',
+        destination: 'TREVA-01 (Norte)',
+        riskScore: 8,
+        estimatedTime: '4h 15m',
+        distance: '342km',
+        checkpoints: [
+          { name: 'CP-ALPHA (Rodoanel)', status: 'SECURE', lat: 20, lng: 30 },
+          { name: 'CP-BRAVO (Fronteira)', status: 'SECURE', lat: 50, lng: 45 },
+          { name: 'CP-CHARLIE (Acesso TREVA)', status: 'SECURE', lat: 80, lng: 70 }
+        ],
+        escortUnits: 6,
+        airSupport: true,
+        threatZones: [
+          { id: 'tz-1', x: 40, y: 50, radius: 15, intensity: 'HIGH' }
+        ]
+      };
+    },
+    onSuccess: (data) => {
+      setRoute(data);
+      addLogEntry('LOGISTICS', 'Transferência P1', 'Rota tática otimizada via Protocolo Brasil Sem Medo.');
+      tacticalAudio.playSuccess();
+    }
+  });
 
   const Header = (
     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-slate-900/80 border-b border-white/10 relative z-50 shrink-0">
@@ -70,7 +67,7 @@ export function TacticalRoutePlanner({ isEmbedded = false }: { isEmbedded?: bool
       <div className="flex items-center gap-2">
         {!route && !isCalculating && (
           <Button 
-            onClick={calculateTacticalRoute}
+            onClick={() => calculateTacticalRoute()}
             size="sm"
             className="bg-sky-600 hover:bg-sky-500 text-white font-black uppercase text-[9px] tracking-widest h-8 px-4 rounded-md shadow-[0_0_15px_rgba(14,165,233,0.3)] border-t border-white/10 transition-all active:scale-95 group overflow-hidden"
           >

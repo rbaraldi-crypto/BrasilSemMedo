@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { mockSimilarCases, SimilarCase } from "@/data/mockData";
+import { mockSimilarCases } from "@/data/mockData";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +8,16 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Scale, AlertCircle, ExternalLink, FileText, Lock, PieChart } from "lucide-react";
+
+interface SimilarCase {
+  id: string;
+  caseNumber: string;
+  penalty: string;
+  crime: string;
+  decision: string;
+  similarity: number;
+  factors?: any[];
+}
 
 export function Precedents() {
   const [selectedCase, setSelectedCase] = useState<SimilarCase | null>(null);
@@ -24,7 +34,6 @@ export function Precedents() {
         </div>
       </div>
 
-      {/* Changed text color to black as requested */}
       <Alert className="bg-warning/10 border-warning/30 text-black">
         <AlertCircle className="h-5 w-5 text-warning" />
         <AlertTitle className="text-black font-bold ml-2">Atenção</AlertTitle>
@@ -69,7 +78,7 @@ export function Precedents() {
                     <Button 
                       variant="ghost" 
                       size="icon" 
-                      onClick={() => setSelectedCase(item)}
+                      onClick={() => setSelectedCase(item as SimilarCase)}
                       title="Visualizar Caso"
                     >
                       <ExternalLink className="h-4 w-4 text-muted-foreground hover:text-primary" />
@@ -82,7 +91,6 @@ export function Precedents() {
         </CardContent>
       </Card>
 
-      {/* Read-Only Case Dialog */}
       <Dialog open={!!selectedCase} onOpenChange={(open) => !open && setSelectedCase(null)}>
         <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
           <DialogHeader>

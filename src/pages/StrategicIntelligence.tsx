@@ -9,7 +9,9 @@ import {
   History, LayoutGrid, Shield, Zap, 
   AlertCircle, Target, Truck
 } from 'lucide-react';
-import { useIntelligence } from '@/contexts/IntelligenceContext';
+import { useTactical } from '@/contexts/TacticalContext';
+import { useSystem } from '@/contexts/SystemContext';
+import { useUI } from '@/contexts/UIContext';
 import { MetricCard } from '@/components/intelligence/MetricCard';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { TacticalWorkspace } from '@/components/intelligence/TacticalWorkspace';
@@ -18,15 +20,9 @@ import { NarcoterroristAlert } from '@/components/intelligence/NarcoterroristAle
 import { FinancialAsphyxiaFlow } from '@/components/intelligence/FinancialAsphyxiaFlow';
 
 export default function StrategicIntelligence() {
-  const { 
-    setSelectedOrg, 
-    auditLog, 
-    organizations,
-    togglePanel,
-    openPanels,
-    requestMuralhaScan,
-    addLogEntry
-  } = useIntelligence();
+  const { setSelectedOrg, organizations } = useTactical();
+  const { auditLog, addLogEntry } = useSystem();
+  const { togglePanel, openPanels, requestMuralhaScan } = useUI();
 
   const [narcoterroristAlert, setNarcoterroristAlert] = useState<string | null>(null);
   const [showP1Alert, setShowP1Alert] = useState(false);

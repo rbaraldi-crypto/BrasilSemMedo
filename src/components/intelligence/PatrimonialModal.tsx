@@ -4,7 +4,9 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Landmark, Loader2, Zap, CheckCircle, ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useIntelligence } from '@/contexts/IntelligenceContext';
+import { useUI } from '@/contexts/UIContext';
+import { useTactical } from '@/contexts/TacticalContext';
+import { useSystem } from '@/contexts/SystemContext';
 import { PatrimonialStep } from '@/types/intelligence';
 import { tacticalAudio } from '@/lib/audioUtils';
 
@@ -13,7 +15,10 @@ interface PatrimonialModalProps {
 }
 
 export function PatrimonialModal({ workflow }: PatrimonialModalProps) {
-  const { activeModal, setActiveModal, selectedNode, addLogEntry } = useIntelligence();
+  const { activeModal, setActiveModal } = useUI();
+  const { selectedNode } = useTactical();
+  const { addLogEntry } = useSystem();
+  
   const [isSisbajudLoading, setIsSisbajudLoading] = useState(false);
   const [sisbajudResult, setSisbajudResult] = useState<any>(null);
 

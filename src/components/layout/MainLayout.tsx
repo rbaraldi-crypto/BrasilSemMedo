@@ -10,7 +10,9 @@ import {
 import { notificationService } from '@/services/notificationService';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
-import { IntelligenceProvider, useIntelligence } from '@/contexts/IntelligenceContext';
+import { SystemProvider, useSystem } from '@/contexts/SystemContext';
+import { TacticalProvider } from '@/contexts/TacticalContext';
+import { UIProvider, useUI } from '@/contexts/UIContext';
 import { cn } from '@/lib/utils';
 import { DeadMansSwitch } from '../ui/DeadMansSwitch';
 import { iabsTreeData } from '@/data/mockData';
@@ -25,11 +27,8 @@ const DossierTree = lazy(() => import('@/components/intelligence/DossierTree').t
 const PatrimonialModal = lazy(() => import('@/components/intelligence/PatrimonialModal').then(m => ({ default: m.PatrimonialModal })));
 
 function TacticalHUD() {
-  const { 
-    isOnline, pendingSyncCount, isNightVision, 
-    isVoiceActive, setVoiceActive, setLocked,
-    linkType, setLinkType, simulatedLatency 
-  } = useIntelligence();
+  const { isOnline, pendingSyncCount, linkType, setLinkType, simulatedLatency } = useSystem();
+  const { isNightVision, isVoiceActive, setVoiceActive, setLocked } = useUI();
 
   const handleLinkChange = (type: 'FIBER' | 'SATELLITE') => {
     setLinkType(type);
@@ -130,7 +129,7 @@ function TacticalHUD() {
 }
 
 function MainLayoutContent() {
-  const { isNightVision } = useIntelligence();
+  const { isNightVision } = useUI();
 
   return (
     <div className={cn(
@@ -177,8 +176,12 @@ function MainLayoutContent() {
 
 export function MainLayout() {
   return (
-    <IntelligenceProvider>
-      <MainLayoutContent />
-    </IntelligenceProvider>
+    <SystemProvider>
+      <TacticalProvider>
+        <UIProvider>
+          <MainLayoutContent />
+        </UIProvider>
+      </TacticalProvider>
+    </SystemProvider>
   );
 }

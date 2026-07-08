@@ -7,7 +7,9 @@ import {
   Zap, Radio, AlertCircle, Smartphone,
   ShieldAlert, UserX
 } from 'lucide-react';
-import { useIntelligence } from '@/contexts/IntelligenceContext';
+import { useUI } from '@/contexts/UIContext';
+import { useTactical } from '@/contexts/TacticalContext';
+import { useSystem } from '@/contexts/SystemContext';
 import { intelligenceService } from '@/services/intelligenceService';
 import { cn } from '@/lib/utils';
 import { tacticalAudio } from '@/lib/audioUtils';
@@ -20,10 +22,9 @@ import { TacticalVideoFeed } from './TacticalVideoFeed';
 import { BiometricMultimodalOverlay } from './BiometricMultimodalOverlay';
 
 export function MuralhaModal({ isEmbedded = false }: { isEmbedded?: boolean }) {
-  const { 
-    activeModal, closeModal, setActiveModal, 
-    muralhaScanTrigger, setTargetTrajectory, addLogEntry 
-  } = useIntelligence();
+  const { activeModal, closeModal, setActiveModal, muralhaScanTrigger } = useUI();
+  const { setTargetTrajectory } = useTactical();
+  const { addLogEntry } = useSystem();
   
   const [scanPhase, setScanPhase] = useState<'IDLE' | 'FILTERING' | 'RADAR' | 'MATCH'>('IDLE');
   const [scanResult, setScanResult] = useState<any>(null);

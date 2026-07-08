@@ -2,7 +2,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Globe, Loader2 } from 'lucide-react';
-import { useIntelligence } from '@/contexts/IntelligenceContext';
+import { useTactical } from '@/contexts/TacticalContext';
+import { useUI } from '@/contexts/UIContext';
 
 interface ONUModalProps {
   isLoading: boolean;
@@ -10,7 +11,8 @@ interface ONUModalProps {
 }
 
 export function ONUModal({ isLoading, result }: ONUModalProps) {
-  const { selectedNode, activeModal, setActiveModal } = useIntelligence();
+  const { selectedNode } = useTactical();
+  const { activeModal, setActiveModal } = useUI();
 
   const isOpen = activeModal === 'ONU';
 

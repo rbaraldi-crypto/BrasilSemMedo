@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useIntelligence } from '@/contexts/IntelligenceContext';
+import { useUI } from '@/contexts/UIContext';
 import { tacticalAudio } from '@/lib/audioUtils';
 
 export function useTacticalShortcuts() {
   const navigate = useNavigate();
-  const { setActiveModal } = useIntelligence();
+  const { setActiveModal } = useUI();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

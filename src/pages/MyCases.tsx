@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { mockMyCases, mockSubordinates, MyCase, SubordinateUser } from '@/data/mockData';
+import { mockMyCases, mockSubordinates } from '@/data/mockData';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
@@ -12,20 +12,41 @@ import { Briefcase, Search, Filter, UserPlus, CalendarClock, AlertCircle, Loader
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
 
+export interface SubordinateUser {
+  id: string;
+  name: string;
+  role: string;
+  avatar: string;
+  workload: number;
+}
+
+export interface MyCase {
+  id: string;
+  inmateName: string;
+  caseNumber: string;
+  priority: string;
+  type: string;
+  status: string;
+  entryDate: string;
+  similarCases: any[];
+  documents: any[];
+  isPoint11: boolean;
+  delegatedTo?: SubordinateUser;
+  delegatedAt?: string;
+  estimatedCompletion?: string;
+}
+
 export function MyCases() {
   const [filterText, setFilterText] = useState('');
   const [priorityFilter, setPriorityFilter] = useState<string>('all');
   
-  // Local state to manage cases to simulate updates without backend
-  const [cases, setCases] = useState<MyCase[]>(mockMyCases);
+  const [cases, setCases] = useState<MyCase[]>(mockMyCases as MyCase[]);
 
-  // Delegation Modal State
   const [isDelegating, setIsDelegating] = useState(false);
   const [selectedCaseForDelegation, setSelectedCaseForDelegation] = useState<MyCase | null>(null);
   const [delegationStep, setDelegationStep] = useState<'loading' | 'select' | 'confirm'>('loading');
   const [selectedSubordinate, setSelectedSubordinate] = useState<SubordinateUser | null>(null);
 
-  // Priority Change Modal State
   const [priorityDialog, setPriorityDialog] = useState<{ isOpen: boolean; case: MyCase | null }>({
     isOpen: false,
     case: null
@@ -48,15 +69,12 @@ export function MyCases() {
     }
   };
 
-  // --- Delegation Handlers ---
-
   const handleOpenDelegation = (caseItem: MyCase) => {
     setSelectedCaseForDelegation(caseItem);
     setIsDelegating(true);
     setDelegationStep('loading');
     setSelectedSubordinate(null);
 
-    // Simulate API Call failure then fallback to list
     setTimeout(() => {
       setDelegationStep('select');
     }, 1500);
@@ -67,13 +85,13 @@ export function MyCases() {
 
     const now = new Date();
     const estimated = new Date();
-    estimated.setDate(now.getDate() + 2); // +2 days
+    estimated.setDate(now.getDate() + 2);
 
     const updatedCases = cases.map(c => {
       if (c.id === selectedCaseForDelegation.id) {
         return {
           ...c,
-          priority: 'Delegado' as const,
+          priority: 'Delegado',
           delegatedTo: selectedSubordinate,
           delegatedAt: now.toLocaleString('pt-BR'),
           estimatedCompletion: estimated.toLocaleDateString('pt-BR'),
@@ -88,26 +106,20 @@ export function MyCases() {
     setSelectedCaseForDelegation(null);
   };
 
-  // --- Priority Change Handlers ---
-
   const handlePriorityClick = (caseItem: MyCase) => {
-    if (caseItem.priority === 'Delegado') return; // Cannot change priority of delegated tasks
+    if (caseItem.priority === 'Delegado') return;
     setPriorityDialog({ isOpen: true, case: caseItem });
   };
 
   const handleChangePriority = async (newPriority: 'Alta' | 'Média' | 'Baixa') => {
     if (!priorityDialog.case) return;
 
-    // --- API INTEGRATION POINT ---
-    // PATCH /hitl/tasks/{taskId}/prioridade
     try {
         const taskId = priorityDialog.case.id;
-        
-        // Cálculo simples de prazo baseado na prioridade para o payload
         const prazoMap = {
-            'Alta': new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(), // +24h
-            'Média': new Date(Date.now() + 72 * 60 * 60 * 1000).toISOString(), // +72h
-            'Baixa': new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString() // +5 dias
+            'Alta': new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
+            'Média': new Date(Date.now() + 72 * 60 * 60 * 1000).toISOString(),
+            'Baixa': new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString()
         };
 
         console.log(`[API] PATCH /hitl/tasks/${taskId}/prioridade`);
@@ -116,9 +128,6 @@ export function MyCases() {
             prazo_limite: prazoMap[newPriority],
             motivo: "Alteração manual pelo usuário via interface MyCases"
         });
-
-        // await fetch(`/hitl/tasks/${taskId}/prioridade`, { ... })
-
     } catch (error) {
         console.error("Erro ao atualizar prioridade:", error);
     }
@@ -304,7 +313,7 @@ export function MyCases() {
                                     flex items-center justify-between p-3 rounded-lg border cursor-pointer transition-all
                                     ${selectedSubordinate?.id === user.id ? 'border-primary bg-primary/5 ring-1 ring-primary' : 'hover:bg-muted'}
                                 `}
-                                onClick={() => setSelectedSubordinate(user)}
+                                onClick={() => setSelectedSubordinate(user as SubordinateUser)}
                             >
                                 <div className="flex items-center gap-3">
                                     <Avatar className="h-8 w-8">

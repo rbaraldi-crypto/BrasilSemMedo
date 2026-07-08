@@ -10,7 +10,8 @@ import {
   Building2, Zap
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useIntelligence } from '@/contexts/IntelligenceContext';
+import { useTactical } from '@/contexts/TacticalContext';
+import { useUI } from '@/contexts/UIContext';
 import { motion, useMotionValue, useTransform, MotionValue, AnimatePresence } from 'framer-motion';
 import { strategicMarkers as initialMarkers } from '@/data/mockData';
 import { StrategicMarker } from '@/types/intelligence';
@@ -75,10 +76,8 @@ function HeatmapLayer({ markers }: { markers: StrategicMarker[] }) {
 }
 
 export function IntelligenceMap({ isEmbedded = false }: { isEmbedded?: boolean }) {
-  const { 
-    selectedOrg, selectedNode, setSelectedNode, activeTab, 
-    setActiveTab, activeModal, closeModal, setActiveModal,
-  } = useIntelligence();
+  const { selectedOrg, selectedNode, setSelectedNode } = useTactical();
+  const { activeTab, setActiveTab, activeModal, closeModal, setActiveModal } = useUI();
   
   const [visibleLayers] = useState<string[]>(['treva', 'port', 'muralha', 'border']);
   const [showHeatmap, setShowHeatmap] = useState(false);

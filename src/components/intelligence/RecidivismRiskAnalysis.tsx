@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useQuery } from '@tanstack/react-query';
 import { 
   BrainCircuit, AlertTriangle, ShieldAlert, 
   TrendingUp, Info, Activity, Skull, 
@@ -10,10 +10,9 @@ import {
   PolarAngleAxis, ResponsiveContainer 
 } from 'recharts';
 import { cn } from '@/lib/utils';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { penalService } from '@/services/penalService';
-import { RecidivismRisk } from '@/types/intelligence';
 import { TacticalSkeleton } from '@/components/ui/TacticalSkeleton';
 
 interface RecidivismRiskAnalysisProps {
@@ -22,18 +21,11 @@ interface RecidivismRiskAnalysisProps {
 }
 
 export function RecidivismRiskAnalysis({ inmateId, className }: RecidivismRiskAnalysisProps) {
-  const [risk, setRisk] = useState<RecidivismRisk | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchRisk = async () => {
-      setIsLoading(true);
-      const data = await penalService.getRecidivismRisk(inmateId);
-      setRisk(data);
-      setIsLoading(false);
-    };
-    fetchRisk();
-  }, [inmateId]);
+  // Padronização com useQuery para gerenciar loading, error e cache automaticamente
+  const { data: risk, isLoading } = useQuery({
+    queryKey: ['recidivismRisk', inmateId],
+    queryFn: () => penalService.getRecidivismRisk(inmateId),
+  });
 
   if (isLoading) {
     return (

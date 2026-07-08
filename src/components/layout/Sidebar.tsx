@@ -11,13 +11,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import { useIntelligence } from '@/contexts/IntelligenceContext';
+import { useUI } from '@/contexts/UIContext';
 
 export function Sidebar() {
   const location = useLocation();
   const navigate = useNavigate();
   const { language, setLanguage, t } = useLanguage();
-  const { isNightVision, setNightVision, isLocked, setLocked, setActiveModal, requestMuralhaScan } = useIntelligence();
+  const { isNightVision, setNightVision, isLocked, setLocked, setActiveModal, requestMuralhaScan } = useUI();
   const [isOpen, setIsOpen] = useState(false);
 
   // Função para testar a Muralha Brasileira de qualquer lugar

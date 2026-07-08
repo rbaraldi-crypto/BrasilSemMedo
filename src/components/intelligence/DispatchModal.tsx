@@ -8,7 +8,9 @@ import {
   AlertTriangle, Activity, Navigation, Loader2, WifiOff,
   Cctv, Layers, History, TrendingUp, MessageSquare
 } from 'lucide-react';
-import { useIntelligence } from '@/contexts/IntelligenceContext';
+import { useSystem } from '@/contexts/SystemContext';
+import { useTactical } from '@/contexts/TacticalContext';
+import { useUI } from '@/contexts/UIContext';
 import { cn } from '@/lib/utils';
 import { tacticalAudio } from '@/lib/audioUtils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -32,7 +34,9 @@ const generateMockCameras = () => {
 };
 
 export function DispatchModal() {
-  const { activeModal, setActiveModal, addLogEntry, isOnline, fieldUnits, targetTrajectory } = useIntelligence();
+  const { activeModal, setActiveModal } = useUI();
+  const { addLogEntry, isOnline } = useSystem();
+  const { fieldUnits, targetTrajectory } = useTactical();
   const [selectedUnit, setSelectedUnit] = useState<any>(null);
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSuccess] = useState(false);

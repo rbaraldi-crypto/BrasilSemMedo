@@ -1,4 +1,4 @@
-import { useIntelligence } from '@/contexts/IntelligenceContext';
+import { useSystem } from '@/contexts/SystemContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   History, ShieldCheck, Scan, Gavel, 
@@ -15,7 +15,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
  * Visualiza o log de auditoria como blocos encadeados para garantir imutabilidade.
  */
 export function AuditTimeline({ isEmbedded = false }: { isEmbedded?: boolean }) {
-  const { auditLog } = useIntelligence();
+  const { auditLog } = useSystem();
 
   const getIcon = (type: string) => {
     switch (type) {

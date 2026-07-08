@@ -7,32 +7,35 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
 import { AlertTriangle, Info, CheckSquare, ExternalLink, Link as LinkIcon, Loader2, WifiOff, SearchX, UserPlus, CalendarClock, CheckCircle2 } from "lucide-react";
-import { mockSubordinates, SubordinateUser } from "@/data/mockData";
+import { mockSubordinates } from "@/data/mockData";
+
+interface SubordinateUser {
+  id: string;
+  name: string;
+  role: string;
+  avatar: string;
+  workload: number;
+}
 
 export function Compliance() {
   const navigate = useNavigate();
   const [showExplanation, setShowExplanation] = useState(false);
   
-  // Estados para a busca de legislação
   const [isLoadingLegislation, setIsLoadingLegislation] = useState(false);
   const [showErrorDialog, setShowErrorDialog] = useState(false);
 
-  // Estados para Delegação
   const [isDelegating, setIsDelegating] = useState(false);
   const [delegationStep, setDelegationStep] = useState<'loading' | 'select' | 'confirm'>('loading');
   const [selectedSubordinate, setSelectedSubordinate] = useState<SubordinateUser | null>(null);
   
-  // Estado do Alerta Principal (Simulando refresh/remoção após ação)
   const [mainAlertStatus, setMainAlertStatus] = useState<'active' | 'delegated'>('active');
 
-  // Dados da Regra (Extraídos para uso na lógica)
   const ruleData = {
     rule: "LEP Art. 112 - Progressão de Regime (16%)",
     base: "10/01/2024",
     searchQuery: "Lei de Execução Penal Artigo 112 Planalto"
   };
 
-  // Alertas com rotas de navegação definidas
   const activeAlerts = [
     { 
       id: 1, 
@@ -61,10 +64,8 @@ export function Compliance() {
     setIsLoadingLegislation(true);
     setShowErrorDialog(false);
 
-    // Simulação de busca na internet / banco de dados de leis
     await new Promise(resolve => setTimeout(resolve, 1500));
 
-    // 70% de chance de sucesso, 30% de chance de erro
     const isSuccess = Math.random() > 0.3;
 
     if (isSuccess) {
@@ -81,20 +82,14 @@ export function Compliance() {
     setDelegationStep('loading');
     setSelectedSubordinate(null);
 
-    // Simula carregamento de analistas disponíveis
     setTimeout(() => {
       setDelegationStep('select');
     }, 1000);
   };
 
   const handleConfirmDelegation = () => {
-    // Simula a ação de delegar e "refrescar" a tela
     setIsDelegating(false);
-    
-    // Atualiza o estado do alerta principal para refletir que foi tratado
     setMainAlertStatus('delegated');
-    
-    // Reseta seleção
     setSelectedSubordinate(null);
   };
 
@@ -203,7 +198,6 @@ export function Compliance() {
         </Card>
       </div>
 
-      {/* Dialog de Explicação do Alerta */}
       <Dialog open={showExplanation} onOpenChange={setShowExplanation}>
         <DialogContent className="max-w-3xl">
           <DialogHeader>
@@ -269,7 +263,6 @@ Status = (Data_Atual > Data_Vencimento) ? "VENCIDO" : "EM_PRAZO"`}
         </DialogContent>
       </Dialog>
 
-      {/* Dialog de Erro de Acesso */}
       <Dialog open={showErrorDialog} onOpenChange={setShowErrorDialog}>
         <DialogContent className="border-destructive/50 sm:max-w-[425px]">
             <DialogHeader>
@@ -312,7 +305,6 @@ Status = (Data_Atual > Data_Vencimento) ? "VENCIDO" : "EM_PRAZO"`}
         </DialogContent>
       </Dialog>
 
-      {/* Dialog de Delegação (Novo) */}
       <Dialog open={isDelegating} onOpenChange={setIsDelegating}>
         <DialogContent className="sm:max-w-[500px]">
           <DialogHeader>
@@ -341,7 +333,7 @@ Status = (Data_Atual > Data_Vencimento) ? "VENCIDO" : "EM_PRAZO"`}
                                     flex items-center justify-between p-3 rounded-lg border cursor-pointer transition-all
                                     ${selectedSubordinate?.id === user.id ? 'border-primary bg-primary/5 ring-1 ring-primary' : 'hover:bg-muted'}
                                 `}
-                                onClick={() => setSelectedSubordinate(user)}
+                                onClick={() => setSelectedSubordinate(user as SubordinateUser)}
                             >
                                 <div className="flex items-center gap-3">
                                     <Avatar className="h-8 w-8">

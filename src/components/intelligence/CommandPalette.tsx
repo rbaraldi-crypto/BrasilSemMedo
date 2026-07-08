@@ -8,7 +8,8 @@ import {
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useTacticalShortcuts } from '@/hooks/useTacticalShortcuts';
 import { intelligenceService } from '@/services/intelligenceService';
-import { useIntelligence } from '@/contexts/IntelligenceContext';
+import { useTactical } from '@/contexts/TacticalContext';
+import { useUI } from '@/contexts/UIContext';
 import { cn } from '@/lib/utils';
 import { tacticalAudio } from '@/lib/audioUtils';
 
@@ -18,7 +19,8 @@ export function CommandPalette() {
   const [results, setResults] = useState<any[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const navigate = useNavigate();
-  const { setSelectedOrg, togglePanel } = useIntelligence();
+  const { setSelectedOrg } = useTactical();
+  const { togglePanel } = useUI();
   
   useTacticalShortcuts();
 

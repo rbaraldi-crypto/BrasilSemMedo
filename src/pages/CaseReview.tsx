@@ -1,19 +1,27 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { mockMyCases, SimilarCase, CaseDocument } from '@/data/mockData';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { useQuery, useMutation } from '@tanstack/react-query';
+import { mockMyCases } from '@/data/mockData';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
-import { Progress } from "@/components/ui/progress";
-import { ArrowLeft, Scale, FileText, AlertCircle, CheckCircle2, Gavel, ArrowUpRight, Lock, ExternalLink, Paperclip, Eye, Edit2, RefreshCw, Loader2, ShieldAlert, PieChart, Baby } from 'lucide-react';
+import { ArrowLeft, Scale, FileText, CheckCircle2, Gavel, Edit2, Loader2, ShieldAlert } from 'lucide-react';
 import { JuvenileTransitionWorkflow } from '@/components/intelligence/JuvenileTransitionWorkflow';
 
-// Interface para a resposta da API
+interface SimilarCase {
+  id: string;
+  caseNumber: string;
+  penalty: string;
+  crime: string;
+  decision: string;
+  similarity: number;
+}
+
 interface Classificacao {
   tipo: string;
   materia: string;
@@ -22,30 +30,18 @@ interface Classificacao {
 export function CaseReview() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [selectedSimilarCase, setSelectedSimilarCase] = useState<SimilarCase | null>(null);
-  const [selectedDocument, setSelectedDocument] = useState<CaseDocument | null>(null);
   
-  // State for Classification Data (Fetched from API)
-  const [classificacoes, setClassificacoes] = useState<Classificacao[]>([]);
-  const [isLoadingClassifications, setIsLoadingClassifications] = useState(false);
-
-  // State for Classification Editing
   const [isEditClassOpen, setIsEditClassOpen] = useState(false);
   const [tempClassification, setTempClassification] = useState({ tipo: "", materia: "" });
   const [currentClassification, setCurrentClassification] = useState({ tipo: "Execucao Penal", materia: "" });
   
-  // State for Similarity Refresh
-  const [isRecalculating, setIsRecalculating] = useState(false);
   const [displayedSimilarCases, setDisplayedSimilarCases] = useState<SimilarCase[]>([]);
-
-  // Auth & Error State
   const [authError, setAuthError] = useState<string | null>(null);
   const [mockUserRole, setMockUserRole] = useState<"JUIZ" | "ANALISTA">("JUIZ");
 
   const caseData = mockMyCases.find(c => c.id === id);
 
-  // Medida 2: Age Check Logic
-  const inmateAge = 17; // Mocked for demonstration
+  const inmateAge = 17;
   const showJuvenileWorkflow = inmateAge < 18;
 
   useEffect(() => {
@@ -58,25 +54,29 @@ export function CaseReview() {
     }
   }, [caseData]);
 
-  useEffect(() => {
-    const fetchClassificacoes = async () => {
-      setIsLoadingClassifications(true);
-      try {
-        await new Promise(resolve => setTimeout(resolve, 500));
-        const mockData: Classificacao[] = [
-          { tipo: "Execucao Penal", materia: "Progressao" },
-          { tipo: "Execucao Penal", materia: "Livramento Condicional" },
-          { tipo: "Execucao Penal", materia: "Regressao" }
-        ];
-        setClassificacoes(mockData);
-      } catch (error) {
-        console.error("Erro ao buscar classificações:", error);
-      } finally {
-        setIsLoadingClassifications(false);
-      }
-    };
-    fetchClassificacoes();
-  }, []);
+  // Padronização com useQuery para buscar as classificações
+  const { data: classificacoes = [], isLoading: isLoadingClassifications } = useQuery({
+    queryKey: ['classificacoes'],
+    queryFn: async () => {
+      await new Promise(resolve => setTimeout(resolve, 500));
+      return [
+        { tipo: "Execucao Penal", materia: "Progressao" },
+        { tipo: "Execucao Penal", materia: "Livramento Condicional" },
+        { tipo: "Execucao Penal", materia: "Regressao" }
+      ] as Classificacao[];
+    }
+  });
+
+  // Padronização com useMutation para salvar a classificação
+  const saveClassificationMutation = useMutation({
+    mutationFn: async (newClassification: typeof tempClassification) => {
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      return newClassification;
+    },
+    onSuccess: (data) => {
+      setCurrentClassification(data);
+    }
+  });
 
   const handleOpenEdit = () => {
     setTempClassification(currentClassification);
@@ -84,19 +84,15 @@ export function CaseReview() {
     setAuthError(null);
   };
 
-  const handleSaveClassification = async () => {
+  const handleSaveClassification = () => {
     setAuthError(null);
     if (mockUserRole === "JUIZ") {
       setAuthError("Erro 403: Função não permitida para Juízes.");
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      return;
     }
-
-    setIsRecalculating(true);
+    
     setIsEditClassOpen(false);
-    setTimeout(() => {
-      setCurrentClassification(tempClassification);
-      setIsRecalculating(false);
-    }, 1500);
+    saveClassificationMutation.mutate(tempClassification);
   };
 
   if (!caseData) {
@@ -109,7 +105,6 @@ export function CaseReview() {
   }
 
   const uniqueTypes = Array.from(new Set(classificacoes.map(c => c.tipo)));
-  const availableMaterias = classificacoes.filter(c => c.tipo === tempClassification.tipo).map(c => c.materia);
 
   return (
     <div className="space-y-6">
@@ -136,7 +131,6 @@ export function CaseReview() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
-          {/* Medida 2: Juvenile Transition Workflow Integration */}
           {showJuvenileWorkflow && (
             <JuvenileTransitionWorkflow 
               age={inmateAge} 
@@ -177,7 +171,7 @@ export function CaseReview() {
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-6 space-y-6 min-h-[200px]">
-              {isRecalculating ? (
+              {saveClassificationMutation.isPending ? (
                 <div className="absolute inset-0 bg-background/80 backdrop-blur-sm z-10 flex flex-col items-center justify-center gap-4">
                     <Loader2 className="h-10 w-10 text-primary animate-spin" />
                     <p className="font-semibold text-primary">Recalculando Similaridade...</p>

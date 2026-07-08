@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldX } from 'lucide-react';
-import { useIntelligence } from '@/contexts/IntelligenceContext';
+import { useUI } from '@/contexts/UIContext';
 import { BiometricScanner } from '@/components/intelligence/BiometricScanner';
 import { tacticalAudio } from '@/lib/audioUtils';
 
@@ -11,7 +11,7 @@ import { tacticalAudio } from '@/lib/audioUtils';
  * O sistema agora responde apenas ao bloqueio manual (Sidebar/Voz).
  */
 export function DeadMansSwitch() {
-  const { isLocked, setLocked } = useIntelligence();
+  const { isLocked, setLocked } = useUI();
 
   return (
     <AnimatePresence>

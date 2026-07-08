@@ -1,4 +1,5 @@
-import { useIntelligence, PanelID } from '@/contexts/IntelligenceContext';
+import { PanelID } from '@/types/intelligence';
+import { useUI } from '@/contexts/UIContext';
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
 import { cn } from '@/lib/utils';
 import { X, Maximize2, GripVertical, GripHorizontal, LayoutGrid, Monitor, Columns } from 'lucide-react';
@@ -22,7 +23,7 @@ interface WorkspacePanelProps {
 }
 
 function WorkspacePanelWrapper({ id, title, children }: WorkspacePanelProps) {
-  const { togglePanel } = useIntelligence();
+  const { togglePanel } = useUI();
 
   return (
     <div className="h-full flex flex-col bg-slate-950 border border-white/10 rounded-lg overflow-hidden shadow-2xl relative group/panel">
@@ -49,7 +50,7 @@ function WorkspacePanelWrapper({ id, title, children }: WorkspacePanelProps) {
 }
 
 export function TacticalWorkspace() {
-  const { openPanels, layoutMode, setLayoutMode } = useIntelligence();
+  const { openPanels, layoutMode, setLayoutMode } = useUI();
 
   if (openPanels.length === 0) {
     return (
