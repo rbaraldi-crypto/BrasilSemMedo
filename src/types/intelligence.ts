@@ -142,8 +142,6 @@ export interface ProgramGuideline {
   icon: LucideIcon;
 }
 
-// --- Novas Interfaces Rigorosas ---
-
 export interface ONUResult {
   targetName: string;
   riskLevel: string;
@@ -169,5 +167,29 @@ export interface GlobalSearchItem {
   subtitle?: string;
   icon?: LucideIcon;
   action?: () => void;
-  data?: any; // Mantido como 'any' ou 'unknown' para flexibilidade do payload, mas a estrutura principal está tipada
+  data?: any;
+}
+
+export interface DossierNode {
+  label: string;
+  value: string;
+  icon?: LucideIcon;
+  children?: DossierNode[];
+}
+
+export interface FinancialBlock {
+  id: string;
+  amount: number;
+  org_id: string;
+  timestamp: string;
+}
+
+export interface PenalCase {
+  id: string;
+  inmate_cpf: string;
+  last_decision: string;
+  status: string;
+  operator_id: string;
+  updated_at: string;
+  is_point_11: boolean;
 }
