@@ -31,7 +31,7 @@ export function SystemProvider({ children }: { children: ReactNode }) {
       : Math.floor(650 + Math.random() * 400);
   }, [linkType]);
 
-  const withNetworkDelay = useCallback(async <T>(fn: () => Promise<T>): Promise<T> => {
+  const withNetworkDelay = useCallback(async <T,>(fn: () => Promise<T>): Promise<T> => {
     await new Promise(resolve => setTimeout(resolve, simulatedLatency));
     return fn();
   }, [simulatedLatency]);

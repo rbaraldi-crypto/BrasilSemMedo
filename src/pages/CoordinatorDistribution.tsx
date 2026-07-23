@@ -1,1 +1,175 @@
-data:application/octet-stream;base64,ZGF0YTphcHBsaWNhdGlvbi9vY3RldC1zdHJlYW07YmFzZTY0LFpHRjBZVHBoY0hCc2FXTmhkR2x2Ymk5dlkzUmxkQzF6ZEhKbFlXMDdZbUZ6WlRZMExHRlhNWGRpTTBvd1NVaHpaMlJZVG14VWJVWXlZVmRrYUdSSFZXZG1VMEp0WTIwNWRFbERaSGxhVjBacVpFTXhlV0l6VmpCYVdFbDBXa2M1ZEVwNmMwdGhWekYzWWpOS01FbEljMmRSTWtaNVdrTjNaMUV5Um5sYVJVNTJZbTVTYkdKdVVYTkpSVTVvWTIxU1NWcFhSbXRhV0VselNVVk9hR050VWxWaFdGSnpXbE4zWjFFeVJubGFSVkpzWXpKT2VXRllRakJoVnpsMVNVZ3daMXB1U25aaVUwRnVVVU01YW1JeU1YZGlNalZzWW01U2Vrd3pWbkJNTWs1b1kyMVJiazkzY0hCaVdFSjJZMjVSWjJWNVFrTmtXRkl3WWpJMFoyWlRRbTFqYlRsMFNVTmtRVXd5VG5aaVdFSjJZbTFXZFdSSVRYWmtWMnQyV1c1V01HUkhPWFZLZW5OTFlWY3hkMkl6U2pCSlNITm5Wa2RHYVdKSFZYTkpSbEpvV1cxNGJGRnRPV3RsVTNkblZrZEdhV0pIVmtSYVYzaHpURU5DVlZsWFNuTmFWV2hzV1ZkUmMwbEdVbWhaYlhoc1UwZFdhRnBIVm5sTVEwSlZXVmRLYzFwV1NuWmtlVUk1U1VkYWVXSXlNR2RLTUVGMldUSTVkR05IT1hWYVZ6VXdZM2s1TVdGVE9UQlpWMHB6V2xOak4wTnRiSFJqUnpsNVpFTkNOMGxGU21oYVIyUnNTVWd3WjFwdVNuWmlVMEZ1VVVNNWFtSXlNWGRpTWpWc1ltNVNla3d6Vm5CTU1rcG9Xa2RrYkVwNmMwdGhWekYzWWpOS01FbEljMmRWU0VwMldqTktiR016VFdkbVUwSnRZMjA1ZEVsRFpFRk1NazUyWWxoQ2RtSnRWblZrU0UxMlpGZHJkbU5JU25aYU0wcHNZek5OYms5M2NIQmlXRUoyWTI1UloyVjVRa0pqYmtwMlpEQjRiRnB1VVhOSlJsWjZXbGhLZWt4RFFrTlpXRXBFWVVkR2VXUkVUWE5KUms1c1pFaFNjR0p0WkhwTVEwSldZekpXZVZFeWFHeFpNbk56U1VWR2MxcFlTakJSTW14NVdUSjRiRXhEUWxWamJWWjFXa2RzZFZveFZuZEpTREJuV201S2RtSlRRVzVpU0ZacVlWZFNiRXhZU214WlYwNHdTbnB6UzJGWE1YZGlNMG93U1VoeloySlhPV3BoTUZKd1l6TlNlV0ZYU2pGa1IyeDJZbXhXZWxwWVNucEpTREJuV201S2RtSlRRVzVSUXpscldWaFNhRXd5TVhaWk1uUkZXVmhTYUVwNmMwdGhWekYzWWpOS01FbEljMmRSV0Zwb1pFZEdlVXhEUWtKa2JVWXdXVmhLUjFsWGVITlpiVVpxWVhsM1oxRllXbWhrUjBaNVUxY3hhRm95VldkbVUwSnRZMjA1ZEVsRFpFRk1NazUyWWxoQ2RtSnRWblZrU0UxMlpGZHJkbGxZV21oa1IwWjVTbnB6UzBOdFZqUmpSemw1WkVOQ2JXUlhOV3BrUjJ4MlltbENSR0l5T1hsYVIyeDFXVmhTZG1OclVuQmpNMUo1WVZkS01XUkhiSFppYVdkd1NVaHpTMGxEUW1waU1qVjZaRU5DZFZsWVduQmFNa1l3V2xOQk9VbElWbnBhVlRWb1pHMXNibGxZVW14TFEyczNRMmR2WjBsSVNteGtTRlo1WW1sQmIwTnBRV2RKUTBFNFdrZHNNa2xIVG5OWldFNTZWRzFHZEZwVU1HbGlWMngxVEZkbmRHTXlUbmxhVjFaMVNVZEtia3hYU21oWk1uUnVZMjA1TVdKdFVXZGpRekEwU1dvMFMwbERRV2RKUTBGblVFZFNjR1JwUW1waVIwWjZZekExYUdKWFZUbEpiVEZvWlVNeE0weFVaRFJpUTBKMFpVTXhhR1JZVW5aSlNFNTNXVmRPYkV4WWEzUlBRMGtyUTJsQlowbERRV2RKUTBGblVFZFNjR1JwUW1waVIwWjZZekExYUdKWFZUbEpiVnB6V2xobloyRllVbXhpV0UxMFdUSldkV1JIVm5sSlIzQXhZek5TY0ZwdWEzUlpiVll3WkRKV2JHSnBTU3REYVVGblNVTkJaMGxEUVdkSlEwRTRXa2RzTWtsSFRuTlpXRTU2VkcxR2RGcFVNR2xhYlhoc1pVTkNjR1JIVm5SamVURnFXbGMxTUZwWVNXZGFNa1ozVEZSUmFWQm5iMmRKUTBGblNVTkJaMGxEUVdkSlEwRTRVVzVXTUdSSE9YVkpTRnBvWTIxc2FHSnVVVGxKYldSdllqTk9NRWxwUW5waFdIQnNVRk5LY0ZreU9YVkphVUoyWW10T2MyRlhUbkpRV0hOdlMxTkJPVkJwUW5WWldGcHdXakpHTUZwVFoyNU1NbEp3WXpOU2VXRlhTakZoVjA1b1lubGpjR1pVTkV0SlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQk9GRllTbmxpTTJSTldsZGFNRWxIVG5OWldFNTZWRzFHZEZwVU1HbGhRekF4U1VoamRFNVRTV2RNZWpSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCRE9VTmtXRkl3WWpJMEswTnBRV2RKUTBGblNVTkJaMGxEUVdkSlJIaHJZVmhaSzBOcFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblVFZG5lVWxIVG5OWldFNTZWRzFHZEZwVU1HbGtSMVkwWkVNd2VtVkhkMmRhYlRsMVpFTXhhV0l5ZUd0SlNGSnNaVWhSZEdOSVNuQmlWMFo1WlZOQ01HTnRSbXBoTW14MVdua3hNR0ZYWkc5a1Ewa3JWVWRHY0dKdFZuTkpSMUoyU1VWT2RtSXpTbXRhVnpWb1drYzVlVkJET1c5TmFqUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhqUTBKcVlrZEdlbU13TldoaVYxVTVTVzVTYkdWSVVYUmlXRll3V2xkUmRGcHRPWGxhVjJSNVlqTldkVnBEU1N0U01sWjZaRTFQYW1KNVFtdGFVMEpzWTFoV2NHTkhWV2RhVTBKcFdWZDRhR0p0VG14WlZ6RnNZbTVTZGtsSFVteEpSMDVvWTIxa2FFeHFkM1pqUkRSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCRE9XdGhXRmtyUTJsQlowbERRV2RKUTBGblNVTkJPRXd5VW5Ca2FqUkxTVU5CWjBsRFFXZEpRMEZuU1VSNGEyRllXV2RaTW5ob1l6Tk9UMWxYTVd4UVUwcHRZa2RXTkVsSFpHaGpRekI1U1dvMFMwbERRV2RKUTBGblNVTkJaMGxEUVdkUVJVb3haRWhTZG1KcFFqSlpXRXB3V1ZjMU1GQlRTblprV0ZKellWYzFiRWxwUW1waVIwWjZZekExYUdKWFZUbEpiV1JvWTBNd2VVbHFORXRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0ZVeVZqQmtSMngxV2pOTloxa3llR2hqTTA1UFdWY3hiRkJUU205TVZGRm5aSGt3TUVscFFYWlFhVUpUV2xka2VWbFlUV2RhUjFWblZHMVdibmMzVG1waFZ6aExTVU5CWjBsRFFXZEpRMEZuU1VOQloxQkRPVU5rV0ZJd1lqSTBLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpSSGhEWkZoU01HSXlOR2RaTW5ob1l6Tk9UMWxYTVd4UVUwcHVXVmhCZEUxcFNTdERhVUZuU1VOQlowbERRV2RKUTBGblNVTkJaMUJGU21oamEwNXZXVmhLTUUxNVFtcGlSMFo2WXpBMWFHSlhWVGxKYldkMFRrTkNNMHhVVVdsSlF6Z3JTVVpLYkdKSFJqQjNOMDU1WVZjNFoxcEhWV2RWU0VwMldraFdNR0ZZV25CYVIwWnJXbEZ2WjBsRFFXZEpRMEZuU1VOQlowbERRVGhNTUVveFpFaFNkbUpxTkV0SlEwRm5TVU5CWjBsRFFXZEpSSGQyV2tkc01sQm5iMmRKUTBGblNVTkJaMGxFZDNaYVIyd3lVR2R2UzBsRFFXZEpRMEZuU1VOQk9GcEhiREpKUjA1eldWaE9lbFJ0Um5SYVZEQnBXak5LY0ZwRFFtNWpiV3hyVEZkT2RtSklUWFJOVTBKMFdrUndibU50Ykd0TVYwNTJZa2hOZEUxNVFtNVpXRUYwVG1sSkswTnBRV2RKUTBGblNVTkJaMGxEUVRoUk1rWjVXa1EwUzBsRFFXZEpRMEZuU1VOQlowbERRV2RRUlU1b1kyMVNTVnBYUm10YVdFbG5XVEo0YUdNelRrOVpWekZzVUZOS2QxbHBNSGxKYWpSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaFJNa1o1V2taU2NHUkhlR3hKUjA1eldWaE9lbFJ0Um5SYVZEQnBaRWRXTkdSRE1YcGlVMEp0WWpJMU1FeFhNV3hhUjJ3eFlsTkNNRnBZYURCTVZ6RXhaRWRXYTB4WFduWmpiVlp1WTIwNU1XSnRVV2RrV0VKM1dsaEthbGxZVG14SmFqVlJZMjA1YWxwWVRucGlNMDFuV2xjd1oxSnRiSE5aVkhkMlVUSkdlVnBHVW5Ca1IzaHNVR2R2WjBsRFFXZEpRMEZuU1VOQlowbERRVGhNTUU1b1kyMVNTVnBYUm10YVdFa3JRMmxCWjBsRFFXZEpRMEZuU1VOQlowbEVlRVJaV0VwclVUSTVkV1JIVm5Wa1JEUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhhUjJ3eVNVZE9jMWxZVG5wVWJVWjBXbFF3YVdSSFZqUmtRekI1WlVkM1oxcHRPWFZrUXpGcFlqSjRhMGxJVW14bFNGRjBaREpHZVdKdGJIVmFlVWtyVGtSSk9Fd3lVbkJrYWpSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaGpRMEpxWWtkR2VtTXdOV2hpVjFVNVNXNVNiR1ZJVVhSbFNFMW5aRWRXTkdSRE1YUmtXRkpzV2tNeGJXSXpTbXhhTTBwMlpGYzFhMGxITVRCTVZFVm5XbTE0YkdWRFFuQmtSMVowWTNreGFscFhOVEJhV0VsbldqSkdkMHhVUldsUVoyOW5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RRUmxKNVdsYzFhMkZYTlc1V1dFRm5XVEo0YUdNelRrOVpWekZzVUZOS2IweFVUV2RrZVRCNlNXbEJkbEJwUVhKTlZFbHNTVWRTYkdNeVVteEpSemwxWkVkV2RFTnBRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5VRU01ZDFCbmIyZEpRMEZuU1VOQlowbERRV2RKUTBFNFREQk9hR050VWtSaU1qVXdXbGMxTUZCbmIyZEpRMEZuU1VOQlowbERRV2RRUXpsRVdWaEthMUJuYjJkSlEwRm5TVU5CWjBsRFFXZFFSVTVvWTIxUkswTnBRV2RKUTBGblNVTkJaMGxEUVdkSlJIaEVXVmhLYTFOSFZtaGFSMVo1U1VkT2MxbFlUbnBVYlVaMFdsUXdhV05IU1hSTmFVa3JRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RRUlU1b1kyMVNWV0ZZVW5OYVUwSnFZa2RHZW1Nd05XaGlWMVU1U1c1U2JHVklVWFJqTWpCbldtMDVkV1JETVhSYVYxSndaRmN3WjJSSFZqUmtRekYwWkZoU2JGcERNVzFpTTBwc1dqTktkbVJYTld0SlNGWjNZMGRXZVZreVJucGFVMGtyVkdOUGNGcEhiR2hKUjFKc1NVVk9kbUp0VG5Oa1dGQkViekk0T0V3d1RtaGpiVkpWWVZoU2MxcFVORXRKUTBGblNVTkJaMGxEUVdkSlEwRm5VRU01UkZsWVNtdFRSMVpvV2tkV2VWQm5iMmRKUTBGblNVTkJaMGxEUVdkSlEwRTRVVEpHZVZwRlRuWmlibEpzWW01UkswTnBRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5VRWRTY0dScFFtcGlSMFo2WXpBMWFHSlhWVGxKYmxKc1pVaFJkRTF1YUhOSlIxcDJZbTVSZEZsdE9YTmFRMEl3V2xob01FeFlRbmxoVnpGb1kyNXJhVkJxVVhWTmFVSnJZVmRHZWxCRE9XdGhXRmtyUTJsQlowbERRV2RKUTBGblNVTkJaMGxEUVdkUVNFRm5XVEo0YUdNelRrOVpWekZzVUZOS01GcFlhREJNV0doNlNVaFNiR1ZJVVhSaVdGWXdXbGRSZEZwdE9YbGFWMlI1WWpOV2RWcERRblJrUXpCNFNXbzFUbHBZVW1oUGFVRXhUR3BCWjFwSGJHaGplbmQyWTBRMFMwbERRV2RKUTBGblNVTkJaMGxEUVdkUVF6bEVXVmhLYTFFeU9YVmtSMVoxWkVRMFMwbERRV2RKUTBGblNVTkJaMGxFZDNaUk1rWjVXa1EwUzBsRFFXZEpRMEZuU1VOQlowbEVlRVJaV0VwclVHZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaFJNa1o1V2tWb2JGbFhVbXhqYVVKcVlrZEdlbU13TldoaVYxVTVTVzVDYVV4VVNXbFFaMjluU1VOQlowbERRV2RKUTBGblNVTkJaMGxFZUVSWldFcHJWa2RzTUdKSFZXZFpNbmhvWXpOT1QxbFhNV3hRVTBvd1dsaG9NRXhZVG5SSlIxcDJZbTVSZEdKWFZtdGhXRlowU1VoU2JHVklVWFJpV0ZZd1dsZFJkRnB0T1hsYVYyUjVZak5XZFZwRFFqRmpTRUpzWTIxT2FHTXlWV2xRYTA1MlltMU9jMlJqVDNSYVJ6bDZTVU5vU1dJeWNHeExWSGQyVVRKR2VWcEdVbkJrUjNoc1VHZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaE1NRTVvWTIxU1NWcFhSbXRhV0VrclEybEJaMGxEUVdkSlEwRm5TVU5CWjBsRWVFUlpXRXByVVRJNWRXUkhWblZrUkRSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaGFSMnd5U1VkT2MxbFlUbnBVYlVaMFdsUXdhV1JIVmpSa1F6QjVaVWQzWjFwdE9YVmtRekZwWWpKNGEwbElVbXhsU0ZGMFl6TldhbGt5Vm5wamVVa3JUVlJuT0V3eVVuQmthalJMU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVRoalEwSnFZa2RHZW1Nd05XaGlWMVU1U1c1U2JHVklVWFJsU0UxblpFZFdOR1JETVhSa1dGSnNXa014YldJelNteGFNMHAyWkZjMWEwbEhNVEJNVkVWbldtMTRiR1ZEUW5Ca1IxWjBZM2t4YWxwWE5UQmFXRWxuV2pKR2QweFVSV2xRWjI5blNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZFFSbFo2V2xoS1JHRkhWbXBoZVVKcVlrZEdlbU13TldoaVYxVTVTVzFuZEUxNVFqTk1WRTFwU1VNNEswbEVaekZLVTBKcldWTkNkRnBZVW1oSlIxSndkelpHZVdGWFJVdEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJPRXd6UVN0RGFVRm5TVU5CWjBsRFFXZEpRMEZuU1VSM2RsRXlSbmxhUlU1MlltNVNiR0p1VVN0RGFVRm5TVU5CWjBsRFFXZEpRMEU0VERCT2FHTnRVU3REYVVGblNVTkJaMGxEUVdkUVF6bHJZVmhaSzBObmIyZEpRMEZuU1VOQlowbEVlRVJaV0VwclVHZHZaMGxEUVdkSlEwRm5TVU5CWjFCRlRtaGpiVkpKV2xkR2ExcFlTU3REYVVGblNVTkJaMGxEUVdkSlEwRm5TVVI0UkZsWVNtdFdSMnd3WWtkVksxSXlWbnBrVFU5cVlubENhMXBUUWtKaWJVWnpZVmhPTUZsWVRUaE1NRTVvWTIxU1ZXRllVbk5hVkRSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCRlRtaGpiVkpGV2xoT2FtTnRiSGRrUjJ4MlltbzFUbUl5TlhCa1J6bDVXbE5DYUVsSE9XcGtXRUpvZHpabVJHOHlPR2RhVTBKMlNVaE9NRmxZVWpGamVVSnJXbE5DYWxsWFVtaEpSekZzWWxkS2VXSjVRbXRaVTBKc1kxaFdjR05IVlhWUVF6bEVXVmhLYTFKSFZucFpNMHB3WTBoU2NHSXlOQ3REYVVGblNVTkJaMGxEUVdkSlEwRTRUREJPYUdOdFVrbGFWMFpyV2xoSkswTnBRV2RKUTBGblNVTkJaMGxEUVRoUk1rWjVXa1ZPZG1KdVVteGlibEVyUTJsQlowbERRV2RKUTBGblNVTkJaMGxFZUZWWlYwcHpXbFEwUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFZrZEdhV0pIVmtsYVYwWnJXbGhKSzBOcFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJPRlpIUm1saVIxWlRZak5qSzBOcFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxFZUZWWlYwcHpXbFZvYkZsWFVTdFJWelZvWWtkc2VtUkhSVGhNTVZKb1dXMTRiRk5IVm1oYVJEUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblVFWlNhRmx0ZUd4VFIxWm9Xa1ExVkdSSFJqQmtXRTA0VERGU2FGbHRlR3hUUjFab1drUTBTMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQloxQkdVbWhaYlhoc1UwZFdhRnBFTlZGamJUbHFXbGhPZW1JelRXZFJXRkp3WkcwNWVsQkRPVlZaVjBweldsVm9iRmxYVVN0RGFVRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUkhoVldWZEtjMXBWYUd4WlYxRXJVVEpHZDFsWFRuQmFSMFpyV2xSM2RsWkhSbWxpUjFaSldsZEdhMUJuYjJkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhXUjBacFlrZFdTVnBYUm10UWExSnNZekpXZEdOSFZuVmhSemc0VERGU2FGbHRlR3hUUjFab1drUTBTMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQloxQkdVbWhaYlhoc1UwZFdhRnBEUW1waVIwWjZZekExYUdKWFZUbEpibEpzWlVoUmRHTnRiRzVoU0ZGcFVHdElSSEE0VHpGYVdFMDRUREZTYUZsdGVHeFRSMVpvV2tRMFMwbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVVIzZGxaSFJtbGlSMVpUWWpOakswTnBRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5VRU01VlZsWFNuTmFWV2hzV1ZkU2JHTnFORXRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0ZaSFJtbGlSMVpEWWpKU05WQm5iMmRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjJVeU1YWlpNblJGWVZoT01HTnRiR2xrV0ZKd1lqSTFWbU15Vm5samVUVjBXVmhCYjB0SVZucGFXRWx3U1VRd0swbERaMHRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZFFSbEpvV1cxNGJGVnRPVE5KUjNSc1pWUXhOMlJZVG14amFUVndXa2d3SzBOcFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkUVJsSm9XVzE0YkZFeVZuTmlSRFJMU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRWVHdGhXRmxuV1RKNGFHTXpUazlaVnpGc1VGTktiV0pIVmpSSlIyd3dXbGN4ZWt4WFRteGlibEpzWTJsQ2JsbFlRWFJOZVVrclEybEJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUkhoQ1pHMUdNRmxZU1dkWk1uaG9Zek5PVDFsWE1XeFFVMHB2VEZSbloyUjVNRFJKYWpSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFVWaGFhR1JIUm5sVFZ6Rm9XakpWWjJNelNtcFFXSFF4WXpKV2VVeHRSakpaV0ZKb1kyNHdaMHg2TkV0SlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVRoUldGcG9aRWRHZVZKdFJuTmlSMHBvV1RKeksyVXpWbnBhV0VsMVltMUdkRnBUTlhwa1YwcDZaRWhLY0dKdFkyOU5RM2RuVFdsc09WQkRPVUprYlVZd1dWaEtSMWxYZUhOWmJVWnFZWG8wUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5VRU01UW1SdFJqQlpXRWtyUTJsQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpSSGhyWVZoWkswTnBRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQloxQklRV2RaTW5ob1l6Tk9UMWxYTVd4UVUwcHRZakkxTUV4WE1XeGFSMnd4WWxOSksyVXpWbnBhV0VsMVltMUdkRnBZTURoTU0wRXJRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5VRWhCWjFreWVHaGpNMDVQV1ZjeGJGQlRTakJhV0dnd1RGaG9la2xJVW14bFNGRjBZbGhXTUZwWFVYUmFiVGw1V2xka2VXSXpWblZhUTBrclpUTldlbHBZU1hWamJUbHpXbGd3T0V3elFTdERhVUZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRWQzWmFSMnd5VUdkdlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZFFRemxyWVZoWkswTnBRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZFFRemxWV1ZkS2MxcFZUbXhpUjNjclEybEJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQloxQkdVbWhaYlhoc1VUSldjMkpFTkV0SlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVUjRRMWxYVW01YVUwSXlXVmhLY0ZsWE5UQlFXSFF4WXpKV2VVeHVUakJaV0ZJeFkzbEJPVkJVTUdkS01GSndZek5DZG1KelQzUmtiVlp6U25sQkwwbERaR3RhVjFwb1pGZDRNRXA1UVRaSlEyUjZXbGRPZG1KdFVtaGpibXR1WmxOQ2FtSkhSbnBqTURWb1lsZFZPV1V6Vm5wYVdFbDFZek5TYUdSSVZucEpSREE1VUZOQmJsSkhiSHBqUnpsMWR6WXhNbHBYZDI1SlJEaG5TakpLYmt4WVRqRlpNazVzWXpOTloyRkhPVEphV0VrMldXMWpkR016Vm1wWk1sWjZZM2s0TlUxRFkyZFBhVUZ1U2pNd0swTnBRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VoME1XTXlWbmxNYms0d1dWaFNNV016TUV0SlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVUjNkbEZ0Um10YU1sVXJRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMUJET1ZWWlYwcHpXbFZPYkdKSGR5dERhVUZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5VRVpTYUZsdGVHeFJNbFp6WWtOQ2FtSkhSbnBqTURWb1lsZFZPVWx0V25aaWJsRjBXVzA1YzFwRFNTdGxNMVo2V2xoSmRWa3lSbnBhV0U1RVlqTldkV1JJTURoTU1WSm9XVzE0YkZFeVZuTmlSRFJMU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0ZaSFJtbGlSMVpFV2xkNGMwbEhUbk5aV0U1NlZHMUdkRnBVTUdsa2VURmlUV3BCZDJOSWFHUkphalJMU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRWVHdGhXRmxuV1RKNGFHTXpUazlaVnpGc1VGTktiV0pIVmpSSlIxcHpXbGhuZEZreU9YTkpSMlJvWTBNd2VFbHFORXRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQloxQkhVbkJrYVVKcVlrZEdlbU13TldoaVYxVTVTVzFhYzFwWVoyZGhibFo2WkVkc2JXVlRNV2xhV0ZJeldsZFdkVWxJVW14bFNGRjBWM3BGZDJOSWFHUkpTRkpzWlVoUmRHSllWakJhVjFGMFdtMDVlVnBYWkhsaU0xWjFXa05DTVdOSVFteGpiVTVvWXpKVloxcHRPWFZrUXpGcFlqSjRhMGxxTkV0SlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVRoak0wSm9ZbW8xVUZrelZuZFpZMDl1ZHpaT2RsQkRPWHBqUjBaMVVHZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVUjRlbU5IUm5WUWJuUk9XVmhTYjB4dVNuWmtWelZyUzBOb01XTXlWbmxNYlU1b1l6SldlbEV5T1RGaWJsRm5USGxDTVdNeVZubE1iVEZvWlVWT2FHTXlWbnBMVTBGeFNVUkZkMDFEYkRsS1ZIZDJZek5DYUdKcU5FdEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCRE9XdGhXRmtyUTJsQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpSSGhSWTIwNWJtTnRWbnBqZVVJeVdWZDRNVnBVTVRkTFNGWjZXbGhKZFZreVJucGFXRTVFWWpOV2RXUkRRWFpKU0ZaNldsaEpkV0pYUmpSUk1rWjZXbGhOY0VsRGIyZE5WRUYzWmxOQ2FtSkhSbnBqTURWb1lsZFZPVWx0WjNSTmFVbG5USG8wUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlJIZDJXa2RzTWxCbmIyZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlJIZDJWa2RHYVdKSFZrUmFWM2h6VUdkdlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRWVGVlpWMHB6V2xWT2JHSkhkeXREYVVGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQk9GcEhiREpKUjA1eldWaE9lbFJ0Um5SYVZEQnBXbTE0YkdWRFFuQmtSMVowWTNreGFscFhOVEJhV0VsbldqSkdkMHhVUldka1IxWTBaRU14ZW1SWFRtcGFXRTU2U1dvMFMwbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuVUVaU2VWcFhOV3RoVnpWdVZsaEJaMWt5ZUdoak0wNVBXVmN4YkZCVFNtOU1WRkZuWkhrd01FbHBRWFpRWjI5blNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhqTTBKb1ltbENhbUpIUm5wak1EVm9ZbGRWT1VsdVVteGxTRkYwWXpJd1oxcHRPWFZrUXpGMFdsZFNjR1JYTUdsUWEwWnpaRWM0T0V3elRuZFpWelFyUTJsQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaE1NbEp3WkdvMFMwbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaE1NVkpvV1cxNGJGRXlWbk5pUkRSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQk9GWkhSbWxpUjFaRVdsZDRjMGxIVG5OWldFNTZWRzFHZEZwVU1HbGtSMVkwWkVNeGVXRlhaRzlrUTBrclEybEJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhSYmxZd1pFYzVkVWxJV21oamJXeG9ZbTVST1VsdFpHOWlNMDR3U1dsQ2VtRlljR3hRVTBwNllsTkpLMUZYY0RGak0xSm9ZMmxDUkZsWVNtNVpWSGQyVVc1V01HUkhPWFZRWjI5blNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VSM2RsWkhSbWxpUjFaRVdsZDRjMUJuYjJkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhNTVZKb1dXMTRiRlZ0T1ROUVoyOW5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RMVTJ3NVEybEJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZFFRemxWV1ZkS2MxcFZTblphU0dzclEybEJaMGxEUVdkSlEwRm5TVU5CWjBsRWQzWldSMFpwWWtkVkswTnBRV2RKUTBGblNVTkJaMGxEUVRoTU1FNW9ZMjFTUkdJeU5UQmFWelV3VUdkdlowbERRV2RKUTBGblNVUjNkbEV5Um5sYVJEUkxRMmxCWjBsRFFXZEpRMEZuVUVkU2NHUnBRbXBpUjBaNll6QTFhR0pYVlRsSmJXUjVZVmRSWjFvelNuQmFRekZxWWpKNGVreFVSV2RpVjFFMldqTktjRnBETVdwaU1uaDZURlJKWjFveVJuZE1WRmxwVUdkdlowbERRV2RKUTBGblNVTkJaMUJGVG1oamJWRm5XVEo0YUdNelRrOVpWekZzVUZOS2FXSXpTbXRhV0VsMFlrTXdNRWxIU25aamJWSnNZMmt4YzB4WFVteGpNMUo1WkZkT01HRllXbXhKYWpSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCRlRtaGpiVkpKV2xkR2ExcFlTU3REYVVGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCRlRtaGpiVkpWWVZoU2MxcFRRbXBpUjBaNll6QTFhR0pYVlRsSmJsSnNaVWhSZEZwSFZucGtTRW94V1ROU2NHUnRWV2RhYlhoc1pVTkNjR1JIVm5SamVURnFXbGMxTUZwWVNXZGFNa1ozVEZSSmFWQm5iMmRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCRlJuTmFXRW93VVRKc2VWa3llR3hKUjA1eldWaE9lbFJ0Um5SYVZEQnBZVU13TVVsSVkzUk9VMGxuVEhvMFMwbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVVZHYzFwWVNqQlpXRTFuVVROTVJISllVbkJaTWpsNlEybEJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZFFRemxFV1ZoS2ExWkhiREJpUjFVclEybEJaMGxEUVdkSlEwRm5TVU5CWjBsRWQzWlJNa1o1V2tWb2JGbFhVbXhqYWpSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCRlRtaGpiVkpFWWpJMU1GcFhOVEJKUjA1eldWaE9lbFJ0Um5SYVZEQnBZek5DYUZreVZYUmxVekF3U1dvMFMwbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRTRXa2RzTWtsSFRuTlpXRTU2VkcxR2RGcFVNR2xqUXpCNlNVZEtia3hYVW14ak0xSjVaRmRPTUdGWVdteE1lbFZuWTIwNU1XSnRVbXhhUXpGeldubENhV0l6U210YVdFbG5XVzA1ZVZwSFZubE1WMUpzWXpOU2VXUlhUakJoV0Zwc1RIcEZkMGxJVW14bFNGRjBZekl3YVZCbmIyZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMUJJUVdkWk1uaG9Zek5PVDFsWE1XeFFVMHB0WWpJMU1FeFhTblppUjFGcFVHdGthR050WkdoaVJ6aG5Va2RXTUZwWFRqQlpWMUoyVUVNNWQxQm5iMmRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCSVFXZFpNbmhvWXpOT1QxbFhNV3hRVTBvd1dsaG9NRXhZYUhwSlNGSnNaVWhSZEdKWVZqQmFWMUYwV20wNWVWcFhaSGxpTTFaMVdrTkpLMDE1UW1oaWJVWnpZVmhPTUZsWVRXZGFXRTR3ZHpaT2RrbEhSbXBoVnpGb1NVZFNiRWxFYTNkS1UwSnJXVk5DYWxsWVFtaFpNbXhyV1ZkU2JFeHBRbE5hVjA1MllsZFdkVnBIUlhSak1sVm5ZMjFXYTJGWVRqQmpiV3hwWkZkdVJIQTRUMnBpZVRRNFRETkJLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuVUVNNWEyRllXU3REYVVGblNVTkJaMGxEUVdkSlEwRm5TVVIzZGxFeVJubGFSVTUyWW01U2JHSnVVU3REYVVGblNVTkJaMGxEUVdkSlEwRTRUREJPYUdOdFVTdERhVUZuU1VOQlowbERRV2RKUTBGTFNVTkJaMGxEUVdkSlEwRm5TVVI0UkZsWVNtdFFaMjluU1VOQlowbERRV2RKUTBGblNVTkJPRkV5Um5sYVJXaHNXVmRTYkdOcU5FdEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJPRkV5Um5sYVJsSndaRWQ0YkZCc1NteGpNMVowWW5sQ2ExcFRRa2xpTW5Cc1VFTTVSRmxZU210V1Iyd3dZa2RWSzBOcFFXZEpRMEZuU1VOQlowbERRV2RKUkhkMlVUSkdlVnBGYUd4WlYxSnNZMm8wUzBsRFFXZEpRMEZuU1VOQlowbERRV2RRUlU1b1kyMVNSR0l5TlRCYVZ6VXdVR2R2WjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUkhocllWaFpaMWt5ZUdoak0wNVBXVmN4YkZCVFNucGpSMFpxV2xNeE5VeFVVV2xRWjI5blNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZFFSMUp3WkdsQ2FtSkhSbnBqTURWb1lsZFZPVWx0V25OYVdHZG5ZVzVXZW1SSGJHMWxVekZwV2xoU00xcFhWblZKUjJ3d1dsY3hla3hYVG14aWJsSnNZMmxDTUZwWWFEQk1XRTUwU1dvMFMwbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCSVRuZFpWelFyVkcwNU1tSXpUV2RWU0VwMldUSldlbU15T1hwUVF6bDZZMGRHZFZCbmIyZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVRoak0wSm9ZbWxDYW1KSFJucGpNRFZvWWxkVk9VbHRXblppYmxGMFdXMDVjMXBEU1N0TmFsRTRURE5PZDFsWE5DdERhVUZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVRoTU1sSndaR28wUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVUjRhMkZZV1dkWk1uaG9Zek5PVDFsWE1XeFFVMHB0WWtkV05FbEhjREZqTTFKd1dtNXJkRmx0VmpCa01sWnNZbWxDY0dSSFZuUmplVEZxV2xjMU1GcFlTV2RrUjFZMFpFTXhlbUpUU1N0RGFVRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUkhoNlkwZEdkVkJyVW5Cak0xSjVZVmRLTVhjMk1XdGlNMDA0VEROT2QxbFhOQ3REYVVGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpSSGg2WTBkR2RVbEhUbk5aV0U1NlZHMUdkRnBVTUdsYWJUbDFaRU14YVdJeWVHdEphalI0VDBSM2RtTXpRbWhpYWpSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpSSGQyV2tkc01sQm5iMmRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCSFVuQmthVUpxWWtkR2VtTXdOV2hpVjFVNVNXMWFjMXBZWjJkaGJsWjZaRWRzYldWVE1XbGFXRkl6V2xkV2RVbEhiREJhVnpGNlRGZE9iR0p1VW14amFVSXdXbGhvTUV4WVRuUkphalJMU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5VRWhPZDFsWE5DdFZSMVoxV2tkV2RXUkhWbnBRUXpsNlkwZEdkVkJuYjJkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhqTTBKb1ltbENhbUpIUm5wak1EVm9ZbGRWT1VsdFduWmlibEYwV1cwNWMxcERRakJhV0dnd1RGaGthR050TlhCaWJXTnBVR3BaT0V3elRuZFpWelFyUTJsQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRTRUREpTY0dScU5FdEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJPRXd5VW5Ca2FqUkxTVU5CWjBsRFFXZEpRMEZuU1VOQloxQkRPVVJaV0VwclVUSTVkV1JIVm5Wa1JEUkxTVU5CWjBsRFFXZEpRMEZuU1VSM2RsRXlSbmxhUkRSTFNVTkJaMGxEUVdkSlEwRTRUREpTY0dScU5FdEpRMEZuU1VOQloxQkRPV3RoV0ZrclEybEJaMGxEUVRoTU1sSndaR28wUzBsRFFYQlBkM0E1UTJjOVBRbz0K
+import { useNavigate } from 'react-router-dom';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Badge } from '@/components/ui/badge';
+import { Progress } from '@/components/ui/progress';
+import { ArrowLeft, Users, BarChart3, Settings, UserCheck, AlertCircle, TrendingUp } from 'lucide-react';
+import { mockDistributionUsers } from '@/data/mockData';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+
+export function CoordinatorDistribution() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="min-h-screen bg-background p-8">
+      <div className="max-w-7xl mx-auto space-y-8">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Button variant="ghost" size="icon" onClick={() => navigate('/distribuicao')}>
+              <ArrowLeft className="h-5 w-5" />
+            </Button>
+            <div>
+              <h2 className="text-3xl font-bold text-primary tracking-tight">Painel do Coordenador</h2>
+              <p className="text-muted-foreground">Gestão de equipe e balanceamento de carga.</p>
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <Button variant="outline" className="gap-2">
+              <Settings className="h-4 w-4" /> Regras de Negócio
+            </Button>
+            <Button className="gap-2">
+              <BarChart3 className="h-4 w-4" /> Relatório de Produtividade
+            </Button>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground uppercase">Processos em Fila</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-warning">42</div>
+              <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
+                <TrendingUp className="h-3 w-3" /> +12% desde ontem
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground uppercase">Média de Conclusão</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-primary">4.2 dias</div>
+              <p className="text-xs text-muted-foreground mt-1">Meta: 5.0 dias</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground uppercase">Concluídos (Hoje)</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-success">18</div>
+              <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
+                <UserCheck className="h-3 w-3" /> 85% da meta diária
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Gestão de Analistas</CardTitle>
+            <CardDescription>Monitore a ocupação e o status de cada membro da equipe.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Analista</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Processos Ativos</TableHead>
+                  <TableHead>Capacidade</TableHead>
+                  <TableHead>Desempenho</TableHead>
+                  <TableHead className="text-right">Ações</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {mockDistributionUsers.map((user) => (
+                  <TableRow key={user.id}>
+                    <TableCell>
+                      <div className="flex items-center gap-3">
+                        <Avatar className="h-8 w-8">
+                          <AvatarImage src={user.avatar} />
+                          <AvatarFallback>{user.name.substring(0, 2)}</AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <p className="font-medium">{user.name}</p>
+                          <p className="text-xs text-muted-foreground">{user.role}</p>
+                        </div>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <Badge variant={user.status === 'Disponível' ? 'default' : 'secondary'} className={user.status === 'Disponível' ? 'bg-success hover:bg-success/90' : ''}>
+                        {user.status}
+                      </Badge>
+                    </TableCell>
+                    <TableCell className="font-bold">{user.casesCount}</TableCell>
+                    <TableCell className="w-[200px]">
+                      <div className="flex flex-col gap-1">
+                        <div className="flex justify-between text-[10px] text-muted-foreground uppercase font-bold">
+                          <span>Ocupação</span>
+                          <span>{Math.round((user.casesCount / user.maxCases) * 100)}%</span>
+                        </div>
+                        <Progress value={(user.casesCount / user.maxCases) * 100} className="h-2" />
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex items-center gap-1 text-success">
+                        <TrendingUp className="h-4 w-4" />
+                        <span className="text-sm font-medium">Alto</span>
+                      </div>
+                    </TableCell>
+                    <TableCell className="text-right">
+                      <Button variant="ghost" size="sm">Ajustar Carga</Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card className="border-l-4 border-l-destructive">
+            <CardHeader>
+              <CardTitle className="text-destructive flex items-center gap-2">
+                <AlertCircle className="h-5 w-5" />
+                Alertas Críticos
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="p-3 bg-destructive/5 rounded-lg border border-destructive/10 text-sm">
+                <p className="font-bold">Gargalo Detectado</p>
+                <p className="text-xs text-muted-foreground">3 analistas estão acima de 90% da capacidade. Recomenda-se redistribuição.</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Resumo de Hoje</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center text-sm">
+                  <span>Novos Processos</span>
+                  <span className="font-bold">24</span>
+                </div>
+                <div className="flex justify-between items-center text-sm">
+                  <span>Distribuídos</span>
+                  <span className="font-bold">18</span>
+                </div>
+                <div className="flex justify-between items-center text-sm">
+                  <span>Pendentes</span>
+                  <span className="font-bold text-warning">6</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
+}
