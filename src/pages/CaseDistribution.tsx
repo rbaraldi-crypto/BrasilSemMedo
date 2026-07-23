@@ -1,1 +1,153 @@
-data:application/octet-stream;base64,ZGF0YTphcHBsaWNhdGlvbi9vY3RldC1zdHJlYW07YmFzZTY0LFpHRjBZVHBoY0hCc2FXTmhkR2x2Ymk5dlkzUmxkQzF6ZEhKbFlXMDdZbUZ6WlRZMExHRlhNWGRpTTBvd1NVaHpaMlJZVG14Vk0xSm9aRWRWWjJaVFFtMWpiVGwwU1VOa2VWcFhSbXBrUTJNM1EyMXNkR05IT1hsa1EwSTNTVWhXZWxwVk5XaGtiV3h1V1ZoU2JFbElNR2RhYmtwMllsTkJibU50Vm1oWk0xRjBZMjA1TVdSSFZubE1WMUoyWWxOak4wTnRiSFJqUnpsNVpFTkNOMGxITVhaWk1uUkZZVmhPTUdOdGJHbGtXRkp3WWpJMVJGbFlUbXhqZVhkbllsYzVhbUV3VW5Cak0xSjVZVmRLTVdSSGJIWmliRlo2V2xoS2VrbElNR2RhYmtwMllsTkJibEZET1d0WldGSm9UREl4ZGxreWRFVlpXRkpvU25welMyRlhNWGRpTTBvd1NVaHpaMUV5Um5sYVEzZG5VVEpHZVZwRlRuWmlibEpzWW01UmMwbEZUbWhqYlZKSldsZEdhMXBZU1hOSlJVNW9ZMjFTVldGWVVuTmFVM2RuVVRKR2VWcEZVbXhqTWs1NVlWaENNR0ZYT1hWSlNEQm5XbTVLZG1KVFFXNVJRemxxWWpJeGQySXlOV3hpYmxKNlRETldjRXd5VG1oamJWRnVUM2R3Y0dKWVFuWmpibEZuWlhsQ1ExbFhVbTVhVTBJNVNVZGFlV0l5TUdkS01FRjJXVEk1ZEdOSE9YVmFWelV3WTNrNU1XRlRPV2xaVjFKdVdsTmpOME50YkhSalJ6bDVaRU5DTjBsRlNqRmtTRkoyWW1sQ09VbEhXbmxpTWpCblNqQkJkbGt5T1hSalJ6bDFXbGMxTUdONU9URmhVemxwWkZoU01HSXlORzVQZDNCd1lsaENkbU51VVdkbGVVSktZbTVDTVdSRFFqbEpSMXA1WWpJd1owb3dRWFpaTWpsMFkwYzVkVnBYTlRCamVUa3hZVk01Y0dKdVFqRmtRMk0zUTIxc2RHTkhPWGxrUTBJM1NVWk9iR0pIVm1wa1EzZG5WVEpXYzFwWFRqQlJNamwxWkVkV2RXUkRkMmRWTWxaeldsZE9NRk5ZVW14aVUzZG5WVEpXYzFwWFRqQldTRXB3V2pKa2JHTnBkMmRWTWxaeldsZE9NRlp0Um5Oa1YxVm5abE5DYldOdE9YUkpRMlJCVERKT2RtSllRblppYlZaMVpFaE5kbVJYYTNaak1sWnpXbGRPTUVwNmMwdGhWekYzWWpOS01FbEljMmRVUjBZMVlqTldNRkl6U25CYVEzZG5WVEpXYUdOdFRtOU1RMEpIWVZkNE1GcFlTWE5KUlVaNVkyMDVNMVZ0Ykc1aFNGRnpTVVZPYzJJeVRuSk1RMEpFWVVkV2FtRXdUbkJqYlU1eldsUkpaMlpUUW0xamJUbDBTVU5rYzJSWFRuQmFSMVYwWTIxV2FGa3pVVzVQZDNCd1lsaENkbU51VVdkbGVVSkNaRzFHTUZsWVNYTkpSVVl5V1ZoU2FHTnJXbWhpUjNocFdWZE9ja3hEUWtKa2JVWXdXVmhLU21KWFJtNWFVMEk1U1VkYWVXSXlNR2RLTUVGMldUSTVkR05IT1hWYVZ6VXdZM2s1TVdGVE9XaGtiVVl3V1ZoSmJrOTNiMHRhV0doM1lqTktNRWxIV2pGaWJVNHdZVmM1ZFVsRlRtaGpNbFpGWVZoT01HTnRiR2xrV0ZKd1lqSTBiMHRUUWpkRGFVRm5XVEk1ZFdNelVXZGliVVl5WVZka2FHUkhWV2RRVTBJeFl6SldUMWxZV25CYU1rWXdXbE5uY0U5M2IyZEpSMDUyWW01T01FbEdkSHBhVjBaNVdUSm9WVnBZU25STVEwSjZXbGhTVkZwWFJubFpNbWhWV2xoS2RGaFRRVGxKU0ZaNldsWk9NRmxZVW14TFEyTnVTMVJ6UzBOcFFXZFpNamwxWXpOUloxcHRiSE5rUjFaNVdsZFNSRmxZVG14amVVRTVTVWN4ZGxreWRFVmhXRTR3WTIxc2FXUllVbkJpTWpWRVdWaE9iR041TlcxaFYzZ3dXbGhKYjFsNVFUbFFhVUZMU1VOQlowbEhUWFZoVnpWMFdWaFNiRlJ0Um5SYVV6VXdZakI0ZG1ReVZubFJNa1o2V2xObmNFeHRiSFZaTW5neFdrZFdla3RJVG14WldFcHFZVVpTYkdOdE1IVmtSemxOWWpOa2JHTnJUbWhqTWxWdlMxTnJaMlpJZDJkRGFVRm5TVU5DYWt4dFRuZGFhVFZ3WW0xT2MyUlhVbXhqZVdoNldsZEdlVmt5YUZWYVdFcDBTMUZ2WjBsRGF6ZERaMjluU1VoS2JHUklWbmxpYVVGdlEybEJaMGxEUVRoYVIyd3lTVWRPYzFsWVRucFViVVowV2xRd2FXSlhiSFZNVjJkMFl6Sk9lVnBYVm5WSlIwcHVURmRLYUZreWRHNWpiVGt4WW0xUloyTkRNRFJKYWpSTFNVTkJaMGxEUVdkUVIxSndaR2xDYW1KSFJucGpNRFZvWWxkVk9VbHRNV2hsUXpFelRGUmtOR0pEUW5SbFF6Rm9aRmhTZGtsSVRuZFpWMDVzVEZocmRFOURTU3REYVVGblNVTkJaMGxEUVdkUVIxSndaR2xDYW1KSFJucGpNRFZvWWxkVk9VbHRXbk5hV0dkbllWaFNiR0pZVFhSWk1sWjFaRWRXZVVsSGNERmpNMUp3V201cmRGbHRWakJrTWxac1ltbEpLME5wUVdkSlEwRm5TVU5CWjBsRFFUaGFSMnd5U1VkT2MxbFlUbnBVYlVaMFdsUXdhVnB0ZUd4bFEwSndaRWRXZEdONU1XcGFWelV3V2xoSloxb3lSbmRNVkZGcFVHZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaFJibFl3WkVjNWRVbElXbWhqYld4b1ltNVJPVWx0Wkc5aU0wNHdTV2xDZW1GWWNHeFFVMHB3V1RJNWRVbHBRblppYTA1ellWZE9jbEJZYzI5TFUwRTVVR2xDZFZsWVduQmFNa1l3V2xObmJrd3lVbWhqTW1ocFlqSkdlVnBEWTNCbVZEUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhSV0VwNVlqTmtVMkZYWkc5a1EwSnFZa2RHZW1Nd05XaGlWMVU1U1cxbmRFNVRRak5NVkZWblkyMDVNRmxZVW14TVZFVTBUVU5KWjB4Nk5FdEpRMEZuU1VOQlowbERRV2RKUTBGblVFTTVRMlJZVWpCaU1qUXJRMmxCWjBsRFFXZEpRMEZuU1VOQlowbEVlR3RoV0ZrclEybEJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZFFSMmQ1U1VkT2MxbFlUbnBVYlVaMFdsUXdhV1JIVmpSa1F6QjZaVWQzWjFwdE9YVmtRekZwWWpKNGEwbElVbXhsU0ZGMFkwaEtjR0pYUm5sbFUwSXdZMjFHYW1FeWJIVmFlVEV3WVZka2IyUkRTU3RTUjJ4NlpFaEtjRmx1Vm5CM05tWkViekk0WjFwSFZXZFZTRXAyV1RKV2VtTXlPWHBRUXpsdlRXbzBTMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEU0WTBOQ2FtSkhSbnBqTURWb1lsZFZPVWx1VW14bFNGRjBZbGhXTUZwWFVYUmFiVGw1V2xka2VXSXpWblZhUTBrclVtMXNjMWxUUW10YVUwSnNZbTVTZVZsWFVtaEpSMVZuV1ZoU2VXRlhTakZoWTA5dWR6Wk9ka2xIVW14SlIwWjFXVmQ0Y0dNelVtaGplVFE0VEROQkswTnBRV2RKUTBGblNVTkJaMGxEUVdkSlJIZDJXa2RzTWxCbmIyZEpRMEZuU1VOQlowbERRV2RRUXpscllWaFpLME5wUVdkSlEwRm5TVU5CWjBsRFFUaFJibFl3WkVjNWRVbElXbWhqYld4b1ltNVJPVWx0T1RGa1IzaHdZbTFWYVVsSFRuTlpXRTU2VkcxR2RGcFVNR2xhTWtaM1RGUkphVWxIT1hWUk1uaHdXVEp6T1dWNVozQkpSREFyU1VjMWFHUnRiRzVaV0ZKc1MwTmpkbGt5T1haamJWSnNZbTFHYTJJelNXNUxXREFyUTJsQlowbERRV2RKUTBGblNVTkJaMGxFZUUxWldHeDJaRmhTU0dOdGJHdEpSMDV6V1ZoT2VsUnRSblJhVkRCcFlVTXdNRWxJWTNST1EwbG5USG8wUzBsRFFXZEpRMEZuU1VOQlowbERRV2RXYld4NmR6Wk9ka2xIVW5aSlJVNTJZak5LYTFwWE5XaGFSemw1UTJsQlowbERRV2RKUTBGblNVTkJPRXd3U2pGa1NGSjJZbW8wUzBsRFFXZEpRMEZuU1VOQk9Fd3lVbkJrYWpSTFEybEJaMGxEUVdkSlEwRm5VRWRTY0dScFFtcGlSMFo2WXpBMWFHSlhWVGxKYldSNVlWZFJaMW96U25CYVF6RnFZako0ZWt4VVJXZGlSMk0yV2pOS2NGcERNV3BpTW5oNlRGUk5aMW95Um5kTVZHZHBVR2R2WjBsRFFXZEpRMEZuU1VOQloxQkhVbkJrYVVKcVlrZEdlbU13TldoaVYxVTVTVzE0Yms5dFRuWmlRekY2WTBkR2RVeFVTV2RqTTBKb1dUSlZkR1ZUTURCSmFqUkxTVU5CWjBsRFFXZEpRMEZuU1VOQloxQkhVbkJrYVVKcVlrZEdlbU13TldoaVYxVTVTVzFhYzFwWVoyZGFNa1ozVEZSSmFWQm5iMmRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVVI0YTJGWVdXZFpNbmhvWXpOT1QxbFhNV3hRVTBwNVdsZDRhR1JIYkRKYVUwSnRZa2RXTkV4VVJXbFFaMjluU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkUVJrNXNXVmhLYW1GRFFtcGlSMFo2WXpBMWFHSlhWVGxKYlVacFl6STVjMlJZVW14SlIzaHNXbTVSZEUxcFFqQmlNMEYwVFdrME1VbEhaM1JPUTBJelRGUlJaMlJIVmpSa1F6RjBaRmhTYkZwRE1XMWlNMHBzV2pOS2RtUlhOV3RKYVVGMlVHZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuVUVWc2RXTklWakJKUVc5blNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEozWWtkR2FscFhhSFppUjFKc1kyb3dhVkZ1Vm5wWk1rWjVTVWhDZG1OcFFuVmlNakZzU1VjNU1VbEZUbEZTYVRSMVRHbEpaME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbEhUbk5aV0U1NlZHMUdkRnBVTUdsalIzZDBUME5KUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMlJ0Um5Oa1YxVTVaVE5PYkZsWVNtcGhSbEpzWTIweE9VTnBRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsSE9YVlJNbWhvWW0xa2JGQlljMjlhVTJ0blVGUTBaMk15VmpCVk1sWm9ZMjFPYjFaSFZubGlVMmhzVEc1U2FHTnRaR3hrUXpVeVdWZDRNVnBUYkRsRGFVRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRWFpRWjI5blNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRWQzWmFSMnd5VUdkdlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlJIaERaRmhTTUdJeU5HZGtiVVo1WVZkR2RXUkVNR2xpTTFZd1lrZHNkVnBUU1dkak1tdzJXbFF3YVdGWFRuWmlhVWtyUTJsQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRTRVbTFzYzJSSFZubEpSMDV6V1ZoT2VsUnRSblJhVkRCcFlVTXdNRWxJWTNST1EwbG5USG8wUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFREQktNV1JJVW5aaWFqUkxTVU5CWjBsRFFXZEpRMEZuU1VOQloxQkRPV3RoV0ZrclEyZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaGFSMnd5U1VkT2MxbFlUbnBVYlVaMFdsUXdhV016UW1oWk1sVjBaVk13ZWtscU5FdEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkNOMXB0YkhOa1IxWjVXbGRTUkZsWVRteGplVFYwV1ZoQmIwdEhUbWhqTWxaS1pFZFdkRXRUUVRsUWFVRnZRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFVUSkdlVnBEUW5KYVdHczVaVEpPYUdNeVZrcGtSMVowVEcxc2EyWlRRbXBpUjBaNll6QTFhR0pYVlRsSmJXaDJaRzFXZVU5dVRtOVpWMUoyWkhreGRGcERRakJqYlVaMVl6SnNNR0ZYT1hWTVdFNXZXVmRTZG1SNVNTdERhVUZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlJIaEVXVmhLYTFFeU9YVmtSMVoxWkVOQ2FtSkhSbnBqTURWb1lsZFZPVWx1UVhST1EwSnRZa2RXTkVsSGJEQmFWekY2VEZkT2JHSnVVbXhqYVVKeFpGaE9NR0ZYV2pWTVYwcHNaRWhrYkZwWE5HbFFaMjluU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVVI0YTJGWVdXZFpNbmhvWXpOT1QxbFhNV3hRVTBwdFlrZFdORWxIYkRCYVZ6RjZURmRPYkdKdVVteGphVUp1V1ZoQmRFNURTU3REYVVGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQk9GRllXbWhrUjBaNVNVZE9jMWxZVG5wVWJVWjBXbFF3YVdGRE1IaE5hVUl6VEZSRmVVbEhTblpqYlZKc1kybEpLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVUjRRbVJ0UmpCWldFcEtZbGRHYmxwVFFucGpiVTA1WlRKT2FHTXlWa3BrUjFaMFRHMXNkV0pYUmpCYVZrSnZZak5TZG1aVFFYWlFaMjluU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaFJXRnBvWkVkR2VWSnRSbk5pUjBwb1dUSnpLMlV5VG1oak1sWktaRWRXZEV4dGJIVmlWMFl3V2xVMWFHSlhWWFZqTTFacFl6TlNlV0ZYTlc1TFJFRnpTVVJKY0daVWQzWlJXRnBvWkVkR2VWSnRSbk5pUjBwb1dUSnpLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFREQkdNbGxZVW1oamFqUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxFZUd0aFdGa3JRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlJIaHZUa05DYW1KSFJucGpNRFZvWWxkVk9VbHRXblppYmxGMFdXMDVjMXBEUWpCYVdHZ3dURmhDZVdGWE1XaGpibXRwVUc1MGFsbFlUbXhUV0ZKc1lsTTFjR0p0TVdoa1IxWlBXVmN4YkdaVWQzWmhSRkVyUTJsQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpSSGhyWVZoWloxa3llR2hqTTA1UFdWY3hiRkJUU20xaVIxWTBTVWRzTUZwWE1YcE1WMDVzWW01U2JHTnBRbTVaV0VGMFRXbENNRnBZYURCTVdHaDZTVWhTYkdWSVVYUmlXRll3V2xkUmRGcHRPWGxhVjJSNVlqTldkVnBEU1N0RGFVRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkUVNFNTNXVmMwSzFFeFFrZFBhVUkzV1RKR2VscFZiREJhVnpCMVdUTkNiV1pVZDNaak0wSm9ZbW8wUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0dNelFtaGlhamRwWjB0Sk9Fd3pUbmRaVnpRclEybEJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblVFaE9kMWxYTkdkWk1uaG9Zek5PVDFsWE1XeFFVMHB0WWtkV05FbEhiREJhVnpGNlRGZE9iR0p1VW14amFVSnVXVmhCZEUxVFNTdERhVUZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEU0VVRKNGRsa3ljMmRaTW5ob1l6Tk9UMWxYTVd4UVUwcHZURlJOWjJSNU1IcEphVUYyVUdsQ04xa3lSbnBhVld3d1dsY3dkV1JIYkhSYVZXeDFWVmhXYkdSWFZqbEpSMVowU1VkYWNHSkhSVXRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhNTTA1M1dWYzBLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVUjNkbHBIYkRKUVoyOW5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMUJET1d0aFdGa3JRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMUJET1d0aFdGa3JRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RRUjFKd1pHbENhbUpIUm5wak1EVm9ZbGRWT1VsdFduTmFXR2RuWVZoU2JHSllUWFJaTWxaMVpFZFdlVWxIWkdoalF6QXlTV28wUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlJIaHJZVmhaWjFreWVHaGpNMDVQV1ZjeGJGQlRTakJhV0dnd1RGaEtjRm95YURCSmFqUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkUVJVcG9Xa2RrYkVsSVdtaGpiV3hvWW01Uk9XVXlUbWhqTWxaS1pFZFdkRXh1UW5saFZ6bDVZVmhTTlVsRU1EbFFVMEZ1VVZkNE1GbFRZMmRRZVVGdVdrZFdlbVJJU2pGWk0xSndaRzFWYmtsRWIyZEtNMDVzV1RJNWRWcEhSbmxsVTJRNVVHZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVWkNlV0ZYT1hsaFYxSm9Xa2RWWjJVeVRtaGpNbFpLWkVkV2RFeHVRbmxoVnpsNVlWaFNOV1pSYjJkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJPRXd3U21oYVIyUnNVR2R2WjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRTRZME5DYW1KSFJucGpNRFZvWWxkVk9VbHVVbXhsU0ZGMFpVaE5aMlJIVmpSa1F6RjBaRmhTYkZwRE1XMWlNMHBzV2pOS2RtUlhOV3RKUnpFd1RGUkZhVkJ1ZEdwWldFNXNVMWhTYkdKVE5XeGtiVloxWkVaU05XTkhWamxRUXpsM1VHZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RRUXpscllWaFpLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFVXNVdNR1JIT1hWSlNFNXdaVzFWT1VsdVRuUkphVUpxWWtkR2VtTXdOV2hpVjFVNVNXMWthR05ETUhsSmFqUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkU1IyeDZaRWhLY0ZsdVZuQmphVUU0VVZoS2VXSXpaRk5oVjJSdlpFTkNhbUpIUm5wak1EVm9ZbGRWT1VsdFozUk9RMEl6VEZSUmFVbERPQ3REYVVGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQk9Fd3dTakZrU0ZKMlltbzBTMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhNTWxKd1pHbzBTMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQloxQkRPVVJaV0VwclVUSTVkV1JIVm5Wa1JEUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUkhkMlVUSkdlVnBFTkV0SlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQmNFdFlNRXRKUTBGblNVTkJaMGxEUVdkSlEwRm5VRU01YTJGWVdTdERhVUZuU1VOQlowbERRV2RKUTBFNFRESlNjR1JxTkV0RGFVRm5TVU5CWjBsRFFXZEpRMEU0V2tkc01rbEhUbk5aV0U1NlZHMUdkRnBVTUdsak0wSm9XVEpWZEdWVE1ESkphalJMU1VOQlowbERRV2RKUTBGblNVTkJaMUJGVG1oamJWRXJRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RRUlU1b1kyMVNTVnBYUm10YVdFa3JRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFVUSkdlVnBHVW5Ca1IzaHNTVWRPYzFsWVRucFViVVowV2xRd2FXUkhWalJrUXpGeldubEpLMUZYTldoaVIyeDZaRWRHZWtsRlVuQmpNMEoyWW5OUGRHUnRWbkJqZW5kMlVUSkdlVnBHVW5Ca1IzaHNVR2R2WjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblVFVk9hR050VWtWYVdFNXFZMjFzZDJSSGJIWmlhalZFV1ZoS2JsbFRRbXRhVTBJd1kyMUdhVmxYZUc5aWVVSnNZbE5DTUZwWE1YZGllVUo1V2xkR2MweHFkM1pSTWtaNVdrVlNiR015VG5saFdFSXdZVmM1ZFZCbmIyZEpRMEZuU1VOQlowbERRV2RKUTBGblNVUjNkbEV5Um5sYVJXaHNXVmRTYkdOcU5FdEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJPRkV5Um5sYVJVNTJZbTVTYkdKdVVXZFpNbmhvWXpOT1QxbFhNV3hRVTBwNlkwZEdhbHBUTVRWTVZGRnBVR2R2WjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblpUSXhkbGt5ZEVWaFdFNHdZMjFzYVdSWVVuQmlNalZXWXpKV2VXTjVOWFJaV0VGdlMwaFdlbHBZU1hCSlJEQXJTVU5uUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMUJIVW5Ca2FVSnlXbGhyT1dVelZucGFXRWwxWVZkU09VbEhUbk5aV0U1NlZHMUdkRnBVTUdsYWJYaHNaVU5DY0dSSFZuUmplVEZxV2xjMU1GcFlTV2RoYmxaNlpFZHNiV1ZUTVdsYVdGSXpXbGRXZFVsSVFYUk5hVUo1WWpOV2RWcEhWbXRNVjNodVNVZEtkbU50VW14amFVSnBXbmt4ZEdSWVVteGFRemg0VFVOSkswTnBRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZFFSMUp3WkdsQ2FtSkhSbnBqTURWb1lsZFZPVWx0V25OYVdHZG5ZVmhTYkdKWVRYUlpNbFoxWkVkV2VVbEhaR2hqUXpCNlNXbzBTMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUkhoQ1pHMUdNRmxZU1dkWk1uaG9Zek5PVDFsWE1XeFFVMHB2VEZSbloyUjVNRFJKYWpSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RRUlVZeVdWaFNhR05yYkhSWlYyUnNTVWhPZVZsNk1UZGtXRTVzWTJrMWFHUnRSakJaV0VvNVNVTTRLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVUjRRbVJ0UmpCWldFcEhXVmQ0YzFsdFJtcGhlalUzWkZoT2JHTnBOWFZaVnpGc1RHNU9NVmx1VGpCamJXeDFXbmxuZDB4RFFYbExXREE0VERCR01sbFlVbWhqYTFwb1lrZDRhVmxYVG5KUVoyOW5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMUJET1VKa2JVWXdXVmhKSzBOcFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRTRXa2RzTWxCbmIyZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0dORFFtcGlSMFo2WXpBMWFHSlhWVGxKYmxKc1pVaFJkR015TUdkYWJUbDFaRU14ZEZwWFVuQmtWekJwVUc1ME1XTXlWbmxNYlRWb1lsZFdPVkJET1hkUVoyOW5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVRoalEwSnFZa2RHZW1Nd05XaGlWMVU1U1c1U2JHVklVWFJYZWtWM1kwaG9aRWxJVW14bFNGRjBZbGhXTUZwWFVYUmFiVGw1V2xka2VXSXpWblZhUTBrclpUTldlbHBZU1hWamJUbHpXbGd3T0V3elFTdERhVUZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0V3eVVuQmthalJMU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0V3eVVuQmthalJMU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0ZwSGJESkpSMDV6V1ZoT2VsUnRSblJhVkRCcFpFZFdOR1JETVhsaFYyUnZaRU5KSzBOcFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRTRZek5DYUdKcFFtcGlSMFo2WXpBMWFHSlhWVGxKYmxKc1pVaFJkR1ZJVFdkYWJUbDFaRU14YVdJeWVHdEphalUzWkZoT2JHTnBOV3BaV0U1c1l6Qk9kbVJYTlRCbVV6azNaRmhPYkdOcE5YUlpXR2hFV1ZoT2JHTXpNRGhNTTA1M1dWYzBLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFdrZHNNa2xIVG5OWldFNTZWRzFHZEZwVU1HbGtlVEI0VFdsQ2IweFVSV2RaYldOMFlsaFdNRnBYVVdkamJUa3hZbTFTYkZwRE1XMWtWM2h6U1VjeE1FeFVSV2RpTTFwc1kyMWFjMkl6WTNSaFIyeHJXa2RXZFVscU5FdEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCSFVuQmthVUZMU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEpxWWtkR2VtTXdOV2hpVjFVNVNXMW5kRnB1Vm5OaVEwSnBXbmt4ZDJOdGJIUlpXRW8xU1dsQlMwbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQ2VtUkliSE5hVkRFM1pYbENNMkZYVWpCaFJHOW5XVU5TTjB0SVZucGFXRWwxV1RKR2VscFlUa1JpTTFaMVpFTkJka2xJVm5wYVdFbDFZbGRHTkZFeVJucGFXRTF3U1VOdlowMVVRWGRtVTFablNVZ3hPVU5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTTRLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFRESlNjR1JxTkV0SlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFRESlNjR1JxTkV0SlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RRUXpscllWaFpLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQmNFdFlNRXRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0V3d1RtaGpiVkpFWWpJMU1GcFhOVEJRWjI5blNVTkJaMGxEUVdkSlEwRm5TVU5CT0V3d1RtaGpiVkVyUTJkdlowbERRV2RKUTBGblNVTkJaMGxEUVRoUlYzaHNZMjVTUldGWVRqQmpiV3hwWkZoU2NHSXlOR2RNZWpSTFNVTkJaMGxEUVdkSlEwRm5TVVIzZGxwSGJESlFaMjluU1VOQlowbERRV2RKUkhkMldrZHNNbEJuYjJkSlEwRm5TVU5CT0V3eVVuQmthalJMU1VOQlowbEVkM1phUjJ3eVVHZHZaMGxEYXpkRGJqQkxRMjFhTVdKdFRqQmhWemwxU1VWR2MxcFlTakJTUjJ4NlpFaEtjRmx1VmpCaFZ6bDFTME5yWjJWM2IyZEpTRXBzWkVoV2VXSnBRVzlEYVVGblNVTkJPRkV5Um5sYVEwSnFZa2RHZW1Nd05XaGlWMVU1U1cxS2JreFlRbmxoVnpGb1kyNXJaMlJIVmpSa1F6RjNZMjFzZEZsWVNqVk1WMXAyWTIxV2JtTnRPVEZpYlZGcFVHZHZaMGxEUVdkSlEwRTRVVEpHZVZwRmFHeFpWMUpzWTJvMFMwbERRV2RKUTBGblNVTkJPRkV5Um5sYVJsSndaRWQ0YkVsSFRuTlpXRTU2VkcxR2RGcFVNR2xrUjFZMFpFTXhjMXA1UW0xaVIxWTBTVWRzTUZwWE1YcE1WMDVzWW01U2JHTnBRbTVaV0VGMFRXbEpLME5wUVdkSlEwRm5TVU5CWjBsRFFUaFJNbWhzV1RKMFJHRllTbXBpUjFWNVNVZE9jMWxZVG5wVWJVWjBXbFF3YVdGRE1ERkpTR04wVGxOSloweDZORXRKUTBGblNVTkJaMGxEUVdkSlJVWXhaRWM0ZEZKSGJIcGtTRXB3V1c1V2NIYzJaa1J2TWpoTFNVTkJaMGxEUVdkSlEwRTRUREJPYUdOdFVsVmhXRkp6V2xRMFMwbERRV2RKUTBGblVFTTVSRmxZU210VFIxWm9Xa2RXZVZCbmIyZEpRMEZuU1VOQk9GRXlSbmxhUlU1MlltNVNiR0p1VVdkWk1uaG9Zek5PVDFsWE1XeFFVMHA2WTBkR2FscFRNVFZNVkZGcFVHZHZaMGxEUVdkSlEwRm5TVVI0ZDBsSFRuTlpXRTU2VkcxR2RGcFVNR2xrUjFZMFpFTXhOR041UW5aalIwWnFZVmhTTlV4VWEzZEphalJMU1VOQlowbERRV2RKUTBGblNVVTRaMkpYT1RCaU0wbG5Xa2RWWjJOdFZtNWpiVVo2U1VaT1NsVkRRbmRpTWxKc1NVZFNjR016VW5saFYwb3hZVmhKWjFsWVZqQmlNakZvWkVkc2FsbFhNV3hpYmxKc1NVaENlV0l5VG14ak0wNTJZM2xDYTFwVFFtbFpWMncwV1ZOQ2FtSXlNWGRpUjFZMFlWZFNhRnBIVlhWRGFVRm5TVU5CWjBsRFFXZFFRemwzVUdkdlowbERRV2RKUTBGblNVUjRRMlJZVWpCaU1qUm5aRzFHZVdGWFJuVmtSREJwWXpKV2FtSXlOV3RaV0VvMVNXbENhbUpIUm5wak1EVm9ZbGRWT1VsdVkzUmFibFp6WWtOQ01GcFlhREJNV0doNlNXbzFRbVJIYkRKWldFbG5WRmM1YTJKNVFrSmtXRkoyWW1OUGFHUkhiR3BpZW5kMlVXNVdNR1JIT1hWUVoyOW5TVU5CWjBsRFFUaE1NRTVvWTIxU1JHSXlOVEJhVnpVd1VHZHZaMGxEUVdkUVF6bEVXVmhLYTFCbmIyZEpRMnMzUTI0d1N3bz0K
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { mockDistributionCases, mockDistributionUsers } from '@/data/mockData';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { LayoutGrid, Search, Filter, ArrowRight, Clock, CheckCircle2 } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+
+export function CaseDistribution() {
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredCases = mockDistributionCases.filter(c =>
+    c.inmateName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    c.cpf.includes(searchTerm)
+  );
+
+  return (
+    <div className="min-h-screen bg-background p-8">
+      <div className="max-w-7xl mx-auto space-y-8">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Button variant="ghost" size="icon" onClick={() => navigate('/dashboard')}>
+              <ArrowRight className="h-5 w-5 rotate-180" />
+            </Button>
+            <div>
+              <h2 className="text-3xl font-bold text-primary tracking-tight">Distribuição de Processos</h2>
+              <p className="text-muted-foreground">Fila de entrada e atribuição de analistas.</p>
+            </div>
+          </div>
+          <Button variant="outline" className="gap-2" onClick={() => navigate('/coordenador')}>
+            <LayoutGrid className="h-4 w-4" />
+            Visão do Coordenador
+          </Button>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2 space-y-4">
+            <div className="flex gap-2">
+              <div className="relative flex-1">
+                <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+                <Input
+                  placeholder="Buscar por nome ou CPF..."
+                  className="pl-8"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+              <Button variant="outline" size="icon">
+                <Filter className="h-4 w-4" />
+              </Button>
+            </div>
+
+            <div className="space-y-3">
+              {filteredCases.map((caseItem) => (
+                <Card key={caseItem.id} className="hover:shadow-md transition-shadow">
+                  <CardContent className="p-4 flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <Avatar className="h-12 w-12 border">
+                        <AvatarImage src={caseItem.inmatePhoto} />
+                        <AvatarFallback>{caseItem.inmateName.substring(0, 2)}</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <h4 className="font-bold text-primary">{caseItem.inmateName}</h4>
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <span>CPF: {caseItem.cpf}</span>
+                          <span>•</span>
+                          <span className="flex items-center gap-1">
+                            <Clock className="h-3 w-3" /> {caseItem.timeInQueue} em fila
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-6">
+                      <div className="text-right">
+                        <Badge variant={caseItem.priority === 'Alta' ? 'destructive' : 'secondary'}>
+                          Prioridade {caseItem.priority}
+                        </Badge>
+                        <p className="text-xs text-muted-foreground mt-1">{caseItem.eventType}</p>
+                      </div>
+                      <Button size="sm" className="gap-2">
+                        Distribuir <ArrowRight className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Analistas Disponíveis</CardTitle>
+                <CardDescription>Carga de trabalho em tempo real.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {mockDistributionUsers.map((user) => (
+                  <div key={user.id} className="flex items-center justify-between p-2 rounded-lg border bg-muted/10">
+                    <div className="flex items-center gap-3">
+                      <Avatar className="h-8 w-8">
+                        <AvatarImage src={user.avatar} />
+                        <AvatarFallback>{user.name.substring(0, 2)}</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium">{user.name}</p>
+                        <p className="text-[10px] text-muted-foreground">{user.role}</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-xs font-bold">{user.casesCount}/{user.maxCases}</span>
+                      <div className="w-12 h-1 bg-muted rounded-full mt-1 overflow-hidden">
+                        <div
+                          className="h-full bg-primary"
+                          style={{ width: `${(user.casesCount / user.maxCases) * 100}%` }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+
+            <AlertDistribution />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AlertDistribution() {
+  return (
+    <Card className="bg-primary text-primary-foreground">
+      <CardHeader>
+        <CardTitle className="text-lg flex items-center gap-2">
+          <CheckCircle2 className="h-5 w-5" />
+          Auto-Distribuição
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <p className="text-xs opacity-90">
+          O motor de regras SIP pode distribuir automaticamente processos de baixa complexidade.
+        </p>
+        <Button variant="secondary" className="w-full text-xs">Ativar Modo Automático</Button>
+      </CardContent>
+    </Card>
+  );
+}

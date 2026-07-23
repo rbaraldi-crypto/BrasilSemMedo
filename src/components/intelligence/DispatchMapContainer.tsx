@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Loader } from '@googlemaps/js-api-loader';
+import { importLibrary, setOptions } from '@googlemaps/js-api-loader';
 import { MarkerClusterer, GridAlgorithm } from '@googlemaps/markerclusterer';
 
 const TARGET_COORDS = { lat: -23.4306, lng: -46.4730 };
@@ -47,12 +47,12 @@ export function DispatchMapContainer({
   // Inicialização do Mapa
   useEffect(() => {
     if (mapRef.current && !googleMapRef.current && !useStaticFallback && isOnline) {
-      const loader = new Loader({ 
-        apiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '', 
-        version: "weekly" 
+      setOptions({
+        key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '',
+        v: "weekly"
       });
 
-      loader.load().then(() => {
+      importLibrary('maps').then(() => {
         const map = new google.maps.Map(mapRef.current!, {
           center: TARGET_COORDS,
           zoom: 14,
@@ -91,7 +91,6 @@ export function DispatchMapContainer({
              strokeColor: "#328CC1",
              strokeOpacity: 0.5,
              strokeWeight: 2,
-             strokeDasharray: "4,4",
              map: map
            });
 
