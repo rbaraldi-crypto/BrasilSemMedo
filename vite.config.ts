@@ -6,10 +6,34 @@ import react from '@vitejs/plugin-react';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+/**
+ * Minimal structural types for the inline Babel plugin below. Declared locally so
+ * this config does not depend on transitive @types/babel__* packages being hoisted.
+ */
+interface BabelNode {
+  type: string;
+  name: any;
+  object?: any;
+  property?: any;
+  attributes: any[];
+  loc?: { start: { line: number; column: number } } | null;
+}
+interface BabelPath {
+  node: BabelNode;
+}
+interface BabelState {
+  filename?: string;
+}
+interface BabelTypesApi {
+  jsxAttribute: (name: any, value: any) => any;
+  jsxIdentifier: (name: string) => any;
+  stringLiteral: (value: string) => any;
+}
+
 export default defineConfig({
   plugins: [react({ babel: { plugins: [
-function __dualiteSourceLoc({ types: t }) {
-  return { visitor: { JSXOpeningElement(path, state) {
+function __dualiteSourceLoc({ types: t }: { types: BabelTypesApi }) {
+  return { visitor: { JSXOpeningElement(path: BabelPath, state: BabelState) {
     var fn = state.filename || '';
     if (!fn || fn.includes('node_modules')) return;
     var name = path.node.name;

@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Loader } from '@googlemaps/js-api-loader';
+import { setOptions, importLibrary } from '@googlemaps/js-api-loader';
 import { MarkerClusterer, GridAlgorithm } from '@googlemaps/markerclusterer';
 
 const TARGET_COORDS = { lat: -23.4306, lng: -46.4730 };
@@ -47,12 +47,12 @@ export function DispatchMapContainer({
   // Inicialização do Mapa
   useEffect(() => {
     if (mapRef.current && !googleMapRef.current && !useStaticFallback && isOnline) {
-      const loader = new Loader({ 
-        apiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '', 
-        version: "weekly" 
+      setOptions({
+        key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '',
+        v: "weekly"
       });
 
-      loader.load().then(() => {
+      Promise.all([importLibrary('maps'), importLibrary('marker')]).then(() => {
         const map = new google.maps.Map(mapRef.current!, {
           center: TARGET_COORDS,
           zoom: 14,
@@ -89,9 +89,21 @@ export function DispatchMapContainer({
              path: pathCoords,
              geodesic: true,
              strokeColor: "#328CC1",
-             strokeOpacity: 0.5,
+             strokeOpacity: 0,
              strokeWeight: 2,
-             strokeDasharray: "4,4",
+             // Tracejado: o Maps JS API não suporta `strokeDasharray`; o padrão é
+             // desenhar símbolos repetidos sobre uma linha transparente.
+             icons: [{
+               icon: {
+                 path: "M 0,-1 0,1",
+                 strokeColor: "#328CC1",
+                 strokeOpacity: 0.5,
+                 strokeWeight: 2,
+                 scale: 2
+               },
+               offset: '0',
+               repeat: '12px'
+             }],
              map: map
            });
 
@@ -111,23 +123,25 @@ export function DispatchMapContainer({
              }
            });
 
-           const last = pathCoords[pathCoords.length - 1];
-           const prev = pathCoords[pathCoords.length - 2];
-           const trendLat = last.lat + (last.lat - prev.lat);
-           const trendLng = last.lng + (last.lng - prev.lng);
+           if (pathCoords.length > 1) {
+             const last = pathCoords[pathCoords.length - 1];
+             const prev = pathCoords[pathCoords.length - 2];
+             const trendLat = last.lat + (last.lat - prev.lat);
+             const trendLng = last.lng + (last.lng - prev.lng);
 
-           trendVectorRef.current = new google.maps.Polyline({
-             path: [last, { lat: trendLat, lng: trendLng }],
-             geodesic: true,
-             strokeColor: "#22D3EE",
-             strokeOpacity: 0.8,
-             strokeWeight: 3,
-             icons: [{
-               icon: { path: google.maps.SymbolPath.FORWARD_OPEN_ARROW, scale: 3, strokeColor: "#22D3EE" },
-               offset: '100%'
-             }],
-             map: map
-           });
+             trendVectorRef.current = new google.maps.Polyline({
+               path: [last, { lat: trendLat, lng: trendLng }],
+               geodesic: true,
+               strokeColor: "#22D3EE",
+               strokeOpacity: 0.8,
+               strokeWeight: 3,
+               icons: [{
+                 icon: { path: google.maps.SymbolPath.FORWARD_OPEN_ARROW, scale: 3, strokeColor: "#22D3EE" },
+                 offset: '100%'
+               }],
+               map: map
+             });
+           }
         }
 
         // Câmeras (Clusterer)
