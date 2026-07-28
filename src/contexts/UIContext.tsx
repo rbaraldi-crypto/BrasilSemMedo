@@ -41,7 +41,7 @@ export function UIProvider({ children }: { children: ReactNode }) {
   const [muralhaScanTrigger, setMuralhaScanTrigger] = useState(0);
 
   const requestMuralhaScan = useCallback(() => {
-    setOpenPanels(prev => prev.includes('MURALHA') ? prev : [...prev, 'MURALHA'].slice(-4));
+    setOpenPanels(prev => prev.includes('MURALHA') ? prev : [...prev, 'MURALHA' as PanelID].slice(-4));
     setMuralhaScanTrigger(prev => prev + 1);
     tacticalAudio.playScan();
   }, []);
