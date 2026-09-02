@@ -19,7 +19,7 @@ export function DispatchModal() {
   const { activeModal, setActiveModal } = useUI();
   const { addLogEntry, isOnline } = useSystem();
   const { fieldUnits, targetTrajectory } = useTactical();
-  
+
   const [selectedUnit, setSelectedUnit] = useState<any>(null);
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSuccess] = useState(false);
@@ -41,7 +41,7 @@ export function DispatchModal() {
 
   useEffect(() => {
     if (isOpen && !mapLoaded) {
-      const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+      const apiKey = import.meta.env?.VITE_GOOGLE_MAPS_API_KEY ?? '';
       if (!apiKey || apiKey === "YOUR_API_KEY" || !isOnline) {
         setUseStaticFallback(true);
       }
@@ -62,17 +62,17 @@ export function DispatchModal() {
     if (!selectedUnit) return;
     setIsSending(true);
     setFieldMessages([]);
-    tacticalAudio.playScan(); 
-    
+    tacticalAudio.playScan();
+
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     tacticalAudio.playSuccess();
     setIsSending(false);
     setIsSuccess(true);
-    
+
     const details = `Ordem enviada para ${selectedUnit.callsign} em ${targetData.location}`;
     addLogEntry('DISPATCH', 'EQUIPE DE CAMPO', details);
-    
+
     if (!isOnline) {
       toast.info("Ordem enfileirada para envio automático (Offline).");
     } else {
@@ -92,7 +92,7 @@ export function DispatchModal() {
         useStaticFallback ? "border-amber-500/50" : "border-white/10"
       )}>
         <WatermarkOverlay />
-        
+
         <DialogHeader className={cn(
           "p-5 border-b flex flex-row items-center justify-between space-y-0 z-50 relative",
           useStaticFallback ? "bg-amber-950/20 border-amber-500/30" : "bg-slate-900/80 border-white/10"
@@ -112,25 +112,25 @@ export function DispatchModal() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-             <Button 
-               variant="outline" 
-               size="sm" 
-               className={cn("h-8 text-[10px] font-black uppercase tracking-widest gap-2", showCameras ? "bg-primary/20 border-primary" : "border-white/10")}
-               onClick={() => setShowCameras(!showCameras)}
-             >
-               <Cctv className="h-3 w-3" /> {showCameras ? "Ocultar Câmeras" : "Mostrar Câmeras"}
-             </Button>
-             <div className={cn("flex items-center gap-2 px-3 py-1 rounded-full border", useStaticFallback ? "bg-amber-500/10 border-amber-500/20" : "bg-primary/10 border-primary/20")}>
-                {useStaticFallback ? <WifiOff className="h-3 w-3 text-amber-500" /> : <Activity className="h-3 w-3 text-primary animate-pulse" />}
-                <span className={cn("text-[10px] font-black uppercase tracking-widest", useStaticFallback ? "text-amber-500" : "text-primary")}>
-                  {useStaticFallback ? "OFFLINE" : "LINK SATELITAL: ATIVO"}
-                </span>
-             </div>
+            <Button
+              variant="outline"
+              size="sm"
+              className={cn("h-8 text-[10px] font-black uppercase tracking-widest gap-2", showCameras ? "bg-primary/20 border-primary" : "border-white/10")}
+              onClick={() => setShowCameras(!showCameras)}
+            >
+              <Cctv className="h-3 w-3" /> {showCameras ? "Ocultar Câmeras" : "Mostrar Câmeras"}
+            </Button>
+            <div className={cn("flex items-center gap-2 px-3 py-1 rounded-full border", useStaticFallback ? "bg-amber-500/10 border-amber-500/20" : "bg-primary/10 border-primary/20")}>
+              {useStaticFallback ? <WifiOff className="h-3 w-3 text-amber-500" /> : <Activity className="h-3 w-3 text-primary animate-pulse" />}
+              <span className={cn("text-[10px] font-black uppercase tracking-widest", useStaticFallback ? "text-amber-500" : "text-primary")}>
+                {useStaticFallback ? "OFFLINE" : "LINK SATELITAL: ATIVO"}
+              </span>
+            </div>
           </div>
         </DialogHeader>
 
         <div className="flex-1 flex flex-col md:flex-row overflow-hidden relative z-10">
-          <DispatchMapContainer 
+          <DispatchMapContainer
             useStaticFallback={useStaticFallback}
             isOnline={isOnline}
             fieldUnits={fieldUnits}
@@ -140,8 +140,7 @@ export function DispatchModal() {
             onSelectUnit={handleSelectUnit}
             onMapLoaded={() => setMapLoaded(true)}
           />
-
-          <UnitDetailsPanel 
+          <UnitDetailsPanel
             selectedUnit={selectedUnit}
             isSent={isSent}
             isSending={isSending}

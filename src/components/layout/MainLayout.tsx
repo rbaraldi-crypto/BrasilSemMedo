@@ -1,11 +1,11 @@
-import { useEffect, useState, Suspense, lazy } from 'react';
+import { useEffect, useState, Suspense, lazy, useCallback } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { CommandPalette } from '../intelligence/CommandPalette';
 import { 
   ShieldCheck, Activity, Landmark, Bell, BellOff, 
   Wifi, WifiOff, CloudSync, Mic, MicOff, Lock,
-  Globe, Satellite, Zap
+  Globe, Satellite, Zap, Loader2
 } from 'lucide-react';
 import { notificationService } from '@/services/notificationService';
 import { Button } from '@/components/ui/button';
@@ -18,19 +18,31 @@ import { DeadMansSwitch } from '../ui/DeadMansSwitch';
 import { iabsTreeData } from '@/data/mockData';
 import { GlobalIntelligenceTicker } from '../intelligence/GlobalIntelligenceTicker';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { initializePreloadStrategy } from '@/lib/preload';
+import { logger } from '@/lib/logger';
 
-// Modais de Inteligência Globalizados
+// Lazy load dos modais pesados com preload
 const MuralhaModal = lazy(() => import('@/components/intelligence/MuralhaModal').then(m => ({ default: m.MuralhaModal })));
 const DispatchModal = lazy(() => import('@/components/intelligence/DispatchModal').then(m => ({ default: m.DispatchModal })));
 const IntelligenceMap = lazy(() => import('@/components/intelligence/IntelligenceMap').then(m => ({ default: m.IntelligenceMap })));
 const DossierTree = lazy(() => import('@/components/intelligence/DossierTree').then(m => ({ default: m.DossierTree })));
 const PatrimonialModal = lazy(() => import('@/components/intelligence/PatrimonialModal').then(m => ({ default: m.PatrimonialModal })));
 
+// Componente de loading para Suspense
+const ModalLoader = () => (
+  <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center z-[100]">
+    <div className="flex flex-col items-center gap-4">
+      <Loader2 className="h-10 w-10 text-primary animate-spin" />
+      <span className="text-xs font-black text-primary uppercase tracking-widest animate-pulse">Carregando Módulo...</span>
+    </div>
+  </div>
+);
+
 function TacticalHUD() {
   const { isOnline, pendingSyncCount, linkType, setLinkType, simulatedLatency } = useSystem();
   const { isNightVision, isVoiceActive, setVoiceActive, setLocked } = useUI();
 
-  const handleLinkChange = (type: 'FIBER' | 'SATELLITE') => {
+  const handleLinkChange = useCallback((type: 'FIBER' | 'SATELLITE') => {
     setLinkType(type);
     toast.info(`LINK ALTERADO: ${type}`, {
       description: type === 'SATELLITE' 
@@ -38,7 +50,8 @@ function TacticalHUD() {
         : "Modo Padrão: Conexão de alta velocidade restabelecida.",
       icon: type === 'SATELLITE' ? <Satellite className="h-4 w-4" /> : <Globe className="h-4 w-4" />
     });
-  };
+    logger.info('TacticalHUD', `Link alterado para: ${type}`);
+  }, [setLinkType]);
 
   return (
     <div className="md:pl-64 fixed top-0 left-0 right-0 z-40 pointer-events-none">
@@ -58,6 +71,7 @@ function TacticalHUD() {
                 )}
                 onClick={() => setVoiceActive(!isVoiceActive)}
                 title={isVoiceActive ? "Voz Ativa: Diga comandos" : "Ativar Comandos de Voz"}
+                aria-label={isVoiceActive ? "Desativar comandos de voz" : "Ativar comandos de voz"}
               >
                 {isVoiceActive ? <Mic className="h-3 w-3" /> : <MicOff className="h-3 w-3" />}
               </Button>
@@ -68,6 +82,7 @@ function TacticalHUD() {
                 className="h-6 w-6 p-0 text-slate-500 hover:bg-destructive/20 hover:text-destructive rounded-full"
                 onClick={() => setLocked(true)}
                 title="Bloquear Terminal Agora"
+                aria-label="Bloquear terminal"
               >
                 <Lock className="h-3 w-3" />
               </Button>
@@ -131,6 +146,12 @@ function TacticalHUD() {
 function MainLayoutContent() {
   const { isNightVision } = useUI();
 
+  // Inicializa estratégia de preload
+  useEffect(() => {
+    initializePreloadStrategy();
+    logger.info('MainLayout', 'Estratégia de preload inicializada');
+  }, []);
+
   return (
     <div className={cn(
       "min-h-screen transition-colors duration-700 pb-8", 
@@ -150,10 +171,10 @@ function MainLayoutContent() {
             ? 'linear-gradient(rgba(18, 255, 65, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(18, 255, 65, 0.1) 1px, transparent 1px)' 
             : 'radial-gradient(circle, #FFF 1px, transparent 1px)', 
           backgroundSize: isNightVision ? '20px 20px' : '30px 30px' 
-        }} />
+        }} aria-hidden="true" />
         
         {isNightVision && (
-          <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] bg-[linear-gradient(rgba(18,255,65,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
+          <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] bg-[linear-gradient(rgba(18,255,65,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" aria-hidden="true" />
         )}
 
         <div className="container mx-auto p-4 md:p-10 max-w-7xl relative z-10 pt-16 md:pt-20">
@@ -163,7 +184,7 @@ function MainLayoutContent() {
 
       <GlobalIntelligenceTicker />
 
-      <Suspense fallback={null}>
+      <Suspense fallback={<ModalLoader />}>
         <MuralhaModal />
         <DispatchModal />
         <IntelligenceMap />

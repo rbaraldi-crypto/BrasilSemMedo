@@ -1,9 +1,10 @@
 import { supabase } from '@/lib/supabase';
 import { PenalCase, RecidivismRisk } from '@/types/intelligence';
+import { logger } from '@/lib/logger';
 
 /**
  * Penal Service: Execução e Ponto 11
- * Integrado com a tabela penal_cases do Supabase/DynamoDB.
+ * Fix: Substituído console.error por logger.
  */
 export const penalService = {
   async getCaseDetails(caseId: string): Promise<PenalCase | null> {
@@ -17,6 +18,7 @@ export const penalService = {
       if (error) throw error;
       return data;
     } catch (err) {
+      logger.error('PenalService', 'Falha ao buscar detalhes do caso', err);
       return null;
     }
   },
@@ -35,7 +37,7 @@ export const penalService = {
       
       if (error) throw error;
     } catch (err) {
-      console.error("IABS-SIP: Falha ao registrar decisão judicial", err);
+      logger.error('PenalService', 'Falha ao registrar decisão judicial', err);
     }
   },
 
@@ -50,19 +52,14 @@ export const penalService = {
       if (error) return false;
       return data?.is_point_11 || false;
     } catch (err) {
+      logger.error('PenalService', 'Falha ao verificar Ponto 11', err);
       return false;
     }
   },
 
-  /**
-   * getRecidivismRisk (Opção 1): Motor de Análise Preditiva.
-   * Simula o cruzamento de dados de inteligência para apoiar o Magistrado.
-   */
   async getRecidivismRisk(inmateId: string): Promise<RecidivismRisk> {
-    // Simulação de latência de processamento AWS
     await new Promise(resolve => setTimeout(resolve, 1500));
 
-    // Lógica mockada baseada no ID para Carlos Eduardo (Ponto 11)
     const isHighRisk = inmateId.includes('001');
 
     return {

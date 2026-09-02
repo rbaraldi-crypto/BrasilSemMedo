@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Radio, MessageSquare, Shield, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Radio, MessageSquare } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { FieldMessage } from '@/types/intelligence';
 
@@ -20,7 +21,6 @@ export function FieldChat({ messages, unitCallsign }: FieldChatProps) {
 
   return (
     <div className="flex flex-col h-full bg-black/40 border border-white/10 rounded-xl overflow-hidden shadow-inner">
-      {/* Header do Chat */}
       <div className="bg-slate-900/80 border-b border-white/10 px-4 py-2 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Radio className="h-3 w-3 text-primary animate-pulse" />
@@ -29,7 +29,6 @@ export function FieldChat({ messages, unitCallsign }: FieldChatProps) {
         <Badge variant="outline" className="text-[10px] border-success/30 text-success uppercase">Criptografado</Badge>
       </div>
 
-      {/* Lista de Mensagens */}
       <div 
         ref={scrollRef}
         className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar"
@@ -72,7 +71,6 @@ export function FieldChat({ messages, unitCallsign }: FieldChatProps) {
         </AnimatePresence>
       </div>
 
-      {/* Footer / Status */}
       <div className="p-2 bg-slate-900/40 border-t border-white/5 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="h-1.5 w-1.5 rounded-full bg-success animate-pulse" />
@@ -80,18 +78,6 @@ export function FieldChat({ messages, unitCallsign }: FieldChatProps) {
         </div>
         <span className="text-[10px] font-mono text-slate-600">AES-256_LINK_V4</span>
       </div>
-    </div>
-  );
-}
-
-function Badge({ children, variant, className }: any) {
-  return (
-    <div className={cn(
-      "px-1.5 py-0.5 rounded text-[10px] font-black uppercase border",
-      variant === 'outline' ? "border-white/10 text-slate-400" : "bg-primary text-white border-primary",
-      className
-    )}>
-      {children}
     </div>
   );
 }

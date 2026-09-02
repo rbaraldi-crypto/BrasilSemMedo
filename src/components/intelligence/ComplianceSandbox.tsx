@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  ShieldCheck, ShieldAlert, AlertTriangle, 
-  Scale, Zap, Info, CheckCircle2, XCircle,
-  BarChart3, Fingerprint
+  ShieldCheck, ShieldAlert, 
+  Scale, Zap, CheckCircle2, XCircle
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { tacticalAudio } from '@/lib/audioUtils';
 
@@ -17,9 +17,23 @@ interface ComplianceSandboxProps {
   onValidated: (score: number) => void;
 }
 
+interface SimulationResult {
+  score: number;
+  status: string;
+  violations: SimulationViolation[];
+  timestamp: string;
+}
+
+interface SimulationViolation {
+  id: string;
+  title: string;
+  desc: string;
+  severity: string;
+}
+
 export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated }: ComplianceSandboxProps) {
   const [isSimulating, setIsSimulating] = useState(false);
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<SimulationResult | null>(null);
   const [acknowledged, setAcknowledged] = useState(false);
 
   const runSimulation = async () => {
@@ -28,13 +42,11 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
     setAcknowledged(false);
     tacticalAudio.playScan();
 
-    // Simulação de processamento de IA Jurídica
     await new Promise(resolve => setTimeout(resolve, 2000));
 
-    let score = 95; // Score base de conformidade
-    const violations = [];
+    let score = 95;
+    const violations: SimulationViolation[] = [];
 
-    // Lógica Ponto 11
     if (isPoint11 && actionType === 'concessao') {
       score = 15;
       violations.push({
@@ -44,10 +56,10 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
         severity: 'CRITICAL'
       });
     } else if (actionType === 'concessao') {
-      score = 82; // Risco moderado para concessões comuns
+      score = 82;
     }
 
-    const simulationResult = {
+    const simulationResult: SimulationResult = {
       score,
       status: score > 70 ? 'CONFORME' : score > 40 ? 'ALERTA' : 'BLOQUEADO',
       violations,
@@ -151,7 +163,7 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
             <div className="space-y-3">
               <span className="text-[10px] font-bold text-slate-500 uppercase">Análise de Riscos</span>
               {result.violations.length > 0 ? (
-                result.violations.map((v: any) => (
+                result.violations.map((v) => (
                   <div key={v.id} className="p-3 bg-destructive/10 border border-destructive/20 rounded-xl flex items-start gap-3">
                     <ShieldAlert className="h-4 w-4 text-destructive shrink-0 mt-0.5" />
                     <div>
@@ -189,18 +201,6 @@ export function ComplianceSandbox({ caseType, actionType, isPoint11, onValidated
           </motion.div>
         )}
       </div>
-    </div>
-  );
-}
-
-function Badge({ children, variant, className }: any) {
-  return (
-    <div className={cn(
-      "px-2 py-0.5 rounded text-[10px] font-black uppercase border",
-      variant === 'outline' ? "border-white/10 text-slate-400" : "bg-primary text-white border-primary",
-      className
-    )}>
-      {children}
     </div>
   );
 }

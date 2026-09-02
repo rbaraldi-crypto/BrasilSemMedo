@@ -1,23 +1,22 @@
 import { Organization, FieldUnit, IntelligenceLogEntry, WorkspaceSettings, GlobalSearchItem } from '@/types/intelligence';
 import { mockOrganizations, mockFieldUnits, mockMyCases } from '@/data/mockData';
+import { logger } from '@/lib/logger';
 
 /**
  * Intelligence Service: Interface de Persistência Final IABS-SIP
  * Mapeado para operações AWS DynamoDB (Simuladas via High-Fidelity Mocks).
- * Utiliza padrões de GSI (Global Secondary Index) para buscas na Muralha P9.
+ * Fix: Substituído console.log por logger condicional.
  */
 export const intelligenceService = {
-  // 1. Domínio: Inteligência Estratégica (Facções)
   async getOrganizations(): Promise<Organization[]> {
-    console.log("[AWS_DYNAMODB] Scanning table: sip_organizations...");
+    logger.log('IntelligenceService', 'Scanning table: sip_organizations...');
     await new Promise(resolve => setTimeout(resolve, 800));
     return mockOrganizations;
   },
 
-  // 2. Muralha Paulista: Busca via GSI_MURALHA_V2 (P9 + P12)
   async searchMuralha(filters: { clothing: string, accessory: string }, isManualOverride = false) {
     const queryType = isManualOverride ? "PRIORITY_TARGET_SCAN" : "GSI_ATTRIBUTE_SEARCH";
-    console.log(`[AWS_DYNAMODB] Executando ${queryType} em GSI_MURALHA_V2...`, filters);
+    logger.log('IntelligenceService', `Executando ${queryType} em GSI_MURALHA_V2...`, filters);
     
     await new Promise(resolve => setTimeout(resolve, 2000));
     
@@ -42,7 +41,6 @@ export const intelligenceService = {
         gait: 94.5,
         iris: 99.1
       },
-      // Medida 9: Correlação IMEI-Face (P12)
       deviceAlert: {
         detected: true,
         imei: "358294/10/284756/0",
@@ -64,9 +62,8 @@ export const intelligenceService = {
     };
   },
 
-  // 3. Monitoramento de Viaturas (Simulação de Kinesis Data Streams)
   subscribeToUnits(onUpdate: (unit: FieldUnit) => void) {
-    console.log("[AWS_KINESIS] Subscribed to field_units_stream");
+    logger.log('IntelligenceService', 'Subscribed to field_units_stream');
     const interval = setInterval(() => {
       const randomUnit = mockFieldUnits[Math.floor(Math.random() * mockFieldUnits.length)];
       onUpdate({
@@ -82,7 +79,7 @@ export const intelligenceService = {
   },
 
   async saveWorkspaceSettings(settings: WorkspaceSettings): Promise<void> {
-    console.log("[AWS_DYNAMODB] PutItem: sip_user_settings", settings);
+    logger.debug('IntelligenceService', 'PutItem: sip_user_settings', settings);
     localStorage.setItem('iabs_workspace_aws_cache', JSON.stringify(settings));
   },
 
@@ -93,7 +90,7 @@ export const intelligenceService = {
 
   async globalSearch(query: string): Promise<GlobalSearchItem[]> {
     const q = query.toLowerCase();
-    console.log(`[AWS_DYNAMODB] Querying GSI_GLOBAL_SEARCH for: ${q}`);
+    logger.log('IntelligenceService', `Querying GSI_GLOBAL_SEARCH for: ${q}`);
     
     const orgResults: GlobalSearchItem[] = mockOrganizations
       .filter(o => o.name.toLowerCase().includes(q) || o.acronym.toLowerCase().includes(q))
@@ -107,7 +104,7 @@ export const intelligenceService = {
   },
 
   async saveAuditLog(entry: IntelligenceLogEntry): Promise<void> {
-    console.log("[AWS_DYNAMODB] PutItem: sip_audit_logs", entry);
+    logger.debug('IntelligenceService', 'PutItem: sip_audit_logs', entry);
   },
 
   async getAuditLogs(limit = 20): Promise<IntelligenceLogEntry[]> {

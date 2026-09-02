@@ -41,7 +41,10 @@ export function UIProvider({ children }: { children: ReactNode }) {
   const [muralhaScanTrigger, setMuralhaScanTrigger] = useState(0);
 
   const requestMuralhaScan = useCallback(() => {
-    setOpenPanels(prev => prev.includes('MURALHA') ? prev : [...prev, 'MURALHA'].slice(-4));
+    setOpenPanels((prev: PanelID[]): PanelID[] => {
+      if (prev.includes('MURALHA')) return prev;
+      return ([...prev, 'MURALHA'] as PanelID[]).slice(-4) as PanelID[];
+    });
     setMuralhaScanTrigger(prev => prev + 1);
     tacticalAudio.playScan();
   }, []);
@@ -51,10 +54,10 @@ export function UIProvider({ children }: { children: ReactNode }) {
       requestMuralhaScan();
       return;
     }
-    setOpenPanels(prev => 
-      prev.includes(panelId) 
-        ? prev.filter(id => id !== panelId) 
-        : [...prev, panelId].slice(-4)
+    setOpenPanels((prev: PanelID[]): PanelID[] =>
+      prev.includes(panelId)
+        ? prev.filter((id: PanelID) => id !== panelId)
+        : (([...prev, panelId] as PanelID[]).slice(-4) as PanelID[])
     );
     tacticalAudio.playScan();
   }, [openPanels, requestMuralhaScan]);
@@ -67,13 +70,13 @@ export function UIProvider({ children }: { children: ReactNode }) {
       case 'ABRIR_MURALHA': requestMuralhaScan(); break;
       case 'ABRIR_MAPA': setActiveModal('MAP'); break;
       case 'BLOQUEAR_SISTEMA': setLocked(true); break;
-      case 'MODO_TACTICO': 
-        setIsNightVision(!isNightVision); 
+      case 'MODO_TACTICO':
+        setIsNightVision(prev => !prev);
         toast.info("MODO OPERAÇÃO TÁCTICA ATIVADO", { icon: '🟢' });
         break;
       case 'FECHAR_MODAIS': setActiveModal('NONE'); break;
-      case 'VER_RISCO_CARLOS': 
-        setActiveModal('DOSSIER'); 
+      case 'VER_RISCO_CARLOS':
+        setActiveModal('DOSSIER');
         toast.success("Dossiê de Carlos Eduardo carregado via voz.");
         break;
       case 'BLOQUEAR_ATIVOS_PCC':
@@ -83,7 +86,7 @@ export function UIProvider({ children }: { children: ReactNode }) {
         });
         break;
     }
-  }, [requestMuralhaScan, isNightVision]);
+  }, [requestMuralhaScan]);
 
   useEffect(() => {
     if (isVoiceActive) {
@@ -121,7 +124,7 @@ export function UIProvider({ children }: { children: ReactNode }) {
     setIsNightVision(val);
     tacticalAudio.playScan();
     if (val) {
-      toast.info("MODO OPERAÇÃO TÁCTICA ATIVADO", { 
+      toast.info("MODO OPERAÇÃO TÁCTICA ATIVADO", {
         description: "Filtros de visão noturna aplicados ao terminal.",
         icon: '🟢'
       });

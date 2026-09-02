@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState, useEffect } from 'react';
+import { useMemo, useRef, useState, useEffect, lazy, Suspense } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -7,18 +7,21 @@ import {
   ArrowLeft, UserCircle, MapPin, Scan, ShieldAlert, 
   Waves, Fence, Skull, Plus, Minus,
   ShieldCheck, Activity, Flame, Network, DollarSign,
-  Building2, Zap
+  Building2, Zap, Loader2
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTactical } from '@/contexts/TacticalContext';
 import { useUI } from '@/contexts/UIContext';
-import { motion, useMotionValue, useTransform, MotionValue, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { strategicMarkers as initialMarkers } from '@/data/mockData';
 import { StrategicMarker } from '@/types/intelligence';
 import { HierarchyNode } from './HierarchyNode';
 import { WatermarkOverlay } from '@/components/ui/WatermarkOverlay';
-import { TrevaDigitalTwin } from './TrevaDigitalTwin';
 import { tacticalAudio } from '@/lib/audioUtils';
+import { TacticalSkeleton } from '@/components/ui/TacticalSkeleton';
+
+// Lazy load do Digital Twin (componente pesado)
+const TrevaDigitalTwin = lazy(() => import('./TrevaDigitalTwin').then(m => ({ default: m.TrevaDigitalTwin })));
 
 /**
  * Medida 4: Megaprisões (TREVA)
@@ -72,7 +75,7 @@ function HeatmapLayer({ markers }: { markers: StrategicMarker[] }) {
     });
   }, [markers]);
 
-  return <canvas ref={canvasRef} width={1200} height={800} className="absolute inset-0 w-full h-full pointer-events-none mix-blend-screen opacity-70" />;
+  return <canvas ref={canvasRef} width={1200} height={800} className="absolute inset-0 w-full h-full pointer-events-none mix-blend-screen opacity-70" aria-hidden="true" />;
 }
 
 export function IntelligenceMap({ isEmbedded = false }: { isEmbedded?: boolean }) {
@@ -84,9 +87,6 @@ export function IntelligenceMap({ isEmbedded = false }: { isEmbedded?: boolean }
   const [activeTrevaTwin, setActiveTrevaTwin] = useState<StrategicMarker | null>(null);
 
   const mapContainerRef = useRef<HTMLDivElement>(null);
-  const mapX = useMotionValue(0);
-  const mapY = useMotionValue(0);
-  const mapScale = useMotionValue(1);
 
   const filteredMarkers = useMemo(() => strategicMarkers.filter(m => visibleLayers.includes(m.type)), [visibleLayers]);
 
@@ -101,7 +101,7 @@ export function IntelligenceMap({ isEmbedded = false }: { isEmbedded?: boolean }
     <Tabs value={activeTab} onValueChange={setActiveTab} className="h-full flex flex-col md:flex-row overflow-hidden relative">
       <div className="flex-1 relative bg-slate-950 overflow-hidden">
         <TabsContent value="territory" className="h-full m-0 p-0 relative overflow-hidden" ref={mapContainerRef}>
-           <motion.div drag dragConstraints={mapContainerRef} style={{ x: mapX, y: mapY, scale: mapScale }} className="absolute inset-0 cursor-grab active:cursor-grabbing flex items-center justify-center origin-center">
+          <div className="absolute inset-0 cursor-grab active:cursor-grabbing flex items-center justify-center origin-center">
             <div className="relative w-[120%] h-[120%] border border-white/10 rounded-2xl overflow-hidden bg-slate-900/40 backdrop-blur-sm">
               <img src="https://diariocarioca.com/wp-content/uploads/2025/05/174440622467f986d0729ee_1744406224_3x2_lg.webp" className="w-full h-full object-cover opacity-40 grayscale mix-blend-lighten pointer-events-none" alt="Tactical Map" />
               {showHeatmap && <HeatmapLayer markers={filteredMarkers} />}
@@ -113,7 +113,12 @@ export function IntelligenceMap({ isEmbedded = false }: { isEmbedded?: boolean }
                     "rounded-full border-2 border-white/40 flex items-center justify-center shadow-2xl transition-all hover:scale-125 cursor-pointer z-10", 
                     marker.isMassive ? 'h-16 w-16 bg-red-900 border-red-500 shadow-red-500/80' : 'h-10 w-10 bg-primary shadow-primary/50',
                     marker.type === 'treva' && 'animate-pulse'
-                  )}>
+                  )}
+                  role="button"
+                  aria-label={`${marker.name} - ${marker.status}`}
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && handleMarkerClick(marker)}
+                  >
                     {marker.isMassive ? <Building2 className="h-8 w-8 text-white" /> : marker.type === 'port' ? <Waves className="h-4 w-4 text-white" /> : marker.type === 'treva' ? <ShieldAlert className="h-4 w-4 text-white" /> : <Scan className="h-4 w-4 text-white" />}
                   </motion.div>
                   {marker.isMassive && (
@@ -124,17 +129,23 @@ export function IntelligenceMap({ isEmbedded = false }: { isEmbedded?: boolean }
                 </div>
               ))}
             </div>
-           </motion.div>
+          </div>
         </TabsContent>
         
-        {/* Medida 4: Digital Twin Overlay com AnimatePresence Corrigido */}
+        {/* Medida 4: Digital Twin Overlay com Suspense */}
         <AnimatePresence>
           {activeTrevaTwin && activeTrevaTwin.floors && (
-            <TrevaDigitalTwin 
-              unitName={activeTrevaTwin.name}
-              floors={activeTrevaTwin.floors}
-              onClose={() => setActiveTrevaTwin(null)}
-            />
+            <Suspense fallback={
+              <div className="absolute inset-0 bg-slate-950/90 flex items-center justify-center">
+                <TacticalSkeleton lines={8} />
+              </div>
+            }>
+              <TrevaDigitalTwin 
+                unitName={activeTrevaTwin.name}
+                floors={activeTrevaTwin.floors}
+                onClose={() => setActiveTrevaTwin(null)}
+              />
+            </Suspense>
           )}
         </AnimatePresence>
       </div>

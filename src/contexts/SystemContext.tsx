@@ -11,7 +11,7 @@ interface SystemContextType {
   linkType: LinkType;
   setLinkType: (type: LinkType) => void;
   simulatedLatency: number;
-  withNetworkDelay: <T>(fn: () => Promise<T>) => Promise<T>;
+  withNetworkDelay: <T,>(fn: () => Promise<T>) => Promise<T>;
   auditLog: IntelligenceLogEntry[];
   addLogEntry: (type: IntelligenceLogEntry['type'], targetName: string, details: string) => void;
   refreshData: () => void;
@@ -26,15 +26,21 @@ export function SystemProvider({ children }: { children: ReactNode }) {
   const [linkType, setLinkType] = useState<LinkType>('FIBER');
 
   const simulatedLatency = useMemo(() => {
-    return linkType === 'FIBER' 
-      ? Math.floor(15 + Math.random() * 20) 
+    return linkType === 'FIBER'
+      ? Math.floor(15 + Math.random() * 20)
       : Math.floor(650 + Math.random() * 400);
   }, [linkType]);
 
-  const withNetworkDelay = useCallback(async <T>(fn: () => Promise<T>): Promise<T> => {
-    await new Promise(resolve => setTimeout(resolve, simulatedLatency));
-    return fn();
-  }, [simulatedLatency]);
+  const withNetworkDelay = useCallback(
+    <T,>(fn: () => Promise<T>): Promise<T> => {
+      return new Promise<T>((resolve, reject) => {
+        setTimeout(() => {
+          fn().then(resolve).catch(reject);
+        }, simulatedLatency);
+      });
+    },
+    [simulatedLatency]
+  );
 
   const { data: auditLog = [] } = useQuery({
     queryKey: ['auditLogs'],

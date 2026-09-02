@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useMutation } from '@tanstack/react-query';
-import { BrainCircuit, Sparkles, FileText, Check, Copy, RefreshCw, Scale } from 'lucide-react';
+import { BrainCircuit, Sparkles, Check, RefreshCw, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { tacticalAudio } from '@/lib/audioUtils';
 
@@ -14,11 +15,9 @@ interface LegalJustificationAssistantProps {
 export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustificationAssistantProps) {
   const [draft, setDraft] = useState<string | null>(null);
 
-  // Padronização com useMutation para geração de texto via IA
   const { mutate: generateJustification, isPending: isGenerating } = useMutation({
     mutationFn: async () => {
       tacticalAudio.playScan();
-      // Simulação de processamento LLM Jurídico
       await new Promise(resolve => setTimeout(resolve, 2000));
 
       const justifications = [
@@ -84,7 +83,7 @@ export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustif
               className="space-y-4"
             >
               <div className="p-4 bg-black/40 border border-white/5 rounded-xl relative group">
-                <p className="text-sm text-slate-300 leading-relaxed italic">"{draft}"</p>
+                <p className="text-sm text-slate-300 leading-relaxed italic">&quot;{draft}&quot;</p>
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <Scale className="h-3 w-3 text-primary/40" />
                 </div>
@@ -110,18 +109,6 @@ export function LegalJustificationAssistant({ onSelect, crimeType }: LegalJustif
           )}
         </AnimatePresence>
       </div>
-    </div>
-  );
-}
-
-function Badge({ children, variant, className }: any) {
-  return (
-    <div className={cn(
-      "px-2 py-0.5 rounded text-[10px] font-black uppercase border",
-      variant === 'outline' ? "border-white/10 text-slate-400" : "bg-primary text-white border-primary",
-      className
-    )}>
-      {children}
     </div>
   );
 }

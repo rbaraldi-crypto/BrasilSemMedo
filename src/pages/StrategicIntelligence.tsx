@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -7,7 +8,8 @@ import {
   ShieldAlert, ShieldCheck, DollarSign, 
   Lock, Scan, Skull, Network,
   History, LayoutGrid, Shield, Zap, 
-  AlertCircle, Target, Truck
+  AlertCircle, Target, Truck, ArrowRight,
+  Flame, TrendingDown
 } from 'lucide-react';
 import { useTactical } from '@/contexts/TacticalContext';
 import { useSystem } from '@/contexts/SystemContext';
@@ -18,8 +20,11 @@ import { TacticalWorkspace } from '@/components/intelligence/TacticalWorkspace';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NarcoterroristAlert } from '@/components/intelligence/NarcoterroristAlert';
 import { FinancialAsphyxiaFlow } from '@/components/intelligence/FinancialAsphyxiaFlow';
+import { toast } from 'sonner';
+import { tacticalAudio } from '@/lib/audioUtils';
 
 export default function StrategicIntelligence() {
+  const navigate = useNavigate();
   const { setSelectedOrg, organizations } = useTactical();
   const { auditLog, addLogEntry } = useSystem();
   const { togglePanel, openPanels, requestMuralhaScan } = useUI();
@@ -43,6 +48,17 @@ export default function StrategicIntelligence() {
     }, 15000);
     return () => clearTimeout(timer);
   }, []);
+
+  const handleBloquearAtivos = (org: any) => {
+    tacticalAudio.playScan();
+    toast.success(`Iniciando FDE para: ${org.acronym}`, {
+      description: 'Abrindo Financial Disruption Engine...',
+      icon: <Zap className="h-4 w-4" />,
+      duration: 2000,
+    });
+    addLogEntry('SISBAJUD', org.name, `FDE ativado — Análise de Asfixia Financeira iniciada`);
+    setTimeout(() => navigate('/fde/dashboard/executivo'), 800);
+  };
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
@@ -72,6 +88,15 @@ export default function StrategicIntelligence() {
           <PanelToggleButton id="MAP" label="Mapa" active={openPanels.includes('MAP')} onClick={() => togglePanel('MAP')} icon={<Network className="h-3 w-3" />} />
           <PanelToggleButton id="LOGISTICS_PLANNER" label="Logística" active={openPanels.includes('LOGISTICS_PLANNER')} onClick={() => togglePanel('LOGISTICS_PLANNER')} icon={<Truck className="h-3 w-3" />} />
           <PanelToggleButton id="VICTIM_SUPPORT" label="Vítimas" active={openPanels.includes('VICTIM_SUPPORT')} onClick={() => togglePanel('VICTIM_SUPPORT')} icon={<ShieldCheck className="h-3 w-3" />} />
+          
+          {/* Botão FDE - Destaque */}
+          <Button
+            size="sm"
+            className="h-8 text-[10px] font-black uppercase tracking-widest gap-2 bg-gradient-to-r from-red-600 to-orange-500 hover:opacity-90 shadow-lg shadow-red-600/30 border-none animate-pulse"
+            onClick={() => navigate('/fde/dashboard/executivo')}
+          >
+            <Flame className="h-3 w-3" /> FDE Engine
+          </Button>
         </div>
       </div>
       
@@ -128,12 +153,15 @@ export default function StrategicIntelligence() {
                     >
                       <Target className="h-2.5 w-2.5 mr-1" /> Ver Hierarquia
                     </Button>
+                    {/* Botão Bloquear Ativos → dispara FDE */}
                     <Button 
                       variant="ghost" 
                       size="sm" 
-                      className="h-6 px-2 text-[10px] font-black uppercase bg-white/5 hover:bg-primary hover:text-white transition-all"
+                      className="h-6 px-2 text-[10px] font-black uppercase bg-gradient-to-r from-red-600/20 to-orange-500/20 border border-red-500/30 text-red-400 hover:from-red-600 hover:to-orange-500 hover:text-white transition-all gap-1"
+                      onClick={() => handleBloquearAtivos(org)}
                     >
-                      <DollarSign className="h-2.5 w-2.5 mr-1" /> Bloquear Ativos
+                      <TrendingDown className="h-2.5 w-2.5" /> Bloquear Ativos
+                      <ArrowRight className="h-2 w-2" />
                     </Button>
                   </div>
                 </div>

@@ -1,9 +1,10 @@
 import { supabase } from '@/lib/supabase';
 import { FinancialBlock } from '@/types/intelligence';
+import { logger } from '@/lib/logger';
 
 /**
  * Financial Service: Asfixia Financeira (Ponto 1 e 8)
- * Integrado com a tabela financial_blocks do Supabase/DynamoDB.
+ * Fix: Substituído console.error por logger.
  */
 export const financialService = {
   async recordFinancialBlock(block: Omit<FinancialBlock, 'id'>): Promise<void> {
@@ -13,7 +14,7 @@ export const financialService = {
         .insert([block]);
       if (error) throw error;
     } catch (err) {
-      console.error("IABS-SIP: Falha ao registrar bloqueio SISBAJUD", err);
+      logger.error('FinancialService', 'Falha ao registrar bloqueio SISBAJUD', err);
     }
   },
 
@@ -28,6 +29,7 @@ export const financialService = {
       if (error) throw error;
       return data || [];
     } catch (err) {
+      logger.error('FinancialService', 'Falha ao buscar estatísticas financeiras', err);
       return [];
     }
   },
@@ -43,6 +45,7 @@ export const financialService = {
       if (error) throw error;
       return data || [];
     } catch (err) {
+      logger.error('FinancialService', 'Falha ao buscar eventos recentes', err);
       return [];
     }
   }

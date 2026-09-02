@@ -2,6 +2,7 @@ import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { AlertTriangle, RefreshCw, ShieldX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { tacticalAudio } from '@/lib/audioUtils';
+import { logger } from '@/lib/logger';
 
 interface Props {
   children: ReactNode;
@@ -28,11 +29,12 @@ export class TacticalErrorBoundary extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error(`IABS-SIP [CRITICAL_MODULE_FAILURE]: ${this.props.moduleName}`, error, errorInfo);
+    logger.error('TacticalErrorBoundary', `Módulo falhou: ${this.props.moduleName}`, error, errorInfo);
     tacticalAudio.playScan(); // Alerta sonoro de falha
   }
 
   private handleReset = () => {
+    logger.info('TacticalErrorBoundary', `Resetando módulo: ${this.props.moduleName}`);
     this.setState({ hasError: false, error: null });
   };
 
@@ -70,6 +72,6 @@ export class TacticalErrorBoundary extends Component<Props, State> {
       );
     }
 
-    return this.children;
+    return this.props.children;
   }
 }

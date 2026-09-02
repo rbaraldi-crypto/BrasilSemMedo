@@ -1,1 +1,277 @@
-data:application/octet-stream;base64,ZGF0YTphcHBsaWNhdGlvbi9vY3RldC1zdHJlYW07YmFzZTY0LFpHRjBZVHBoY0hCc2FXTmhkR2x2Ymk5dlkzUmxkQzF6ZEhKbFlXMDdZbUZ6WlRZMExHRlhNWGRpTTBvd1NVaHpaMlJZVG14Vk0xSm9aRWRWWjJaVFFtMWpiVGwwU1VOa2VWcFhSbXBrUTJNM1EyMXNkR05IT1hsa1EwSTNTVWhXZWxwVk5XaGtiV3h1V1ZoU2JFbElNR2RhYmtwMllsTkJibU50Vm1oWk0xRjBZMjA1TVdSSFZubE1WMUoyWWxOak4wTnRiSFJqUnpsNVpFTkNOMGxITVhaWk1uUkZZVmhPTUdOdGJHbGtXRkp3WWpJMVJGbFlUbXhqZVhkbllsYzVhbUV3VW5Cak0xSjVZVmRLTVdSSGJIWmliRlo2V2xoS2VrbElNR2RhYmtwMllsTkJibEZET1d0WldGSm9UREl4ZGxreWRFVlpXRkpvU25welMyRlhNWGRpTTBvd1NVaHpaMUV5Um5sYVEzZG5VVEpHZVZwRlRuWmlibEpzWW01UmMwbEZUbWhqYlZKSldsZEdhMXBZU1hOSlJVNW9ZMjFTVldGWVVuTmFVM2RuVVRKR2VWcEZVbXhqTWs1NVlWaENNR0ZYT1hWSlNEQm5XbTVLZG1KVFFXNVJRemxxWWpJeGQySXlOV3hpYmxKNlRETldjRXd5VG1oamJWRnVUM2R3Y0dKWVFuWmpibEZuWlhsQ1ExbFhVbTVhVTBJNVNVZGFlV0l5TUdkS01FRjJXVEk1ZEdOSE9YVmFWelV3WTNrNU1XRlRPV2xaVjFKdVdsTmpOME50YkhSalJ6bDVaRU5DTjBsRlNqRmtTRkoyWW1sQ09VbEhXbmxpTWpCblNqQkJkbGt5T1hSalJ6bDFXbGMxTUdONU9URmhVemxwWkZoU01HSXlORzVQZDNCd1lsaENkbU51VVdkbGVVSktZbTVDTVdSRFFqbEpSMXA1WWpJd1owb3dRWFpaTWpsMFkwYzVkVnBYTlRCamVUa3hZVk01Y0dKdVFqRmtRMk0zUTIxc2RHTkhPWGxrUTBJM1NVWk9iR0pIVm1wa1EzZG5WVEpXYzFwWFRqQlJNamwxWkVkV2RXUkRkMmRWTWxaeldsZE9NRk5ZVW14aVUzZG5WVEpXYzFwWFRqQldTRXB3V2pKa2JHTnBkMmRWTWxaeldsZE9NRlp0Um5Oa1YxVm5abE5DYldOdE9YUkpRMlJCVERKT2RtSllRblppYlZaMVpFaE5kbVJYYTNaak1sWnpXbGRPTUVwNmMwdGhWekYzWWpOS01FbEljMmRVUjBZMVlqTldNRkl6U25CYVEzZG5WVEpXYUdOdFRtOU1RMEpIWVZkNE1GcFlTWE5KUlVaNVkyMDVNMVZ0Ykc1aFNGRnpTVVZPYzJJeVRuSk1RMEpFWVVkV2FtRXdUbkJqYlU1eldsUkpaMlpUUW0xamJUbDBTVU5rYzJSWFRuQmFSMVYwWTIxV2FGa3pVVzVQZDNCd1lsaENkbU51VVdkbGVVSkNaRzFHTUZsWVNYTkpSVVl5V1ZoU2FHTnJXbWhpUjNocFdWZE9ja3hEUWtKa2JVWXdXVmhLU21KWFJtNWFVMEk1U1VkYWVXSXlNR2RLTUVGMldUSTVkR05IT1hWYVZ6VXdZM2s1TVdGVE9XaGtiVVl3V1ZoSmJrOTNiMHRhV0doM1lqTktNRWxIV2pGaWJVNHdZVmM1ZFVsRlRtaGpNbFpGWVZoT01HTnRiR2xrV0ZKd1lqSTBiMHRUUWpkRGFVRm5XVEk1ZFdNelVXZGliVVl5WVZka2FHUkhWV2RRVTBJeFl6SldUMWxZV25CYU1rWXdXbE5uY0U5M2IyZEpSMDUyWW01T01FbEdkSHBhVjBaNVdUSm9WVnBZU25STVEwSjZXbGhTVkZwWFJubFpNbWhWV2xoS2RGaFRRVGxKU0ZaNldsWk9NRmxZVW14TFEyTnVTMVJ6UzBOcFFXZFpNamwxWXpOUloxcHRiSE5rUjFaNVdsZFNSRmxZVG14amVVRTVTVWN4ZGxreWRFVmhXRTR3WTIxc2FXUllVbkJpTWpWRVdWaE9iR041TlcxaFYzZ3dXbGhKYjFsNVFUbFFhVUZMU1VOQlowbEhUWFZoVnpWMFdWaFNiRlJ0Um5SYVV6VXdZakI0ZG1ReVZubFJNa1o2V2xObmNFeHRiSFZaTW5neFdrZFdla3RJVG14WldFcHFZVVpTYkdOdE1IVmtSemxOWWpOa2JHTnJUbWhqTWxWdlMxTnJaMlpJZDJkRGFVRm5TVU5DYWt4dFRuZGFhVFZ3WW0xT2MyUlhVbXhqZVdoNldsZEdlVmt5YUZWYVdFcDBTMUZ2WjBsRGF6ZERaMjluU1VoS2JHUklWbmxpYVVGdlEybEJaMGxEUVRoYVIyd3lTVWRPYzFsWVRucFViVVowV2xRd2FXSlhiSFZNVjJkMFl6Sk9lVnBYVm5WSlIwcHVURmRLYUZreWRHNWpiVGt4WW0xUloyTkRNRFJKYWpSTFNVTkJaMGxEUVdkUVIxSndaR2xDYW1KSFJucGpNRFZvWWxkVk9VbHRNV2hsUXpFelRGUmtOR0pEUW5SbFF6Rm9aRmhTZGtsSVRuZFpWMDVzVEZocmRFOURTU3REYVVGblNVTkJaMGxEUVdkUVIxSndaR2xDYW1KSFJucGpNRFZvWWxkVk9VbHRXbk5hV0dkbllWaFNiR0pZVFhSWk1sWjFaRWRXZVVsSGNERmpNMUp3V201cmRGbHRWakJrTWxac1ltbEpLME5wUVdkSlEwRm5TVU5CWjBsRFFUaGFSMnd5U1VkT2MxbFlUbnBVYlVaMFdsUXdhVnB0ZUd4bFEwSndaRWRXZEdONU1XcGFWelV3V2xoSloxb3lSbmRNVkZGcFVHZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaFJibFl3WkVjNWRVbElXbWhqYld4b1ltNVJPVWx0Wkc5aU0wNHdTV2xDZW1GWWNHeFFVMHB3V1RJNWRVbHBRblppYTA1ellWZE9jbEJZYzI5TFUwRTVVR2xDZFZsWVduQmFNa1l3V2xObmJrd3lVbWhqTW1ocFlqSkdlVnBEWTNCbVZEUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhSV0VwNVlqTmtVMkZYWkc5a1EwSnFZa2RHZW1Nd05XaGlWMVU1U1cxbmRFNVRRak5NVkZWblkyMDVNRmxZVW14TVZFVTBUVU5KWjB4Nk5FdEpRMEZuU1VOQlowbERRV2RKUTBGblVFTTVRMlJZVWpCaU1qUXJRMmxCWjBsRFFXZEpRMEZuU1VOQlowbEVlR3RoV0ZrclEybEJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZFFSMmQ1U1VkT2MxbFlUbnBVYlVaMFdsUXdhV1JIVmpSa1F6QjZaVWQzWjFwdE9YVmtRekZwWWpKNGEwbElVbXhsU0ZGMFkwaEtjR0pYUm5sbFUwSXdZMjFHYW1FeWJIVmFlVEV3WVZka2IyUkRTU3RTUjJ4NlpFaEtjRmx1Vm5CM05tWkViekk0WjFwSFZXZFZTRXAyV1RKV2VtTXlPWHBRUXpsdlRXbzBTMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEU0WTBOQ2FtSkhSbnBqTURWb1lsZFZPVWx1VW14bFNGRjBZbGhXTUZwWFVYUmFiVGw1V2xka2VXSXpWblZhUTBrclVtMXNjMWxUUW10YVUwSnNZbTVTZVZsWFVtaEpSMVZuV1ZoU2VXRlhTakZoWTA5dWR6Wk9ka2xIVW14SlIwWjFXVmQ0Y0dNelVtaGplVFE0VEROQkswTnBRV2RKUTBGblNVTkJaMGxEUVdkSlJIZDJXa2RzTWxCbmIyZEpRMEZuU1VOQlowbERRV2RRUXpscllWaFpLME5wUVdkSlEwRm5TVU5CWjBsRFFUaFJibFl3WkVjNWRVbElXbWhqYld4b1ltNVJPVWx0T1RGa1IzaHdZbTFWYVVsSFRuTlpXRTU2VkcxR2RGcFVNR2xhTWtaM1RGUkphVWxIT1hWUk1uaHdXVEp6T1dWNVozQkpSREFyU1VjMWFHUnRiRzVaV0ZKc1MwTmpkbGt5T1haamJWSnNZbTFHYTJJelNXNUxXREFyUTJsQlowbERRV2RKUTBGblNVTkJaMGxFZUUxWldHeDJaRmhTU0dOdGJHdEpSMDV6V1ZoT2VsUnRSblJhVkRCcFlVTXdNRWxJWTNST1EwbG5USG8wUzBsRFFXZEpRMEZuU1VOQlowbERRV2RXYld4NmR6Wk9ka2xIVW5aSlJVNTJZak5LYTFwWE5XaGFSemw1UTJsQlowbERRV2RKUTBGblNVTkJPRXd3U2pGa1NGSjJZbW8wUzBsRFFXZEpRMEZuU1VOQk9Fd3lVbkJrYWpSTFEybEJaMGxEUVdkSlEwRm5VRWRTY0dScFFtcGlSMFo2WXpBMWFHSlhWVGxKYldSNVlWZFJaMW96U25CYVF6RnFZako0ZWt4VVJXZGlSMk0yV2pOS2NGcERNV3BpTW5oNlRGUk5aMW95Um5kTVZHZHBVR2R2WjBsRFFXZEpRMEZuU1VOQloxQkhVbkJrYVVKcVlrZEdlbU13TldoaVYxVTVTVzE0Yms5dFRuWmlRekY2WTBkR2RVeFVTV2RqTTBKb1dUSlZkR1ZUTURCSmFqUkxTVU5CWjBsRFFXZEpRMEZuU1VOQloxQkhVbkJrYVVKcVlrZEdlbU13TldoaVYxVTVTVzFhYzFwWVoyZGFNa1ozVEZSSmFWQm5iMmRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVVI0YTJGWVdXZFpNbmhvWXpOT1QxbFhNV3hRVTBwNVdsZDRhR1JIYkRKYVUwSnRZa2RXTkV4VVJXbFFaMjluU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkUVJrNXNXVmhLYW1GRFFtcGlSMFo2WXpBMWFHSlhWVGxKYlVacFl6STVjMlJZVW14SlIzaHNXbTVSZEUxcFFqQmlNMEYwVFdrME1VbEhaM1JPUTBJelRGUlJaMlJIVmpSa1F6RjBaRmhTYkZwRE1XMWlNMHBzV2pOS2RtUlhOV3RKYVVGMlVHZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuVUVWc2RXTklWakJKUVc5blNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEozWWtkR2FscFhhSFppUjFKc1kyb3dhVkZ1Vm5wWk1rWjVTVWhDZG1OcFFuVmlNakZzU1VjNU1VbEZUbEZTYVRSMVRHbEpaME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbEhUbk5aV0U1NlZHMUdkRnBVTUdsalIzZDBUME5KUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMlJ0Um5Oa1YxVTVaVE5PYkZsWVNtcGhSbEpzWTIweE9VTnBRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsSE9YVlJNbWhvWW0xa2JGQlljMjlhVTJ0blVGUTBaMk15VmpCVk1sWm9ZMjFPYjFaSFZubGlVMmhzVEc1U2FHTnRaR3hrUXpVeVdWZDRNVnBUYkRsRGFVRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRWFpRWjI5blNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRWQzWmFSMnd5VUdkdlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlJIaERaRmhTTUdJeU5HZGtiVVo1WVZkR2RXUkVNR2xpTTFZd1lrZHNkVnBUU1dkak1tdzJXbFF3YVdGWFRuWmlhVWtyUTJsQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRTRVbTFzYzJSSFZubEpSMDV6V1ZoT2VsUnRSblJhVkRCcFlVTXdNRWxJWTNST1EwbG5USG8wUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFREQktNV1JJVW5aaWFqUkxTVU5CWjBsRFFXZEpRMEZuU1VOQloxQkRPV3RoV0ZrclEyZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaGFSMnd5U1VkT2MxbFlUbnBVYlVaMFdsUXdhV016UW1oWk1sVjBaVk13ZWtscU5FdEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkNOMXB0YkhOa1IxWjVXbGRTUkZsWVRteGplVFYwV1ZoQmIwdEhUbWhqTWxaS1pFZFdkRXRUUVRsUWFVRnZRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFVUSkdlVnBEUW5KYVdHczVaVEpPYUdNeVZrcGtSMVowVEcxc2EyWlRRbXBpUjBaNll6QTFhR0pYVlRsSmJXaDJaRzFXZVU5dVRtOVpWMUoyWkhreGRGcERRakJqYlVaMVl6SnNNR0ZYT1hWTVdFNXZXVmRTZG1SNVNTdERhVUZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlJIaEVXVmhLYTFFeU9YVmtSMVoxWkVOQ2FtSkhSbnBqTURWb1lsZFZPVWx1UVhST1EwSnRZa2RXTkVsSGJEQmFWekY2VEZkT2JHSnVVbXhqYVVKeFpGaE9NR0ZYV2pWTVYwcHNaRWhrYkZwWE5HbFFaMjluU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVVI0YTJGWVdXZFpNbmhvWXpOT1QxbFhNV3hRVTBwdFlrZFdORWxIYkRCYVZ6RjZURmRPYkdKdVVteGphVUp1V1ZoQmRFNURTU3REYVVGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQk9GRllXbWhrUjBaNVNVZE9jMWxZVG5wVWJVWjBXbFF3YVdGRE1IaE5hVUl6VEZSRmVVbEhTblpqYlZKc1kybEpLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVUjRRbVJ0UmpCWldFcEtZbGRHYmxwVFFucGpiVTA1WlRKT2FHTXlWa3BrUjFaMFRHMXNkV0pYUmpCYVZrSnZZak5TZG1aVFFYWlFaMjluU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFUaFJXRnBvWkVkR2VWSnRSbk5pUjBwb1dUSnpLMlV5VG1oak1sWktaRWRXZEV4dGJIVmlWMFl3V2xVMWFHSlhWWFZqTTFacFl6TlNlV0ZYTlc1TFJFRnpTVVJKY0daVWQzWlJXRnBvWkVkR2VWSnRSbk5pUjBwb1dUSnpLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFREQkdNbGxZVW1oamFqUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxFZUd0aFdGa3JRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlJIaHZUa05DYW1KSFJucGpNRFZvWWxkVk9VbHRXblppYmxGMFdXMDVjMXBEUWpCYVdHZ3dURmhDZVdGWE1XaGpibXRwVUc1MGFsbFlUbXhUV0ZKc1lsTTFjR0p0TVdoa1IxWlBXVmN4YkdaVWQzWmhSRkVyUTJsQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpSSGhyWVZoWloxa3llR2hqTTA1UFdWY3hiRkJUU20xaVIxWTBTVWRzTUZwWE1YcE1WMDVzWW01U2JHTnBRbTVaV0VGMFRXbENNRnBZYURCTVdHaDZTVWhTYkdWSVVYUmlXRll3V2xkUmRGcHRPWGxhVjJSNVlqTldkVnBEU1N0RGFVRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkUVNFNTNXVmMwSzFFeFFrZFBhVUkzV1RKR2VscFZiREJhVnpCMVdUTkNiV1pVZDNaak0wSm9ZbW8wUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0dNelFtaGlhamRwWjB0Sk9Fd3pUbmRaVnpRclEybEJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblVFaE9kMWxYTkdkWk1uaG9Zek5PVDFsWE1XeFFVMHB0WWtkV05FbEhiREJhVnpGNlRGZE9iR0p1VW14amFVSnVXVmhCZEUxVFNTdERhVUZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEU0VVRKNGRsa3ljMmRaTW5ob1l6Tk9UMWxYTVd4UVUwcHZURlJOWjJSNU1IcEphVUYyVUdsQ04xa3lSbnBhVld3d1dsY3dkV1JIYkhSYVZXeDFWVmhXYkdSWFZqbEpSMVowU1VkYWNHSkhSVXRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhNTTA1M1dWYzBLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVUjNkbHBIYkRKUVoyOW5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMUJET1d0aFdGa3JRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMUJET1d0aFdGa3JRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RRUjFKd1pHbENhbUpIUm5wak1EVm9ZbGRWT1VsdFduTmFXR2RuWVZoU2JHSllUWFJaTWxaMVpFZFdlVWxIWkdoalF6QXlTV28wUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlJIaHJZVmhaWjFreWVHaGpNMDVQV1ZjeGJGQlRTakJhV0dnd1RGaEtjRm95YURCSmFqUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkUVJVcG9Xa2RrYkVsSVdtaGpiV3hvWW01Uk9XVXlUbWhqTWxaS1pFZFdkRXh1UW5saFZ6bDVZVmhTTlVsRU1EbFFVMEZ1VVZkNE1GbFRZMmRRZVVGdVdrZFdlbVJJU2pGWk0xSndaRzFWYmtsRWIyZEtNMDVzV1RJNWRWcEhSbmxsVTJRNVVHZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVWkNlV0ZYT1hsaFYxSm9Xa2RWWjJVeVRtaGpNbFpLWkVkV2RFeHVRbmxoVnpsNVlWaFNOV1pSYjJkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJPRXd3U21oYVIyUnNVR2R2WjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRTRZME5DYW1KSFJucGpNRFZvWWxkVk9VbHVVbXhsU0ZGMFpVaE5aMlJIVmpSa1F6RjBaRmhTYkZwRE1XMWlNMHBzV2pOS2RtUlhOV3RKUnpFd1RGUkZhVkJ1ZEdwWldFNXNVMWhTYkdKVE5XeGtiVloxWkVaU05XTkhWamxRUXpsM1VHZHZaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RRUXpscllWaFpLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFVXNVdNR1JIT1hWSlNFNXdaVzFWT1VsdVRuUkphVUpxWWtkR2VtTXdOV2hpVjFVNVNXMWthR05ETUhsSmFqUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkU1IyeDZaRWhLY0ZsdVZuQmphVUU0VVZoS2VXSXpaRk5oVjJSdlpFTkNhbUpIUm5wak1EVm9ZbGRWT1VsdFozUk9RMEl6VEZSUmFVbERPQ3REYVVGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQk9Fd3dTakZrU0ZKMlltbzBTMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRVGhNTWxKd1pHbzBTMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQloxQkRPVVJaV0VwclVUSTVkV1JIVm5Wa1JEUkxTVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUkhkMlVUSkdlVnBFTkV0SlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQmNFdFlNRXRKUTBGblNVTkJaMGxEUVdkSlEwRm5VRU01YTJGWVdTdERhVUZuU1VOQlowbERRV2RKUTBFNFRESlNjR1JxTkV0RGFVRm5TVU5CWjBsRFFXZEpRMEU0V2tkc01rbEhUbk5aV0U1NlZHMUdkRnBVTUdsak0wSm9XVEpWZEdWVE1ESkphalJMU1VOQlowbERRV2RKUTBGblNVTkJaMUJGVG1oamJWRXJRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RRUlU1b1kyMVNTVnBYUm10YVdFa3JRMmxCWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFVUSkdlVnBHVW5Ca1IzaHNTVWRPYzFsWVRucFViVVowV2xRd2FXUkhWalJrUXpGeldubEpLMUZYTldoaVIyeDZaRWRHZWtsRlVuQmpNMEoyWW5OUGRHUnRWbkJqZW5kMlVUSkdlVnBHVW5Ca1IzaHNVR2R2WjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblVFVk9hR050VWtWYVdFNXFZMjFzZDJSSGJIWmlhalZFV1ZoS2JsbFRRbXRhVTBJd1kyMUdhVmxYZUc5aWVVSnNZbE5DTUZwWE1YZGllVUo1V2xkR2MweHFkM1pSTWtaNVdrVlNiR015VG5saFdFSXdZVmM1ZFZCbmIyZEpRMEZuU1VOQlowbERRV2RKUTBGblNVUjNkbEV5Um5sYVJXaHNXVmRTYkdOcU5FdEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJPRkV5Um5sYVJVNTJZbTVTYkdKdVVXZFpNbmhvWXpOT1QxbFhNV3hRVTBwNlkwZEdhbHBUTVRWTVZGRnBVR2R2WjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblpUSXhkbGt5ZEVWaFdFNHdZMjFzYVdSWVVuQmlNalZXWXpKV2VXTjVOWFJaV0VGdlMwaFdlbHBZU1hCSlJEQXJTVU5uUzBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMUJIVW5Ca2FVSnlXbGhyT1dVelZucGFXRWwxWVZkU09VbEhUbk5aV0U1NlZHMUdkRnBVTUdsYWJYaHNaVU5DY0dSSFZuUmplVEZxV2xjMU1GcFlTV2RoYmxaNlpFZHNiV1ZUTVdsYVdGSXpXbGRXZFVsSVFYUk5hVUo1WWpOV2RWcEhWbXRNVjNodVNVZEtkbU50VW14amFVSnBXbmt4ZEdSWVVteGFRemg0VFVOSkswTnBRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZFFSMUp3WkdsQ2FtSkhSbnBqTURWb1lsZFZPVWx0V25OYVdHZG5ZVmhTYkdKWVRYUlpNbFoxWkVkV2VVbEhaR2hqUXpCNlNXbzBTMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUkhoQ1pHMUdNRmxZU1dkWk1uaG9Zek5PVDFsWE1XeFFVMHB2VEZSbloyUjVNRFJKYWpSTFNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RRUlVZeVdWaFNhR05yYkhSWlYyUnNTVWhPZVZsNk1UZGtXRTVzWTJrMWFHUnRSakJaV0VvNVNVTTRLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVUjRRbVJ0UmpCWldFcEhXVmQ0YzFsdFJtcGhlalUzWkZoT2JHTnBOWFZaVnpGc1RHNU9NVmx1VGpCamJXeDFXbmxuZDB4RFFYbExXREE0VERCR01sbFlVbWhqYTFwb1lrZDRhVmxYVG5KUVoyOW5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMUJET1VKa2JVWXdXVmhKSzBOcFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRTRXa2RzTWxCbmIyZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0dORFFtcGlSMFo2WXpBMWFHSlhWVGxKYmxKc1pVaFJkR015TUdkYWJUbDFaRU14ZEZwWFVuQmtWekJwVUc1ME1XTXlWbmxNYlRWb1lsZFdPVkJET1hkUVoyOW5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVRoalEwSnFZa2RHZW1Nd05XaGlWMVU1U1c1U2JHVklVWFJYZWtWM1kwaG9aRWxJVW14bFNGRjBZbGhXTUZwWFVYUmFiVGw1V2xka2VXSXpWblZhUTBrclpUTldlbHBZU1hWamJUbHpXbGd3T0V3elFTdERhVUZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0V3eVVuQmthalJMU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0V3eVVuQmthalJMU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0ZwSGJESkpSMDV6V1ZoT2VsUnRSblJhVkRCcFpFZFdOR1JETVhsaFYyUnZaRU5KSzBOcFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRTRZek5DYUdKcFFtcGlSMFo2WXpBMWFHSlhWVGxKYmxKc1pVaFJkR1ZJVFdkYWJUbDFaRU14YVdJeWVHdEphalUzWkZoT2JHTnBOV3BaV0U1c1l6Qk9kbVJYTlRCbVV6azNaRmhPYkdOcE5YUlpXR2hFV1ZoT2JHTXpNRGhNTTA1M1dWYzBLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFdrZHNNa2xIVG5OWldFNTZWRzFHZEZwVU1HbGtlVEI0VFdsQ2IweFVSV2RaYldOMFlsaFdNRnBYVVdkamJUa3hZbTFTYkZwRE1XMWtWM2h6U1VjeE1FeFVSV2RpTTFwc1kyMWFjMkl6WTNSaFIyeHJXa2RXZFVscU5FdEpRMEZuU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjFCSFVuQmthVUZMU1VOQlowbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEpxWWtkR2VtTXdOV2hpVjFVNVNXMW5kRnB1Vm5OaVEwSnBXbmt4ZDJOdGJIUlpXRW8xU1dsQlMwbERRV2RKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQ2VtUkliSE5hVkRFM1pYbENNMkZYVWpCaFJHOW5XVU5TTjB0SVZucGFXRWwxV1RKR2VscFlUa1JpTTFaMVpFTkJka2xJVm5wYVdFbDFZbGRHTkZFeVJucGFXRTF3U1VOdlowMVVRWGRtVTFablNVZ3hPVU5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBGblNVTTRLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFRESlNjR1JxTkV0SlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RKUTBFNFRESlNjR1JxTkV0SlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQlowbERRV2RRUXpscllWaFpLME5wUVdkSlEwRm5TVU5CWjBsRFFXZEpRMEZuU1VOQmNFdFlNRXRKUTBGblNVTkJaMGxEUVdkSlEwRm5TVU5CT0V3d1RtaGpiVkpFWWpJMU1GcFhOVEJRWjI5blNVTkJaMGxEUVdkSlEwRm5TVU5CT0V3d1RtaGpiVkVyUTJkdlowbERRV2RKUTBGblNVTkJaMGxEUVRoUlYzaHNZMjVTUldGWVRqQmpiV3hwWkZoU2NHSXlOR2RNZWpSTFNVTkJaMGxEUVdkSlEwRm5TVVIzZGxwSGJESlFaMjluU1VOQlowbERRV2RKUkhkMldrZHNNbEJuYjJkSlEwRm5TVU5CT0V3eVVuQmthalJMU1VOQlowbEVkM1phUjJ3eVVHZHZaMGxEYXpkRGJqQkxRMjFhTVdKdFRqQmhWemwxU1VWR2MxcFlTakJTUjJ4NlpFaEtjRmx1VmpCaFZ6bDFTME5yWjJWM2IyZEpTRXBzWkVoV2VXSnBRVzlEYVVGblNVTkJPRkV5Um5sYVEwSnFZa2RHZW1Nd05XaGlWMVU1U1cxS2JreFlRbmxoVnpGb1kyNXJaMlJIVmpSa1F6RjNZMjFzZEZsWVNqVk1WMXAyWTIxV2JtTnRPVEZpYlZGcFVHZHZaMGxEUVdkSlEwRTRVVEpHZVZwRmFHeFpWMUpzWTJvMFMwbERRV2RKUTBGblNVTkJPRkV5Um5sYVJsSndaRWQ0YkVsSFRuTlpXRTU2VkcxR2RGcFVNR2xrUjFZMFpFTXhjMXA1UW0xaVIxWTBTVWRzTUZwWE1YcE1WMDVzWW01U2JHTnBRbTVaV0VGMFRXbEpLME5wUVdkSlEwRm5TVU5CWjBsRFFUaFJNbWhzV1RKMFJHRllTbXBpUjFWNVNVZE9jMWxZVG5wVWJVWjBXbFF3YVdGRE1ERkpTR04wVGxOSloweDZORXRKUTBGblNVTkJaMGxEUVdkSlJVWXhaRWM0ZEZKSGJIcGtTRXB3V1c1V2NIYzJaa1J2TWpoTFNVTkJaMGxEUVdkSlEwRTRUREJPYUdOdFVsVmhXRkp6V2xRMFMwbERRV2RKUTBGblVFTTVSRmxZU210VFIxWm9Xa2RXZVZCbmIyZEpRMEZuU1VOQk9GRXlSbmxhUlU1MlltNVNiR0p1VVdkWk1uaG9Zek5PVDFsWE1XeFFVMHA2WTBkR2FscFRNVFZNVkZGcFVHZHZaMGxEUVdkSlEwRm5TVVI0ZDBsSFRuTlpXRTU2VkcxR2RGcFVNR2xrUjFZMFpFTXhOR041UW5aalIwWnFZVmhTTlV4VWEzZEphalJMU1VOQlowbERRV2RKUTBGblNVVTRaMkpYT1RCaU0wbG5Xa2RWWjJOdFZtNWpiVVo2U1VaT1NsVkRRbmRpTWxKc1NVZFNjR016VW5saFYwb3hZVmhKWjFsWVZqQmlNakZvWkVkc2FsbFhNV3hpYmxKc1NVaENlV0l5VG14ak0wNTJZM2xDYTFwVFFtbFpWMncwV1ZOQ2FtSXlNWGRpUjFZMFlWZFNhRnBIVlhWRGFVRm5TVU5CWjBsRFFXZFFRemwzVUdkdlowbERRV2RKUTBGblNVUjRRMlJZVWpCaU1qUm5aRzFHZVdGWFJuVmtSREJwWXpKV2FtSXlOV3RaV0VvMVNXbENhbUpIUm5wak1EVm9ZbGRWT1VsdVkzUmFibFp6WWtOQ01GcFlhREJNV0doNlNXbzFRbVJIYkRKWldFbG5WRmM1YTJKNVFrSmtXRkoyWW1OUGFHUkhiR3BpZW5kMlVXNVdNR1JIT1hWUVoyOW5TVU5CWjBsRFFUaE1NRTVvWTIxU1JHSXlOVEJhVnpVd1VHZHZaMGxEUVdkUVF6bEVXVmhLYTFCbmIyZEpRMnMzUTI0d1N3bz0K
+import { useState, useMemo } from 'react';
+import { faker } from '@faker-js/faker/locale/pt_BR';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Progress } from '@/components/ui/progress';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import {
+  Users, Search, BarChart3, CheckCircle2,
+  AlertTriangle, Clock, Zap, TrendingUp, Shield, ShieldAlert
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+faker.seed(42);
+
+interface Analyst {
+  id: string;
+  name: string;
+  avatar: string;
+  specialization: string;
+  casesCount: number;
+  maxCases: number;
+  status: 'DISPONÍVEL' | 'OCUPADO' | 'INDISPONÍVEL';
+  resolvedCount: number;
+  avgDays: number;
+}
+
+interface DistCase {
+  id: string;
+  inmateName: string;
+  cpf: string;
+  processNumber: string;
+  eventType: string;
+  priority: 'Alta' | 'Média' | 'Baixa';
+  isPoint11: boolean;
+  timeInQueue: string;
+  analystId: string | null;
+  region: string;
+}
+
+const generateAnalysts = (): Analyst[] =>
+  Array.from({ length: 8 }, (_, i) => {
+    const casesCount = faker.number.int({ min: 2, max: 18 });
+    return {
+      id: `analyst-${i + 1}`,
+      name: faker.person.fullName(),
+      avatar: faker.person.firstName().substring(0, 2).toUpperCase(),
+      specialization: faker.helpers.arrayElement(['Crimes Hediondos', 'Execução Penal', 'Progressão de Regime', 'HITL Avançado']),
+      casesCount,
+      maxCases: 20,
+      status: casesCount >= 18 ? 'OCUPADO' : 'DISPONÍVEL',
+      resolvedCount: faker.number.int({ min: 10, max: 80 }),
+      avgDays: faker.number.int({ min: 2, max: 14 }),
+    };
+  });
+
+const generateCases = (): DistCase[] =>
+  Array.from({ length: 12 }, (_, i) => ({
+    id: `DIST-${String(i + 1).padStart(5, '0')}`,
+    inmateName: faker.person.fullName(),
+    cpf: faker.string.numeric(3) + '.' + faker.string.numeric(3) + '.' + faker.string.numeric(3) + '-' + faker.string.numeric(2),
+    processNumber: faker.string.numeric(7) + '-' + faker.string.numeric(2) + '.' + faker.string.numeric(4) + '.8.26.' + faker.string.numeric(4),
+    eventType: faker.helpers.arrayElement(['Progressão de Regime', 'Livramento Condicional', 'Saída Temporária', 'Recurso', 'Monitoramento']),
+    priority: faker.helpers.arrayElement(['Alta', 'Média', 'Baixa'] as const),
+    isPoint11: i < 3,
+    timeInQueue: faker.helpers.arrayElement(['15m', '1h 30m', '3h', '6h', '1d 2h']),
+    analystId: i < 8 ? `analyst-${(i % 8) + 1}` : null,
+    region: faker.helpers.arrayElement(['São Paulo', 'Rio de Janeiro', 'Minas Gerais', 'Paraná']),
+  }));
+
+const statusColors: Record<string, string> = {
+  DISPONÍVEL: 'border-success/30 text-success bg-success/10',
+  OCUPADO: 'border-warning/30 text-warning bg-warning/10',
+  INDISPONÍVEL: 'border-red-500/30 text-red-400 bg-red-500/10',
+};
+
+const priorityColors: Record<string, string> = {
+  Alta: 'border-red-500/30 text-red-400',
+  Média: 'border-warning/30 text-warning',
+  Baixa: 'border-success/30 text-success',
+};
+
+export function CaseDistribution() {
+  const [analysts] = useState<Analyst[]>(generateAnalysts);
+  const [cases, setCases] = useState<DistCase[]>(generateCases);
+  const [search, setSearch] = useState('');
+  const [isAutoDistributing, setIsAutoDistributing] = useState(false);
+
+  const unassigned = cases.filter(c => !c.analystId);
+  const point11Cases = cases.filter(c => c.isPoint11);
+
+  const filteredAnalysts = useMemo(() =>
+    analysts.filter(a =>
+      a.name.toLowerCase().includes(search.toLowerCase()) ||
+      a.specialization.toLowerCase().includes(search.toLowerCase())
+    ), [analysts, search]);
+
+  const handleAutoDistribute = async () => {
+    setIsAutoDistributing(true);
+    await new Promise(r => setTimeout(r, 1500));
+    setCases(prev => prev.map(c => {
+      if (!c.analystId) {
+        const available = analysts
+          .filter(a => a.casesCount < a.maxCases && a.status === 'DISPONÍVEL')
+          .sort((a, b) => a.casesCount - b.casesCount);
+        return { ...c, analystId: available[0]?.id || null };
+      }
+      return c;
+    }));
+    setIsAutoDistributing(false);
+  };
+
+  const handleAssign = (caseId: string, analystId: string) => {
+    setCases(prev => prev.map(c => c.id === caseId ? { ...c, analystId } : c));
+  };
+
+  const avgWorkload = Math.round(analysts.reduce((s, a) => s + a.casesCount, 0) / analysts.length);
+
+  return (
+    <div className="space-y-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h2 className="text-3xl font-bold text-primary tracking-tight">Distribuição de Casos</h2>
+          <p className="text-muted-foreground text-sm mt-1">Gestão de fila e atribuição de casos aos analistas.</p>
+        </div>
+        <Button
+          className="gap-2 bg-primary hover:bg-primary/90 font-black uppercase text-xs"
+          onClick={handleAutoDistribute}
+          disabled={isAutoDistributing || unassigned.length === 0}
+        >
+          <Zap className="h-4 w-4" />
+          {isAutoDistributing ? 'Distribuindo...' : `Distribuição Automática (${unassigned.length})`}
+        </Button>
+      </div>
+
+      {point11Cases.length > 0 && (
+        <div className="p-4 bg-red-600/10 border border-red-600/30 rounded-xl flex items-start gap-3">
+          <ShieldAlert className="h-5 w-5 text-red-500 shrink-0 mt-0.5 animate-pulse" />
+          <div>
+            <p className="text-sm font-black text-red-400 uppercase">Atenção: {point11Cases.length} Casos Ponto 11</p>
+            <p className="text-xs text-slate-400 mt-0.5">Casos de crimes hediondos/narcoterrorismo requerem analista especializado. Progressão bloqueada pelo Modo Endurecido.</p>
+          </div>
+        </div>
+      )}
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { label: 'Total de Analistas', value: analysts.length, icon: Users, color: 'text-primary' },
+          { label: 'Disponíveis', value: analysts.filter(a => a.status === 'DISPONÍVEL').length, icon: CheckCircle2, color: 'text-success' },
+          { label: 'Carga Média', value: `${avgWorkload} casos`, icon: TrendingUp, color: 'text-primary' },
+          { label: 'Não Atribuídos', value: unassigned.length, icon: Clock, color: 'text-warning' },
+        ].map((kpi, i) => (
+          <Card key={i} className="border-border">
+            <CardContent className="p-4">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-bold text-muted-foreground uppercase">{kpi.label}</span>
+                <kpi.icon className={cn("h-4 w-4", kpi.color)} />
+              </div>
+              <p className={cn("text-2xl font-bold", kpi.color)}>{kpi.value}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      <Tabs defaultValue="queue">
+        <TabsList className="bg-muted">
+          <TabsTrigger value="queue" className="font-bold uppercase text-xs">Fila de Entrada</TabsTrigger>
+          <TabsTrigger value="team" className="font-bold uppercase text-xs">Visão da Equipe</TabsTrigger>
+          <TabsTrigger value="metrics" className="font-bold uppercase text-xs">Métricas</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="queue" className="space-y-3 mt-4">
+          {cases.map(c => (
+            <Card key={c.id} className={cn("border-border hover:border-primary/30 transition-all", c.isPoint11 && "border-red-500/30 bg-red-500/5")}>
+              <CardContent className="p-4">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                  <div className="flex items-start gap-3">
+                    {c.isPoint11 && <ShieldAlert className="h-4 w-4 text-red-500 shrink-0 mt-0.5 animate-pulse" />}
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <p className="text-sm font-bold text-foreground">{c.inmateName}</p>
+                        <Badge variant="outline" className={cn("text-[10px] font-bold", priorityColors[c.priority])}>{c.priority}</Badge>
+                        {c.isPoint11 && <Badge className="text-[9px] bg-red-600 border-none font-black">PONTO 11</Badge>}
+                      </div>
+                      <p className="text-xs text-muted-foreground font-mono">{c.processNumber}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{c.eventType} · Na fila há {c.timeInQueue}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    {c.analystId ? (
+                      <Badge variant="outline" className="text-[10px] border-success/30 text-success font-bold">
+                        <CheckCircle2 className="h-3 w-3 mr-1" />
+                        {analysts.find(a => a.id === c.analystId)?.name.split(' ')[0]}
+                      </Badge>
+                    ) : (
+                      analysts.filter(a => a.status === 'DISPONÍVEL').slice(0, 3).map(a => (
+                        <Button
+                          key={a.id}
+                          variant="outline"
+                          size="sm"
+                          className="h-7 text-[10px] font-bold uppercase border-primary/30 text-primary hover:bg-primary/10"
+                          onClick={() => handleAssign(c.id, a.id)}
+                        >
+                          {a.name.split(' ')[0]}
+                        </Button>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </TabsContent>
+
+        <TabsContent value="team" className="mt-4">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
+              <Input placeholder="Buscar analista..." className="pl-9" value={search} onChange={e => setSearch(e.target.value)} />
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {filteredAnalysts.map(analyst => (
+              <Card key={analyst.id} className="border-border hover:border-primary/30 transition-all">
+                <CardContent className="p-4">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Avatar className="h-10 w-10 shrink-0">
+                      <AvatarFallback className="bg-primary/20 text-primary font-bold">{analyst.avatar}</AvatarFallback>
+                    </Avatar>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between">
+                        <p className="text-sm font-bold text-foreground truncate">{analyst.name}</p>
+                        <Badge variant="outline" className={cn("text-[9px] font-bold shrink-0 ml-2", statusColors[analyst.status])}>{analyst.status}</Badge>
+                      </div>
+                      <p className="text-xs text-muted-foreground">{analyst.specialization}</p>
+                    </div>
+                  </div>
+                  <div className="space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-muted-foreground">Carga</span>
+                      <span className="font-bold">{analyst.casesCount}/{analyst.maxCases}</span>
+                    </div>
+                    <Progress value={(analyst.casesCount / analyst.maxCases) * 100} className="h-1.5" indicatorClassName={analyst.casesCount >= 16 ? 'bg-warning' : 'bg-primary'} />
+                  </div>
+                  <div className="grid grid-cols-2 gap-2 mt-3 text-[10px] text-muted-foreground">
+                    <span>{analyst.resolvedCount} resolvidos</span>
+                    <span>~{analyst.avgDays}d médio</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </TabsContent>
+
+        <TabsContent value="metrics" className="mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { label: 'Total de Casos', value: cases.length, icon: BarChart3 },
+              { label: 'Atribuídos', value: cases.filter(c => c.analystId).length, icon: CheckCircle2 },
+              { label: 'Taxa de Alocação', value: `${Math.round((cases.filter(c => c.analystId).length / cases.length) * 100)}%`, icon: Shield },
+            ].map((s, i) => (
+              <Card key={i} className="border-border">
+                <CardContent className="p-6 text-center">
+                  <s.icon className="h-8 w-8 text-primary mx-auto mb-3" />
+                  <p className="text-2xl font-black text-foreground">{s.value}</p>
+                  <p className="text-xs text-muted-foreground font-bold uppercase mt-1">{s.label}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+}

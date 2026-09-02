@@ -1,18 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 /**
  * WatermarkOverlay: Proteção de dados S2 (Anti-Leak).
- * Exibe informações do operador e rastreabilidade.
+ * Fix: Usa ReturnType<typeof setInterval> em vez de NodeJS.Timeout.
  */
 export function WatermarkOverlay() {
   const [timestamp, setTimestamp] = useState(new Date().toLocaleString());
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    const timer = setInterval(() => setTimestamp(new Date().toLocaleString()), 1000);
-    return () => clearInterval(timer);
+    timerRef.current = setInterval(() => setTimestamp(new Date().toLocaleString()), 1000);
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    };
   }, []);
 
-  // Dados simulados do operador para rastreabilidade
   const operatorData = {
     id: "JUIZ-SILVA-8921",
     unit: "VARA-EXEC-SP",
@@ -21,7 +26,7 @@ export function WatermarkOverlay() {
   };
 
   return (
-    <div className="absolute inset-0 pointer-events-none z-[100] overflow-hidden opacity-[0.05] select-none">
+    <div className="absolute inset-0 pointer-events-none z-[100] overflow-hidden opacity-[0.05] select-none" aria-hidden="true">
       <div className="absolute inset-0 flex flex-wrap gap-x-32 gap-y-24 p-10 justify-around items-center rotate-[-20deg] scale-125">
         {Array.from({ length: 16 }).map((_, i) => (
           <div key={i} className="text-white font-mono text-[10px] font-black whitespace-nowrap leading-tight border border-white/10 p-2">
