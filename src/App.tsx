@@ -9,6 +9,9 @@ import { MyCases } from '@/pages/MyCases';
 import { CaseReview } from '@/pages/CaseReview';
 import { StatsDashboard } from '@/pages/StatsDashboard';
 import StrategicIntelligence from '@/pages/StrategicIntelligence';
+import P7Page from '@/pages/P7Page';
+import P8Page from '@/pages/P8Page';
+import MuralhaBackendProposal from '@/pages/MuralhaBackendProposal';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { Toaster } from '@/components/ui/sonner';
 import { TacticalTour } from '@/components/intelligence/TacticalTour';
@@ -29,12 +32,15 @@ function App() {
             <Route path="acao-humana" element={<HITL />} />
             <Route path="acao-humana/:taskId" element={<HITL />} />
             <Route path="brasil-sem-medo" element={<StrategicIntelligence />} />
+            <Route path="p7-command-center" element={<P7Page />} />
+            <Route path="p8-budget-control" element={<P8Page />} />
+            <Route path="muralha-backend" element={<MuralhaBackendProposal />} />
           </Route>
           <Route path="/estatisticas" element={<StatsDashboard />} />
         </Routes>
       </Router>
       <Toaster richColors position="top-right" />
-      <TacticalTour /> {/* Briefing Tático (U3) */}
+      <TacticalTour />
     </LanguageProvider>
   );
 }

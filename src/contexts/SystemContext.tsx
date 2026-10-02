@@ -11,7 +11,7 @@ interface SystemContextType {
   linkType: LinkType;
   setLinkType: (type: LinkType) => void;
   simulatedLatency: number;
-  withNetworkDelay: <T>(fn: () => Promise<T>) => Promise<T>;
+  withNetworkDelay: <T,>(fn: () => Promise<T>) => Promise<T>;
   auditLog: IntelligenceLogEntry[];
   addLogEntry: (type: IntelligenceLogEntry['type'], targetName: string, details: string) => void;
   refreshData: () => void;
@@ -26,49 +26,63 @@ export function SystemProvider({ children }: { children: ReactNode }) {
   const [linkType, setLinkType] = useState<LinkType>('FIBER');
 
   const simulatedLatency = useMemo(() => {
-    return linkType === 'FIBER' 
-      ? Math.floor(15 + Math.random() * 20) 
+    return linkType === 'FIBER'
+      ? Math.floor(15 + Math.random() * 20)
       : Math.floor(650 + Math.random() * 400);
   }, [linkType]);
 
-  const withNetworkDelay = useCallback(async <T>(fn: () => Promise<T>): Promise<T> => {
-    await new Promise(resolve => setTimeout(resolve, simulatedLatency));
-    return fn();
-  }, [simulatedLatency]);
+  const withNetworkDelay = useCallback(
+    async <T,>(fn: () => Promise<T>): Promise<T> => {
+      await new Promise(resolve => setTimeout(resolve, simulatedLatency));
+      return fn();
+    },
+    [simulatedLatency]
+  );
 
   const { data: auditLog = [] } = useQuery({
     queryKey: ['auditLogs'],
     queryFn: () => withNetworkDelay(() => intelligenceService.getAuditLogs(20)),
   });
 
-  const addLogEntry = useCallback((type: IntelligenceLogEntry['type'], targetName: string, details: string) => {
-    const lastEntry = auditLog[0];
-    const entry: IntelligenceLogEntry = {
-      timestamp: new Date().toISOString(),
-      type,
-      targetName,
-      details,
-      block_index: (lastEntry?.block_index || 0) + 1,
-      previous_hash: lastEntry?.audit_hash || "0000000000000000",
-      audit_hash: Math.random().toString(36).substring(2, 18).toUpperCase()
-    };
+  const addLogEntry = useCallback(
+    (type: IntelligenceLogEntry['type'], targetName: string, details: string) => {
+      const lastEntry = auditLog[0];
+      const entry: IntelligenceLogEntry = {
+        timestamp: new Date().toISOString(),
+        type,
+        targetName,
+        details,
+        block_index: (lastEntry?.block_index || 0) + 1,
+        previous_hash: lastEntry?.audit_hash || '0000000000000000',
+        audit_hash: Math.random().toString(36).substring(2, 18).toUpperCase(),
+      };
 
-    if (isOnline) {
-      intelligenceService.saveAuditLog(entry).then(() => {
-        queryClient.invalidateQueries({ queryKey: ['auditLogs'] });
-      });
-    } else {
-      syncService.queueAction('LOG', entry);
-      setPendingSyncCount(syncService.getQueue().length);
-    }
-  }, [auditLog, isOnline, queryClient]);
+      if (isOnline) {
+        intelligenceService.saveAuditLog(entry).then(() => {
+          queryClient.invalidateQueries({ queryKey: ['auditLogs'] });
+        });
+      } else {
+        syncService.queueAction('LOG', entry);
+        setPendingSyncCount(syncService.getQueue().length);
+      }
+    },
+    [auditLog, isOnline, queryClient]
+  );
 
   return (
-    <SystemContext.Provider value={{
-      isOnline, pendingSyncCount, linkType, setLinkType,
-      simulatedLatency, withNetworkDelay, auditLog, addLogEntry,
-      refreshData: () => queryClient.invalidateQueries()
-    }}>
+    <SystemContext.Provider
+      value={{
+        isOnline,
+        pendingSyncCount,
+        linkType,
+        setLinkType,
+        simulatedLatency,
+        withNetworkDelay,
+        auditLog,
+        addLogEntry,
+        refreshData: () => queryClient.invalidateQueries(),
+      }}
+    >
       {children}
     </SystemContext.Provider>
   );
