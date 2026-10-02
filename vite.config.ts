@@ -1,10 +1,6 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import path from 'path';
 
 export default defineConfig({
   plugins: [
@@ -30,63 +26,37 @@ function __dualiteSourceLoc({ types: t }) {
     attrs.push(t.jsxAttribute(t.jsxIdentifier('data-ds'), t.stringLiteral(rel + ':' + loc.start.line + ':' + loc.start.column)));
   } } };
 }
-] },
-      babel: {
-        plugins: [
-          function dualiteSourceLoc({ types: t }: { types: any }) {
-            return {
-              visitor: {
-                JSXOpeningElement(
-                  nodePath: any,
-                  state: { filename?: string }
-                ) {
-                  const fn: string = state.filename || '';
-                  if (!fn || fn.includes('node_modules')) return;
-                  const name = nodePath.node.name;
-                  const reactSpecials = ['Fragment', 'StrictMode', 'Suspense', 'Profiler'];
-                  const isReactSpecial =
-                    (name.type === 'JSXIdentifier' && reactSpecials.includes(name.name)) ||
-                    (name.type === 'JSXMemberExpression' &&
-                      name.object?.name === 'React' &&
-                      reactSpecials.includes(name.property?.name)) ||
-                    (name.type === 'JSXMemberExpression' &&
-                      (name.property?.name === 'Provider' ||
-                        name.property?.name === 'Consumer'));
-                  if (isReactSpecial) return;
-                  const attrs = nodePath.node.attributes;
-                  for (let i = 0; i < attrs.length; i++) {
-                    if (
-                      attrs[i].type === 'JSXAttribute' &&
-                      attrs[i].name?.name === 'data-ds'
-                    )
-                      return;
-                  }
-                  const loc = nodePath.node.loc;
-                  if (!loc) return;
-                  const wd = '/home/project/';
-                  const rel = fn.startsWith(wd) ? fn.slice(wd.length) : fn;
-                  attrs.push(
-                    t.jsxAttribute(
-                      t.jsxIdentifier('data-ds'),
-                      t.stringLiteral(
-                        rel + ':' + loc.start.line + ':' + loc.start.column
-                      )
-                    )
-                  );
-                },
-              },
-            };
-          },
-        ],
-      },
-    }),
+] } }),
+    {
+      name: 'babel',
+      enforce: 'pre' as const,
+      transform: function(_code: string, id: string) {
+        const cwd = process.cwd();
+        const nodePath = cwd + path.sep;
+        if (id.includes('node_modules') || !id.startsWith(nodePath)) {
+          return null;
+        }
+        if (id.endsWith('.tsx') || id.endsWith('.ts')) {
+          return {
+            code: _code,
+            map: null
+          };
+        }
+        return null;
+      }
+    }
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
+      '@': path.resolve(__dirname, './src')
+    }
   },
-  optimizeDeps: {
-    exclude: ['lucide-react'],
+  server: {
+    port: 5173,
+    host: true
   },
+  build: {
+    outDir: 'dist',
+    sourcemap: true
+  }
 });
