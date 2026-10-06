@@ -11,6 +11,7 @@ import { StatsDashboard } from '@/pages/StatsDashboard';
 import StrategicIntelligence from '@/pages/StrategicIntelligence';
 import P7Page from '@/pages/P7Page';
 import P8Page from '@/pages/P8Page';
+import P9Page from '@/pages/P9Page';
 import MuralhaBackendProposal from '@/pages/MuralhaBackendProposal';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { Toaster } from '@/components/ui/sonner';
@@ -34,6 +35,7 @@ function App() {
             <Route path="brasil-sem-medo" element={<StrategicIntelligence />} />
             <Route path="p7-command-center" element={<P7Page />} />
             <Route path="p8-budget-control" element={<P8Page />} />
+            <Route path="p9-muralha" element={<P9Page />} />
             <Route path="muralha-backend" element={<MuralhaBackendProposal />} />
           </Route>
           <Route path="/estatisticas" element={<StatsDashboard />} />
