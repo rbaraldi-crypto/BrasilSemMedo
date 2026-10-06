@@ -36,10 +36,7 @@ function __dualiteSourceLoc({ types: t }) {
           function dualiteSourceLoc({ types: t }: { types: any }) {
             return {
               visitor: {
-                JSXOpeningElement(
-                  nodePath: any,
-                  state: { filename?: string }
-                ) {
+                JSXOpeningElement(nodePath: any, state: any) {
                   const fn: string = state.filename || '';
                   if (!fn || fn.includes('node_modules')) return;
                   const name = nodePath.node.name;
